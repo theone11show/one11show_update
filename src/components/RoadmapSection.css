@@ -1,0 +1,64 @@
+.roadmap-section {
+  padding: 4rem 2rem;
+  background-color: #ff4f4f;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+
+/* Wrapper for heading with horizontal lines */
+.heading-line-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: nowrap;
+}
+
+/* Heading text */
+.section-headings {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: black;
+  white-space: nowrap;
+  font-family: fantasy;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Horizontal lines */
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: black;
+  border: none;
+  max-width: 300px;
+}
+
+/* Centered image */
+.center-image {
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heading-line-wrapper {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .section-headings {
+    font-size: 2rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .line {
+    max-width: 100px;
+  }
+}

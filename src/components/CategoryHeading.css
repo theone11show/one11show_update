@@ -1,0 +1,39 @@
+.category-heading-container {
+  background-color: #ff5050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  gap: 2rem;
+  flex-wrap: nowrap; /* Keep items in one line */
+  flex-direction: row;
+}
+
+.category-title {
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: black;
+  font-family: fantasy, sans-serif;
+  letter-spacing: 4px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: black;
+  border: none;
+  max-width: 300px;
+}
+
+/* ✅ Responsive for phones */
+@media (max-width: 768px) {
+  .category-title {
+    font-size: 2rem;
+  }
+
+  .line {
+    max-width: 100px;
+  }
+}
