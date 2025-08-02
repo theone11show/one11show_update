@@ -1,12 +1,12 @@
 /* Base container */
 .payment-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+   background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px #0000001a;
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px
 }
 
 /* Titles & Headings */
