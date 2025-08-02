@@ -27,6 +27,11 @@ const cardData = [
       'A soulful showcase of vocal talent, range, and expression from upcoming vocal powerhouses.',
     link: '/Results/rappers.jpg',
   },
+  {
+    title:'Battle of DJs' ,
+ description:'Spin your beats and show your DJ skills in a battle of sound, style, and energy',
+  link: '/Results/dj.jpg'
+  }
 ];
 
 const CompetitionCards = () => {
