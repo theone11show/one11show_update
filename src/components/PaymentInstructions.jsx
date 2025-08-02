@@ -12,21 +12,27 @@ const PaymentInstructions = () => {
 
   const categoryFees = {
     "Battle of Bands": {
-      registration: 5999,
+      registration: 4999,
       lateFee: 1000,
     },
     "Battle of Rappers": {
-      registration: 1699,
+      registration: 1199,
       lateFee: 500,
     },
     "Battle of Singer-Songwriters": {
-      registration: 2499,
+      registration: 1999,
       lateFee: 500,
     },
     "Battle of Musicians": {
-      registration: 1699,
+      registration: 1199,
       lateFee: 500,
     },
+
+    "Battle of DJs": {
+      registration: 2499,
+      lateFee: 500,
+    },
+    
   };
 
   const [category] = useState(
