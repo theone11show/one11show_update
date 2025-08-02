@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css';
-import './Logo.css';
-import Logo from './Logo';
+import React, { useState } from "react";
+import { Link, useNavigate, NavLink } from "react-router-dom";
+import "./Navbar.css";
+import "./Logo.css";
+import Logo from "./Logo";
 
 function Navbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleShowUpdates = () => {
-    navigate('/updates');
-    window.scrollTo({ top: 500, behavior: 'smooth' });
+    navigate("/updates");
+    window.scrollTo({ top: 500, behavior: "smooth" });
     setMenuOpen(false); // Close mobile menu after click
   };
 
   const toggleMenu = () => {
-    setMenuOpen(prev => !prev);
+    setMenuOpen((prev) => !prev);
   };
 
   return (
@@ -32,17 +32,32 @@ function Navbar() {
           ☰
         </div>
 
-        <div className={`nav-buttons ${menuOpen ? 'open' : ''}`}>
-          <Link to="/#team" onClick={() => setMenuOpen(false)}>Home</Link>
+        <div className={`nav-buttons ${menuOpen ? "open" : ""}`}>
+          <Link to="/#team" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
           {/* <Link to="/gallery#scroll" onClick={() => setMenuOpen(false)}>Gallery</Link> */}
-          <Link 
+          <Link
             to="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
           >
             Register
           </Link>
-          <Link to="/updates" onClick={handleShowUpdates}>Updates</Link>
+          <Link to="/updates" onClick={handleShowUpdates}>
+            Updates
+          </Link>
+
+          {/* connect with the team features implement in there */}
+
+          <Link
+            // to="https://docs.google.com/forms/d/e/.../viewform?usp=header"
+            to="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Connect With The Team
+          </Link>
         </div>
       </div>
     </div>

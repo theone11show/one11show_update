@@ -12,27 +12,38 @@ import CompetitionCards from "./CompetitionCards";
 const Oneshow = () => {
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       const leftImage = document.querySelector(".side-image.left");
       const rightImage = document.querySelector(".side-image.right");
-      if (leftImage) leftImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
-      if (rightImage) rightImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
+      if (leftImage)
+        leftImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
+      if (rightImage)
+        rightImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-        <Layout>
-    <div >
-      {/* Side Images */}
-      <div className="side-images">
-        <img src="gallery1.jpg" alt="Left Visual" className="side-image left" />
-        <img src="gallery1.jpg" alt="Right Visual" className="side-image right" />
-      </div>
+    <Layout>
+      <div>
+        {/* Side Images */}
+        <div className="side-images">
+          <img
+            src="gallery1.jpg"
+            alt="Left Visual"
+            className="side-image left"
+          />
+          <img
+            src="gallery1.jpg"
+            alt="Right Visual"
+            className="side-image right"
+          />
+        </div>
 
-      {/* Hero Section */}
-      {/* <section className="hero">
+        {/* Hero Section */}
+        {/* <section className="hero">
         <p>AN ARTIST LAUNCHPAD</p>
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
@@ -44,17 +55,15 @@ const Oneshow = () => {
         </a>
       </section> */}
 
-      <AboutSection/>
-      <SubmissionBanner/>
-      <CategoryHeading/>
-      <CategoryDescriptions />
-      <RoadmapSection/>
-      <UpdatesSection/>
-           <CompetitionCards />
-
-      
-    </div>
-        </Layout>
+        <AboutSection />
+        <SubmissionBanner />
+        <CategoryHeading />
+        <CategoryDescriptions />
+        <RoadmapSection />
+        <UpdatesSection />
+        <CompetitionCards />
+      </div>
+    </Layout>
   );
 };
 

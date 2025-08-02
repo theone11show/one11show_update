@@ -28,6 +28,10 @@ const UpdatesSection = () => {
                     <p className="news-date">30 JUNE 2025</p>
                 </div>
 
+                <div className="news-item">
+                    <p className="news-title">The Round Will Be Sortlisted </p>
+                    <p className="news-date">01 Aug 2025</p>
+                </div>
 
                 {/* Conditionally shown items */}
                 {showMore && (

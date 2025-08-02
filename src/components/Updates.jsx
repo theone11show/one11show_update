@@ -6,25 +6,31 @@ const cardData = [
         title: 'Battle of Bands',
         description: 'A thrilling face-off between top bands showcasing their musical synergy, energy, and performance skills.',
 
-        link: '/Results/bands.jpg'
+        // link: '/Results/bands.jpg'
     },
     {
         title: 'Battle of Singers Song writers',
         description: 'Original voices and lyrical stories come alive as singer-songwriters.',
 
-        link: '/Results/signer_songwriters.png'
+        // link: '/Results/signer_songwriters.png'
     },
     {
         title: 'Battle of Musicians',
         description: 'An epic competition where instrumentalists and solo artists push musical boundaries to win',
 
-        link: '/Results/musicians.png'
+        // link: '/Results/musicians.png'
     },
     {
         title: 'Battle of Rappers',
         description: 'A soulful showcase of vocal talent, range, and expression from upcoming vocal powerhouses.',
 
-        link: '/Results/rappers.jpg'
+        // link: '/Results/rappers.jpg'
+    },
+
+     {
+        title: 'Battle of DJs',
+        description: 'A high-energy competition where DJs battle with beats, mixes, and crowd-moving skills to stand out.',
+        // link: '/Results/rappers.jpg'
     }
 
 ];
@@ -47,12 +53,12 @@ const Updates = () => {
                             <h2 style={styles.title}>{card.title}</h2>
                             <p style={styles.description}>{card.description}</p>
 
-                            <button
+                            {/* <button
                                 style={styles.button}
                                 onClick={() => setPopupImage(card.link)}
                             >
                                 View
-                            </button>
+                            </button> */}
                             <button
                                 style={styles.button}
                                 onClick={() => {
