@@ -15,21 +15,14 @@ const UpdatesSection = () => {
                 <h2>News & Updates</h2>
 
                 <div className="news-item">
-                    <p className="news-title">The 1A Shortlisted Candidates are out</p>
-                    <p className="news-date">17 JUNE 2025</p>
+                    <p className="news-title">The payment portal is open for round 1B participants</p>
+                    <p className="news-date">24 JULY 2025</p>
                 </div>
 
-                <div className="news-item">
-                    <p className="news-title">Our 1A online battles</p>
-                    <p className="news-date">25 JUNE 2025</p>
-                </div>
-                <div className="news-item">
-                    <p className="news-title">Re-Opening of registration’s of round 1B</p>
-                    <p className="news-date">30 JUNE 2025</p>
-                </div>
+
 
                 <div className="news-item">
-                    <p className="news-title">The Round Will Be Sortlisted </p>
+                    <p className="news-title">The Round Will Be Shortlisted </p>
                     <p className="news-date">01 Aug 2025</p>
                 </div>
 
