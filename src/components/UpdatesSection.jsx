@@ -19,14 +19,7 @@ const UpdatesSection = () => {
                     <p className="news-date">24 JULY 2025</p>
                 </div>
 
-                {/* <div className="news-item">
-                    <p className="news-title">Our 1A online battles</p>
-                    <p className="news-date">25 JUNE 2025</p>
-                </div>
-                <div className="news-item">
-                    <p className="news-title">Re-Opening of registration’s of round 1B</p>
-                    <p className="news-date">30 JUNE 2025</p>
-                </div> */}
+
 
                 <div className="news-item">
                     <p className="news-title">The Round Will Be Shortlisted </p>
