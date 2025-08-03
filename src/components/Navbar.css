@@ -15,7 +15,6 @@
 
 }
 
-/* Wrap content in a max-width container */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -23,8 +22,66 @@
   height: 156px;
   padding: 0 8rem 0 3rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1700px;
   width: 100%;
+  
+}
+
+/* Nav links */
+.nav-buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-buttons a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding: 0 4rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding: 0 3rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 1rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .nav-buttons {
+    gap: 0.1rem;
+  }
+}
+@media(max-width:860px)
+{
+  .nav-buttons a {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.4rem;
+}
 }
 
 /* Logo */
@@ -38,23 +95,8 @@
   object-fit: contain;
 }
 
-/* Nav links */
-.nav-buttons {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
 
-.nav-buttons a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
+
 
 .nav-buttons a:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -80,10 +122,10 @@
   }
 
   .menu-icon {
-            display: block;
+        display: block;
         align-self: flex-end;
         margin-bottom: 0.5rem;
-        margin-top: -7.1rem;
+        margin-top: -6.1rem;
         margin-right: 25px;
         transform: scale(1.1);
   }
@@ -101,7 +143,7 @@
     display: flex;
   }
   .logo img {
-  height: 73px;
+  height: 75px;
   width: auto;
   object-fit: contain;
 }
