@@ -47,7 +47,7 @@ const Updates = () => {
                 <UpdatesSection/>
             </div>
             <h1 style={styles.heading}>
-                Shortlisted Candidates for Round 1A Are Out!
+               The payment portal is open for round 1B participants
             </h1>
 
             <div style={styles.container}>
