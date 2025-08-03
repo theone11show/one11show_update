@@ -22,7 +22,7 @@ const UpdatesSection = () => {
 
 
                 <div className="news-item">
-                    <p className="news-title">The Round Will Be Shortlisted </p>
+                    <p className="news-title">The Round 1B has Started</p>
                     <p className="news-date">01 Aug 2025</p>
                 </div>
 
