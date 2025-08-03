@@ -133,6 +133,7 @@ function JoinWaitList() {
   };
 
   return (
+    <div style={styles.mainContainer}>
     <div style={styles.container}>
       <h2 style={styles.heading}>Join Our Waitlist</h2>
 
@@ -242,14 +243,15 @@ function JoinWaitList() {
           </button> */}
 
           <button type="submit" style={styles.button} disabled={loading}>
-            {loading ? "Submitting..." : "Join Wait list"}
+            {loading ? "Submitting..." : "Join Waitlist"}
           </button>
         </form>
       ) : (
         <p style={styles.success}>Thank you for joining! 🎉</p>
       )}
     </div>
-  );
+    </div>
+ );
 }
 
 // CSS in JS
@@ -264,6 +266,12 @@ const styles = {
     boxShadow: "0 0 10px rgba(0,0,0,0.1)",
     backgroundColor: "#fff",
   },
+
+  mainContainer: {
+    backgroundColor: "#ff5050",
+    padding : "10px"
+  },
+
   heading: {
     fontSize: "24px",
     marginBottom: "20px",
