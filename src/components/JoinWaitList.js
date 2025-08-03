@@ -1,115 +1,134 @@
-import React, { useState } from 'react';
-import 'react-phone-input-2/lib/style.css';
-import PhoneInput from 'react-phone-input-2';
- import "./JoinWaitList.css";
+import React, { useState } from "react";
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
+import "./JoinWaitList.css";
 
 function JoinWaitList() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    whatsapp: '',
-     phoneNumber: '',
-     address:''
+    name: "",
+    email: "",
+    whatsapp: "",
+    phoneNumber: "",
+    address: "",
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
 
   const validateField = (name, value) => {
-    let error = '';
+    let error = "";
 
     switch (name) {
-      case 'name':
+      case "name":
         if (!value.trim()) {
-          error = 'Full Name is required';
+          error = "Full Name is required";
         } else if (!/^[a-zA-Z\s]+$/.test(value)) {
-          error = 'Only letters and spaces allowed';
+          error = "Only letters and spaces allowed";
         }
         break;
 
-      case 'email':
+      case "email":
         if (!value.trim()) {
-          error = 'Email is required';
+          error = "Email is required";
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = 'Invalid email format';
+          error = "Invalid email format";
         }
         break;
 
-      case 'whatsapp':
+      case "whatsapp":
         if (!value.trim()) {
-          error = 'WhatsApp number is required';
+          error = "WhatsApp number is required";
         } else if (!/^\d+$/.test(value)) {
-          error = 'Only digits allowed';
+          error = "Only digits allowed";
         } else if (value.length !== 10) {
-          error = 'WhatsApp number must be exactly 10 digits';
+          error = "WhatsApp number must be exactly 10 digits";
         }
         break;
-    case 'phoneNumber':
-  if (!value.trim()) {
-    error = 'Phone number is required';
-  } else if (!/^\+?\d+$/.test(value)) {
-    error = 'Only numbers and "+" allowed';
-  } else {
-    const digitsOnly = value.replace(/\D/g, ''); // removes non-digits
-    if (digitsOnly.length < 8 || digitsOnly.length > 15) {
-      error = 'Phone number must be between 8 and 15 digits';
-    }
-  }
-  break;
+      case "phoneNumber":
+        if (!value.trim()) {
+          error = "Phone number is required";
+        } else if (!/^\+?\d+$/.test(value)) {
+          error = 'Only numbers and "+" allowed';
+        } else {
+          const digitsOnly = value.replace(/\D/g, ""); // removes non-digits
+          if (digitsOnly.length < 8 || digitsOnly.length > 15) {
+            error = "Phone number must be between 8 and 15 digits";
+          }
+        }
+        break;
 
-
-         case 'address':
-    if (!value.trim()) {
-      error = 'Address is required';
-    }
-    break;
+      case "address":
+        if (!value.trim()) {
+          error = "Address is required";
+        }
+        break;
 
       default:
         break;
     }
 
-    setErrors(prev => ({ ...prev, [name]: error }));
+    setErrors((prev) => ({ ...prev, [name]: error }));
     return error;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     validateField(name, value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const nameError = validateField('name', formData.name);
-    const emailError = validateField('email', formData.email);
-    const whatsappError = validateField('whatsapp', formData.whatsapp);
-    const phoneNumberError = validateField('phoneNumber',formData.phoneNumber) ;
-    const addressError = validateField('address',formData.address) ;
+    if (loading) return;
 
-    if (!nameError && !emailError && !whatsappError &&!phoneNumberError &&!addressError ) {
-   const orderedData = {
-  name: formData.name || 'NA',
-  email: formData.email || 'NA',
-  whatsapp: formData.whatsapp || 'NA',
-  phoneNumber: formData.phoneNumber || 'NA',
-  address: formData.address || 'NA',
-};
- fetch('https://script.google.com/macros/s/AKfycbxARE_XCVY5xiGsWAzmU77AbtdVEDXjSqiHSNKMG3eAU-AJvVgfLrhQZPGvCXOhQI4R/exec', {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(orderedData),
-  })
-  .then(() => {
-    setSubmitted(true);
-  })
- .catch((error) => {
-    console.error('Error submitting to Google Sheet:', error);
-  });
+    setLoading(true);
+
+    const nameError = validateField("name", formData.name);
+    const emailError = validateField("email", formData.email);
+    const whatsappError = validateField("whatsapp", formData.whatsapp);
+    const phoneNumberError = validateField("phoneNumber", formData.phoneNumber);
+    const addressError = validateField("address", formData.address);
+
+    if (
+      !nameError &&
+      !emailError &&
+      !whatsappError &&
+      !phoneNumberError &&
+      !addressError
+    ) {
+      const orderedData = {
+        name: formData.name || "NA",
+        email: formData.email || "NA",
+        whatsapp: formData.whatsapp || "NA",
+        phoneNumber: formData.phoneNumber || "NA",
+        address: formData.address || "NA",
+      };
+      fetch(
+        "https://script.google.com/macros/s/AKfycbxARE_XCVY5xiGsWAzmU77AbtdVEDXjSqiHSNKMG3eAU-AJvVgfLrhQZPGvCXOhQI4R/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderedData),
+        }
+      )
+        .then(() => {
+          setSubmitted(true);
+        })
+        .catch((error) => {
+          console.error("Error submitting to Google Sheet:", error);
+        })
+
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
     }
   };
 
@@ -165,37 +184,39 @@ function JoinWaitList() {
               style={styles.input}
               maxLength={10}
             />
-            {errors.whatsapp && <span style={styles.error}>{errors.whatsapp}</span>}
+            {errors.whatsapp && (
+              <span style={styles.error}>{errors.whatsapp}</span>
+            )}
           </div>
-        
-<div style={styles.inputGroup}>
-  <label htmlFor="phone" style={styles.label}>
-    Phone Number <span style={styles.required}>*</span>
-  </label>
 
-  <PhoneInput
-  country={'in'}
-  value={formData.phoneNumber}
-  onChange={(value) =>
-   setFormData((prev) => ({ ...prev, phoneNumber: '+' + value }))
-  }
-  enableSearch
-  inputProps={{
-    name: 'phoneNumber',
-    required: true,
-    id: 'phoneNumber',
-    style: {
-      width: '100%',
-      height: '40px',
-      fontSize: '16px',
-    },
-  }}
-/>
+          <div style={styles.inputGroup}>
+            <label htmlFor="phone" style={styles.label}>
+              Phone Number <span style={styles.required}>*</span>
+            </label>
 
-  {errors.phoneNumber && (
-    <span style={styles.error}>{errors.phoneNumber}</span>
-  )}
-</div>
+            <PhoneInput
+              country={"in"}
+              value={formData.phoneNumber}
+              onChange={(value) =>
+                setFormData((prev) => ({ ...prev, phoneNumber: "+" + value }))
+              }
+              enableSearch
+              inputProps={{
+                name: "phoneNumber",
+                required: true,
+                id: "phoneNumber",
+                style: {
+                  width: "100%",
+                  height: "40px",
+                  fontSize: "16px",
+                },
+              }}
+            />
+
+            {errors.phoneNumber && (
+              <span style={styles.error}>{errors.phoneNumber}</span>
+            )}
+          </div>
 
           <div style={styles.inputGroup}>
             <label htmlFor="address" style={styles.label}>
@@ -210,13 +231,18 @@ function JoinWaitList() {
               value={formData.address}
               onChange={handleChange}
               style={styles.input}
-              
             />
-            {errors.address && <span style={styles.error}>{errors.address}</span>}
+            {errors.address && (
+              <span style={styles.error}>{errors.address}</span>
+            )}
           </div>
-
+          {/* 
           <button type="submit" style={styles.button}>
             Join Wait list
+          </button> */}
+
+          <button type="submit" style={styles.button} disabled={loading}>
+            {loading ? "Submitting..." : "Join Wait list"}
           </button>
         </form>
       ) : (
@@ -229,61 +255,61 @@ function JoinWaitList() {
 // CSS in JS
 const styles = {
   container: {
-    maxWidth: '400px',
-    margin: '80px auto',
-    padding: '20px',
-    textAlign: 'left',
-    border: '1px solid #ddd',
-    borderRadius: '12px',
-    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-    backgroundColor: '#fff',
+    maxWidth: "400px",
+    margin: "80px auto",
+    padding: "20px",
+    textAlign: "left",
+    border: "1px solid #ddd",
+    borderRadius: "12px",
+    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    backgroundColor: "#fff",
   },
   heading: {
-    fontSize: '24px',
-    marginBottom: '20px',
-    textAlign: 'center',
+    fontSize: "24px",
+    marginBottom: "20px",
+    textAlign: "center",
   },
   form: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '16px',
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
   },
   inputGroup: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
   },
   label: {
-    marginBottom: '6px',
-    fontWeight: 'bold',
+    marginBottom: "6px",
+    fontWeight: "bold",
   },
   input: {
-    padding: '10px',
-    fontSize: '16px',
-    borderRadius: '6px',
-    border: '1px solid #ccc',
+    padding: "10px",
+    fontSize: "16px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
   },
   button: {
-    padding: '10px',
-   backgroundColor: '#000',
-    color: '#fff',
-    fontSize: '16px',
-    border: 'none',
-    borderRadius: '6px',
-    cursor: 'pointer',
+    padding: "10px",
+    backgroundColor: "#000",
+    color: "#fff",
+    fontSize: "16px",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer",
   },
   required: {
-    color: 'red',
+    color: "red",
   },
   error: {
-    color: 'red',
-    fontSize: '14px',
-    marginTop: '4px',
+    color: "red",
+    fontSize: "14px",
+    marginTop: "4px",
   },
   success: {
-    color: 'green',
-    fontWeight: 'bold',
-    fontSize: '18px',
-    textAlign: 'center',
+    color: "green",
+    fontWeight: "bold",
+    fontSize: "18px",
+    textAlign: "center",
   },
 };
 
