@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate, NavLink } from "react-router-dom";
+
+
 import "./Navbar.css";
 import "./Logo.css";
 import Logo from "./Logo";
@@ -48,16 +50,11 @@ function Navbar() {
             Updates
           </Link>
 
-          {/* connect with the team features implement in there */}
-
-          <Link
-            // to="https://docs.google.com/forms/d/e/.../viewform?usp=header"
-            to="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {/* JoinWaitlist features implement in there */}
+          <Link to="/join">
             Join Our Waitlist
           </Link>
+
         </div>
       </div>
     </div>

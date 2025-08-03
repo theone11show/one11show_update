@@ -26,7 +26,7 @@ import Footer from './components/Footer';
 import InfoSection from './components/InfoSection';
 
 // Site under development notice ya alert dikhata hoga
-
+/*import DevelopmentNotice from './components/DevelopmentNotice';*/
 
 // Updates component — ye latest updates show karta hai
 import Updates from './components/Updates';
@@ -48,7 +48,7 @@ function App() {
       <Navbar />
 
       {/* Development notice ya maintenance alert */}
-  
+     {/* <DevelopmentNotice />*/}
 
       {/* Routing configuration */}
       <Routes>
