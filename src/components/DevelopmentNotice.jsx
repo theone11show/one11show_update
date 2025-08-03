@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 const DevelopmentNotice = () => {
   return (
@@ -59,4 +59,4 @@ const DevelopmentNotice = () => {
   );
 };
 
-export default DevelopmentNotice;
+export default DevelopmentNotice;*/
