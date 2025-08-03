@@ -51,10 +51,10 @@ function Navbar() {
           </Link>
 
           {/* JoinWaitlist features implement in there */}
-<Link to="/join">
-            JoinWaitList
+          <Link to="/join">
+            Join Our Waitlist
           </Link>
-        
+
         </div>
       </div>
     </div>

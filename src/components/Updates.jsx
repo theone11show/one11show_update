@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import UpdatesSection from "./UpdatesSection";
 
 const cardData = [
     {
@@ -42,8 +43,11 @@ const Updates = () => {
 
     return (
         <div>
+            <div>
+                <UpdatesSection/>
+            </div>
             <h1 style={styles.heading}>
-                Shortlisted Candidates for Round 1A Are Out!
+               The payment portal is open for round 1B participants
             </h1>
 
             <div style={styles.container}>

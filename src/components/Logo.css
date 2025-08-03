@@ -4,7 +4,8 @@
   max-width: 230px;
   aspect-ratio: 1 / 1;
   margin-top: -15px;
-  cursor: pointer; /* shows pointer on click */
+  cursor: pointer;
+  /* shows pointer on click */
 }
 
 .vinyl-container {
@@ -40,6 +41,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -76,9 +78,13 @@
   }
 
   .clogo img.vinyl {
-    width: 50%;
+    /* width: 50%;
     top: 32%;
-    left: 11%;
+    left: 11%; */
+    width: 54%;
+    top: 33%;
+    left: 10%;
+
   }
 
   .venyl_img img.vinyl-overlay {
@@ -90,7 +96,7 @@
 
   .venyl_stick img.vinyl-stick {
     width: 32%;
-    top: 56%;
+    top: 40%;
     left: 24%;
   }
 }
