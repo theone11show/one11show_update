@@ -56,7 +56,7 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Connect With The Team
+            Join Our Waitlist
           </Link>
         </div>
       </div>
