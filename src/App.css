@@ -13,6 +13,8 @@
   }
 }
 
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +38,18 @@
     transform: rotate(360deg);
   }
 }
+
+/* @media (min-width: 374px) and (max-width:440) {
+  .App-header {
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App-link {
+    font-size: 12px;
+  }
+}; */

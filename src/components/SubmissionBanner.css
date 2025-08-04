@@ -1,33 +1,38 @@
-/* Existing Styles */
+/* General Styles */
 .submission-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #e25562;
   color: white;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   font-family: 'Poppins', sans-serif;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
 
-.submission-banner h2 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: fantasy;
+.submission {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  max-width: 90%;
 }
 
 .register-btn {
   background-color: #e67e22;
   color: black;
-  font-weight: 100;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   text-decoration: none;
   padding: 0.8rem 2rem;
   border-radius: 40px;
   transition: background 0.3s ease, transform 0.2s ease;
   font-family: fantasy;
+  display: inline-block;
+  text-align: center;
 }
 
 .register-btn:hover {
@@ -38,33 +43,21 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .submission-banner {
-    padding: 2rem 1rem;
-  }
-
-  .submission-banner h2 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-  }
-
-  .register-btn {
-    font-size: 1.2rem;
-    padding: 0.6rem 1.5rem;
+    padding: 3rem 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .submission-banner {
-    padding: 1.5rem 0.5rem;
+    padding: 2.5rem 1rem;
   }
 
-  .submission-banner h2 {
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
+  .submission {
+    font-size: 1rem;
   }
 
   .register-btn {
+    padding: 0.6rem 1.4rem;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
   }
 }
