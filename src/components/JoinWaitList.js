@@ -134,142 +134,158 @@ function JoinWaitList() {
 
   return (
     <div style={styles.mainContainer}>
-    <div style={styles.container}>
-      <h2 style={styles.heading}>Join Our Waitlist</h2>
+      <div style={styles.container}>
+        {!submitted && <h2 style={styles.heading}>Join Our Waitlist</h2>}
 
-      {!submitted ? (
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.inputGroup}>
-            <label htmlFor="name" style={styles.label}>
-              Full Name <span style={styles.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your full name"
-              value={formData.name}
-              onChange={handleChange}
-              style={styles.input}
-            />
-            {errors.name && <span style={styles.error}>{errors.name}</span>}
-          </div>
+        {!submitted ? (
+          <form onSubmit={handleSubmit} style={styles.form}>
+            <div style={styles.inputGroup}>
+              <label htmlFor="name" style={styles.label}>
+                Full Name <span style={styles.required}>*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleChange}
+                style={styles.input}
+              />
+              {errors.name && <span style={styles.error}>{errors.name}</span>}
+            </div>
 
-          <div style={styles.inputGroup}>
-            <label htmlFor="email" style={styles.label}>
-              Email Address <span style={styles.required}>*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              style={styles.input}
-            />
-            {errors.email && <span style={styles.error}>{errors.email}</span>}
-          </div>
+            <div style={styles.inputGroup}>
+              <label htmlFor="email" style={styles.label}>
+                Email Address <span style={styles.required}>*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                style={styles.input}
+              />
+              {errors.email && <span style={styles.error}>{errors.email}</span>}
+            </div>
 
-          <div style={styles.inputGroup}>
-            <label htmlFor="whatsapp" style={styles.label}>
-              WhatsApp Number <span style={styles.required}>*</span>
-            </label>
-            <input
-              type="tel"
-              id="whatsapp"
-              name="whatsapp"
-              placeholder="Enter 10-digit number"
-              value={formData.whatsapp}
-              onChange={handleChange}
-              style={styles.input}
-              maxLength={10}
-            />
-            {errors.whatsapp && (
-              <span style={styles.error}>{errors.whatsapp}</span>
-            )}
-          </div>
+            <div style={styles.inputGroup}>
+              <label htmlFor="whatsapp" style={styles.label}>
+                WhatsApp Number <span style={styles.required}>*</span>
+              </label>
+              <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                placeholder="Enter 10-digit number"
+                value={formData.whatsapp}
+                onChange={handleChange}
+                style={styles.input}
+                maxLength={10}
+              />
+              {errors.whatsapp && (
+                <span style={styles.error}>{errors.whatsapp}</span>
+              )}
+            </div>
 
-          <div style={styles.inputGroup}>
-            <label htmlFor="phone" style={styles.label}>
-              Phone Number <span style={styles.required}>*</span>
-            </label>
+            <div style={styles.inputGroup}>
+              <label htmlFor="phone" style={styles.label}>
+                Phone Number <span style={styles.required}>*</span>
+              </label>
 
-            <PhoneInput
-              country={"in"}
-              value={formData.phoneNumber}
-              onChange={(value) =>
-                setFormData((prev) => ({ ...prev, phoneNumber: "+" + value }))
-              }
-              enableSearch
-              inputProps={{
-                name: "phoneNumber",
-                required: true,
-                id: "phoneNumber",
-                style: {
-                  width: "100%",
-                  height: "40px",
-                  fontSize: "16px",
-                },
-              }}
-            />
+              <PhoneInput
+                country={"in"}
+                value={formData.phoneNumber}
+                onChange={(value) =>
+                  setFormData((prev) => ({ ...prev, phoneNumber: "+" + value }))
+                }
+                enableSearch
+                inputProps={{
+                  name: "phoneNumber",
+                  required: true,
+                  id: "phoneNumber",
+                  style: {
+                    width: "100%",
+                    height: "40px",
+                    fontSize: "16px",
+                  },
+                }}
+              />
 
-            {errors.phoneNumber && (
-              <span style={styles.error}>{errors.phoneNumber}</span>
-            )}
-          </div>
+              {errors.phoneNumber && (
+                <span style={styles.error}>{errors.phoneNumber}</span>
+              )}
+            </div>
 
-          <div style={styles.inputGroup}>
-            <label htmlFor="address" style={styles.label}>
-              Enter your Address <span style={styles.required}>*</span>
-            </label>
-            <textarea
-              type="address"
-              textarea
-              id="address"
-              name="address"
-              placeholder="Enter your Address"
-              value={formData.address}
-              onChange={handleChange}
-              style={styles.input}
-            />
-            {errors.address && (
-              <span style={styles.error}>{errors.address}</span>
-            )}
-          </div>
-          {/* 
+            <div style={styles.inputGroup}>
+              <label htmlFor="address" style={styles.label}>
+                Enter your Address <span style={styles.required}>*</span>
+              </label>
+              <textarea
+                type="address"
+                textarea
+                id="address"
+                name="address"
+                placeholder="Enter your Address"
+                value={formData.address}
+                onChange={handleChange}
+                style={styles.input}
+              />
+              {errors.address && (
+                <span style={styles.error}>{errors.address}</span>
+              )}
+            </div>
+            {/* 
           <button type="submit" style={styles.button}>
             Join Wait list
           </button> */}
 
-          <button type="submit" style={styles.button} disabled={loading}>
-            {loading ? "Submitting..." : "Join Waitlist"}
-          </button>
-        </form>
-      ) : (
-        <p style={styles.success}>Thank you for joining! 🎉</p>
-      )}
+            <button type="submit" style={styles.button} disabled={loading}>
+              {loading ? "Submitting..." : "Join Waitlist"}
+            </button>
+          </form>
+        ) : (
+          <p className="thanksmessage">
+            <span className="congratulation">
+              You're officially in! Congratulations!!!
+            </span>{" "}
+            <p className="thankyou">
+              Thank you for joining our waitlist. We'll be in touch soon with an
+              official email about the show and tickets{" "}
+            </p>
+          </p>
+        )}
+      </div>
     </div>
-    </div>
- );
+  );
 }
 
-// CSS in JS
+// CSS in js
+
 const styles = {
   container: {
-    maxWidth: "400px",
-    margin: "80px auto",
+    position: "absolute",
+    top: "70%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    maxWidth: "500px",
+    width: "100%",
     padding: "20px",
     textAlign: "left",
     border: "1px solid #ddd",
     borderRadius: "12px",
     boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-    backgroundColor: "#fff",
+    backgroundColor: "#ff5050",
   },
 
   mainContainer: {
-    backgroundColor: "#ff5050",
-    padding : "10px"
+    // backgroundImage: `url(${backgroundimage})`,
+    backgroundSize: "cover", // fill the whole container
+    backgroundPosition: "cover", // keep the image centered
+    backgroundRepeat: "no-repeat",
+    height: "100vh",
   },
 
   heading: {
@@ -277,11 +293,13 @@ const styles = {
     marginBottom: "20px",
     textAlign: "center",
   },
+
   form: {
     display: "flex",
     flexDirection: "column",
     gap: "16px",
   },
+
   inputGroup: {
     display: "flex",
     flexDirection: "column",
@@ -313,12 +331,6 @@ const styles = {
     fontSize: "14px",
     marginTop: "4px",
   },
-  success: {
-    color: "green",
-    fontWeight: "bold",
-    fontSize: "18px",
-    textAlign: "center",
-  },
-};
 
+};
 export default JoinWaitList;
