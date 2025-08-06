@@ -1,124 +1,120 @@
 /* Base container */
 .payment-container {
-   background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px #0000001a;
-    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-    margin: 40px auto;
-    max-width: 800px;
-    padding: 20px
+  padding: 2rem;
+  background-color: var(--color-charcoal-black);
+  color: var(--color-cream-white);
+  font-family: var(--font-antonio);
+  max-width: 900px;
+  margin: auto;
 }
 
-/* Titles & Headings */
+/* Main Title */
 .payment-title {
+  font-family: var(--font-anton);
   text-align: center;
-  color: #2d2e32;
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-primary-red);
+  text-transform: uppercase;
 }
 
+/* Section block */
+.payment-section {
+  margin-bottom: 2rem;
+  background-color: var(--color-dark-charcoal);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Section headers */
 .section-heading {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 8px;
-  color: white;
-}
-
-.payment-section ul li {
-  margin: 5px 0; /* 10px margin top and bottom */
+  font-family: var(--font-anton);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .section-heading.green {
-  background: #28a745;
+  color: #32cd32;
 }
 
 .section-heading.blue {
-  background: #007bff;
+  color: var(--color-electric-blue);
 }
 
 .section-heading.red {
-  background: #dc3545;
+  color: var(--color-primary-red);
 }
 
 .section-heading.purple {
-  background: #6f42c1;
+  color: var(--color-bubblegum-magenta);
 }
 
-.payment-section {
-  margin-bottom: 30px;
-}
-
-/* UPI Info */
-.upi-code {
+/* Payment format box */
+.payment-format {
+  white-space: pre-wrap;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
   font-family: monospace;
-  font-size: 16px;
-  background: #f3f3f3;
-  padding: 4px 10px;
-  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+/* UPI stuff */
+.upi-code {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
 }
 
 .copy-button {
-  margin-left: 10px;
-  background: #007bff;
+  margin-left: 1rem;
+  background-color: var(--color-primary-red);
   color: white;
+  padding: 0.3rem 0.8rem;
   border: none;
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 6px;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
 }
 
 .copy-button:hover {
-  background: #0056b3;
+  background-color: #e01520;
+  box-shadow: 0 0 10px var(--color-primary-red);
 }
 
-/* Category Select */
-#category-select {
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
+/* UPI App Buttons */
+.upi-buttons {
+  margin-top: 1rem;
 }
 
-/* UPI App Icons */
 .upi-apps {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
-  /* flex-wrap: wrap; */
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .upi-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  transition: transform 0.2s;
+  background-color: transparent;
+  border: 2px solid var(--color-electric-blue);
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .upi-button img {
   width: 50px;
-  height: auto;
-  border-radius: 50%;
+  height: 50px;
 }
 
 .upi-button:hover {
   transform: scale(1.1);
-}
-
-/* Format Block */
-.payment-format {
-  background: #f8f9fa;
-  padding: 12px;
-  border-radius: 8px;
-  font-family: monospace;
-  font-size: 14px;
-  white-space: pre-wrap;
+  box-shadow: 0 0 12px var(--color-electric-blue);
 }
 
 /* QR Modal */
@@ -128,54 +124,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 1000;
 }
 
 .qr-content {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
+  background-color: var(--color-dark-charcoal);
+  padding: 2rem;
+  border-radius: 1rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: var(--color-cream-white);
+  box-shadow: 0 0 20px var(--color-electric-blue);
 }
 
-.qr-content h3 {
-  margin-bottom: 16px;
-  font-size: 22px;
+.qr-content button {
+  margin-top: 1rem;
 }
 
-.qr-content p {
-  margin: 12px 0;
-  font-family: monospace;
-  font-size: 16px;
+/* Links */
+a {
+  color: var(--color-electric-blue);
+  text-decoration: underline;
+  transition: color 0.2s;
 }
 
-.close-button {
-  margin-top: 10px;
-  background: #dc3545;
-  color: white;
-  border: none;
-  padding: 6px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  background: #b02a37;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .upi-apps {
-    justify-content: center;
-  }
-
-  .qr-modal {
-    display: none !important; /* hide QR on mobile */
-  }
+a:hover {
+  color: var(--color-bubblegum-magenta);
 }
