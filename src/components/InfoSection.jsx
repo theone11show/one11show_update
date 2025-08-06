@@ -1,47 +1,87 @@
 import React from 'react';
-import './InfoSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faXTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function InfoSection() {
-    const navigate = useNavigate();
+function ContactSection() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success('Your message has been sent! ');
+    e.target.reset();
+  };
 
-    const handleShowUpdates = () => {
-        navigate('/updates');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:info@theone11.show';
+  };
 
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+917477785294';
+  };
 
-    return (
-        <div className="info-section">
-            <div >
-                
-            </div>
+  return (
+    <section id="contact" className="py-16 md:py-24 bg-charcoal-black">
+      <ToastContainer />
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-4xl sm:text-5xl font-[var(--font-null-feel)] text-cream-white mb-8">
+          Get In Touch
+        </h2>
+        <p className="text-lg md:text-xl text-cream-white max-w-3xl mx-auto font-[var(--font-antonio)] mb-8">
+          Have questions, partnership inquiries, or want to apply to be featured? Reach out to us!
+        </p>
 
-            <div className="info-card contactcard">
-                <h2>Contact Us</h2>
-                <p>
-                    If you have questions or want to connect, feel free to message us on WhatsApp.
-                </p>
-                <br />
-                <div className="social-links">
-                    <a href="https://wa.me/917477785294" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-                    </a>
-                    <a href="https://www.instagram.com/theone11.show?igsh=MTVvdTcwcTVvYnM2cw==" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faInstagram} size="2x" />
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61576672565861&mibextid=rS40aB7S9Ucbxw6v" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebook} size="2x" />
-                    </a>
-                    <a href="https://x.com/theone11show" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faXTwitter} size="2x" />
-                    </a>
-                </div>
-            </div>
+        <div className="flex flex-col items-center space-y-6">
+          <div
+            onClick={handleEmailClick}
+            className="hover:underline text-xl md:text-2xl font-semibold flex items-center cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faEnvelope} className="mr-3" />
+            info@theone11.show
+          </div>
+
+          <div
+            onClick={handlePhoneClick}
+            className="text-primary-red hover:underline text-xl md:text-2xl font-semibold flex items-center cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faPhone} className="mr-3 cursor-pointer" />
+            +91 7477785294
+          </div>
         </div>
-    );
+
+        <div className="mt-12">
+          <form
+            className="max-w-xl mx-auto space-y-6"
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
+              required
+            />
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+              className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="btn-primary w-full text-xl py-3 !rounded-lg"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default InfoSection;
+export default ContactSection;
