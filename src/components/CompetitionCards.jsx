@@ -5,7 +5,8 @@ const events = [
   {
     id: 'bands-section',
     title: 'Battle of Bands',
-    subtitle: 'A thrilling face-off between top bands showcasing their musical synergy, energy, and performance skills.',
+    subtitle:
+      'A thrilling face-off between top bands showcasing their musical synergy, energy, and performance skills.',
     image: 'https://placehold.co/600x400/333333/00ffff?text=Battle+of+Bands',
     alt: 'Battle of Bands Poster',
     color: 'text-primary-red',
@@ -13,28 +14,32 @@ const events = [
   {
     id: 'singer-songwriter-section',
     title: 'Singer/Songwriter Battle',
-    subtitle: 'Original voices and lyrical stories come alive as singer-songwriters.',
+    subtitle:
+      'Original voices and lyrical stories come alive as singer-songwriters.',
     image: 'https://placehold.co/600x400/333333/ff00ff?text=Singer-Songwriters',
     alt: 'Singer-Songwriters Poster',
   },
   {
     id: 'musicians-section',
     title: 'Musicians (Instrumental)',
-    subtitle: 'An epic competition where instrumentalists and solo artists push musical boundaries to win.',
+    subtitle:
+      'An epic competition where instrumentalists and solo artists push musical boundaries to win.',
     image: 'https://placehold.co/600x400/333333/ffff00?text=Musicians',
     alt: 'Musicians Poster',
   },
   {
     id: 'rappers-section',
     title: 'Battle of Rappers',
-    subtitle: 'A soulful showcase of vocal talent, range, and expression from upcoming vocal powerhouses.',
+    subtitle:
+      'A soulful showcase of vocal talent, range, and expression from upcoming vocal powerhouses.',
     image: 'https://placehold.co/600x400/333333/a020f0?text=Rappers',
     alt: 'Rappers Poster',
   },
   {
     id: 'djs-section',
     title: 'Battle of DJs',
-    subtitle: 'Spin your beats and show your DJ skills in a battle of sound, style, and energy',
+    subtitle:
+      'Spin your beats and show your DJ skills in a battle of sound, style, and energy',
     image: 'https://placehold.co/600x400/333333/ffa500?text=DJs',
     alt: 'DJs Poster',
   },
@@ -48,13 +53,13 @@ const events = [
   {
     id: 'upcoming-events',
     title: 'Upcoming Events',
-    subtitle: 'Stay Tuned for New Announcements!',
-    image: 'https://placehold.co/600x400/333333/00f0c0?text=More+Events',
-    alt: 'More Events Poster',
+    subtitle: 'Stay tuned for more exciting competitions!',
+    image: 'https://placehold.co/600x400/333333/ffffff?text=Upcoming+Events',
+    alt: 'Upcoming Events Poster',
   },
 ];
 
-const CompletionCards = () => {
+const CompetitionCards = () => {
   const navigate = useNavigate();
 
   const handleRegister = (eventTitle) => {
@@ -62,7 +67,7 @@ const CompletionCards = () => {
     window.scrollTo({ top: scrollTop });
 
     setTimeout(() => {
-      navigate('/payment-instructions', {
+      navigate('/register', {
         state: { category: eventTitle },
       });
     }, 200);
@@ -70,11 +75,10 @@ const CompletionCards = () => {
 
   return (
     <section
-  id="events"
-  className="relative py-16 md:py-24 overflow-hidden"
-  style={{ backgroundColor: 'var(--color-charcoal-black)' }}
->
-      
+      id="events"
+      className="relative py-16 md:py-24 overflow-hidden"
+      style={{ backgroundColor: 'var(--color-charcoal-black)' }}
+    >
       <img
         src="https://placehold.co/600x600/171616/f81a26/png?text=Vinyl+Disc"
         alt="Animated Vinyl Disc"
@@ -93,7 +97,11 @@ const CompletionCards = () => {
               id={event.id}
               className="bg-[var(--color-dark-charcoal)] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
             >
-              <img src={event.image} alt={event.alt} className="w-full h-64 object-cover" />
+              <img
+                src={event.image}
+                alt={event.alt}
+                className="w-full h-64 object-cover"
+              />
               <div className="p-6">
                 <h3 className="text-2xl font-[var(--font-anton)] text-[var(--color-primary-red)] mb-2">
                   {event.title}
@@ -101,12 +109,22 @@ const CompletionCards = () => {
                 <p className="text-[var(--color-cream-white)] text-lg font-[var(--font-antonio)] mb-4">
                   {event.subtitle}
                 </p>
-                <button
-                  onClick={() => handleRegister(event.title)}
-                  className="bg-[var(--color-primary-red)] text-white px-4 py-2 text-sm rounded-md hover:bg-red-700 transition"
-                >
-                  Register Now
-                </button>
+
+                {event.title === 'Upcoming Events' ? (
+                  <button
+                    onClick={() => navigate('/join')}
+                    className="bg-[var(--color-primary-red)] text-white px-4 py-2 text-sm rounded-md hover:bg-red-700 transition"
+                  >
+                    Join Waitlist
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleRegister(event.title)}
+                    className="bg-[var(--color-primary-red)] text-white px-4 py-2 text-sm rounded-md hover:bg-red-700 transition"
+                  >
+                    Register Now
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -116,4 +134,4 @@ const CompletionCards = () => {
   );
 };
 
-export default CompletionCards;
+export default CompetitionCards;

@@ -40,9 +40,7 @@ function Navbar() {
           </Link>
           {/* <Link to="/gallery#scroll" onClick={() => setMenuOpen(false)}>Gallery</Link> */}
           <Link
-            to="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
+            to="/register"
           >
             Register
           </Link>
