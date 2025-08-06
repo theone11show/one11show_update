@@ -43,7 +43,7 @@ const PaymentInstructions = () => {
   const [showQR, setShowQR] = useState(false);
 
   const { registration, lateFee } = categoryFees[category];
-  const upiID = "7811092672-1@okbizaxis";
+  const upiID = "";
 
   const cleanNote = category.replace(/[^a-zA-Z0-9 ]/g, "") + " Registration";
 

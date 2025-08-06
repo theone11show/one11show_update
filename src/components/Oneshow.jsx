@@ -29,7 +29,7 @@ const Oneshow = () => {
     <Layout>
       <div>
         {/* Side Images */}
-        {/* <div className="side-images">
+        <div className="side-images">
           <img
             src="gallery1.jpg"
             alt="Left Visual"
@@ -40,7 +40,7 @@ const Oneshow = () => {
             alt="Right Visual"
             className="side-image right"
           />
-        </div> */}
+        </div>
 
         {/* Hero Section */}
         {/* <section className="hero">
