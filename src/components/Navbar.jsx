@@ -1,64 +1,150 @@
 import React, { useState } from "react";
-import { Link, useNavigate, NavLink } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import "./Logo.css";
-import Logo from "./Logo";
 
-function Navbar() {
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
+const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleShowUpdates = () => {
-    navigate("/updates");
-    window.scrollTo({ top: 500, behavior: "smooth" });
-    setMenuOpen(false); // Close mobile menu after click
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <div className="button-bar">
-      <div className="navbar-container">
-        <div className="logo">
-          <Link to="/">
-            <Logo />
-            {/* <h2 style={{ color: 'white' }}>LOGO</h2> Placeholder logo text */}
-          </Link>
-        </div>
+    <header className="shadow-lg fixed w-full z-50 py-4 px-6 md:px-12 bg-charcoal-black">
+      <nav className="container mx-auto flex justify-between items-center max-w-7xl">
+        {/* Logo */}
+        <Link to="/home" className="flex items-center">
+          <img
+            src="one 11 witots texts.png"
+            alt="The One11 Show Logo"
+            className="h-12 sm:h-16"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src =
+                "https://placehold.co/200x80/171616/f81a26?text=ONE11+Show";
+            }}
+          />
+        </Link>
 
-        <div className="menu-icon" onClick={toggleMenu}>
-          ☰
-        </div>
+        {/* Hamburger Icon (Mobile Only) */}
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden text-cream-white focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          <i className="fas fa-bars text-2xl"></i>
+        </button>
 
-        <div className={`nav-buttons ${menuOpen ? "open" : ""}`}>
-          <Link to="/#team" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-          {/* <Link to="/gallery#scroll" onClick={() => setMenuOpen(false)}>Gallery</Link> */}
+        {/* Desktop Nav Links */}
+        <ul className="hidden md:flex space-x-6 text-lg items-center">
+          {/* Home Dropdown */}
+          <li className="relative group">
+            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
+              Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
+            </span>
+            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg">
+              <li><Link to="home" className="block py-1">About Us</Link></li>
+              <li><Link to="home" className="block py-1">Our Mission</Link></li>
+              <li><Link to="home" className="block py-1">Team</Link></li>
+              <hr className="border-t border-gray-700 my-2" />
+              <li><Link to="contact" className="block py-1">FAQs</Link></li>
+              <li><Link to="contact" className="block py-1">Support</Link></li>
+              <li><Link to="privacy" className="block py-1">Privacy Policy</Link></li>
+              <li><Link to="terms" className="block py-1">Terms of Service</Link></li>
+            </ul>
+          </li>
+
+          {/* Events Dropdown */}
+          <li className="relative group">
+            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
+              Events <i className="fas fa-chevron-down ml-2 text-sm"></i>
+            </span>
+            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg">
+              <li> <Link to="bands-section" className="block py-1">Battle of Bands</Link></li>
+              <li><Link to="singer-songwriter-section" className="block py-1">Singer/Songwriter Battle</Link></li>
+              <li><Link to="musicians-section" className="block py-1">Musicians (Instrumental)</Link></li>
+              <li><Link to="rappers-section" className="block py-1">Battle of Rappers</Link></li>
+              <li><Link to="rappers-section" className="block py-1">Music Battle Series</Link></li>
+              <li><Link to="djs-section" className="block py-1">Battle of DJs</Link></li>
+              <li><Link to="challenge-section" className="block py-1">48-Hours Music Making Challenge</Link></li>
+            </ul>
+          </li>
+
+          {/* Static Links */}
+          <li>
+            <Link to="updates" className="text-cream-white hover:text-primary-red transition nav-link">
+              Updates
+            </Link>
+          </li>
+
+
+          <li>
+            <Link to="join" className="text-cream-white hover:text-primary-red transition nav-link">
+              Join Our Waitlist
+            </Link>
+          </li>
+
+
+          <li>
+            <Link to="contact" className="text-cream-white hover:text-primary-red transition nav-link">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-charcoal-black bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-bold transition-transform duration-300 ease-in-out transform ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+      >
+        <button
+          onClick={closeMobileMenu}
+          className="absolute top-6 right-6 text-cream-white"
+          aria-label="Close mobile menu"
+        >
+          <i className="fas fa-times text-3xl"></i>
+        </button>
+
+        {/* Mobile Links */}
+        {[
+          { label: 'Home', id: '#home' },
+          { label: 'About Us', id: '#home' },
+          { label: 'Our Mission', id: '#home' },
+          { label: 'Team', id: '#home' },
+          { label: 'FAQs', id: '#contact' },
+          { label: 'Support', id: '#contact' },
+          { label: 'Privacy Policy', id: '#privacy' },
+          { label: 'Terms of Service', id: '#terms' },
+          { label: 'Events', id: '#events' },
+          { label: 'Battle of Bands', id: '#bands-section' },
+          { label: 'Singer/Songwriter Battle', id: '#singer-songwriter-section' },
+          { label: 'Musicians', id: '#musicians-section' },
+          { label: 'Rappers', id: '#rappers-section' },
+          { label: 'DJs', id: '#djs-section' },
+          { label: '48-Hour Challenge', id: '#challenge-section' },
+          { label: 'Updates', id: '#updates' },
+          { label: 'Join Waitlist', id: '#join' },
+          { label: 'Contact', id: '#contact' },
+        ].map((item, idx) => (
           <Link
-            to="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
+            key={idx}
+            href={item.id}
+            onClick={closeMobileMenu}
+            className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
           >
-            Register
+            {item.label}
           </Link>
-          <Link to="/updates" onClick={handleShowUpdates}>
-            Updates
-          </Link>
-
-          {/* JoinWaitlist features implement in there */}
-          <Link to="/join">
-            Join Our Waitlist
-          </Link>
-
-        </div>
+        ))}
       </div>
-    </div>
+    </header>
   );
-}
+};
 
-export default Navbar;
+export default Header;
