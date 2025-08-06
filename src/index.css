@@ -1,13 +1,355 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import "tailwindcss";
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+ :root {
+            --color-primary-red: #f81a26;
+            --color-cream-white: #faffff;
+            --color-charcoal-black: #171616;
+            --color-dark-charcoal: #333333;
+            --color-electric-blue: #00ffff; /* Added for Sunburn feel */
+            --color-bubblegum-magenta: #ff00ff; /* Added for Sunburn feel */
+            --font-anton: 'Anton', sans-serif;
+            --font-antonio: 'Antonio', sans-serif;
+            --font-null-feel: 'Anton', sans-serif; /* Simulating 'Null' with Anton for impactful headings */
+            --font-fredoka-one: 'Fredoka One', cursive; /* Added for Bambino feel */
+
+            /* ORBYZ specific colors for background animations */
+            --orbyz-red-light: rgba(255, 64, 64, 0.3);
+            --orbyz-red-medium: rgba(255, 20, 80, 0.3);
+            --orbyz-red-dark: rgba(180, 20, 20, 0.2);
+            --orbyz-orb-gradient-start: rgba(255, 64, 64, 0.6);
+            --orbyz-orb-gradient-end: rgba(180, 20, 20, 0.6);
+        }
+
+        body {
+            font-family: var(--font-antonio); /* Default body font */
+            background-color: var(--color-charcoal-black);
+            color: var(--color-cream-white);
+            /* Radial gradient to subtly integrate red into the background with more depth */
+            background-image: radial-gradient(at top center, rgba(248, 26, 38, 0.1) 0%, rgba(23, 22, 22, 0.9) 70%, var(--color-charcoal-black) 100%);
+            background-size: cover;
+            background-attachment: fixed; /* Ensures gradient stays fixed while scrolling */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-null-feel); /* For major headings */
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary-red);
+            color: var(--color-cream-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent; /* For hover effect */
+        }
+
+        .btn-primary:hover {
+            background-color: #e01520; /* Slightly darker red on hover */
+            transform: translateY(-3px) scale(1.02); /* More pronounced lift and slight scale */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 15px var(--color-primary-red); /* Added red glow */
+            border-color: var(--color-electric-blue); /* Neon border on hover */
+        }
+
+        .card-bg-dark {
+            background-color: var(--color-dark-charcoal);
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+            transition: all 0.3s ease;
+        }
+
+        .card-bg-dark:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 25px var(--color-electric-blue); /* Neon glow on hover */
+            border-color: var(--color-electric-blue);
+        }
+
+        /* Hero section background styling (ORBYZ inspired) */
+        .hero-abstract-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Behind main hero content and orbs */
+            background-image: linear-gradient(to bottom, var(--color-charcoal-black) 0%, rgba(248, 26, 38, 0.7) 60%, var(--color-charcoal-black) 100%);
+            filter: brightness(0.7); /* Darken the background slightly for text contrast */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ORBYZ - Hero overlay with animated radial gradients */
+        .hero-abstract-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, var(--orbyz-red-light) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, var(--orbyz-red-medium) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, var(--orbyz-red-dark) 0%, transparent 50%);
+            animation: gradientShift 8s ease-in-out infinite;
+            mix-blend-mode: screen; /* Blends nicely with the background image */
+            opacity: 0.8;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+        }
+
+        /* ORBYZ - Floating Orbs */
+        .floating-orbs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1; /* Above abstract background, below hero content */
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--orbyz-orb-gradient-start), var(--orbyz-orb-gradient-end));
+            animation: float 6s ease-in-out infinite;
+            filter: blur(1px);
+            opacity: 0.7; /* Make them slightly transparent */
+        }
+
+        .orb:nth-child(1) { width: 60px; height: 60px; top: 10%; left: 10%; animation-delay: 0s; }
+        .orb:nth-child(2) { width: 40px; height: 40px; top: 70%; left: 80%; animation-delay: 2s; }
+        .orb:nth-child(3) { width: 80px; height: 80px; top: 30%; left: 70%; animation-delay: 4s; }
+        .orb:nth-child(4) { width: 30px; height: 30px; top: 80%; left: 20%; animation-delay: 1s; }
+        .orb:nth-child(5) { width: 50px; height: 50px; top: 20%; left: 60%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+
+        /* Events section background vinyl */
+        .events-background-vinyl {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg); /* Center and initial rotation */
+            width: min(80%, 600px); /* Responsive width, max 600px */
+            height: auto;
+            opacity: 0.05; /* Very subtle */
+            z-index: 0; /* Behind content, above section background */
+            animation: spinVinyl 30s linear infinite; /* Slow, continuous spin */
+        }
+
+        @keyframes spinVinyl {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Custom message box styles */
+        .message-box-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .message-box-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .message-box-content {
+            background-color: var(--color-dark-charcoal);
+            color: var(--color-cream-white);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            max-width: 400px;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .message-box-overlay.show .message-box-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Translucent Header Style - Enhanced for glassy effect */
+        header {
+            background-color: rgba(255, 255, 255, 0.08); /* Very transparent white */
+            backdrop-filter: blur(20px); /* Increased blur for a stronger glassy look */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Slightly more visible light border */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        /* Navigation links styling for uppercase and font weight */
+        .nav-link, .dropdown-sub-heading, .dropdown-menu a {
+            position: relative; /* Needed for pseudo-element positioning */
+            text-transform: uppercase;
+            font-weight: 600; /* semibold */
+            display: block; /* Ensures padding/margin work */
+            padding: 0.5rem 0.75rem; /* Added padding for hover area */
+            overflow: hidden; /* Hide overflowing underline initially */
+        }
+
+        /* Underline animation for nav-link and dropdown-sub-heading */
+        .nav-link::after, .dropdown-sub-heading::after, .dropdown-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%; /* Start from center */
+            transform: translateX(-50%); /* Center the underline */
+            width: 0; /* Hidden initially */
+            height: 2px; /* Underline thickness */
+            background-color: var(--color-primary-red); /* Underline color changed to red */
+            transition: width 0.3s ease-out; /* Smooth transition, only width changes */
+        }
+
+        .nav-link:hover::after, .dropdown-sub-heading:hover::after, .dropdown-menu a:hover::after {
+            width: 80%; /* Expand to 80% width */
+        }
+
+
+        /* Dropdown specific styles */
+        .dropdown-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%; /* Position below the parent link */
+            left: 50%;
+            transform: translateX(-50%) translateY(10px); /* Start slightly below and centered */
+            background-color: rgba(28, 30, 36, 0.9); /* Darker background for dropdown */
+            backdrop-filter: blur(10px); /* Glassy effect for dropdown */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            min-width: 220px; /* Increased width to accommodate longer names */
+            padding: 0.75rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
+            z-index: 60; /* Higher than header, lower than modal */
+            list-style: none; /* Remove default list styling */
+            white-space: nowrap; /* Prevent wrapping of menu items */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Add shadow to dropdown */
+        }
+
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0); /* Move up to desired position */
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu a {
+            color: var(--color-cream-white);
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            text-transform: capitalize; /* Sub-items usually not all caps */
+            font-weight: 400; /* Regular weight for sub-items */
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(248, 26, 38, 0.7); /* Red hover background */
+            color: var(--color-cream-white);
+        }
+
+        /* Styling for the updates cards (General Announcements) */
+        .updates-card {
+            background-color: var(--color-dark-charcoal);
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content vertically */
+            text-align: center;
+            min-height: 300px; /* Ensure cards have some height */
+        }
+
+        .updates-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 25px var(--color-electric-blue); /* Neon glow on hover */
+        }
+
+        .updates-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--color-primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .updates-card h4 {
+            font-family: var(--font-anton);
+            color: var(--color-primary-red); /* Changed to red for emphasis */
+            font-size: 1.75rem; /* text-3xl for category headings */
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .updates-card ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+            width: 100%; /* Take full width of card */
+            max-height: 150px; /* Limit height for scroll if many names */
+            overflow-y: auto; /* Enable scrolling for long lists */
+            padding-right: 5px; /* Space for scrollbar */
+        }
+
+        .updates-card li {
+            font-family: var(--font-antonio);
+            color: var(--color-cream-white);
+            font-size: 1.125rem; /* text-lg */
+            padding: 0.25rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+            text-transform: capitalize; /* Keep names readable */
+        }
+
+        .updates-card li:last-child {
+            border-bottom: none; /* No border for last item */
+        }
+
+        .updates-card .status-tag { /* New class for status consistency */
+            font-weight: bold;
+            margin-top: 1rem; /* Adjusted margin */
+            padding: 0.3rem 0.9rem; /* Adjusted padding */
+            border-radius: 9999px; /* Full rounded */
+            font-size: 0.875rem; /* text-sm */
+            display: inline-block; /* Allow padding to work */
+        }
+        .updates-card .status-tag.shortlisted {
+            background-color: #32cd32; /* green */
+            color: white;
+        }
+        .updates-card .status-tag.announced {
+            background-color: #00ffff; /* electric blue */
+            color: var(--color-charcoal-black); /* black text for contrast */
+        }
+        .updates-card .status-tag.pending {
+            background-color: #ffa500; /* orange */
+            color: white;
+        }
