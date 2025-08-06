@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import "./Logo.css";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,10 +16,10 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow-lg fixed w-full z-50 py-4 px-6 md:px-12 bg-charcoal-black">
+    <header className="shadow-lg fixed w-full z-50 py-1 px-6  bg-charcoal-black">
       <nav className="container mx-auto flex justify-between items-center max-w-7xl">
         {/* Logo */}
-        <Link to="/home" className="flex items-center">
+        {/* <Link to="/home" className="flex items-center">
           <img
             src="one 11 witots texts.png"
             alt="The One11 Show Logo"
@@ -29,7 +30,14 @@ const Header = () => {
                 "https://placehold.co/200x80/171616/f81a26?text=ONE11+Show";
             }}
           />
-        </Link>
+        </Link> */}
+        {/* <Link to="/"> */}
+        <div>
+
+            <Logo />
+        </div>
+            {/* <h2 style={{ color: 'white' }}>LOGO</h2> Placeholder logo text */}
+ {/*          </Link> */}
 
         {/* Hamburger Icon (Mobile Only) */}
         <button
