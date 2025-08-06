@@ -4,7 +4,8 @@ import {
   faFacebookF,
   faTwitter,
   faInstagram,
-  faYoutube
+  faYoutube,
+  faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
@@ -37,18 +38,30 @@ function Footer() {
 
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-6 text-2xl mb-6">
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
+          <div
+            onClick={() => window.open('https://www.facebook.com/profile.php?id=61576672565861', '_blank')}
+            className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
+          >
             <FontAwesomeIcon icon={faFacebookF} />
-          </a>
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
+          </div>
+          <div
+            onClick={() => window.open('https://x.com/theone11show', '_blank')}
+            className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
+          >
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
+          </div>
+          <div
+            onClick={() => window.open('https://www.instagram.com/theone11.show/', '_blank')}
+            className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
+          >
             <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
-            <FontAwesomeIcon icon={faYoutube} />
-          </a>
+          </div>
+          <div
+            onClick={() => window.open('https://www.linkedin.com/showcase/108123123/admin/dashboard/', '_blank')}
+            className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </div>
         </div>
 
         {/* Policy Links */}
