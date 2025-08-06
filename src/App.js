@@ -13,6 +13,9 @@ import Oneshow from './components/Oneshow';
 // Form submit hone ke baad dikhne wala thank you page
 import Thank_you from './components/Thank_you';
 
+// indexe.css file link hui hai iss line se 
+import "./index.css";
+
 // About page ka component (project ke baare me info)
 import About from './Pages/About';
 
@@ -79,6 +82,7 @@ function App() {
 
       {/* Footer - har page ke bottom me show hoga */}
       <Footer />
+
     </>
   );
 }
