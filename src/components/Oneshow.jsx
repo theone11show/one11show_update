@@ -3,8 +3,7 @@ import "./styles.css";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
 import SubmissionBanner from "./SubmissionBanner";
-import CategoryHeading from "./CategoryHeading";
-import CategoryDescriptions from "./CategoryDescriptions";
+
 import RoadmapSection from "./RoadmapSection";
 import UpdatesSection from "./UpdatesSection";
 import CompetitionCards from "./CompetitionCards";
@@ -56,10 +55,9 @@ const Oneshow = () => {
       </section> */}
 
         <AboutSection />
-        <SubmissionBanner />
-        <CategoryHeading />
-        <CategoryDescriptions />
-        <RoadmapSection />
+       
+        
+      
         <UpdatesSection />
         <CompetitionCards />
       </div>

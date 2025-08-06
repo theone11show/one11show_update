@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 // Navbar component import kar rahe hain (top navigation bar ke liye)
 import Navbar from './components/Navbar';
 
+
 // Homepage component ya main show form component
 import Oneshow from './components/Oneshow';
 
@@ -35,7 +36,10 @@ import Updates from './components/Updates';
 import PaymentInstructions from './components/PaymentInstructions';
 
 // Join waitlist page — interested log waitlist join kar sakein
-import JoinWaitList from './components/JoinWaitList'; // Make sure file yahi naam ka ho
+import JoinWaitList from './components/JoinWaitList'; 
+// Register Form
+import RegisterForm from './components/RegisterForm';
+//Hero Section
 
 // PopupModal — agar koi popup modal ya alert show karna ho
 import PopupModal from './PopupModal';
@@ -47,6 +51,7 @@ function App() {
     <>
       {/* Top navbar show hoga har page par */}
       <Navbar />
+     
 
       {/* Development notice ya maintenance alert */}
      {/* <DevelopmentNotice />*/}
@@ -73,7 +78,11 @@ function App() {
 
         {/* Payment instructions page */}
         <Route path="/payment-instructions" element={<PaymentInstructions />} />
+       {/*Register Form page*/}
+       <Route path="/register" element={<RegisterForm />} />
       </Routes>
+ 
+
 
       {/* Extra information section - kisi bhi informative content ke liye */}
       <InfoSection />
@@ -84,5 +93,5 @@ function App() {
   );
 }
 
-// App component ko export kar rahe hain taaki ye index.js me use ho sake
+
 export default App;
