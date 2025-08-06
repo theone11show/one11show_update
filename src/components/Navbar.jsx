@@ -51,35 +51,35 @@ const Header = () => {
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex space-x-6 text-lg items-center">
           {/* Home Dropdown */}
-          <li className="relative group">
+          <li className="relative group dropdown-container">
             <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </span>
-            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg">
-              <li><Link to="home" className="block py-1">About Us</Link></li>
-              <li><Link to="home" className="block py-1">Our Mission</Link></li>
-              <li><Link to="home" className="block py-1">Team</Link></li>
-              <hr className="border-t border-gray-700 my-2" />
-              <li><Link to="contact" className="block py-1">FAQs</Link></li>
-              <li><Link to="contact" className="block py-1">Support</Link></li>
-              <li><Link to="privacy" className="block py-1">Privacy Policy</Link></li>
-              <li><Link to="terms" className="block py-1">Terms of Service</Link></li>
+            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
+              <li><Link to="home" className="block py-1 nav-link">About Us</Link></li>
+              <li><Link to="home" className="block py-1  nav-link">Our Mission</Link></li>
+              <li><Link to="home" className="block py-1 nav-link">Team</Link></li>
+              <hr className="border-t border-gray-700 my-2 nav-link" />
+              <li><Link to="contact" className="block py-1 nav-link">FAQs</Link></li>
+              <li><Link to="contact" className="block py-1 nav-link">Support</Link></li>
+              <li><Link to="privacy" className="block py-1 nav-link">Privacy Policy</Link></li>
+              <li><Link to="terms" className="block py-1 nav-link">Terms of Service</Link></li>
             </ul>
           </li>
 
           {/* Events Dropdown */}
-          <li className="relative group">
-            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
+          <li className="relative group dropdown-container">
+            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer nav-link">
               Events <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </span>
-            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg">
-              <li> <Link to="bands-section" className="block py-1">Battle of Bands</Link></li>
-              <li><Link to="singer-songwriter-section" className="block py-1">Singer/Songwriter Battle</Link></li>
-              <li><Link to="musicians-section" className="block py-1">Musicians (Instrumental)</Link></li>
-              <li><Link to="rappers-section" className="block py-1">Battle of Rappers</Link></li>
-              <li><Link to="rappers-section" className="block py-1">Music Battle Series</Link></li>
-              <li><Link to="djs-section" className="block py-1">Battle of DJs</Link></li>
-              <li><Link to="challenge-section" className="block py-1">48-Hours Music Making Challenge</Link></li>
+            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
+              <li> <Link to="bands-section" className="block py-1  nav-link">Battle of Bands</Link></li>
+              <li><Link to="singer-songwriter-section" className="block py-1 nav-link">Singer/Songwriter Battle</Link></li>
+              <li><Link to="musicians-section" className="block py-1 nav-link">Musicians (Instrumental)</Link></li>
+              <li><Link to="rappers-section" className="block py-1 nav-link">Battle of Rappers</Link></li>
+              <li><Link to="rappers-section" className="block py-1 nav-link">Music Battle Series</Link></li>
+              <li><Link to="djs-section" className="block py-1 nav-link">Battle of DJs</Link></li>
+              <li><Link to="challenge-section" className="block py-1 nav-link">48-Hours Music Making Challenge</Link></li>
             </ul>
           </li>
 
