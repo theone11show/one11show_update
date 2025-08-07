@@ -1,14 +1,42 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function ContactSection() {
+  const [isSending, setIsSending] = React.useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success('Your message has been sent! ');
-    e.target.reset();
+
+    // Anti-spam check (honeypot)
+    if (e.target['bot-field'].value !== '') {
+      return; // It's a bot! Abort!
+    }
+
+    setIsSending(true);
+
+    emailjs
+      .sendForm(
+        'service_22a450b',
+        'template_6rqrhrz',
+        e.target,
+        'rkXuILdNRebGGp2nV'
+      )
+      .then(
+        () => {
+          toast.success('Your message has been sent!');
+          e.target.reset();
+          setIsSending(false);
+        },
+        (error) => {
+          toast.error('Failed to send message. Try again later.');
+          console.error(error.text);
+          setIsSending(false);
+        }
+      );
   };
 
   const handleEmailClick = () => {
@@ -20,9 +48,9 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-charcoal-black">
+    <section id="contact" className="py-16 md:py-24 bg-charcoal-black ">
       <ToastContainer />
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 text-center py-32 sm:py-10">
         <h2 className="text-4xl sm:text-5xl font-[var(--font-null-feel)] text-cream-white mb-8">
           Get In Touch
         </h2>
@@ -43,39 +71,70 @@ function ContactSection() {
             onClick={handlePhoneClick}
             className="text-primary-red hover:underline text-xl md:text-2xl font-semibold flex items-center cursor-pointer"
           >
-            <FontAwesomeIcon icon={faPhone} className="mr-3 cursor-pointer" />
+            <FontAwesomeIcon icon={faPhone} className="mr-3" />
             +91 7477785294
           </div>
         </div>
 
         <div className="mt-12">
-          <form
-            className="max-w-xl mx-auto space-y-6"
-            onSubmit={handleSubmit}
-          >
+          <form className="max-w-xl mx-auto space-y-6" onSubmit={handleSubmit}>
+            {/* Honeypot Anti-Spam Field */}
             <input
               type="text"
-              placeholder="Your Name"
-              className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
-              required
+              name="bot-field"
+              style={{ display: 'none' }}
+              tabIndex="-1"
+              autoComplete="off"
             />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
-              required
-            />
-            <textarea
-              placeholder="Your Message"
-              rows="5"
-              className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
-              required
-            ></textarea>
+
+            <div className="text-left">
+              <label htmlFor="name" className="block text-cream-white mb-2">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="from_name"
+                placeholder="Enter your name"
+                className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
+                required
+              />
+            </div>
+
+            <div className="text-left">
+              <label htmlFor="email" className="block text-cream-white mb-2">
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="from_email"
+                placeholder="Enter your email"
+                className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
+                required
+              />
+            </div>
+
+            <div className="text-left">
+              <label htmlFor="message" className="block text-cream-white mb-2">
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Enter your message"
+                rows="5"
+                className="w-full p-4 rounded-lg bg-white border border-primary-red text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-red"
+                required
+              ></textarea>
+            </div>
+
             <button
               type="submit"
-              className="btn-primary w-full text-xl py-3 !rounded-lg"
+              className="btn-primary w-full text-xl py-3 !rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={isSending}
             >
-              Send Message
+              {isSending ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
