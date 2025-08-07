@@ -20,13 +20,9 @@ const LatestUpdates = () => {
           </h3>
 
           <div className="max-h-40 overflow-y-auto w-full text-sm space-y-3 pr-2 custom-scrollbar">
-            <p>• Finalist Dates For All Battles Will Be Announced On July 30, 2025.</p>
-            <p>• New Celebrity Judges To Be Revealed Next Week!</p>
-            <p>• All Initial Audition Rounds Have Been Successfully Completed.</p>
-            <p>• Details For The Next Phase Of Competitions Will Be Released Soon.</p>
-            <p>• Exciting New Partnership Opportunities Are Now Open.</p>
-            <p>• Volunteer Applications For Event Support Are Currently Being Accepted.</p>
-            <p>• Check Back Regularly For The Latest News And Updates!</p>
+            <p>• The payment portal is open for round 1B participants 24 JULY 2025</p>
+            <p>• The Round 1B has Started01 Aug 2025 </p>
+            
           </div>
 
           <button className="mt-6 px-4 py-2 bg-cyan-300 text-black font-bold rounded-full text-sm shadow-lg hover:bg-cyan-200 transition">
