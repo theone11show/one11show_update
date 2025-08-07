@@ -12,7 +12,7 @@ function Footer() {
   return (
     <footer className="bg-[#171616] py-10 px-6">
       <div className="container mx-auto text-center text-white">
-        {/* Top Links */}
+        
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
           <a
             href="https://www.creatouscollective.media"
