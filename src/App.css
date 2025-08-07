@@ -1,55 +1,19 @@
-.App {
-  text-align: center;
+/* src/index.css */
+:root {
+  --color-primary-red: #f81a26;
+  --color-cream-white: #faffff;
+  --color-charcoal-black: #171616;
+  --color-dark-charcoal: #333333;
+  --color-electric-blue: #00ffff;
+  --color-bubblegum-magenta: #ff00ff;
+  --font-anton: 'Anton', sans-serif;
+  --font-antonio: 'Antonio', sans-serif;
+  --font-null-feel: 'Anton', sans-serif;
+  --font-fredoka-one: 'Fredoka One', cursive;
+
+  --orbyz-red-light: rgba(255, 64, 64, 0.3);
+  --orbyz-red-medium: rgba(255, 20, 80, 0.3);
+  --orbyz-red-dark: rgba(180, 20, 20, 0.2);
+  --orbyz-orb-gradient-start: rgba(255, 64, 64, 0.6);
+  --orbyz-orb-gradient-end: rgba(180, 20, 20, 0.6);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* @media (min-width: 374px) and (max-width:440) {
-  .App-header {
-    font-size: 14px;
-    padding: 20px;
-  }
-
-  .App-logo {
-    height: 30vmin;
-  }
-
-  .App-link {
-    font-size: 12px;
-  }
-}; */

@@ -1,0 +1,150 @@
+/* Ensure consistent box model */
+* {
+  box-sizing: border-box;
+  
+}
+
+.button-bar {
+  top: 0;
+  /* position: fixed;; */
+  z-index: 1000;
+  width: 100%;
+  background-color: #0f0f0f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 0; /* Outer no padding, apply inside container */
+
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 156px;
+  padding: 0 8rem 0 3rem;
+  margin: 0 auto;
+  max-width: 1700px;
+  width: 100%;
+  
+}
+
+/* Nav links */
+.nav-buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-buttons a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding: 0 4rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding: 0 3rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 1rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .nav-buttons {
+    gap: 0.1rem;
+  }
+}
+@media(max-width:860px)
+{
+  .nav-buttons a {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.4rem;
+}
+}
+
+/* Logo */
+.logo {
+  flex: 0 0 auto;
+}
+
+.logo img {
+  height: 95px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+
+
+.nav-buttons a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f06292;
+}
+
+/* Hamburger menu */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem 2rem 1rem;
+    height: auto;
+    margin-top: -2rem;
+  }
+
+  .menu-icon {
+        display: block;
+        align-self: flex-end;
+        margin-bottom: 0.5rem;
+        margin-top: -6.1rem;
+        margin-right: 25px;
+        transform: scale(1.1);
+  }
+
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 20px;
+    
+  }
+
+  .nav-buttons.open {
+    display: flex;
+  }
+  .logo img {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+}
+}

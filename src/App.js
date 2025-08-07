@@ -7,14 +7,12 @@ import { Routes, Route } from 'react-router-dom';
 // Navbar component import kar rahe hain (top navigation bar ke liye)
 import Navbar from './components/Navbar';
 
+
 // Homepage component ya main show form component
 import Oneshow from './components/Oneshow';
 
 // Form submit hone ke baad dikhne wala thank you page
 import Thank_you from './components/Thank_you';
-
-// indexe.css file link hui hai iss line se 
-import "./index.css";
 
 // About page ka component (project ke baare me info)
 import About from './Pages/About';
@@ -38,17 +36,22 @@ import Updates from './components/Updates';
 import PaymentInstructions from './components/PaymentInstructions';
 
 // Join waitlist page — interested log waitlist join kar sakein
-import JoinWaitList from './components/JoinWaitList'; // Make sure file yahi naam ka ho
+import JoinWaitList from './components/JoinWaitList'; 
+// Register Form
+import RegisterForm from './components/RegisterForm';
+//Hero Section
 
 // PopupModal — agar koi popup modal ya alert show karna ho
 import PopupModal from './PopupModal';
-
+// import main Css
+import './index.css'
 // Main App function jo pura layout render karta hai
 function App() {
   return (
     <>
       {/* Top navbar show hoga har page par */}
       <Navbar />
+     
 
       {/* Development notice ya maintenance alert */}
      {/* <DevelopmentNotice />*/}
@@ -75,17 +78,20 @@ function App() {
 
         {/* Payment instructions page */}
         <Route path="/payment-instructions" element={<PaymentInstructions />} />
+       {/*Register Form page*/}
+       <Route path="/register" element={<RegisterForm />} />
       </Routes>
+ 
+
 
       {/* Extra information section - kisi bhi informative content ke liye */}
       <InfoSection />
 
       {/* Footer - har page ke bottom me show hoga */}
       <Footer />
-
     </>
   );
 }
 
-// App component ko export kar rahe hain taaki ye index.js me use ho sake
+
 export default App;

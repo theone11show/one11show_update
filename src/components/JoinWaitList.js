@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
-import "./JoinWaitList.css";
 
 function JoinWaitList() {
   const [formData, setFormData] = useState({
@@ -277,7 +276,7 @@ const styles = {
     border: "1px solid #ddd",
     borderRadius: "12px",
     boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-    backgroundColor: "#ff5050",
+    backgroundColor:"#333333"
   },
 
   mainContainer: {

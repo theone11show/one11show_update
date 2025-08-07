@@ -3,8 +3,7 @@ import "./styles.css";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
 import SubmissionBanner from "./SubmissionBanner";
-import CategoryHeading from "./CategoryHeading";
-import CategoryDescriptions from "./CategoryDescriptions";
+
 import RoadmapSection from "./RoadmapSection";
 import UpdatesSection from "./UpdatesSection";
 import CompetitionCards from "./CompetitionCards";
@@ -29,7 +28,7 @@ const Oneshow = () => {
     <Layout>
       <div>
         {/* Side Images */}
-        {/* <div className="side-images">
+        <div className="side-images">
           <img
             src="gallery1.jpg"
             alt="Left Visual"
@@ -40,7 +39,7 @@ const Oneshow = () => {
             alt="Right Visual"
             className="side-image right"
           />
-        </div> */}
+        </div>
 
         {/* Hero Section */}
         {/* <section className="hero">
@@ -56,10 +55,9 @@ const Oneshow = () => {
       </section> */}
 
         <AboutSection />
-        <SubmissionBanner />
-        <CategoryHeading />
-        <CategoryDescriptions />
-        <RoadmapSection />
+       
+        
+      
         <UpdatesSection />
         <CompetitionCards />
       </div>
