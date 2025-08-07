@@ -148,10 +148,10 @@
 /* Links */
 a {
   color: var(--color-electric-blue);
-  text-decoration: underline;
+  /* text-decoration: underline; */
   transition: color 0.2s;
 }
 
-a:hover {
+/* a:hover {
   color: var(--color-bubblegum-magenta);
-}
+} */
