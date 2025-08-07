@@ -54,7 +54,7 @@ const Oneshow = () => {
         </a>
       </section> */}
 
-        <AboutSection />
+        
        
         
       

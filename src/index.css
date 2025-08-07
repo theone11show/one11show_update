@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* src/index.css */
+
 
 :root {
   --color-primary-red: #f81a26;
@@ -358,4 +358,4 @@ h1, h2, h3, h4, h5, h6 {
             background-color: #ffa500; /* orange */
             color: white;
         }
-    
+
