@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Logo.css";
 
 const Logo = () => {
   const vinylRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
+  const navigate = useNavigate();
+
 
   const togglePause = () => {
     const vinyl = vinylRef.current;
@@ -17,6 +20,7 @@ const Logo = () => {
     }
 
     setIsPaused(!isPaused);
+    navigate("/");
   };
 
   return (
