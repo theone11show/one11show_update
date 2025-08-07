@@ -7,13 +7,14 @@
   --color-cream-white: #faffff;
   --color-charcoal-black: #171616;
   --color-dark-charcoal: #333333;
-  --color-electric-blue: #00ffff;
-  --color-bubblegum-magenta: #ff00ff;
-  --font-anton: 'Anton', sans-serif;
-  --font-antonio: 'Antonio', sans-serif;
-  --font-null-feel: 'Anton', sans-serif;
-  --font-fredoka-one: 'Fredoka One', cursive;
+  /* --color-electric-blue: #00ffff; Added for Sunburn feel */
+  --color-bubblegum-magenta: #ff00ff; 
+  --font-anton: "Anton", sans-serif;
+  --font-antonio: "Antonio", sans-serif;
+  --font-null-feel: "Anton", sans-serif; /* Simulating 'Null' with Anton for impactful headings */
+  --font-fredoka-one: "Fredoka One", cursive; /* Added for Bambino feel */
 
+  /* ORBYZ specific colors for background animations */
   --orbyz-red-light: rgba(255, 64, 64, 0.3);
   --orbyz-red-medium: rgba(255, 20, 80, 0.3);
   --orbyz-red-dark: rgba(180, 20, 20, 0.2);
@@ -25,7 +26,7 @@ body {
   font-family: var(--font-antonio); /* Default body font */
   background-color: var(--color-charcoal-black);
   color: var(--color-cream-white);
-
+  /* Radial gradient to subtly integrate red into the background with more depth */
   background-image: radial-gradient(
     at top center,
     rgba(248, 26, 38, 0.1) 0%,

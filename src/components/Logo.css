@@ -1,9 +1,9 @@
 .logo-wrapper {
   position: relative;
-  width: 40vw;
-  max-width: 230px;
+  width: 30vw;
+  max-width: 120px;
   aspect-ratio: 1 / 1;
-  margin-top: -15px;
+  margin-left: 15px;
   cursor: pointer;
   /* shows pointer on click */
 }
@@ -72,9 +72,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .logo-wrapper {
-    width: 50vw;
+    width: 15vw;
     max-width: 200px;
-    margin-top: -10px;
   }
 
   .clogo img.vinyl {
