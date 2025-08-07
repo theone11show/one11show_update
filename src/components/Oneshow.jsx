@@ -57,7 +57,7 @@ const Oneshow = () => {
         
        
         
-      
+            <AboutSection />
         <UpdatesSection />
         <CompetitionCards />
       </div>
