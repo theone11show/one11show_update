@@ -39,7 +39,12 @@ import PaymentInstructions from './components/PaymentInstructions';
 import JoinWaitList from './components/JoinWaitList'; 
 // Register Form
 import RegisterForm from './components/RegisterForm';
-//Hero Section
+// Terms and Conditon
+import TermsandCondition from './components/TermsandCondition'
+// Privacy Policy page
+import PrivacyPolicy from './components/PrivacyPolicy'
+// Our Mission Page 
+import OurMission from './components/OurMission'
 
 // PopupModal — agar koi popup modal ya alert show karna ho
 import PopupModal from './PopupModal';
@@ -80,6 +85,12 @@ function App() {
         <Route path="/payment-instructions" element={<PaymentInstructions />} />
        {/*Register Form page*/}
        <Route path="/register" element={<RegisterForm />} />
+        {/*Terms and Condition page*/}
+       <Route path ='/TermsandCondition' element ={<TermsandCondition/>}/>
+       {/*privacy policy page*/}
+       <Route path ='/Policy' element ={<PrivacyPolicy/>}/>
+          {/*privacy OurMission page*/}
+       <Route path ='/OurMission' element ={<OurMission/>}/>
       </Routes>
  
 

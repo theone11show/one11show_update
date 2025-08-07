@@ -7,6 +7,7 @@ import {
   faYoutube,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -65,17 +66,15 @@ function Footer() {
         </div>
 
         {/* Policy Links */}
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-sm md:text-base mb-4">
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
-            Privacy Policy
-          </a>
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
-            Terms of Service
-          </a>
-          <a href="#" className="text-cream-white hover:text-primary-red transition duration-300">
-            Brand Guidelines
-          </a>
-        </div>
+       
+<div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-sm md:text-base mb-4">
+  <Link to="/Policy" className="text-cream-white hover:text-primary-red transition duration-300">
+    Privacy Policy
+  </Link>
+  <Link to="/TermsandCondition" className="text-cream-white hover:text-primary-red transition duration-300">
+    Terms of Service
+  </Link>
+</div>
 
         {/* Copyright */}
         <p className="text-sm text-gray-500">

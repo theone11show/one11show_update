@@ -54,14 +54,14 @@ const Header = () => {
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </span>
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
-              <li><Link to="home" className="block py-1 nav-link">About Us</Link></li>
-              <li><Link to="home" className="block py-1  nav-link">Our Mission</Link></li>
+              <li><Link to="/about" className="block py-1 nav-link">About Us</Link></li>
+              <li><Link to="/OurMission" className="block py-1  nav-link">Our Mission</Link></li>
               {/* <li><Link to="home" className="block py-1 nav-link">Team</Link></li> */}
               <hr className="border-t border-gray-700 my-2 nav-link" />
               <li><Link to="contact" className="block py-1 nav-link">FAQs</Link></li>
               <li><Link to="contact" className="block py-1 nav-link">Support</Link></li>
-              <li><Link to="privacy" className="block py-1 nav-link">Privacy Policy</Link></li>
-              <li><Link to="terms" className="block py-1 nav-link">Terms of Service</Link></li>
+              <li><Link to="/Policy" className="block py-1 nav-link">Privacy Policy</Link></li>
+              <li><Link to="/TermsandCondition" className="block py-1 nav-link">Terms of Service</Link></li>
             </ul>
           </li>
 
