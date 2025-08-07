@@ -16,28 +16,12 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow-lg fixed w-full z-50 py -1 px-6  bg-charcoal-black">
-      <nav className="container  flex justify-between items-center">
-        {/* Logo */}
-        {/* <Link to="/home" className="flex items-center">
-          <img
-            src="one 11 witots texts.png"
-            alt="The One11 Show Logo"
-            className="h-12 sm:h-16"
-            onError={(e) => {
-              e.currentTarget.onerror = null;
-              e.currentTarget.src =
-                "https://placehold.co/200x80/171616/f81a26?text=ONE11+Show";
-            }}
-          />
-        </Link> */}
-        {/* <Link to="/"> */}
+    <header className="shadow-lg fixed w-full z-50  px-3  bg-charcoal-black">
+      <nav className=" flex justify-between items-center">
         <div>
 
             <Logo />
         </div>
-            {/* <h2 style={{ color: 'white' }}>LOGO</h2> Placeholder logo text */}
- {/*          </Link> */}
 
         {/* Hamburger Icon (Mobile Only) */}
         <button
@@ -58,7 +42,7 @@ const Header = () => {
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
               <li><Link to="home" className="block py-1 nav-link">About Us</Link></li>
               <li><Link to="home" className="block py-1  nav-link">Our Mission</Link></li>
-              <li><Link to="home" className="block py-1 nav-link">Team</Link></li>
+              {/* <li><Link to="home" className="block py-1 nav-link">Team</Link></li> */}
               <hr className="border-t border-gray-700 my-2 nav-link" />
               <li><Link to="contact" className="block py-1 nav-link">FAQs</Link></li>
               <li><Link to="contact" className="block py-1 nav-link">Support</Link></li>
@@ -107,11 +91,13 @@ const Header = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 bg-charcoal-black bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-bold transition-transform duration-300 ease-in-out transform ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden`}
-      >
+<div
+  className={`fixed inset-0 bg-[#171616] opacity-[0.95] py-5 z-50 h-screen overflow-y-auto flex flex-col items-center justify-start space-y-8 text-2xl font-bold transition-transform duration-300 ease-in-out ${
+    isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+  } md:hidden`}
+>
+
+
         <button
           onClick={closeMobileMenu}
           className="absolute top-6 right-6 text-cream-white"
