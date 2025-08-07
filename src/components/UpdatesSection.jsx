@@ -3,7 +3,7 @@ import React from "react";
 const LatestUpdates = () => {
   return (
     <section className="min-h-screen bg-[#1c1c1e] flex items-center justify-center py-12 font-[Antonio]">
-      <div className="w-full max-w-xl bg-[#2c2c2e] text-white rounded-xl shadow-lg p-6 relative ring-4 ring-cyan-400">
+      <div className="w-full max-w-xl bg-[#2c2c2e] text-white rounded-xl p-6 transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)]">
         <h2 className="text-4xl font-[Anton] text-center text-white mb-8">
           Latest Updates
         </h2>
@@ -19,14 +19,15 @@ const LatestUpdates = () => {
             Important Announcements
           </h3>
 
-          <div className="max-h-40 overflow-y-auto w-full text-sm space-y-3 pr-2 custom-scrollbar">
-            <p>• Finalist Dates For All Battles Will Be Announced On July 30, 2025.</p>
-            <p>• New Celebrity Judges To Be Revealed Next Week!</p>
-            <p>• All Initial Audition Rounds Have Been Successfully Completed.</p>
-            <p>• Details For The Next Phase Of Competitions Will Be Released Soon.</p>
-            <p>• Exciting New Partnership Opportunities Are Now Open.</p>
-            <p>• Volunteer Applications For Event Support Are Currently Being Accepted.</p>
-            <p>• Check Back Regularly For The Latest News And Updates!</p>
+          <div className="max-h-40 overflow-y-auto w-full text-sm text-center space-y-3 pr-2 custom-scrollbar">
+            <div className="border-t border-gray-600 pt-2">
+              The payment portal is open for round 1B participants24 JULY 2025
+            </div>
+            <div className="border-t border-gray-600 pt-2">
+              The Round 1B has Started 01 Aug 2025
+            </div>
+            
+           
           </div>
 
           <button className="mt-6 px-4 py-2 bg-cyan-300 text-black font-bold rounded-full text-sm shadow-lg hover:bg-cyan-200 transition">

@@ -54,10 +54,10 @@ const Oneshow = () => {
         </a>
       </section> */}
 
-        <AboutSection />
+        
        
         
-      
+            <AboutSection />
         <UpdatesSection />
         <CompetitionCards />
       </div>

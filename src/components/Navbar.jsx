@@ -16,8 +16,22 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow-lg fixed w-full z-50  px-3  bg-charcoal-black">
-      <nav className=" flex justify-between items-center">
+    <header className="shadow-lg fixed w-full z-50 py -1 px-6  bg-charcoal-black">
+      <nav className="container  flex justify-between items-center">
+        {/* Logo */}
+        {/* <Link to="/home" className="flex items-center">
+          <img
+            src="one 11 witots texts.png"
+            alt="The One11 Show Logo"
+            className="h-12 sm:h-16"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src =
+                "https://placehold.co/200x80/171616/f81a26?text=ONE11+Show";
+            }}
+          />
+        </Link> */}
+        {/* <Link to="/"> */}
         <div>
 
             <Logo />

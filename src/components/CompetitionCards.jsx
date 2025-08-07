@@ -1,5 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import music from '../assets/BattleofMusic.jpg';
+import Dj from '../assets/BattleofDj.jpg';
+import Bands from '../assets/BattleofBands.jpg';
+import Rappers from '../assets/BattleofRappers.jpg';
+import songs from '../assets/Songs.jpg';
+import Upcomming from '../assets/UpComming.png'
+
 
 const events = [
   {
@@ -7,7 +14,7 @@ const events = [
     title: 'Battle of Bands',
     subtitle:
       'A thrilling face-off between top bands showcasing their musical synergy, energy, and performance skills.',
-    image: 'https://placehold.co/600x400/333333/00ffff?text=Battle+of+Bands',
+    image: Bands,
     alt: 'Battle of Bands Poster',
     color: 'text-primary-red',
   },
@@ -16,7 +23,7 @@ const events = [
     title: 'Singer/Songwriter Battle',
     subtitle:
       'Original voices and lyrical stories come alive as singer-songwriters.',
-    image: 'https://placehold.co/600x400/333333/ff00ff?text=Singer-Songwriters',
+    image: songs,
     alt: 'Singer-Songwriters Poster',
   },
   {
@@ -24,7 +31,7 @@ const events = [
     title: 'Musicians (Instrumental)',
     subtitle:
       'An epic competition where instrumentalists and solo artists push musical boundaries to win.',
-    image: 'https://placehold.co/600x400/333333/ffff00?text=Musicians',
+    image: music,
     alt: 'Musicians Poster',
   },
   {
@@ -32,7 +39,7 @@ const events = [
     title: 'Battle of Rappers',
     subtitle:
       'A soulful showcase of vocal talent, range, and expression from upcoming vocal powerhouses.',
-    image: 'https://placehold.co/600x400/333333/a020f0?text=Rappers',
+    image: Rappers,
     alt: 'Rappers Poster',
   },
   {
@@ -40,21 +47,15 @@ const events = [
     title: 'Battle of DJs',
     subtitle:
       'Spin your beats and show your DJ skills in a battle of sound, style, and energy',
-    image: 'https://placehold.co/600x400/333333/ffa500?text=DJs',
+    image: Dj,
     alt: 'DJs Poster',
   },
-  {
-    id: 'challenge-section',
-    title: '48-Hours Music Making Challenge',
-    subtitle: 'For Producers: Create a Track in 2 Days!',
-    image: 'https://placehold.co/600x400/333333/00ccff?text=48H+Music+Challenge',
-    alt: '48 Hours Music Making Challenge Poster',
-  },
+ 
   {
     id: 'upcoming-events',
     title: 'Upcoming Events',
     subtitle: 'Stay tuned for more exciting competitions!',
-    image: 'https://placehold.co/600x400/333333/ffffff?text=Upcoming+Events',
+    image: Upcomming,
     alt: 'Upcoming Events Poster',
   },
 ];
@@ -95,12 +96,13 @@ const CompetitionCards = () => {
             <div
               key={idx}
               id={event.id}
-              className="bg-[var(--color-dark-charcoal)] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="bg-[var(--color-dark-charcoal)] rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)]"
+
             >
               <img
                 src={event.image}
                 alt={event.alt}
-                className="w-full h-64 object-cover"
+                className="w-full h-100 object-cover object-top"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-[var(--font-anton)] text-[var(--color-primary-red)] mb-2">
