@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 // Navbar component import kar rahe hain (top navigation bar ke liye)
 import Navbar from './components/Navbar';
 
+import ScrollToTop from "./components/scrollToTop";
 
 // Homepage component ya main show form component
 import Oneshow from './components/Oneshow';
@@ -56,7 +57,8 @@ function App() {
     <>
       {/* Top navbar show hoga har page par */}
       <Navbar />
-     
+           {/* This will make every route start at the top */}
+      <ScrollToTop />
 
       {/* Development notice ya maintenance alert */}
      {/* <DevelopmentNotice />*/}
