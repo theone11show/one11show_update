@@ -1,11 +1,11 @@
 .logo-wrapper {
   position: relative;
   width: 30vw;
-  max-width: 120px;
+  max-width: 160px;
   aspect-ratio: 1 / 1;
   margin-left: 15px;
   cursor: pointer;
-  /* shows pointer on click */
+  overflow: hidden;
 }
 
 .vinyl-container {
@@ -14,29 +14,49 @@
   height: 100%;
 }
 
-/* Vinyl image */
+/* Vinyl image (rotating CD) */
 .clogo img.vinyl {
   position: absolute;
-  width: 48%;
-  top: 32%;
-  left: 12%;
-  object-fit: contain;
+  width: 50%;
+  top: 25%;
+  left: 25%;
+  object-fit: cover;
   transform-origin: center;
   z-index: 2;
 }
 
-/* Rotating animation */
+/* Overlay (main logo circle) */
+.venyl_img img.vinyl-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Stick */
+.venyl_stick img.vinyl-stick {
+  position: absolute;
+  width: 30%;
+  top: 40%;
+  left: 35%;
+  transform: rotate(0deg);
+  transform-origin: top right;
+  z-index: 3;
+}
+
+/* Animation */
 .vinyl.rotating {
   animation: spin 5s linear infinite;
   animation-play-state: running;
 }
 
-/* Paused animation class */
 .paused {
   animation-play-state: paused !important;
 }
 
-/* Keyframes */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -47,79 +67,29 @@
   }
 }
 
-/* Overlay image */
-.venyl_img img.vinyl-overlay {
-  position: absolute;
-  width: 85%;
-  height: 91%;
-  top: 5%;
-  left: 7%;
-  object-fit: contain;
-  z-index: 1;
-}
-
-/* Tonearm (stick) */
-.venyl_stick img.vinyl-stick {
-  position: absolute;
-  width: 30%;
-  top: 41%;
-  left: 25%;
-  transform: rotate(0deg);
-  transform-origin: top right;
-  z-index: 3;
-}
-
-/* Responsive */
+/* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
   .logo-wrapper {
-    width: 15vw;
-    max-width: 200px;
-  }
-
-  .clogo img.vinyl {
-    /* width: 50%;
-    top: 32%;
-    left: 11%; */
-    width: 54%;
-    top: 33%;
-    left: 10%;
-
-  }
-
-  .venyl_img img.vinyl-overlay {
-    width: 85%;
-    height: 90%;
-    top: 5%;
-    left: 7%;
+    width: 40vw;
+    max-width: 140px;
   }
 
   .venyl_stick img.vinyl-stick {
     width: 32%;
     top: 40%;
-    left: 24%;
+    left: 34%;
   }
 }
 
 @media (max-width: 480px) {
   .logo-wrapper {
-    width: 60vw;
-    max-width: 180px;
+    width: 50vw;
+    max-width: 120px;
   }
 
-  .clogo img.vinyl {
-  position: absolute;
-  width: 50%;
-  top: 25%;
-  left: 10%;
-  object-fit: cover; /* was contain */
-  transform-origin: center;
-  z-index: 2;
-}
-
-
   .venyl_stick img.vinyl-stick {
-    width: 30%;
-    top: 41%;
-    left: 25%;
+    width: 34%;
+    top: 39%;
+    left: 33%;
   }
 }
