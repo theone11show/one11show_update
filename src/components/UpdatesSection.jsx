@@ -1,11 +1,9 @@
 import React from "react";
 import updateImage from '../assets/UpdateImage.png';
-import upcomingEventImage from '../assets/UpComming.png'; // Use your actual image
 
 const LatestUpdates = () => {
   return (
-    <section className="min-h-screen bg-[#1c1c1e] pt-[180px] pb-12 px-4 font-[Antonio] flex flex-col items-center justify-center gap-10">
-      {/* Original Updates Card */}
+    <section className="min-h-screen bg-[#1c1c1e] pt-[180px] pb-12 px-4 font-[Antonio] flex items-start justify-center">
       <div className="w-full max-w-xl bg-[#2c2c2e] text-white rounded-xl p-6 transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)]">
         <h2 className="text-4xl font-[Anton] text-center text-white mb-8">
           Latest Updates
@@ -36,12 +34,7 @@ const LatestUpdates = () => {
           </button>
         </div>
       </div>
-
-      {/* New Upcoming Event Card */}
-      
-      </div>
     </section>
   );
 };
 
-export default LatestUpdates;
