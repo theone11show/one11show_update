@@ -207,7 +207,7 @@ function JoinWaitList() {
     id: "phoneNumber",
   }}
   // Tailwind override for the input
-  inputClass="!bg-white !text-black !rounded-r-md !border !border-gray-300 !h-10 !w-full !text-base"
+  inputClass="!bg-[#333333] !text-[#CCCCCC] !rounded-r-md !border !border-gray-300 !h-10 !w-full !text-base"
   // Tailwind override for the flag dropdown
   buttonClass="!bg-white !border !border-gray-300 !rounded-l-md"
   // For extra container styling if needed
