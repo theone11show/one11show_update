@@ -38,28 +38,7 @@ const LatestUpdates = () => {
       </div>
 
       {/* New Upcoming Event Card */}
-      <div className="w-full max-w-5xl bg-[#2c2c2e] text-white rounded-xl p-8 md:flex items-center gap-8 transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(255,100,100,0.4)]">
-        <div className="flex-shrink-0 w-full md:w-1/2">
-          <img
-            src={upcomingEventImage}
-            alt="Upcoming Event"
-            className="rounded-lg object-cover w-full h-[200px] sm:h-[250px]"
-          />
-        </div>
-        <div className="mt-6 md:mt-0 md:w-1/2 text-center md:text-left">
-          <h3 className="text-3xl font-[Anton] text-red-500 mb-2">
-            Cactus X Fakira
-          </h3>
-          <p className="text-base sm:text-lg text-[var(--color-cream-white)] font-[Antonio] mb-4">
-            Don't miss the biggest upcoming event of the season! Be the first to get updates and secure your spot.
-          </p>
-          <button
-            onClick={() => window.location.href = "/join"}
-            className="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-full text-sm shadow-lg transition"
-          >
-            Join Waitlist
-          </button>
-        </div>
+      
       </div>
     </section>
   );
