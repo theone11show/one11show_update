@@ -194,24 +194,25 @@ function JoinWaitList() {
                 Phone Number <span style={styles.required}>*</span>
               </label>
 
-              <PhoneInput
-                country={"in"}
-                value={formData.phoneNumber}
-                onChange={(value) =>
-                  setFormData((prev) => ({ ...prev, phoneNumber: "+" + value }))
-                }
-                enableSearch
-                inputProps={{
-                  name: "phoneNumber",
-                  required: true,
-                  id: "phoneNumber",
-                  style: {
-                    width: "100%",
-                    height: "40px",
-                    fontSize: "16px",
-                  },
-                }}
-              />
+<PhoneInput
+  country={"in"}
+  value={formData.phoneNumber}
+  onChange={(value) =>
+    setFormData((prev) => ({ ...prev, phoneNumber: "+" + value }))
+  }
+  enableSearch
+  inputProps={{
+    name: "phoneNumber",
+    required: true,
+    id: "phoneNumber",
+  }}
+  // Tailwind override for the input
+  inputClass="!bg-white !text-black !rounded-r-md !border !border-gray-300 !h-10 !w-full !text-base"
+  // Tailwind override for the flag dropdown
+  buttonClass="!bg-white !border !border-gray-300 !rounded-l-md"
+  // For extra container styling if needed
+  containerClass="!w-full"
+/>
 
               {errors.phoneNumber && (
                 <span style={styles.error}>{errors.phoneNumber}</span>
