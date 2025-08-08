@@ -107,10 +107,15 @@
   }
 
   .clogo img.vinyl {
-    width: 53%;
-    top: 29%;
-    left: 10%;
-  }
+  position: absolute;
+  width: 50%;
+  top: 25%;
+  left: 10%;
+  object-fit: cover; /* was contain */
+  transform-origin: center;
+  z-index: 2;
+}
+
 
   .venyl_stick img.vinyl-stick {
     width: 30%;
