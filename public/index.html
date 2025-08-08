@@ -7,7 +7,20 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Register Now" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+      <style>
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
 
+    .rotating {
+      animation: rotate 5s linear infinite;
+    }
+
+    .paused {
+      animation-play-state: paused;
+    }
+  </style>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
