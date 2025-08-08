@@ -113,7 +113,7 @@ const CompetitionCards = () => {
                   {event.subtitle}
                 </p>
 
-                {event.title === 'Upcoming Events' ? (
+                {event.id === 'upcoming-events' ? (
                   <button
                     onClick={() => navigate('/join')}
                     className="bg-[var(--color-primary-red)] text-white px-4 py-2 text-sm rounded-md hover:bg-red-700 transition"
