@@ -64,7 +64,7 @@ const [lastScrollY, setLastScrollY] = useState(0);
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </span>
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
-              <li><Link to="/#events" className="block py-1 nav-link">About Us</Link></li>
+              <li><Link to="/about" className="block py-1 nav-link">About Us</Link></li>
               <li><Link to="/OurMission" className="block py-1 nav-link">Our Mission</Link></li>
               <hr className="border-t border-gray-700 my-2 nav-link" />
               <li><Link to="/contact" className="block py-1 nav-link">FAQs</Link></li>
