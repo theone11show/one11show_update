@@ -372,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .rotating {
-  animation: rotate 5s linear infinite;
+  animation: rotate 5s linear infinite !important;
 }
 
 .paused {
