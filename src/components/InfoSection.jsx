@@ -50,7 +50,7 @@ function ContactSection() {
   return (
     <section id="contact" className="py-16 md:py-24 bg-charcoal-black ">
       <ToastContainer />
-      <div className="container mx-auto px-6 text-center py-32 sm:py-10">
+      <div className="container mx-auto px-6 text-center pt-24 pb-16 sm:py-10">
         <h2 className="text-4xl sm:text-5xl font-[var(--font-null-feel)] text-cream-white mb-8">
           Get In Touch
         </h2>

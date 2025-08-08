@@ -246,15 +246,21 @@ function JoinWaitList() {
             </button>
           </form>
         ) : (
-          <p className="thanksmessage">
-            <span className="congratulation">
+          // SUCCESS MESSAGE BOX WITH HOVER SHADOW
+          <div
+            className=" rounded-xl text-center cursor-pointer transition-all duration-300 hover:scale-105 p-6 bg-[#333333]   
+               hover:shadow-[0_0_25px_#ffffff] "
+            
+          >
+            <p className="text-[#EF4444] text-lg font-bold">
               You're officially in! Congratulations!!!
-            </span>{" "}
-            <p className="thankyou">
-              Thank you for joining our waitlist. We'll be in touch soon with an
-              official email about the show and tickets{" "}
             </p>
-          </p>
+            <p className="text-white mt-2">
+              Thank you for joining our waitlist. We'll be in touch soon with an
+              official email about the show and tickets.
+            </p>
+          </div>
+
         )}
       </div>
     </div>

@@ -9,6 +9,13 @@ import Upcomming from '../assets/UpComming.png'
 
 
 const events = [
+    {
+    id: 'upcoming-events',
+    title: 'Upcoming Events',
+    subtitle: 'Stay tuned for more exciting competitions!',
+    image: Upcomming,
+    alt: 'Upcoming Events Poster',
+  },
   {
     id: 'bands-section',
     title: 'Battle of Bands',
@@ -51,13 +58,7 @@ const events = [
     alt: 'DJs Poster',
   },
  
-  {
-    id: 'upcoming-events',
-    title: 'Upcoming Events',
-    subtitle: 'Stay tuned for more exciting competitions!',
-    image: Upcomming,
-    alt: 'Upcoming Events Poster',
-  },
+
 ];
 
 const CompetitionCards = () => {

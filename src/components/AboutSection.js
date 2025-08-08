@@ -1,10 +1,17 @@
 import React from 'react';
 
 const AboutSection = () => {
+  const handleScroll = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('events');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <section
-        
         className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-16"
       >
         <div className="hero-abstract-background">
@@ -18,15 +25,20 @@ const AboutSection = () => {
         </div>
 
         <div className="relative z-10 p-4 sm:p-8 md:p-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg ">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
             Where genres and language won't be your first thought.
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-cream-white font-[var(--font-antonio)] mb-8 max-w-3xl mx-auto drop-shadow-md ">
+          <p className="text-xl sm:text-2xl md:text-3xl text-cream-white font-[var(--font-antonio)] mb-8 max-w-3xl mx-auto drop-shadow-md">
             Join Us in this exciting Music Battle
           </p>
-          <a href="#events" className="btn-primary text-xl sm:text-2xl ">
+
+          {/* Smooth scroll on click */}
+          <button
+            onClick={handleScroll}
+            className="btn-primary text-xl sm:text-2xl"
+          >
             Join Now
-          </a>
+          </button>
         </div>
       </section>
     </>
