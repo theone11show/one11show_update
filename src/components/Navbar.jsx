@@ -47,7 +47,7 @@ const [lastScrollY, setLastScrollY] = useState(0);
           <Logo />
         </div>
 
-        {/* Hamburger Icon (Mobile Only) */}
+       
         <button
           onClick={toggleMobileMenu}
           className="md:hidden text-cream-white focus:outline-none"
@@ -56,9 +56,9 @@ const [lastScrollY, setLastScrollY] = useState(0);
           <i className="fas fa-bars text-2xl"></i>
         </button>
 
-        {/* Desktop Nav Links */}
+        
         <ul className="hidden md:flex space-x-6 text-lg items-center">
-          {/* Home Dropdown */}
+         
           <li className="relative group dropdown-container">
             <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
@@ -74,7 +74,7 @@ const [lastScrollY, setLastScrollY] = useState(0);
             </ul>
           </li>
 
-          {/* Events Dropdown */}
+          
           <li className="relative group dropdown-container">
             <Link to="/events"
             className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
@@ -87,7 +87,7 @@ const [lastScrollY, setLastScrollY] = useState(0);
               <li><Link to="/events" className="block py-1 nav-link">Battle of Rappers</Link></li>
               <li><Link to="/events" className="block py-1 nav-link">Music Battle Series</Link></li>
               <li><Link to="/events" className="block py-1 nav-link">Battle of DJs</Link></li>
-              {/* <li><Link to="/challenge-section" className="block py-1 nav-link">48-Hours Music Making Challenge</Link></li> */}
+             
             </ul>
           </li>
 
