@@ -1,5 +1,6 @@
 // React core library import kar rahe hain (React components banane ke liye)
 import React from 'react';
+import Event from './components/Event';
 
 // Browser routing ke liye Routes aur Route import kar rahe hain
 import { Routes, Route } from 'react-router-dom';
@@ -91,6 +92,14 @@ function App() {
        <Route path ='/Policy' element ={<PrivacyPolicy/>}/>
           {/*privacy OurMission page*/}
        <Route path ='/OurMission' element ={<OurMission/>}/>
+
+       {/* event component section */}
+       <Route path ='/Events' element ={<Event/>}/>
+
+
+      
+
+
       </Routes>
  
 
