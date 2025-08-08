@@ -11,8 +11,8 @@ import Upcomming from '../assets/UpComming.png'
 const events = [
     {
     id: 'upcoming-events',
-    title: 'Upcoming Events',
-    subtitle: 'Stay tuned for more exciting competitions!',
+    title: 'Cactus X Fakira',
+    subtitle: 'Join the waitlist now!!',
     image: Upcomming,
     alt: 'Upcoming Events Poster',
   },
