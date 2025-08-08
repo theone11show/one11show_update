@@ -31,7 +31,7 @@ const Logo = () => {
             ref={vinylRef}
             src="/rvenyl1.png"
             alt="Vinyl"
-            className="vinyl rotating"
+           className={`vinyl rotating ${isPaused ? "paused" : ""}`}
           />
         </div>
         <div className="venyl_img">
