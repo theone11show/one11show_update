@@ -2,12 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
-  faTwitter,
   faInstagram,
   faYoutube,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 import { Link } from "react-router-dom";
+import twitter from '../assets/Twitterlogo.png'
 
 function Footer() {
   return (
@@ -15,20 +15,20 @@ function Footer() {
       <div className="container mx-auto text-center text-white">
         {/* Top Links */}
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
-          <a
+         {/* <a
             href="https://www.creatouscollective.media"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cream-white hover:text-primary-red transition duration-300 text-lg"
           >
             Creatous Collective Media
-          </a>
+          </a> */}
           <a
             href="mailto:info@theone11.show"
             className="text-primary-red hover:text-primary-red transition duration-300 text-lg"
           >
             info@theone11.show
-          </a>
+          </a> 
           <a
             href="tel:+917477785294"
             className="text-cream-white hover:text-primary-red transition duration-300 text-lg"
@@ -46,11 +46,11 @@ function Footer() {
             <FontAwesomeIcon icon={faFacebookF} />
           </div>
           <div
-            onClick={() => window.open('https://x.com/theone11show', '_blank')}
-            className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
-          >
-            <FontAwesomeIcon icon={faTwitter} />
-          </div>
+        onClick={() => window.open('https://x.com/theone11show', '_blank')}
+       className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
+      >
+      <img src={twitter} alt="X (formerly Twitter)"className="h-6 w-6 inline rounded-md" />
+</div>
           <div
             onClick={() => window.open('https://www.instagram.com/theone11.show/', '_blank')}
             className="text-cream-white hover:text-primary-red transition duration-300 cursor-pointer"
