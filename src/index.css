@@ -208,12 +208,20 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         /* Navigation links styling for uppercase and font weight */
-        .nav-link, .dropdown-sub-heading, .dropdown-menu a {
+         .dropdown-sub-heading, .dropdown-menu a {
             position: relative; /* Needed for pseudo-element positioning */
             text-transform: uppercase;
             font-weight: 600; /* semibold */
             display: block; /* Ensures padding/margin work */
             padding: 0.5rem 0.75rem; /* Added padding for hover area */
+            overflow: hidden; /* Hide overflowing underline initially */
+        }
+        .nav-link{
+            position: relative; /* Needed for pseudo-element positioning */
+            text-transform: uppercase;
+            font-weight: 600; /* semibold */
+            display: block; /* Ensures padding/margin work */
+            padding: 0.5rem 0rem; /* Added padding for hover area */
             overflow: hidden; /* Hide overflowing underline initially */
         }
 
