@@ -45,19 +45,19 @@ export default function UpcomingEvent() {
     <div
       ref={cardRef}
       className={`flex justify-center px-4 py-10 bg-gray-900 text-white transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 font-[Antonio] "
       }`}
     >
       <div
-        className="flex flex-col items-center w-full max-w-4xl bg-[#1f1f1f] rounded-xl shadow-lg overflow-hidden 
-                   transition-all duration-300 hover:shadow-[0_0_25px_rgba(236,72,153,0.7)]"
+        className="flex flex-col items-center w-full max-w-4xl bg-[#1f1f1f] rounded-xl shadow-lg overflow-hidden  
+                   transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)] hover:scale-[1.02] cursor-pointer"
       >
         {/* Event Image */}
         <img
           src={UpComming}
           alt="Upcoming Event"
           onClick={handleImageClick}
-          className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+          className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 "
         />
 
         {/* Subtitle */}
@@ -65,7 +65,7 @@ export default function UpcomingEvent() {
               bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 
               bg-clip-text text-transparent font-bold tracking-wide font-[Poppins] 
               flex items-center justify-center gap-2 text-center">
-  <FaMusic className="text-pink-400 text-xl sm:text-2xl flex-shrink-0" />
+  <FaMusic className="text-pink-400 text-xl sm:text-2xl flex-shrink-0 font-[Anton] " />
   Get ready for an electrifying battle of music! Be part of the ultimate showdown at The One11 Show.
 </p>
         {/* Button with ripple effect */}
@@ -75,7 +75,7 @@ export default function UpcomingEvent() {
             ${
               joined
                 ? "bg-green-500 hover:bg-green-600 text-white"
-                : "bg-pink-600 hover:bg-pink-700 text-white"
+                : "bg-cyan-300 hover:bg-cyan-200 text-black"
             }`}
         >
           {joined ? "Joined " : "Join the Waitlist"}

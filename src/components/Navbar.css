@@ -1,6 +1,22 @@
+/* Mobile padding adjustment */
 @media (max-width: 768px) {
   header {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
   }
+}
+
+/* Navbar show/hide animation */
+header {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+header.hide {
+  transform: translateY(-100%);
+  opacity: 0;
 }

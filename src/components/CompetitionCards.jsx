@@ -73,69 +73,70 @@ const CompetitionCards = () => {
   };
 
   return (
-    <section
-      id="events"
-      className="relative py-16 md:py-24 overflow-hidden"
-      style={{ backgroundColor: 'var(--color-charcoal-black)' }}
-    >
-      {/* Background spinning vinyl image */}
-      <img
-        src="https://placehold.co/600x600/171616/f81a26/png?text=Vinyl+Disc"
-        alt="Animated Vinyl Disc"
-        className="absolute opacity-20 w-[400px] md:w-[600px] left-1/2 -translate-x-1/2 top-10 z-0 animate-spin-slow"
-      />
+<section
+  id="events"
+  className="relative py-10 sm:py-16 overflow-hidden"
+  style={{ backgroundColor: 'var(--color-charcoal-black)' }}
+>
+  {/* Background spinning vinyl image */}
+  <img
+    src="https://placehold.co/600x600/171616/f81a26/png?text=Vinyl+Disc"
+    alt="Animated Vinyl Disc"
+    className="absolute opacity-20 w-[250px] sm:w-[400px] md:w-[600px] left-1/2 -translate-x-1/2 top-5 sm:top-10 z-0 animate-spin-slow"
+  />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6">
-        <h2 className="text-4xl sm:text-5xl font-[var(--font-null-feel)] text-center text-[var(--color-cream-white)] mb-12">
-          Events
-        </h2>
+  <div className="relative z-10 container mx-auto px-3 sm:px-4">
+    <h2 className="text-2xl xs:text-3xl sm:text-5xl font-[var(--font-null-feel)] text-center text-[var(--color-cream-white)] mb-8 sm:mb-12">
+      Events
+    </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {events.map((event, idx) => (
-            <div
-              key={idx}
-              id={event.id}
-              className="bg-[var(--color-dark-charcoal)] rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)]"
-            >
-              {/* Image wrapper with consistent aspect ratio */}
-              <div className="aspect-[4/3] w-full">
-                <img
-                  src={event.image}
-                  alt={event.alt}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+      {events.map((event, idx) => (
+        <div
+          key={idx}
+          id={event.id}
+          className="bg-[var(--color-dark-charcoal)] rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)]"
+        >
+          {/* Image wrapper */}
+          <div className="w-full aspect-video">
+            <img
+              src={event.image}
+              alt={event.alt}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
 
-              {/* Content section */}
-              <div className="p-4 flex flex-col justify-between flex-grow">
-                <h3 className="text-xl sm:text-2xl font-[var(--font-anton)] text-[var(--color-primary-red)] mb-2">
-                  {event.title}
-                </h3>
-                <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream-white)] font-[var(--font-antonio)] mb-4">
-                  {event.subtitle}
-                </p>
+          {/* Content */}
+          <div className="p-3 sm:p-4 flex flex-col justify-between flex-grow">
+            <h3 className="text-lg xs:text-xl sm:text-2xl font-[var(--font-anton)] text-[var(--color-primary-red)] mb-2">
+              {event.title}
+            </h3>
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-[var(--color-cream-white)] font-[var(--font-antonio)] mb-4">
+              {event.subtitle}
+            </p>
 
-                {event.id === 'upcoming-events' ? (
-                  <button
-                    onClick={() => navigate('/join')}
-                    className="bg-[var(--color-primary-red)] text-white px-4 py-2 text-sm rounded-md hover:bg-red-700 transition"
-                  >
-                    Join Waitlist
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => handleRegister(event.title)}
-                    className="bg-[var(--color-primary-red)] text-white px-4 py-2 text-sm rounded-md hover:bg-red-700 transition"
-                  >
-                    Register Now
-                  </button>
-                )}
-              </div>
-            </div>
-          ))}
+            {event.id === 'upcoming-events' ? (
+              <button
+                onClick={() => navigate('/join')}
+                className="bg-[var(--color-primary-red)] text-white px-3 py-2 text-xs sm:text-sm rounded-md hover:bg-red-700 transition"
+              >
+                Join Waitlist
+              </button>
+            ) : (
+              <button
+                onClick={() => handleRegister(event.title)}
+                className="bg-[var(--color-primary-red)] text-white px-3 py-2 text-xs sm:text-sm rounded-md hover:bg-red-700 transition"
+              >
+                Register Now
+              </button>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 

@@ -1,16 +1,12 @@
-import React, { useState , useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "./Logo.css";
 import Logo from "./Logo";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const [showNavbar, setShowNavbar] = useState(true);
-const [lastScrollY, setLastScrollY] = useState(0);
-
-  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -20,26 +16,58 @@ const [lastScrollY, setLastScrollY] = useState(0);
     setIsMobileMenuOpen(false);
   };
 
-   useEffect(() => {
+  // Smooth hide/show on mobile scroll
+  useEffect(() => {
+    let isMobile = window.innerWidth < 768;
+    let lastY = window.scrollY;
+    let ticking = false;
+    const hideThreshold = 50; // pixels before hiding starts
+    const delta = 5; // ignore micro scrolls
+
     const handleScroll = () => {
-      if (window.innerWidth < 768) { // mobile only
-        if (window.scrollY > lastScrollY) {
-          setShowNavbar(false);
-        } else {
-          setShowNavbar(true);
-        }
-        setLastScrollY(window.scrollY);
+      if (!isMobile) return; // only mobile behavior
+
+      const currentY = window.scrollY;
+
+      if (Math.abs(currentY - lastY) <= delta) {
+        ticking = false;
+        return;
+      }
+
+      if (currentY > lastY && currentY > hideThreshold) {
+        setShowNavbar(false); // hide when scrolling down past threshold
+      } else {
+        setShowNavbar(true); // show when scrolling up or near top
+      }
+
+      lastY = currentY;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    const onResize = () => {
+      isMobile = window.innerWidth < 768;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
 
   return (
     <header
-      className={`shadow-lg fixed w-full z-50 py-1 px-6 bg-charcoal-black transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
+      className={`shadow-lg fixed w-full z-50 py-1 px-6 bg-charcoal-black ${
+        showNavbar ? "show" : "hide"
       }`}
     >
       <nav className="container flex justify-between items-center">
@@ -47,7 +75,7 @@ const [lastScrollY, setLastScrollY] = useState(0);
           <Logo />
         </div>
 
-       
+        {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
           className="md:hidden text-cream-white focus:outline-none"
@@ -56,11 +84,11 @@ const [lastScrollY, setLastScrollY] = useState(0);
           <i className="fas fa-bars text-2xl"></i>
         </button>
 
-        
-        <ul className="hidden md:flex space-x-6 text-lg items-center">
-         
-          <li className="relative group dropdown-container">
-            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
+        {/* Desktop Links */}
+        <ul className="hidden md:flex space-x-6 text-lg items-center md:px-0">
+          {/* Home Dropdown */}
+          <li className="relative group dropdown-container !px-0">
+            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer ">
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </span>
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
@@ -74,10 +102,12 @@ const [lastScrollY, setLastScrollY] = useState(0);
             </ul>
           </li>
 
-          
+          {/* Events Dropdown */}
           <li className="relative group dropdown-container">
-            <Link to="/events"
-            className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer">
+            <Link
+              to="/events"
+              className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer"
+            >
               Events <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </Link>
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
@@ -87,7 +117,6 @@ const [lastScrollY, setLastScrollY] = useState(0);
               <li><Link to="/events" className="block py-1 nav-link">Battle of Rappers</Link></li>
               <li><Link to="/events" className="block py-1 nav-link">Music Battle Series</Link></li>
               <li><Link to="/events" className="block py-1 nav-link">Battle of DJs</Link></li>
-             
             </ul>
           </li>
 
@@ -114,23 +143,22 @@ const [lastScrollY, setLastScrollY] = useState(0);
 
         {/* Mobile Links */}
         {[
-          { label: 'Home', to: '/' },
-          { label: 'About Us', to: '/about' },
-          { label: 'Our Mission', to: '/OurMission' },
-          { label: 'FAQs', to: '/contact' },
-          { label: 'Support', to: '/contact' },
-          { label: 'Privacy Policy', to: '/Policy' },
-          { label: 'Terms of Service', to: '/TermsandCondition' },
-          { label: 'Battle of Bands', to: '/Events' },
-          { label: 'Singer/Songwriter Battle', to: '/Evnets' },
-          { label: 'Musicians', to: '/Events' },
-          { label: 'Rappers', to: '/Events' },
-          { label: 'DJs', to: '/Events' },
-          { label: '48-Hour Challenge', to: '/Events' },
-
-          { label: 'Updates', to: '/updates' },
-          { label: 'Join Waitlist', to: '/join' },
-          { label: 'Contact', to: '/contact' }
+          { label: "Home", to: "/" },
+          { label: "About Us", to: "/about" },
+          { label: "Our Mission", to: "/OurMission" },
+          { label: "FAQs", to: "/contact" },
+          { label: "Support", to: "/contact" },
+          { label: "Privacy Policy", to: "/Policy" },
+          { label: "Terms of Service", to: "/TermsandCondition" },
+          { label: "Battle of Bands", to: "/Events" },
+          { label: "Singer/Songwriter Battle", to: "/Events" },
+          { label: "Musicians", to: "/Events" },
+          { label: "Rappers", to: "/Events" },
+          { label: "DJs", to: "/Events" },
+          { label: "48-Hour Challenge", to: "/Events" },
+          { label: "Updates", to: "/updates" },
+          { label: "Join Waitlist", to: "/join" },
+          { label: "Contact", to: "/contact" }
         ].map((item, idx) => (
           <Link
             key={idx}

@@ -17,7 +17,7 @@
 /* White overlay background */
 .venyl_img img.vinyl-overlay {
   position: absolute;
-  width: 78%;
+  width: 85%;
   height: 80%;
   top: 10%;
   left: 5%;
@@ -47,19 +47,29 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Tonearm */
 .venyl_stick img.vinyl-stick {
   position: absolute;
-  width: 25%;
+  /* width: 25%;
   top: 38%;
-  left: 20%;
+  left: 20%; */
+
+  width: 25%;
+  top: 54%;
+  left: 18%;
   transform-origin: top right;
   z-index: 3;
 }
+
 
 /* ===== Tablets (≤ 1024px) ===== */
 @media (max-width: 1024px) {
@@ -67,14 +77,16 @@
     width: 20vw;
     max-width: 100px;
   }
+
   .venyl_img img.vinyl-overlay {
-    width: 76%;
+    width: 100%;
     height: 78%;
     top: 11%;
     left: 4%;
   }
+
   .clogo img.vinyl {
-    width: 47%;
+    width: 55%;
     top: 25%;
     left: 7%;
   }
@@ -86,14 +98,17 @@
     width: 16vw;
     max-width: 85px;
   }
+
   .venyl_img img.vinyl-overlay {
-    width: 75%;
+    /* width: 75%; */
+    width: 95%;
     height: 77%;
     top: 12%;
     left: 4%;
   }
+
   .clogo img.vinyl {
-    width: 46%;
+    width: 53%;
     top: 25%;
     left: 7%;
   }
@@ -105,14 +120,20 @@
     width: 36vw;
     max-width: 75px;
   }
+
   .venyl_img img.vinyl-overlay {
-    width: 74%;
+    /* width: 74%;
+    height: 76%;
+    top: 13%;
+    left: 4%; */
+    width: 100%;
     height: 76%;
     top: 13%;
     left: 4%;
   }
+
   .clogo img.vinyl {
-    width: 45%;
+    width: 53%;
     top: 26%;
     left: 9%;
   }
@@ -124,15 +145,34 @@
     width: 40vw;
     max-width: 70px;
   }
+
   .venyl_img img.vinyl-overlay {
-    width: 73%;
+    /* width: 73%;
     height: 75%;
     top: 13%;
-    left: 4%;
+    left: 4%; */
+    width: 95%;
+    height: 75%;
+    top: 14%;
+    left: 0%;
   }
+
   .clogo img.vinyl {
-    width: 44%;
+    width: 54%;
     top: 26%;
-    left: 7%;
+    left: 0%;
+  }
+}
+@media(min-width:460px)
+{
+  .venyl_stick img.vinyl-stick{
+    left:33%;
+  }
+}
+@media(min-width:1220px)
+{
+    .venyl_stick img.vinyl-stick{
+    left:25%;
+    top:50%;
   }
 }
