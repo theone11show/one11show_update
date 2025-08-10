@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import UpComming from "../assets/UpComming.png";
-import { FaMusic } from "react-icons/fa";
 
 export default function UpcomingEvent() {
   const navigate = useNavigate();
@@ -60,20 +59,14 @@ export default function UpcomingEvent() {
           className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 "
         />
 
-        {/* Subtitle with button color & font-anton */}
+        {/* Subtitle with white color & font-anton */}
         <p
-          className="mt-4 px-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-bold tracking-wide flex items-center justify-center gap-2"
+          className="mt-4 px-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-bold tracking-wide"
           style={{
-            color: joined ? "#22c55e" : "#67e8f9", // match button colors
-            fontFamily: "var(--font-anton)"
+            color: "white",
+            fontFamily: "var(--font-anton)",
           }}
         >
-          <FaMusic
-            className="text-xl sm:text-2xl flex-shrink-0"
-            style={{
-              color: joined ? "#22c55e" : "#67e8f9"
-            }}
-          />
           Get ready for an electrifying battle of music! Be part of the ultimate showdown at The One11 Show.
         </p>
 
