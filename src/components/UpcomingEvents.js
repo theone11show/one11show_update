@@ -45,7 +45,7 @@ export default function UpcomingEvent() {
     <div
       ref={cardRef}
       className={`flex justify-center px-4 py-10 bg-gray-900 text-white transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 font-[Antonio] "
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <div
@@ -60,14 +60,23 @@ export default function UpcomingEvent() {
           className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 "
         />
 
-        {/* Subtitle */}
-     <p className="mt-4 px-4 text-sm sm:text-lg md:text-xl lg:text-2xl 
-              bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 
-              bg-clip-text text-transparent font-bold tracking-wide font-[Poppins] 
-              flex items-center justify-center gap-2 text-center">
-  <FaMusic className="text-pink-400 text-xl sm:text-2xl flex-shrink-0 font-[Anton] " />
-  Get ready for an electrifying battle of music! Be part of the ultimate showdown at The One11 Show.
-</p>
+        {/* Subtitle with button color & font-anton */}
+        <p
+          className="mt-4 px-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-bold tracking-wide flex items-center justify-center gap-2"
+          style={{
+            color: joined ? "#22c55e" : "#67e8f9", // match button colors
+            fontFamily: "var(--font-anton)"
+          }}
+        >
+          <FaMusic
+            className="text-xl sm:text-2xl flex-shrink-0"
+            style={{
+              color: joined ? "#22c55e" : "#67e8f9"
+            }}
+          />
+          Get ready for an electrifying battle of music! Be part of the ultimate showdown at The One11 Show.
+        </p>
+
         {/* Button with ripple effect */}
         <button
           onClick={handleJoinClick}
@@ -78,7 +87,7 @@ export default function UpcomingEvent() {
                 : "bg-cyan-300 hover:bg-cyan-200 text-black"
             }`}
         >
-          {joined ? "Joined " : "Join the Waitlist"}
+          {joined ? "Joined" : "Join the Waitlist"}
         </button>
       </div>
 
