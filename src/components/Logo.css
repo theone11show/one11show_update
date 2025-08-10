@@ -70,7 +70,6 @@
   z-index: 3;
 }
 
-
 /* ===== Tablets (≤ 1024px) ===== */
 @media (max-width: 1024px) {
   .logo-wrapper {
@@ -93,7 +92,7 @@
 }
 
 /* ===== Small Tablets & Large Phones (≤ 768px) ===== */
-@media (max-width: 768px) {
+@media (min-width: 640px) and (max-width: 768px) {
   .logo-wrapper {
     width: 16vw;
     max-width: 85px;
@@ -108,9 +107,9 @@
   }
 
   .clogo img.vinyl {
-    width: 53%;
-    top: 25%;
-    left: 7%;
+    width: 41%;
+    top: 33%;
+    left: 20%;
   }
 }
 
@@ -133,9 +132,9 @@
   }
 
   .clogo img.vinyl {
-    width: 53%;
-    top: 26%;
-    left: 9%;
+    width: 45%;
+    top: 33%;
+    left: 17%;
   }
 }
 
@@ -158,21 +157,24 @@
   }
 
   .clogo img.vinyl {
-    width: 54%;
-    top: 26%;
-    left: 0%;
+    width: 48%;
+    top: 33%;
+    left: 9%;
   }
 }
-@media(min-width:460px)
-{
-  .venyl_stick img.vinyl-stick{
-    left:33%;
+@media (min-width: 460px) {
+  .venyl_stick img.vinyl-stick {
+    left: 33%;
   }
 }
-@media(min-width:1220px)
-{
-    .venyl_stick img.vinyl-stick{
-    left:25%;
-    top:50%;
+@media (min-width: 1220px) {
+  .clogo img.vinyl {
+    position: absolute;
+    width: 46%;
+    top: 32%;
+    left: 10%;
+    object-fit: contain;
+    transform-origin: center;
+    z-index: 2;
   }
 }
