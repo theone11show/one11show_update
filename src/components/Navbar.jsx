@@ -87,10 +87,14 @@ const Header = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6 text-lg items-center md:px-0">
           {/* Home Dropdown */}
-          <li className="relative group dropdown-container !px-0">
-            <span className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer ">
+          <li className="relative group dropdown-container">
+            <Link
+              to="/"
+              className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer"
+            >
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
-            </span>
+            </Link>
+
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
               <li><Link to="/about" className="block py-1 nav-link">About Us</Link></li>
               <li><Link to="/OurMission" className="block py-1 nav-link">Our Mission</Link></li>
