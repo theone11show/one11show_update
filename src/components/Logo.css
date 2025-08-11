@@ -1,8 +1,8 @@
 /* ===== Base (Desktop & Large Screens) ===== */
 .logo-wrapper {
   position: relative;
-  width: 24vw;
-  max-width: 110px;
+  width: 26vw;
+  max-width: 120px;
   aspect-ratio: 1 / 1;
   margin-left: 15px;
   cursor: pointer;
@@ -17,7 +17,7 @@
 /* White overlay background */
 .venyl_img img.vinyl-overlay {
   position: absolute;
-  width: 85%;
+  width: 87%;
   height: 80%;
   top: 10%;
   left: 5%;
@@ -28,7 +28,7 @@
 /* Red vinyl */
 .clogo img.vinyl {
   position: absolute;
-  width: 48%;
+  width: 50%;
   top: 26%;
   left: 7%;
   object-fit: contain;
@@ -63,7 +63,7 @@
   top: 38%;
   left: 20%; */
 
-  width: 25%;
+  width: 27%;
   top: 54%;
   left: 18%;
   transform-origin: top right;
@@ -73,8 +73,8 @@
 /* ===== Tablets (≤ 1024px) ===== */
 @media (max-width: 1024px) {
   .logo-wrapper {
-    width: 20vw;
-    max-width: 100px;
+    width: 22vw;
+    max-width: 110px;
   }
 
   .venyl_img img.vinyl-overlay {
@@ -85,7 +85,7 @@
   }
 
   .clogo img.vinyl {
-    width: 55%;
+    width: 57%;
     top: 25%;
     left: 7%;
   }
@@ -94,20 +94,20 @@
 /* ===== Small Tablets & Large Phones (≤ 768px) ===== */
 @media (min-width: 640px) and (max-width: 768px) {
   .logo-wrapper {
-    width: 16vw;
-    max-width: 85px;
+    width: 20vw;
+    max-width: 95px;
   }
 
   .venyl_img img.vinyl-overlay {
     /* width: 75%; */
-    width: 95%;
+    width: 97%;
     height: 77%;
     top: 12%;
     left: 4%;
   }
 
   .clogo img.vinyl {
-    width: 41%;
+    width: 43%;
     top: 33%;
     left: 20%;
   }
@@ -116,8 +116,8 @@
 /* ===== Mobile Phones (≤ 480px) ===== */
 @media (max-width: 480px) {
   .logo-wrapper {
-    width: 36vw;
-    max-width: 75px;
+    width: 42vw;
+    max-width: 85px;
   }
 
   .venyl_img img.vinyl-overlay {
@@ -132,7 +132,7 @@
   }
 
   .clogo img.vinyl {
-    width: 45%;
+    width: 47%;
     top: 33%;
     left: 17%;
   }
@@ -141,8 +141,8 @@
 /* ===== Very Small Phones (≤ 360px) ===== */
 @media (max-width: 360px) {
   .logo-wrapper {
-    width: 40vw;
-    max-width: 70px;
+    width: 46vw;
+    max-width: 78px;
   }
 
   .venyl_img img.vinyl-overlay {
@@ -150,14 +150,14 @@
     height: 75%;
     top: 13%;
     left: 4%; */
-    width: 95%;
+    width: 97%;
     height: 75%;
     top: 14%;
     left: 0%;
   }
 
   .clogo img.vinyl {
-    width: 48%;
+    width: 50%;
     top: 33%;
     left: 9%;
   }
@@ -170,7 +170,7 @@
 @media (min-width: 1220px) {
   .clogo img.vinyl {
     position: absolute;
-    width: 46%;
+    width: 48%;
     top: 32%;
     left: 10%;
     object-fit: contain;
