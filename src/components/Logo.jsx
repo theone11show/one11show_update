@@ -36,8 +36,8 @@ const Logo = () => {
 
         {/* White overlay */}
         <div className="venyl_img">
-          <img src="/one11w1.png" alt="Overlay" className="vinyl-overlay" />
-        </div>
+          <img src="/one11white.png" alt="Overlay" className="vinyl-overlay" />
+        </div> 
 
         {/* Tonearm */}
         <div className="venyl_stick">
