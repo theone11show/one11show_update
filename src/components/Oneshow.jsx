@@ -6,6 +6,7 @@ import SubmissionBanner from "./SubmissionBanner";
 
 import RoadmapSection from "./RoadmapSection";
 import UpdatesSection from "./UpdatesSection";
+import UpcomingEvents from './UpcommingEvents
 import CompetitionCards from "./CompetitionCards";
 
 const Oneshow = () => {
@@ -59,6 +60,7 @@ const Oneshow = () => {
         
             <AboutSection />
         <UpdatesSection />
+        <UpcomingEvents/>
         <CompetitionCards />
       </div>
     </Layout>
