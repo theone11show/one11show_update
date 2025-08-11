@@ -9,13 +9,7 @@ import songs from '../assets/Songs.jpg';
 import Upcomming from '../assets/UpComming.png';
 
 const events = [
-  {
-    id: 'upcoming-events',
-    title: 'Cactus X Fakira',
-    subtitle: 'Join the waitlist now!!',
-    image: Upcomming,
-    alt: 'Upcoming Events Poster',
-  },
+  
   {
     id: 'bands-section',
     title: 'Battle of Bands',
