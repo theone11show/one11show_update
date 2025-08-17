@@ -35,10 +35,10 @@ const AboutSection = () => {
       <div className="relative z-[3] p-4 sm:p-8 md:p-12">
         <h3 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 drop-shadow-md">
           The one11 Show First Season live
-        </p>
+        </h3>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
           North Bengal's Biggest Music Festival Will Be Live Soon
-        </h1>
+        </h2>
         <p className="text-xl sm:text-2xl md:text-3xl text-cream-white font-[var(--font-antonio)] mb-8 max-w-3xl mx-auto drop-shadow-md">
           Join us for this exciting event
         </p>
