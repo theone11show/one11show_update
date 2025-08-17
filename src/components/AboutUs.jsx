@@ -37,8 +37,9 @@ const AboutUs = () => {
             opacity: 0,
             transform: "translateY(40px)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
+            background: "linear-gradient(135deg, #ff6b6b, #c92a2a)", // 🔴 Coral → Deep Red gradient
           }}
-          className="bg-gradient-to-r from-pink-500 to-red-500 p-6 sm:p-8 text-center"
+          className="p-6 sm:p-8 text-center"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
             About Us
