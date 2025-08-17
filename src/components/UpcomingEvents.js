@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import UpComming from "../assets/UpComming.png";
+import Cactus from '../assests/CACTUS.jpg';
+
 
 export default function UpcomingEvent() {
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ export default function UpcomingEvent() {
       >
         {/* Event Image */}
         <img
-          src={UpComming}
+          src={Cactus}
           alt="Upcoming Event"
           onClick={handleImageClick}
           className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 "
