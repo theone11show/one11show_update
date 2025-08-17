@@ -28,7 +28,7 @@ const AboutSection = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-[1]"></div>
 
       {/* Floating Orbs */}
-      <div className="hero-abstract-background relative z-[2]">
+  { /* <div className="hero-abstract-background relative z-[2]">
         <div className="floating-orbs">
           <div className="orb"></div>
           <div className="orb"></div>
@@ -36,7 +36,7 @@ const AboutSection = () => {
           <div className="orb"></div>
           <div className="orb"></div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Text Content */}
       <div className="relative z-[3] p-4 sm:p-8 md:p-12">
