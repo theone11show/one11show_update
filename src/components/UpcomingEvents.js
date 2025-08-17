@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import UpComming from "../assets/UpComming.png";
 import Cactus from "../assests/CACTUS.jpg";
 
 
