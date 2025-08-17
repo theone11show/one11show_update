@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
 import "./styles.css";
 import Layout from "./Animations/Layout";
-import AboutSection from "./AboutSection";
+import AboutSection from "./AboutSection"; 
 import SubmissionBanner from "./SubmissionBanner";
 import RoadmapSection from "./RoadmapSection";
 import UpcomingEvents from "./UpcomingEvents";
