@@ -1,15 +1,32 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { scroller } from "react-scroll";
 import "./styles.css";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
 import SubmissionBanner from "./SubmissionBanner";
-
 import RoadmapSection from "./RoadmapSection";
-import UpdatesSection from "./UpdatesSection";
 import UpcomingEvents from "./UpcomingEvents";
 import CompetitionCards from "./CompetitionCards";
+import UpdatesSection from "./UpdatesSection";
+import OurTeamComponents from "./OurTeamComponents";
+import AboutUs from "./AboutUs";
 
 const Oneshow = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToUpdates) {
+      setTimeout(() => {
+        scroller.scrollTo("updates-section", {
+          smooth: true,
+          duration: 500,
+          offset: -70,
+        });
+      }, 200);
+    }
+  }, [location]);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -28,40 +45,23 @@ const Oneshow = () => {
   return (
     <Layout>
       <div>
-        {/* Side Images */}
-        {/* <div className="side-images">
-          <img
-            src="gallery1.jpg"
-            alt="Left Visual"
-            className="side-image left"
-          />
-          <img
-            src="gallery1.jpg"
-            alt="Right Visual"
-            className="side-image right"
-          />
-        </div> */}
+        <AboutSection />
 
-        {/* Hero Section */}
-        {/* <section className="hero">
-        <p>AN ARTIST LAUNCHPAD</p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfupbs5PK-pm7peJRzxmEBVlUkRKy0yJEZHe2zbn6mFHmJi7Q/viewform?usp=header"
-          className="bn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Register Now
-        </a>
-      </section> */}
+        {/* FIXED: Responsive stacking */}
+        <div className="flex flex-col lg:flex-row gap-6 bg-[#1c1c1e]">
+          <div className="flex-1">
+            <AboutUs />
+          </div>
+          <div className="flex-1">
+            <OurTeamComponents />
+          </div>
+        </div>
 
-        
-       
-        
-            <AboutSection />
-        <UpdatesSection />
-        <UpcomingEvents/>
+        <UpcomingEvents />
         <CompetitionCards />
+        <section id="updates-section">
+          <UpdatesSection />
+        </section>
       </div>
     </Layout>
   );

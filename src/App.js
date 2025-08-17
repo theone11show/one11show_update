@@ -52,7 +52,14 @@ import OurMission from './components/OurMission'
 import PopupModal from './PopupModal';
 // import main Css
 import './index.css'
+import AboutSection from './components/AboutSection';
+import OurTeamComponents from './components/OurTeamComponents';
+
+
+
 // Main App function jo pura layout render karta hai
+
+
 function App() {
   return (
     <>
@@ -79,7 +86,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
 
         {/* Updates page */}
-        <Route path="/updates" element={<Updates />} />
+        {/* <Route path="/updates" element={<Updates />} /> */}
 
         {/* Waitlist join karne ka page */}
         <Route path="/join" element={<JoinWaitList />} />

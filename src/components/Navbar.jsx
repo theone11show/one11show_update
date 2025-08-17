@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import "./Logo.css";
 import Logo from "./Logo";
+import { scroller } from "react-scroll";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,28 +19,41 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Handle "Updates" click
+  const handleUpdatesClick = () => {
+    closeMobileMenu();
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollToUpdates: true } });
+    } else {
+      scroller.scrollTo("updates-section", {
+        smooth: true,
+        duration: 500,
+        offset: -70,
+      });
+    }
+  };
+
   // Smooth hide/show on mobile scroll
   useEffect(() => {
     let isMobile = window.innerWidth < 768;
     let lastY = window.scrollY;
     let ticking = false;
-    const hideThreshold = 50; // pixels before hiding starts
-    const delta = 5; // ignore micro scrolls
+    const hideThreshold = 50;
+    const delta = 5;
 
     const handleScroll = () => {
-      if (!isMobile) return; // only mobile behavior
+      if (!isMobile) return;
 
       const currentY = window.scrollY;
-
       if (Math.abs(currentY - lastY) <= delta) {
         ticking = false;
         return;
       }
 
       if (currentY > lastY && currentY > hideThreshold) {
-        setShowNavbar(false); // hide when scrolling down past threshold
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // show when scrolling up or near top
+        setShowNavbar(true);
       }
 
       lastY = currentY;
@@ -86,7 +102,6 @@ const Header = () => {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6 text-lg items-center md:px-0">
-          {/* Home Dropdown */}
           <li className="relative group dropdown-container">
             <Link
               to="/"
@@ -94,19 +109,41 @@ const Header = () => {
             >
               Home <i className="fas fa-chevron-down ml-2 text-sm"></i>
             </Link>
-
             <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
-              <li><Link to="/about" className="block py-1 nav-link">About Us</Link></li>
-              <li><Link to="/OurMission" className="block py-1 nav-link">Our Mission</Link></li>
+              <li>
+                <Link to="/about" className="block py-1 nav-link">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/OurMission" className="block py-1 nav-link">
+                  Our Mission
+                </Link>
+              </li>
               <hr className="border-t border-gray-700 my-2 nav-link" />
-              <li><Link to="/contact" className="block py-1 nav-link">FAQs</Link></li>
-              <li><Link to="/contact" className="block py-1 nav-link">Support</Link></li>
-              <li><Link to="/Policy" className="block py-1 nav-link">Privacy Policy</Link></li>
-              <li><Link to="/TermsandCondition" className="block py-1 nav-link">Terms of Service</Link></li>
+              <li>
+                <Link to="/contact" className="block py-1 nav-link">
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="block py-1 nav-link">
+                  Support
+                </Link>
+              </li>
+              <li>
+                <Link to="/Policy" className="block py-1 nav-link">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/TermsandCondition" className="block py-1 nav-link">
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </li>
 
-          {/* Events Dropdown */}
           <li className="relative group dropdown-container">
             <Link
               to="/events"
@@ -124,8 +161,12 @@ const Header = () => {
             </ul>
           </li>
 
-          {/* Static Links */}
-          <li><Link to="/updates" className="text-cream-white hover:text-primary-red transition nav-link">Updates</Link></li>
+          <li
+            onClick={handleUpdatesClick}
+            className="text-cream-white hover:text-primary-red transition nav-link cursor-pointer"
+          >
+            Updates
+          </li>
           <li><Link to="/join" className="text-cream-white hover:text-primary-red transition nav-link">Join Our Waitlist</Link></li>
           <li><Link to="/contact" className="text-cream-white hover:text-primary-red transition nav-link">Contact</Link></li>
         </ul>
@@ -145,7 +186,6 @@ const Header = () => {
           <i className="fas fa-times text-3xl"></i>
         </button>
 
-        {/* Mobile Links */}
         {[
           { label: "Home", to: "/" },
           { label: "About Us", to: "/about" },
@@ -160,9 +200,6 @@ const Header = () => {
           { label: "Rappers", to: "/Events" },
           { label: "DJs", to: "/Events" },
           { label: "48-Hour Challenge", to: "/Events" },
-          { label: "Updates", to: "/updates" },
-          { label: "Join Waitlist", to: "/join" },
-          { label: "Contact", to: "/contact" }
         ].map((item, idx) => (
           <Link
             key={idx}
@@ -173,6 +210,29 @@ const Header = () => {
             {item.label}
           </Link>
         ))}
+
+        {/* Mobile Updates Button */}
+        <span
+          onClick={handleUpdatesClick}
+          className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
+        >
+          Updates
+        </span>
+
+        <Link
+          to="/join"
+          onClick={closeMobileMenu}
+          className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
+        >
+          Join Waitlist
+        </Link>
+        <Link
+          to="/contact"
+          onClick={closeMobileMenu}
+          className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
+        >
+          Contact
+        </Link>
       </div>
     </header>
   );
