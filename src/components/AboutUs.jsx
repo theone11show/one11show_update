@@ -1,0 +1,103 @@
+import React, { useEffect, useRef } from "react";
+
+const AboutUs = () => {
+  const wrapperRef = useRef(null);
+
+  // Inline scroll-reveal effect
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    wrapperRef.current
+      ?.querySelectorAll("[data-reveal]")
+      .forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="min-h-screen bg-[#1c1c1e] pt-20 sm:pt-28 pb-10 px-4 sm:px-6 flex items-center justify-center"
+    >
+      <div className="w-full max-w-6xl bg-white/10 backdrop-blur-md text-[#E2E2E2] rounded-2xl border border-white/20 shadow-lg overflow-hidden hover:shadow-[0_0_35px_#ffffff] transition-shadow duration-300">
+        {/* Header */}
+        <div
+          data-reveal
+          style={{
+            opacity: 0,
+            transform: "translateY(40px)",
+            transition: "opacity 0.7s ease, transform 0.7s ease",
+          }}
+          className="bg-gradient-to-r from-pink-500 to-red-500 p-6 sm:p-8 text-center"
+        >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+            About Us
+          </h1>
+          <p className="mt-2 text-sm sm:text-base md:text-lg opacity-90">
+            Where Talent Meets Opportunity
+          </p>
+        </div>
+
+        {/* Content */}
+        <div className="p-5 sm:p-8 space-y-5 sm:space-y-6 leading-relaxed text-sm sm:text-base md:text-lg">
+          <p
+            data-reveal
+            style={{
+              opacity: 0,
+              transform: "translateY(40px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+          >
+            <span className="text-pink-400 font-semibold">
+              About The One11 Show
+            </span>
+            <br />
+            The One11 Show is Siliguri’s artist’s launchpad dedicated to
+            discovering, mentoring, and launching authentic musical and artistic
+            talent. Powered by The Chordifiers Studio, we unite passionate
+            artists and skilled industry professionals committed to nurturing
+            raw talent.
+          </p>
+
+          <p
+            data-reveal
+            style={{
+              opacity: 0,
+              transform: "translateY(40px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+          >
+            Through vibrant music battles, live sessions, and engaging podcasts,
+            we provide artists with the structure, mentorship, and opportunities
+            they need to shine. We celebrate and uplift the vibrant creative
+            community of Siliguri and beyond.
+          </p>
+
+          <p
+            data-reveal
+            style={{
+              opacity: 0,
+              transform: "translateY(40px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+            className="italic text-gray-300"
+          >
+            Join us to find your stage.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutUs;
