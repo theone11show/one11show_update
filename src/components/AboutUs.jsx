@@ -37,7 +37,7 @@ const AboutUs = () => {
             opacity: 0,
             transform: "translateY(40px)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
-            background: "linear-gradient(135deg, #ff6b6b, #c92a2a)", // 🔴 Coral → Deep Red gradient
+            background: "linear-gradient(135deg, #ff6b6b, #c92a2a)", 
           }}
           className="p-6 sm:p-8 text-center"
         >
@@ -59,7 +59,7 @@ const AboutUs = () => {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            <span className="text-pink-400 font-semibold">
+            <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]">
               About The One11 Show
             </span>
             <br />
