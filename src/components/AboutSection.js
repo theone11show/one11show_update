@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/HeroSectionlogo.jpeg";
 
 const AboutSection = () => {
   const handleScroll = (e) => {
@@ -29,14 +28,10 @@ const AboutSection = () => {
 
       {/* Content */}
       <div className="relative z-[3] p-4 sm:p-8 md:p-12 flex flex-col items-center">
-        {/* Logo */}
-        <div className="p-3 bg-white/10 rounded-full shadow-lg mb-6">
-          <img
-            src={Logo}
-            alt="One11 Show Logo"
-            className="mx-auto h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 object-cover rounded-full"
-          />
-        </div>
+        {/* Title instead of Logo */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-fredoka-one)] text-cream-white mb-6 drop-shadow-lg">
+          One11 Show Season 1
+        </h1>
 
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
           North Bengal's Biggest Music Festival Will Be Live Soon
@@ -54,7 +49,7 @@ const AboutSection = () => {
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-lg sm:text-xl transition duration-300 shadow-md"
+            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white px-4 py-2 rounded-lg text-base sm:text-lg transition duration-300 shadow-md"
           >
             Click Here To Know More
           </button>
