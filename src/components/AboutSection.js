@@ -1,36 +1,59 @@
-import { Link } from "react-router-dom"
-import logo from "../assets/HeroSectionlogo.jpeg" 
+import { Link } from "react-router-dom";
+
+import Logo from "../assets/HeroSection.jpeg";
 
 const AboutSection = () => {
   const handleScroll = (e) => {
-    e.preventDefault()
-    const section = document.getElementById("events")
+    e.preventDefault();
+    const section = document.getElementById("events");
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
+      section.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
-    <section className="relative h-screen flex flex-col items-center justify-between text-center overflow-hidden pt-24">
+    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-16">
       {/* Background Video */}
-      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
-        <source src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/Website%20faktus.mov" type="video/mp4" />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source
+          src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/Website%20faktus.mov"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
-      {/* Top Logo */}
-      <div className="relative z-[3] mt-12">
-        <div className="mx-auto w-36 sm:w-44 md:w-52 lg:w-60 p-4 bg-white rounded-full shadow-lg">
-          <img
-            src={logo}
-            alt="Festival Logo"
-            className="w-full h-full object-contain rounded-full"
-          />
+      {/* Dark Overlay for better text visibility */}
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-[1]"></div> */}
+
+      {/* Floating Orbs */}
+      {/* <div className="hero-abstract-background relative z-[2]">
+        <div className="floating-orbs">
+          <div className="orb"></div>
+          <div className="orb"></div>
+          <div className="orb"></div>
+          <div className="orb"></div>
+          <div className="orb"></div>
         </div>
-      </div>
+      </div> */}
 
       {/* Text Content */}
       <div className="relative z-[3] p-4 sm:p-8 md:p-12">
+        {/* <h3 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 drop-shadow-md">
+          The one11 Show First Season live
+        </h3> */}
+
+        <img
+          src={Logo}
+          alt="One11 Show Logo"
+           className="mx-auto h-32 w-auto sm:h-40 md:h-48 drop-shadow-lg"
+        />
+
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
           North Bengal's Biggest Music Festival Will Be Live Soon
         </h2>
@@ -38,23 +61,24 @@ const AboutSection = () => {
           Join us for this exciting event
         </p>
 
-        <Link to="/join" className="btn-primary text-xl sm:text-2xl inline-block">
-          Join Our Waitlist
-        </Link>
-      </div>
+        <div className="flex flex-col gap-4 items-center justify-center">
+          <Link
+            to="/join"
+            className="btn-primary text-xl sm:text-2xl inline-block"
+          >
+            Join Our Waitlist
+          </Link>
+          <button className="btn-secondary text-xl sm:text-2xl inline-block">
+            Click Here To Know More
+          </button>
 
-      {/* Bottom Button */}
-      <div className="relative z-[3] mb-10">
-        <button
-          onClick={handleScroll}
-          className="px-6 py-3 text-xl sm:text-2xl font-semibold text-white rounded-full shadow-md transition duration-300 hover:opacity-90"
-          style={{ backgroundColor: "#FF5733" }} 
-        >
-          Click here to know more
-        </button>
+          {/* <button className="bg-gray-200 text-black px-6 py-3 rounded-2xl text-xl sm:text-2xl inline-block transition duration-300 shadow-md hover:shadow-lg hover:bg-gray-300">
+  Read more
+</button> */}
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;
