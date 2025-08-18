@@ -60,15 +60,7 @@ const AboutSection = () => {
           >
             Join Our Waitlist
           </Link>
-          <button
-            onClick={handleScroll}
-            className="bg-red-600 hover:bg-red-700 
-                       text-white px-4 py-2 rounded-md 
-                       text-sm sm:text-base 
-                       transition duration-300 shadow-md"
-          >
-            Click Here To Know More
-          </button>
+         
         </div>
       </div>
     </section>
