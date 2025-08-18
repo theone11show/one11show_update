@@ -130,16 +130,24 @@ const OurTeamComponents = () => {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            {expanded ? fullContent : shortContent}
+          
+const handleToggle = () => {
+  if (expanded) {
+    // When collapsing, scroll back to section top
+    wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  setExpanded(!expanded);
+};
+
 
             {/* Read More / Less button */}
-            <button
-              type="button"
-              onClick={() => setExpanded(!expanded)}
-              className="mt-4 inline-block px-4 py-2 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] rounded-lg hover:opacity-90 transition-colors duration-300"
-            >
-              {expanded ? "Read Less" : "Read More"}
-            </button>
+           <button
+  type="button"
+  onClick={handleToggle}
+  className="mt-4 inline-block px-4 py-2 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] rounded-lg hover:opacity-90 transition-colors duration-300"
+>
+  {expanded ? "Read Less" : "Read More"}
+</button>
           </div>
         </div>
       </div>
