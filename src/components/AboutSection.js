@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import Logo from "../assets/HeroSection.jpeg";
+import Logo from "../assests/HeroSection.jpeg";
 
 const AboutSection = () => {
   const handleScroll = (e) => {
