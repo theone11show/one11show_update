@@ -2,13 +2,25 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cactus from "../assets/CACTUS.jpg";
 
-
-
 export default function UpcomingEvent() {
   const navigate = useNavigate();
   const [joined, setJoined] = useState(false);
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const events = [
+    {
+      id: 1,
+      image: Cactus,
+      text: "Get ready for an electrifying battle of music! Be part of the ultimate showdown at The One11 Show.",
+    },
+    {
+      id: 2,
+      image: Cactus,
+      text: "Experience the rhythm like never before – join us for another exciting event at The One11 Show.",
+    },
+  ];
 
   // Intersection Observer for scroll animation
   useEffect(() => {
@@ -23,6 +35,14 @@ export default function UpcomingEvent() {
     );
     if (cardRef.current) observer.observe(cardRef.current);
   }, []);
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % events.length);
+    }, 5000); // 5 seconds
+    return () => clearInterval(interval);
+  }, [events.length]);
 
   const handleJoinClick = (e) => {
     // Ripple effect
@@ -42,6 +62,14 @@ export default function UpcomingEvent() {
     navigate("/join");
   };
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % events.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + events.length) % events.length);
+  };
+
   return (
     <div
       ref={cardRef}
@@ -49,41 +77,79 @@ export default function UpcomingEvent() {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <div
-        className="flex flex-col items-center w-full max-w-4xl bg-[#1f1f1f] rounded-xl shadow-lg overflow-hidden  
-                   transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)] hover:scale-[1.02] cursor-pointer"
-      >
-        {/* Event Image */}
-        <img
-          src={Cactus}
-          alt="Upcoming Event"
-          onClick={handleImageClick}
-          className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 "
-        />
-
-        {/* Subtitle with white color & font-anton */}
-        <p
-          className="mt-4 px-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-bold tracking-wide"
-          style={{
-            color: "white",
-            fontFamily: "var(--font-anton)",
-          }}
+      <div className="relative w-full max-w-4xl overflow-hidden">
+        {/* Carousel Wrapper */}
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          Get ready for an electrifying battle of music! Be part of the ultimate showdown at The One11 Show.
-        </p>
+          {events.map((event) => (
+            <div
+              key={event.id}
+              className="flex-shrink-0 w-full flex flex-col items-center bg-[#1f1f1f] rounded-xl shadow-lg overflow-hidden  
+                        transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)] hover:scale-[1.02] cursor-pointer"
+            >
+              {/* Event Image */}
+              <img
+                src={event.image}
+                alt="Upcoming Event"
+                onClick={handleImageClick}
+                className="w-full h-auto object-cover cursor-pointer transition-transform duration-300 "
+              />
 
-        {/* Button with ripple effect */}
+              {/* Subtitle */}
+              <p
+                className="mt-4 px-4 text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-bold tracking-wide"
+                style={{
+                  color: "white",
+                  fontFamily: "var(--font-anton)",
+                }}
+              >
+                {event.text}
+              </p>
+
+              {/* Button with ripple effect */}
+              <button
+                onClick={handleJoinClick}
+                className={`mt-6 mb-6 px-6 py-3 rounded-full text-sm sm:text-base md:text-lg shadow-md transition-all relative overflow-hidden
+                  ${
+                    joined
+                      ? "bg-green-500 hover:bg-green-600 text-white"
+                      : "bg-cyan-300 hover:bg-cyan-200 text-black"
+                  }`}
+              >
+                {joined ? "Joined" : "Join the Waitlist"}
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Prev / Next Buttons */}
         <button
-          onClick={handleJoinClick}
-          className={`mt-6 mb-6 px-6 py-3 rounded-full text-sm sm:text-base md:text-lg shadow-md transition-all relative overflow-hidden
-            ${
-              joined
-                ? "bg-green-500 hover:bg-green-600 text-white"
-                : "bg-cyan-300 hover:bg-cyan-200 text-black"
-            }`}
+          onClick={prevSlide}
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 p-2 rounded-full"
         >
-          {joined ? "Joined" : "Join the Waitlist"}
+          ◀
         </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 p-2 rounded-full"
+        >
+          ▶
+        </button>
+
+        {/* Indicators */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {events.map((_, index) => (
+            <span
+              key={index}
+              className={`h-3 w-3 rounded-full cursor-pointer ${
+                index === currentIndex ? "bg-cyan-400" : "bg-gray-500"
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            ></span>
+          ))}
+        </div>
       </div>
 
       {/* Ripple Effect Styles */}
