@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/HeroSectionlogo.jpeg";
+
 const AboutSection = () => {
   const handleScroll = (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const AboutSection = () => {
 
         {/* Logo in the center */}
         <img
-          src={Logo} // replace with your actual logo path
+          src={Logo}
           alt="One11 Show Logo"
           className="w-20 sm:w-28 md:w-32 mb-3"
         />
@@ -46,14 +47,14 @@ const AboutSection = () => {
         </h3>
 
         {/* Subtitle */}
-      <h1 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
-  North Bengal's Biggest Music Festival Will Be Live Soon
-</h1>
-<h3 className="text-base sm:text-lg md:text-xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
-  Join us for this exciting event
-</h3>
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-cream-white font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
+          North Bengal's Biggest Music Festival Will Be Live Soon
+        </h2>
+        <h3 className="text-base sm:text-lg md:text-xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
+          Join us for this exciting event
+        </h3>
 
-        {/* Buttons with reduced padding/spacing */}
+        {/* Buttons */}
         <div className="flex flex-col gap-2 items-center justify-center">
           <Link
             to="/join"
@@ -63,7 +64,7 @@ const AboutSection = () => {
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white px-5 py-2 rounded-lg text-base sm:text-lg transition duration-300 shadow-md"
+            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white px-4 py-1.5 rounded-lg text-sm sm:text-base transition duration-300 shadow-md"
           >
             Click Here To Know More
           </button>
