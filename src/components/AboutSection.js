@@ -31,15 +31,14 @@ const AboutSection = () => {
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
        
       
+<div className="rounded-full mb-3 shadow-lg">
+  <img
+    src={Logo}
+    alt="One11 Show Logo"
+    className="w-20 sm:w-28 md:w-32 rounded-full"
+  />
+</div>
 
-        {/* Logo with circular background */}
-        <div className="rounded-full p-3 mb-3 shadow-lg">
-          <img
-            src={Logo}
-            alt="One11 Show Logo"
-            className="w-20 sm:w-28 md:w-32 rounded-full"
-          />
-        </div>
 
         {/* Season text */}
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
