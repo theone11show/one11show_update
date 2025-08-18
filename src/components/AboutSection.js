@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-20">
+    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-28">
       {/* Background Video */}
       <video
         autoPlay
@@ -30,16 +30,18 @@ const AboutSection = () => {
       {/* Content */}
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
         {/* Top Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-[var(--font-fredoka-one)] text-cream-white mb-3 drop-shadow-lg">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
           One11 Show
         </h1>
 
-        {/* Logo in the center */}
-        <img
-          src={Logo}
-          alt="One11 Show Logo"
-          className="w-20 sm:w-28 md:w-32 mb-3"
-        />
+        {/* Logo with circular background */}
+        <div className="bg-white/10 rounded-full p-3 mb-3 shadow-lg">
+          <img
+            src={Logo}
+            alt="One11 Show Logo"
+            className="w-20 sm:w-28 md:w-32 rounded-full"
+          />
+        </div>
 
         {/* Season text */}
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
@@ -64,7 +66,10 @@ const AboutSection = () => {
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white px-4 py-1.5 rounded-lg text-sm sm:text-base transition duration-300 shadow-md"
+            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 
+                       hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 
+                       text-white px-3 py-1.5 rounded-md text-sm sm:text-base 
+                       transition duration-300 shadow-md"
           >
             Click Here To Know More
           </button>
