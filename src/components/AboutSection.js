@@ -46,9 +46,12 @@ const AboutSection = () => {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
-          North Bengal's Biggest Music Festival Will Be Live Soon
-        </p>
+      <h2 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
+  North Bengal's Biggest Music Festival Will Be Live Soon
+</h2>
+<p className="text-base sm:text-lg md:text-xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
+  Join us for this exciting event
+</p>
 
         {/* Buttons with reduced padding/spacing */}
         <div className="flex flex-col gap-2 items-center justify-center">
