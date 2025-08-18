@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import logo from "../assets/HeroSectionlogo.jpeg" 
 
 const AboutSection = () => {
   const handleScroll = (e) => {
@@ -10,32 +11,24 @@ const AboutSection = () => {
   }
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-16">
+    <section className="relative h-screen flex flex-col items-center justify-between text-center overflow-hidden pt-16">
       {/* Background Video */}
       <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
         <source src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/Website%20faktus.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay for better text visibility */}
-      {/* <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-[1]"></div> */}
-
-      {/* Floating Orbs */}
-      {/* <div className="hero-abstract-background relative z-[2]">
-        <div className="floating-orbs">
-          <div className="orb"></div>
-          <div className="orb"></div>
-          <div className="orb"></div>
-          <div className="orb"></div>
-          <div className="orb"></div>
-        </div>
-      </div> */}
+      {/* Top Logo */}
+      <div className="relative z-[3] mt-8">
+        <img
+          src={logo}
+          alt="Festival Logo"
+          className="mx-auto w-32 sm:w-40 md:w-48 lg:w-56 drop-shadow-lg"
+        />
+      </div>
 
       {/* Text Content */}
       <div className="relative z-[3] p-4 sm:p-8 md:p-12">
-        <h3 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 drop-shadow-md">
-          The one11 Show First Season live
-        </h3>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
           North Bengal's Biggest Music Festival Will Be Live Soon
         </h2>
@@ -43,12 +36,19 @@ const AboutSection = () => {
           Join us for this exciting event
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-          <Link to="/join" className="btn-primary text-xl sm:text-2xl inline-block">
-            Join Our Waitlist
-          </Link>
-          <button className="btn-secondary text-xl sm:text-2xl inline-block">Read more</button>
-        </div>
+        <Link to="/join" className="btn-primary text-xl sm:text-2xl inline-block">
+          Join Our Waitlist
+        </Link>
+      </div>
+
+      {/* Bottom Button */}
+      <div className="relative z-[3] mb-10">
+        <button
+          onClick={handleScroll}
+          className="btn-secondary text-xl sm:text-2xl inline-block"
+        >
+          Click here to know more
+        </button>
       </div>
     </section>
   )
