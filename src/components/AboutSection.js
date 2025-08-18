@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-28">
+    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-36">
       {/* Background Video */}
       <video
         autoPlay
@@ -30,12 +30,12 @@ const AboutSection = () => {
       {/* Content */}
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
         
-        {/* Logo (Bigger & Responsive, no transparent circle) */}
+        {/* Logo */}
         <div className="mb-6">
           <img
             src={Logo}
             alt="One11 Show Logo"
-            className="w-28 sm:w-40 md:w-48 lg:w-56"  // bigger & scales with screen
+            className="w-28 sm:w-36 md:w-44 lg:w-52" // bigger logo, responsive
           />
         </div>
 
@@ -62,9 +62,7 @@ const AboutSection = () => {
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-red-600 hover:bg-red-700 
-                       text-white px-4 py-2 rounded-md text-sm sm:text-base 
-                       transition duration-300 shadow-md"
+            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-md text-xs sm:text-sm transition duration-300 shadow-md"
           >
             Click Here To Know More
           </button>
