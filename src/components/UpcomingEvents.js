@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Cactus from "../assets/CACTUS.jpg";
-import FAKIRA from "../assests/FAKIRA.jpg:
+import Cactus from "../assets/CACTUS.jpg"
+import FAKIRA from "../assets/FAKIRA.jpg";
+
 
 export default function UpcomingEvent() {
   const navigate = useNavigate();
