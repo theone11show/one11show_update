@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import Logo from "../assets/HeroSectionlogo.jpeg";
 const AboutSection = () => {
   const handleScroll = (e) => {
     e.preventDefault();
@@ -27,29 +27,40 @@ const AboutSection = () => {
       </video>
 
       {/* Content */}
-      <div className="relative z-[3] p-4 sm:p-8 md:p-12 flex flex-col items-center">
-        {/* Title instead of Logo */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-fredoka-one)] text-cream-white mb-6 drop-shadow-lg">
-          One11 Show Season 1
+      <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
+        {/* Top Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-[var(--font-fredoka-one)] text-cream-white mb-3 drop-shadow-lg">
+          One11 Show
         </h1>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
-          North Bengal's Biggest Music Festival Will Be Live Soon
+        {/* Logo in the center */}
+        <img
+          src={Logo} // replace with your actual logo path
+          alt="One11 Show Logo"
+          className="w-20 sm:w-28 md:w-32 mb-3"
+        />
+
+        {/* Season text */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
+          Season 1
         </h2>
-        <p className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-8 max-w-2xl mx-auto drop-shadow-md">
-          Join us for this exciting event
+
+        {/* Subtitle */}
+        <p className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
+          North Bengal's Biggest Music Festival Will Be Live Soon
         </p>
 
-        <div className="flex flex-col gap-4 items-center justify-center">
+        {/* Buttons with reduced padding/spacing */}
+        <div className="flex flex-col gap-2 items-center justify-center">
           <Link
             to="/join"
-            className="btn-primary text-lg sm:text-xl inline-block"
+            className="btn-primary text-base sm:text-lg px-5 py-2"
           >
             Join Our Waitlist
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white px-4 py-2 rounded-lg text-base sm:text-lg transition duration-300 shadow-md"
+            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white px-5 py-2 rounded-lg text-base sm:text-lg transition duration-300 shadow-md"
           >
             Click Here To Know More
           </button>
