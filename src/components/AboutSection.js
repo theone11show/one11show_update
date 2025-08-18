@@ -29,16 +29,15 @@ const AboutSection = () => {
 
       {/* Content */}
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
-       
-      
-<div className="rounded-full mb-3 shadow-lg">
-  <img
-    src={Logo}
-    alt="One11 Show Logo"
-    className="w-20 sm:w-28 md:w-32 rounded-full"
-  />
-</div>
-
+        
+        {/* Logo (Bigger & Responsive, no transparent circle) */}
+        <div className="mb-6">
+          <img
+            src={Logo}
+            alt="One11 Show Logo"
+            className="w-28 sm:w-40 md:w-48 lg:w-56"  // bigger & scales with screen
+          />
+        </div>
 
         {/* Season text */}
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
@@ -63,9 +62,8 @@ const AboutSection = () => {
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 
-                       hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 
-                       text-white px-2 py-1.5 rounded-md text-sm sm:text-base 
+            className="bg-red-600 hover:bg-red-700 
+                       text-white px-4 py-2 rounded-md text-sm sm:text-base 
                        transition duration-300 shadow-md"
           >
             Click Here To Know More
