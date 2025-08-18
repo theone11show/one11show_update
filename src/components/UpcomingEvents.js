@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cactus from "../assets/CACTUS.jpg";
+import FAKIRA from "../assests/FAKIRA.JPG:
 
 export default function UpcomingEvent() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function UpcomingEvent() {
     },
     {
       id: 2,
-      image: Cactus,
+      image: FAKIRA,
       text: "Experience the rhythm like never before – join us for another exciting event at The One11 Show.",
     },
   ];
