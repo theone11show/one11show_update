@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/logo.png"; // apne path ke hisaab se adjust karna
+import Logo from "../assets/one11show.png";
 
 const AboutSection = () => {
   return (
