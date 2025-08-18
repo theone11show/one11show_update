@@ -29,10 +29,8 @@ const AboutSection = () => {
 
       {/* Content */}
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
-        {/* Top Heading */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
-          One11 Show
-        </h2>
+       
+      
 
         {/* Logo with circular background */}
         <div className="bg-white/10 rounded-full p-3 mb-3 shadow-lg">
