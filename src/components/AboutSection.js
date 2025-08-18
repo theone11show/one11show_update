@@ -33,7 +33,7 @@ const AboutSection = () => {
       
 
         {/* Logo with circular background */}
-        <div className="bg-white/10 rounded-full p-3 mb-3 shadow-lg">
+        <div className="rounded-full p-3 mb-3 shadow-lg">
           <img
             src={Logo}
             alt="One11 Show Logo"
@@ -66,7 +66,7 @@ const AboutSection = () => {
             onClick={handleScroll}
             className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 
                        hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 
-                       text-white px-3 py-1.5 rounded-md text-sm sm:text-base 
+                       text-white px-2 py-1.5 rounded-md text-sm sm:text-base 
                        transition duration-300 shadow-md"
           >
             Click Here To Know More
