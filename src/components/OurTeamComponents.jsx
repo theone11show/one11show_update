@@ -140,7 +140,7 @@ const OurTeamComponents = () => {
           
 
 
-
+        {expanded ? fullContent : shortContent}
             {/* Read More / Less button */}
            <button
   type="button"
