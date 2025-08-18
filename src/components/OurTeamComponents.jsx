@@ -134,6 +134,7 @@ const OurTeamComponents = () => {
 
             {/* Read More / Less button */}
             <button
+              type="button"
               onClick={() => setExpanded(!expanded)}
               className="mt-4 inline-block px-4 py-2 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] rounded-lg hover:opacity-90 transition-colors duration-300"
             >
