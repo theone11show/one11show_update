@@ -11,7 +11,7 @@ const AboutSection = () => {
   }
 
   return (
-    <section className="relative h-screen flex flex-col items-center justify-between text-center overflow-hidden pt-16">
+    <section className="relative h-screen flex flex-col items-center justify-between text-center overflow-hidden pt-24">
       {/* Background Video */}
       <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
         <source src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/Website%20faktus.mov" type="video/mp4" />
@@ -19,12 +19,14 @@ const AboutSection = () => {
       </video>
 
       {/* Top Logo */}
-      <div className="relative z-[3] mt-8">
-        <img
-          src={logo}
-          alt="Festival Logo"
-          className="mx-auto w-32 sm:w-40 md:w-48 lg:w-56 drop-shadow-lg"
-        />
+      <div className="relative z-[3] mt-12">
+        <div className="mx-auto w-36 sm:w-44 md:w-52 lg:w-60 p-4 bg-white rounded-full shadow-lg">
+          <img
+            src={logo}
+            alt="Festival Logo"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
       </div>
 
       {/* Text Content */}
@@ -45,7 +47,8 @@ const AboutSection = () => {
       <div className="relative z-[3] mb-10">
         <button
           onClick={handleScroll}
-          className="btn-secondary text-xl sm:text-2xl inline-block"
+          className="px-6 py-3 text-xl sm:text-2xl font-semibold text-white rounded-full shadow-md transition duration-300 hover:opacity-90"
+          style={{ backgroundColor: "#FF5733" }} 
         >
           Click here to know more
         </button>
