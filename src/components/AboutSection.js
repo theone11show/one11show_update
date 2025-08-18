@@ -41,17 +41,17 @@ const AboutSection = () => {
         />
 
         {/* Season text */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
           Season 1
-        </h2>
+        </h3>
 
         {/* Subtitle */}
-      <h2 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
+      <h1 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
   North Bengal's Biggest Music Festival Will Be Live Soon
-</h2>
-<p className="text-base sm:text-lg md:text-xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
+</h1>
+<h3 className="text-base sm:text-lg md:text-xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
   Join us for this exciting event
-</p>
+</h3>
 
         {/* Buttons with reduced padding/spacing */}
         <div className="flex flex-col gap-2 items-center justify-center">
