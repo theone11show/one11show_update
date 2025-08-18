@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom;
-import Logo from "../assets/HeroSectionlogo.jpeg";
-
+import { Link } from "react-router-dom";
+import Logo from "../assets/HeroSectionLogo.jpeg"; // make sure the file name matches exactly
 
 const AboutSection = () => {
   const handleScroll = (e) => {
@@ -12,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-16">
+    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-20">
       {/* Background Video */}
       <video
         autoPlay
@@ -28,31 +27,16 @@ const AboutSection = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay for better text visibility */}
-      {/* <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-[1]"></div> */}
-
-      {/* Floating Orbs */}
-      {/* <div className="hero-abstract-background relative z-[2]">
-        <div className="floating-orbs">
-          <div className="orb"></div>
-          <div className="orb"></div>
-          <div className="orb"></div>
-          <div className="orb"></div>
-          <div className="orb"></div>
+      {/* Content */}
+      <div className="relative z-[3] p-4 sm:p-8 md:p-12 flex flex-col items-center">
+        {/* Logo */}
+        <div className="p-4 bg-white/10 rounded-full shadow-lg mb-6">
+          <img
+            src={Logo}
+            alt="One11 Show Logo"
+            className="mx-auto h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 object-cover rounded-full"
+          />
         </div>
-      </div> */}
-
-      {/* Text Content */}
-      <div className="relative z-[3] p-4 sm:p-8 md:p-12">
-        {/* <h3 className="text-lg sm:text-xl md:text-2xl text-cream-white font-[var(--font-antonio)] mb-2 drop-shadow-md">
-          The one11 Show First Season live
-        </h3> */}
-
-        <img
-          src={Logo}
-          alt="One11 Show Logo"
-           className="mx-auto h-32 w-auto sm:h-40 md:h-48 drop-shadow-lg"
-        />
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-fredoka-one)] text-cream-white leading-tight mb-4 drop-shadow-lg">
           North Bengal's Biggest Music Festival Will Be Live Soon
@@ -68,13 +52,12 @@ const AboutSection = () => {
           >
             Join Our Waitlist
           </Link>
-          <button className="btn-secondary text-xl sm:text-2xl inline-block">
+          <button
+            onClick={handleScroll}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-2xl text-xl sm:text-2xl transition duration-300 shadow-md"
+          >
             Click Here To Know More
           </button>
-
-          {/* <button className="bg-gray-200 text-black px-6 py-3 rounded-2xl text-xl sm:text-2xl inline-block transition duration-300 shadow-md hover:shadow-lg hover:bg-gray-300">
-  Read more
-</button> */}
         </div>
       </div>
     </section>
