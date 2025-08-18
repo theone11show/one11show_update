@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden pt-36">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-16 pb-8">
       {/* Background Video */}
       <video
         autoPlay
@@ -31,16 +31,16 @@ const AboutSection = () => {
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
         
         {/* Logo */}
-        <div className="mb-2">
+        <div className="mb-1">
           <img
             src={Logo}
             alt="One11 Show Logo"
-            className="w-28 sm:w-36 md:w-44 lg:w-52" // bigger logo, responsive
+            className="w-32 sm:w-40 md:w-48 lg:w-56 mx-auto"
           />
         </div>
 
         {/* Season text */}
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-4 drop-shadow-lg">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-2 drop-shadow-lg">
           Season 1
         </h3>
 
@@ -53,16 +53,19 @@ const AboutSection = () => {
         </h3>
 
         {/* Buttons */}
-        <div className="flex flex-col gap-2 items-center justify-center">
+        <div className="flex flex-col gap-3 items-center justify-center">
           <Link
             to="/join"
-            className="btn-primary text-base sm:text-lg px-5 py-2"
+            className="btn-primary text-base sm:text-lg px-6 py-2"
           >
             Join Our Waitlist
           </Link>
           <button
             onClick={handleScroll}
-            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-md text-xs sm:text-sm transition duration-300 shadow-md"
+            className="bg-red-600 hover:bg-red-700 
+                       text-white px-4 py-2 rounded-md 
+                       text-sm sm:text-base 
+                       transition duration-300 shadow-md"
           >
             Click Here To Know More
           </button>
