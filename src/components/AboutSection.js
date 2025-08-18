@@ -31,7 +31,7 @@ const AboutSection = () => {
       <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
         
         {/* Logo */}
-        <div className="mb-6">
+        <div className="mb-2">
           <img
             src={Logo}
             alt="One11 Show Logo"
