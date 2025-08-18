@@ -24,6 +24,13 @@ const OurTeamComponents = () => {
 
     return () => observer.disconnect()
   }, [])
+  const handleToggle = () => {
+  if (expanded) {
+    // When collapsing, scroll back to section top
+    wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  setExpanded(!expanded);
+};
 
   const fullContent = (
     <>
@@ -131,13 +138,7 @@ const OurTeamComponents = () => {
             }}
           >
           
-const handleToggle = () => {
-  if (expanded) {
-    // When collapsing, scroll back to section top
-    wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  setExpanded(!expanded);
-};
+
 
 
             {/* Read More / Less button */}
