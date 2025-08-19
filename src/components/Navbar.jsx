@@ -33,6 +33,20 @@ const Header = () => {
     }
   };
 
+  // Handle "Events" click
+  const handleEventsClick = () => {
+    closeMobileMenu();
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollToUpcoming: true } });
+    } else {
+      scroller.scrollTo("upcomingevent-section", {
+        smooth: true,
+        duration: 500,
+        offset: -70,
+      });
+    }
+  };
+
   // Smooth hide/show on mobile scroll
   useEffect(() => {
     let isMobile = window.innerWidth < 768;
@@ -144,21 +158,12 @@ const Header = () => {
             </ul>
           </li>
 
-          <li className="relative group dropdown-container">
-            <Link
-              to="/events"
-              className="text-cream-white hover:text-primary-red transition nav-link flex items-center cursor-pointer"
-            >
-              Events <i className="fas fa-chevron-down ml-2 text-sm"></i>
-            </Link>
-            <ul className="absolute hidden group-hover:block bg-charcoal-black text-cream-white p-4 rounded-md shadow-lg dropdown-menu">
-              <li><Link to="/events" className="block py-1 nav-link">Battle of Bands</Link></li>
-              <li><Link to="/events" className="block py-1 nav-link">Singer/Songwriter Battle</Link></li>
-              <li><Link to="/events" className="block py-1 nav-link">Musicians (Instrumental)</Link></li>
-              <li><Link to="/events" className="block py-1 nav-link">Battle of Rappers</Link></li>
-              <li><Link to="/events" className="block py-1 nav-link">Music Battle Series</Link></li>
-              <li><Link to="/events" className="block py-1 nav-link">Battle of DJs</Link></li>
-            </ul>
+          {/* Events - NO DROPDOWN */}
+          <li
+            onClick={handleEventsClick}
+            className="text-cream-white hover:text-primary-red transition nav-link cursor-pointer"
+          >
+            Events
           </li>
 
           <li
@@ -167,8 +172,22 @@ const Header = () => {
           >
             Updates
           </li>
-          <li><Link to="/join" className="text-cream-white hover:text-primary-red transition nav-link">Join Our Waitlist</Link></li>
-          <li><Link to="/contact" className="text-cream-white hover:text-primary-red transition nav-link">Contact</Link></li>
+          <li>
+            <Link
+              to="/join"
+              className="text-cream-white hover:text-primary-red transition nav-link"
+            >
+              Join Our Waitlist
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="text-cream-white hover:text-primary-red transition nav-link"
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -194,12 +213,6 @@ const Header = () => {
           { label: "Support", to: "/contact" },
           { label: "Privacy Policy", to: "/Policy" },
           { label: "Terms of Service", to: "/TermsandCondition" },
-          { label: "Battle of Bands", to: "/Events" },
-          { label: "Singer/Songwriter Battle", to: "/Events" },
-          { label: "Musicians", to: "/Events" },
-          { label: "Rappers", to: "/Events" },
-          { label: "DJs", to: "/Events" },
-          { label: "48-Hour Challenge", to: "/Events" },
         ].map((item, idx) => (
           <Link
             key={idx}
@@ -211,7 +224,15 @@ const Header = () => {
           </Link>
         ))}
 
-        {/* Mobile Updates Button */}
+        {/* Mobile Events */}
+        <span
+          onClick={handleEventsClick}
+          className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
+        >
+          Events
+        </span>
+
+        {/* Mobile Updates */}
         <span
           onClick={handleUpdatesClick}
           className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
