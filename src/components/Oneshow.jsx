@@ -14,6 +14,7 @@ import AboutUs from "./AboutUs";
 const Oneshow = () => {
   const location = useLocation();
 
+  // Handle auto-scroll from navigation
   useEffect(() => {
     if (location.state?.scrollToUpdates) {
       setTimeout(() => {
@@ -24,8 +25,19 @@ const Oneshow = () => {
         });
       }, 200);
     }
+
+    if (location.state?.scrollToUpcoming) {
+      setTimeout(() => {
+        scroller.scrollTo("upcomingevent-section", {
+          smooth: true,
+          duration: 500,
+          offset: -70,
+        });
+      }, 200);
+    }
   }, [location]);
 
+  // Handle parallax side images
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -56,9 +68,13 @@ const Oneshow = () => {
           </div>
         </div>
 
-        <UpcomingEvents />
-        
-        <section id="updates-section">
+        {/* Upcoming Events with scroll target */}
+        <section id="upcomingevent-section" name="upcomingevent-section">
+          <UpcomingEvents />
+        </section>
+
+        {/* Updates with scroll target */}
+        <section id="updates-section" name="updates-section">
           <UpdatesSection />
         </section>
       </div>
