@@ -37,7 +37,7 @@ const AboutUs = () => {
             opacity: 0,
             transform: "translateY(40px)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
-            background: "linear-gradient(135deg, #ff6b6b, #c92a2a)", 
+            background: "linear-gradient(135deg, #ff6b6b, #c92a2a)",
           }}
           className="p-6 sm:p-8 text-center"
         >
@@ -63,11 +63,7 @@ const AboutUs = () => {
               About The One11 Show
             </span>
             <br />
-            The One11 Show is Siliguri’s artist’s launchpad dedicated to
-            discovering, mentoring, and launching authentic musical and artistic
-            talent. Powered by The Chordifiers Studio, we unite passionate
-            artists and skilled industry professionals committed to nurturing
-            raw talent.
+            The One11 Show is an artist’s launchpad dedicated to discovering, mentoring, and launching authentic musical and artistic talent. Powered by The Chordifiers Studio, we unite passionate artists and skilled industry professionals committed to nurturing raw talent.
           </p>
 
           <p
@@ -78,10 +74,7 @@ const AboutUs = () => {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            Through vibrant music battles, live sessions, and engaging podcasts,
-            we provide artists with the structure, mentorship, and opportunities
-            they need to shine. We celebrate and uplift the vibrant creative
-            community of Siliguri and beyond.
+            Through vibrant music battles, live sessions, and engaging podcasts, we provide artists with the structure, mentorship, and opportunities they need to shine. We celebrate and uplift the vibrant creative community around the world.
           </p>
 
           <p
@@ -91,7 +84,7 @@ const AboutUs = () => {
               transform: "translateY(40px)",
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
-            className="italic font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]" 
+            className="italic font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]"
           >
             Join us to find your stage.
           </p>
