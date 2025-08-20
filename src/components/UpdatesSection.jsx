@@ -50,7 +50,7 @@ const LatestUpdates = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#1c1c1e] pt-[160px] pb-12 px-4 font-[Antonio] flex justify-center">
+    <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-12 px-4 font-[Antonio] flex justify-center">
       <div
         ref={wrapperRef}
         className="w-full max-w-5xl bg-[#2c2c2e] text-white rounded-2xl p-6 sm:p-10 
@@ -72,10 +72,10 @@ const LatestUpdates = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center glowing line (thinner now) */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-cyan-300 shadow-[0_0_15px_2px_rgba(0,255,255,0.5)]"></div>
+          {/* Center glowing beam */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_25px_4px_rgba(0,255,255,0.6)]"></div>
 
-          <div className="space-y-8 sm:space-y-10 lg:space-y-12">
+          <div className="space-y-12 sm:space-y-16">
             {updates.map((item, index) => (
               <div
                 key={index}
@@ -85,29 +85,28 @@ const LatestUpdates = () => {
                   transform: "translateY(40px)",
                   transition: `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`,
                 }}
-                className={`relative flex items-center w-full 
+                className={`relative flex w-full 
                   md:${index % 2 === 0 ? "justify-start" : "justify-end"} 
-                  justify-center`} // center on mobile
+                  justify-center`}
               >
                 {/* Timeline dot */}
-                <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-300 shadow-[0_0_15px_5px_rgba(0,255,255,0.6)]"></span>
+                <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_15px_5px_rgba(0,255,255,0.7)]"></span>
 
-                {/* Pointer line */}
+                {/* Connector line (points card to center beam) */}
                 <span
-                  className={`absolute top-1/2 w-8 h-[2px] bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] hidden md:block 
-                  ${index % 2 === 0 ? "left-1/2 ml-0" : "right-1/2 mr-0"}`}
-                  style={{
-                    transform: index % 2 === 0
-                      ? "translateX(0%)"
-                      : "translateX(-100%)",
-                  }}
+                  className={`absolute top-1/2 h-[2px] bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] 
+                    hidden md:block 
+                    ${index % 2 === 0 ? "left-1/2 w-10" : "right-1/2 w-10"}`}
                 ></span>
+
+                {/* Mobile connector (short vertical under dot) */}
+                <span className="absolute top-4 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] md:hidden"></span>
 
                 {/* Card */}
                 <div
-                  className={`w-full max-w-sm sm:max-w-xs md:w-[300px] bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
+                  className={`w-full max-w-sm md:w-[300px] bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
                     md:${index % 2 === 0 ? "mr-10 text-right" : "ml-10 text-left"} 
-                    text-center md:text-inherit`} // responsive + centered on mobile
+                    text-center md:text-inherit`}
                 >
                   <p className="text-xs sm:text-sm text-gray-300">{item.date}</p>
                   <h4 className="text-lg sm:text-xl font-bold text-white mt-1">
