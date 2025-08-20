@@ -27,9 +27,15 @@ const AboutUs = () => {
   return (
     <div
       ref={wrapperRef}
-      className="min-h-screen bg-[#1c1c1e] pt-20 sm:pt-28 pb-10 px-4 sm:px-6 flex items-center justify-center"
+      className="w-full h-full flex items-center justify-center"
     >
-      <div className="w-full max-w-6xl bg-white/10 backdrop-blur-md text-[#E2E2E2] rounded-2xl border border-white/20 shadow-lg overflow-hidden hover:shadow-[0_0_35px_#ffffff] transition-shadow duration-300">
+      <div
+        className="w-full h-full 
+          min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] 
+          bg-white/10 backdrop-blur-md text-[#E2E2E2] 
+          rounded-2xl border border-white/20 shadow-md 
+          hover:shadow-lg transition-shadow duration-300 flex flex-col"
+      >
         {/* Header */}
         <div
           data-reveal
@@ -50,7 +56,7 @@ const AboutUs = () => {
         </div>
 
         {/* Content */}
-        <div className="p-5 sm:p-8 space-y-5 sm:space-y-6 leading-relaxed text-sm sm:text-base md:text-lg">
+        <div className="p-5 sm:p-8 space-y-5 sm:space-y-6 leading-relaxed text-sm sm:text-base md:text-lg flex-1">
           <p
             data-reveal
             style={{
@@ -63,7 +69,10 @@ const AboutUs = () => {
               About The One11 Show
             </span>
             <br />
-            The One11 Show is an artist’s launchpad dedicated to discovering, mentoring, and launching authentic musical and artistic talent. Powered by The Chordifiers Studio, we unite passionate artists and skilled industry professionals committed to nurturing raw talent.
+            The One11 Show is an artist’s launchpad dedicated to discovering,
+            mentoring, and launching authentic musical and artistic talent.
+            Powered by The Chordifiers Studio, we unite passionate artists and
+            skilled industry professionals committed to nurturing raw talent.
           </p>
 
           <p
@@ -74,7 +83,10 @@ const AboutUs = () => {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            Through vibrant music battles, live sessions, and engaging podcasts, we provide artists with the structure, mentorship, and opportunities they need to shine. We celebrate and uplift the vibrant creative community around the world.
+            Through vibrant music battles, live sessions, and engaging podcasts,
+            we provide artists with the structure, mentorship, and opportunities
+            they need to shine. We celebrate and uplift the vibrant creative
+            community around the world.
           </p>
 
           <p
