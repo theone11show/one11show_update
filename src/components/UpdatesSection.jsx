@@ -11,7 +11,7 @@ const updates = [
   {
     date: "July, 2025",
     title: "60 Hr Challenge",
-    description: "",
+    description: "Intense creative competition",
   },
   {
     date: "Aug, 2025",
@@ -21,7 +21,7 @@ const updates = [
   {
     date: "Aug, 2025",
     title: "60 Hr Challenge",
-    description: "",
+    description: "Push your creativity further",
   },
 ];
 
@@ -36,7 +36,6 @@ const LatestUpdates = () => {
           if (entry.isIntersecting) {
             entry.target.style.opacity = 1;
             entry.target.style.transform = "translateY(0)";
-            entry.target.style.scale = 1;
           }
         });
       },
@@ -51,78 +50,76 @@ const LatestUpdates = () => {
   }, []);
 
   return (
-    <div>
-      <section className="min-h-screen bg-[#1c1c1e] pt-[180px] pb-12 px-4 font-[Antonio] flex items-start justify-center">
-        <div
-          ref={wrapperRef}
-          className="w-full max-w-xl bg-[#2c2c2e] text-white rounded-xl p-6 
-          transition-all duration-300 hover:shadow-[0_0_25px_4px_rgba(0,255,255,0.5)]"
-        >
-          {/* Title */}
-          <h2 className="text-4xl font-[Anton] text-center text-white mb-8">
-            Latest Updates
-          </h2>
+    <section className="min-h-screen bg-[#1c1c1e] pt-[160px] pb-12 px-4 font-[Antonio] flex justify-center">
+      <div
+        ref={wrapperRef}
+        className="w-full max-w-5xl bg-[#2c2c2e] text-white rounded-2xl p-10 
+        transition-all duration-300 shadow-lg hover:shadow-[0_0_35px_4px_rgba(0,255,255,0.4)]"
+      >
+        {/* Title */}
+        <h2 className="text-4xl font-[Anton] text-center text-white mb-12">
+          Latest Updates
+        </h2>
 
-          <div className="flex flex-col items-center">
-            {/* Image */}
-            <img
-              src={updateImage}
-              alt="Announcements"
-              className="w-[370px] h-[140px] object-cover rounded mb-6"
-            />
+        {/* Image */}
+        <div className="flex justify-center mb-12">
+          <img
+            src={updateImage}
+            alt="Announcements"
+            className="w-[400px] h-[160px] object-cover rounded-lg shadow-lg"
+          />
+        </div>
 
-            {/* Sub Heading */}
-            <h3 className="text-xl text-red-500 font-bold uppercase tracking-wide text-center mb-8">
-              Important Announcements
-            </h3>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Center glowing line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-cyan-300 shadow-[0_0_20px_2px_rgba(0,255,255,0.5)]"></div>
 
-            {/* Timeline */}
-            <div className="relative border-l-2 border-cyan-300 pl-6 space-y-8 w-full">
-              {updates.map((item, index) => (
+          <div className="space-y-12">
+            {updates.map((item, index) => (
+              <div
+                key={index}
+                data-reveal
+                style={{
+                  opacity: 0,
+                  transform: "translateY(40px)",
+                  transition: `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`,
+                }}
+                className={`relative flex items-center w-full ${
+                  index % 2 === 0 ? "justify-start" : "justify-end"
+                }`}
+              >
+                {/* Timeline dot */}
+                <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-300 shadow-[0_0_15px_5px_rgba(0,255,255,0.6)]"></span>
+
+                {/* Card */}
                 <div
-                  key={index}
-                  data-reveal
-                  style={{
-                    opacity: 0,
-                    transform: "translateY(40px)",
-                    scale: 0.8,
-                    transition: `opacity 0.8s ease ${index * 0.2}s, 
-                                transform 0.8s ease ${index * 0.2}s,
-                                scale 0.6s ease ${index * 0.2 + 0.1}s`,
-                  }}
-                  className="relative"
+                  className={`w-[280px] md:w-[320px] bg-white/10 backdrop-blur-lg p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
+                    ${index % 2 === 0 ? "mr-10 text-right" : "ml-10 text-left"}`}
                 >
-                  {/* Dot with cyan glow */}
-                  <span
-                    className="absolute -left-[10px] top-1 w-3 h-3 rounded-full bg-cyan-300 shadow-[0_0_12px_4px_rgba(0,255,255,0.6)]"
-                    style={{
-                      transform: "scale(0.8)",
-                      transition: `transform 0.5s ease ${index * 0.2 + 0.15}s`,
-                    }}
-                  ></span>
-
-                  {/* Content */}
-                  <div>
-                    <p className="text-sm text-gray-300">{item.date}</p>
-                    <h4 className="font-bold text-white">{item.title}</h4>
-                    {item.description && (
-                      <p className="text-sm text-gray-400">
-                        {item.description}
-                      </p>
-                    )}
-                  </div>
+                  <p className="text-sm text-gray-300">{item.date}</p>
+                  <h4 className="text-xl font-bold text-white mt-1">
+                    {item.title}
+                  </h4>
+                  {item.description && (
+                    <p className="text-sm text-gray-400 mt-1">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
-              ))}
-            </div>
-
-            {/* Button */}
-            <button className="mt-10 px-5 py-2 bg-cyan-300 text-black font-bold rounded-full text-sm shadow-lg hover:bg-cyan-200 transition">
-              New Info!
-            </button>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    </div>
+
+        {/* Button */}
+        <div className="flex justify-center mt-12">
+          <button className="px-6 py-2 bg-cyan-300 text-black font-bold rounded-full text-sm shadow-lg hover:bg-cyan-200 transition">
+            New Info!
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 
