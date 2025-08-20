@@ -58,15 +58,20 @@ const Oneshow = () => {
       <div>
         <AboutSection />
 
-        {/* FIXED: Responsive stacking */}
-        <div className="flex flex-col lg:flex-row gap-6 bg-[#1c1c1e]">
-          <div className="flex-1">
-            <AboutUs />
-          </div>
-          <div className="flex-1">
-            <OurTeamComponents />
-          </div>
-        </div>
+       {/*About us and OurTeam Cards*/}
+<div className="flex flex-col lg:flex-row gap-6 bg-[#1c1c1e] items-stretch">
+  <div className="flex-1 flex">
+    <div className="w-full h-full">
+      <AboutUs />
+    </div>
+  </div>
+  <div className="flex-1 flex">
+    <div className="w-full h-full">
+      <OurTeamComponents />
+    </div>
+  </div>
+</div>
+
 
         {/* Upcoming Events with scroll target */}
         <section id="upcomingevent-section" name="upcomingevent-section">
