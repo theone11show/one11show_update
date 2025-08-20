@@ -23,7 +23,7 @@ const updates = [
     title: "Round 1A",
     description: "Online round for new participants",
   },
-]; // reversed (latest first)
+]; // latest first
 
 const LatestUpdates = () => {
   const wrapperRef = useRef(null);
@@ -72,8 +72,8 @@ const LatestUpdates = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center glowing line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-cyan-300 shadow-[0_0_20px_2px_rgba(0,255,255,0.5)]"></div>
+          {/* Center glowing line (thinner now) */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-cyan-300 shadow-[0_0_15px_2px_rgba(0,255,255,0.5)]"></div>
 
           <div className="space-y-8 sm:space-y-10 lg:space-y-12">
             {updates.map((item, index) => (
@@ -91,6 +91,17 @@ const LatestUpdates = () => {
               >
                 {/* Timeline dot */}
                 <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-300 shadow-[0_0_15px_5px_rgba(0,255,255,0.6)]"></span>
+
+                {/* Pointer line */}
+                <span
+                  className={`absolute top-1/2 w-8 h-[2px] bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] hidden md:block 
+                  ${index % 2 === 0 ? "left-1/2 ml-0" : "right-1/2 mr-0"}`}
+                  style={{
+                    transform: index % 2 === 0
+                      ? "translateX(0%)"
+                      : "translateX(-100%)",
+                  }}
+                ></span>
 
                 {/* Card */}
                 <div
