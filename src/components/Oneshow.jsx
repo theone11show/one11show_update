@@ -57,8 +57,7 @@ const Oneshow = () => {
     <Layout>
       <div>
         <AboutSection />
-
-      {/* About Us and Our Team Cards */}
+{/* About Us and Our Team Cards */}
 <div className="flex flex-col lg:flex-row gap-6 bg-[#1c1c1e] items-stretch">
   {/* About Us (60%) */}
   <div className="lg:w-3/5 flex">
@@ -74,7 +73,6 @@ const Oneshow = () => {
     </div>
   </div>
 </div>
-
 
 
         {/* Upcoming Events with scroll target */}
