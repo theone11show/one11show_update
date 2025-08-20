@@ -66,7 +66,7 @@ const OurTeamComponents = () => {
             }}
             className="italic font-bold text-left bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]"
           >
-            One11 Show Team
+          The One11 Show Team
           </p>
 
           {/* Description */}
