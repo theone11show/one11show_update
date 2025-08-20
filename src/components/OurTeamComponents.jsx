@@ -69,8 +69,6 @@ const OurTeamComponents = () => {
               managers. Our shared mission is to provide an unbiased platform
               for raw talents.
             </p>
-
-            {/* Separate Line */}
             <p
             data-reveal
             style={{
