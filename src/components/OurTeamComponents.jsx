@@ -56,7 +56,21 @@ const OurTeamComponents = () => {
 
         {/* Content */}
         <div className="mt-6 space-y-4 leading-relaxed text-sm sm:text-base md:text-lg flex-1">
-          <div
+          {/* Team One11 Show */}
+          <p
+            data-reveal
+            style={{
+              opacity: 0,
+              transform: "translateY(40px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+            className="italic font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]"
+          >
+            Team One11 Show
+          </p>
+
+          {/* Description */}
+          <p
             data-reveal
             style={{
               opacity: 0,
@@ -64,26 +78,35 @@ const OurTeamComponents = () => {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            <p>
-              We are a unified group of industry music professionals, including
-              producers, directors, artists, performers, and experienced event
-              managers. Our shared mission is to provide an unbiased platform
-              for raw talents.
-            </p>
+            We are a unified group of industry music professionals, including
+            producers, directors, artists, performers, and experienced event
+            managers.
+          </p>
 
-            {/* The One11 Show separate line */}
-            <p
-              data-reveal
-              style={{
-                opacity: 0,
-                transform: "translateY(40px)",
-                transition: "opacity 0.7s ease, transform 0.7s ease",
-              }}
-              className="italic font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]"
-            >
-              The One11 Show
-            </p>
-          </div>
+          {/* Mission */}
+          <p
+            data-reveal
+            style={{
+              opacity: 0,
+              transform: "translateY(40px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+          >
+            Our shared mission is to provide an unbiased platform for raw talents.
+          </p>
+
+          {/* The One11 Show */}
+          <p
+            data-reveal
+            style={{
+              opacity: 0,
+              transform: "translateY(40px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+            className="italic font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]"
+          >
+            The One11 Show
+          </p>
         </div>
       </div>
     </div>
