@@ -27,8 +27,11 @@ const AboutSection = () => {
         Your browser does not support the video tag.
       </video>
 
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-[1]" />
+
       {/* Content */}
-      <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center">
+      <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center text-white">
         
         {/* Logo */}
         <div className="mb-1">
@@ -40,15 +43,15 @@ const AboutSection = () => {
         </div>
 
         {/* Season text */}
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] text-cream-white mb-2 drop-shadow-lg">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] mb-2 drop-shadow-lg">
           Season 1
         </h3>
 
         {/* Subtitle */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-cream-white font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
           North Bengal's Biggest Music Festival Will Be Live Soon
         </h2>
-        <h3 className="text-base sm:text-lg md:text-xl text-cream-white font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
+        <h3 className="text-base sm:text-lg md:text-xl font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
           Join us for this exciting event
         </h3>
 
@@ -60,7 +63,6 @@ const AboutSection = () => {
           >
             Join Our Waitlist
           </Link>
-         
         </div>
       </div>
     </section>
