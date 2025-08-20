@@ -19,21 +19,13 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Handle "Updates" click
+  // Handle "Updates" click → redirect to /updates
   const handleUpdatesClick = () => {
     closeMobileMenu();
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollToUpdates: true } });
-    } else {
-      scroller.scrollTo("updates-section", {
-        smooth: true,
-        duration: 500,
-        offset: -70,
-      });
-    }
+    navigate("/updates");
   };
 
-  // Handle "Events" click
+  // Handle "Events" click (still scrolls on homepage)
   const handleEventsClick = () => {
     closeMobileMenu();
     if (location.pathname !== "/") {
@@ -158,7 +150,6 @@ const Header = () => {
             </ul>
           </li>
 
-          {/* Events - NO DROPDOWN */}
           <li
             onClick={handleEventsClick}
             className="text-cream-white hover:text-primary-red transition nav-link cursor-pointer"
@@ -166,6 +157,7 @@ const Header = () => {
             Events
           </li>
 
+          {/* Updates - Redirects */}
           <li
             onClick={handleUpdatesClick}
             className="text-cream-white hover:text-primary-red transition nav-link cursor-pointer"
@@ -232,7 +224,7 @@ const Header = () => {
           Events
         </span>
 
-        {/* Mobile Updates */}
+        {/* Mobile Updates - Redirect */}
         <span
           onClick={handleUpdatesClick}
           className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
