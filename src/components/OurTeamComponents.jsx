@@ -27,14 +27,14 @@ const OurTeamComponents = () => {
   }, [])
 
   return (
-    <div
-      ref={wrapperRef}
-      className="bg-[#1c1c1e] pt-8 sm:pt-28 pb-6 sm:pb-10 px-4 sm:px-6"
-    >
-      <div className="w-full max-w-4xl mx-auto bg-white/10 backdrop-blur-md 
-        text-[#E2E2E2] rounded-2xl border border-white/20 shadow-lg 
-        overflow-hidden hover:shadow-[0_0_35px_#ffffff] transition-shadow duration-300">
-        
+    <div ref={wrapperRef} className="w-full h-full flex items-center justify-center">
+      <div
+        className="w-full h-full 
+          min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]
+          bg-white/10 backdrop-blur-md text-[#E2E2E2] 
+          rounded-2xl border border-white/20 shadow-md 
+          hover:shadow-lg transition-shadow duration-300 flex flex-col"
+      >
         {/* Header */}
         <div
           data-reveal
@@ -54,7 +54,7 @@ const OurTeamComponents = () => {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-8 space-y-4 leading-relaxed text-sm sm:text-base md:text-lg">
+        <div className="p-4 sm:p-8 space-y-4 leading-relaxed text-sm sm:text-base md:text-lg flex-1">
           <div
             data-reveal
             style={{
