@@ -33,7 +33,8 @@ const OurTeamComponents = () => {
           min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]
           bg-white/10 backdrop-blur-md text-[#E2E2E2] 
           rounded-2xl border border-white/20 shadow-md 
-          hover:shadow-lg transition-shadow duration-300 flex flex-col"
+          hover:shadow-[0_0_35px_#ffffff] transition-shadow duration-300 
+          flex flex-col p-6 sm:p-8"
       >
         {/* Header */}
         <div
@@ -43,7 +44,7 @@ const OurTeamComponents = () => {
             transform: "translateY(40px)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
           }}
-          className="bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] p-4 sm:p-8 text-center"
+          className="bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] p-4 sm:p-6 text-center rounded-xl"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
             Our Team
@@ -54,7 +55,7 @@ const OurTeamComponents = () => {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-8 space-y-4 leading-relaxed text-sm sm:text-base md:text-lg flex-1">
+        <div className="mt-6 space-y-4 leading-relaxed text-sm sm:text-base md:text-lg flex-1">
           <div
             data-reveal
             style={{
