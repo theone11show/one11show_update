@@ -61,12 +61,13 @@ const OurTeamComponents = () => {
             }}
           >
             <p>
-              The One11 Show is a dynamic platform dedicated to discovering,
-              mentoring, and launching authentic musical and artistic talent.
-              Powered by The Chordifiers Studio, our team is made up of
-              passionate professionals unified by a single purpose: to create a
-              true artist launchpad that supports raw talent with mentorship and
-              opportunity.
+              We are a unified group of industry music professionals, including
+              producers, directors, artists, performers, and experienced event
+              managers. Our shared mission is to provide an unbiased platform
+              for raw talents.{" "}
+              <span className="bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] bg-clip-text text-transparent font-semibold">
+                The One11 Show
+              </span>
             </p>
           </div>
         </div>
