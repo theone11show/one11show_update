@@ -112,12 +112,7 @@ const LatestUpdates = () => {
           </div>
         </div>
 
-        {/* Button */}
-        <div className="flex justify-center mt-12">
-          <button className="px-6 py-2 bg-cyan-300 text-black font-bold rounded-full text-sm shadow-lg hover:bg-cyan-200 transition">
-            New Info!
-          </button>
-        </div>
+       
       </div>
     </section>
   );
