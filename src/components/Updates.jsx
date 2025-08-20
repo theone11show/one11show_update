@@ -1,6 +1,6 @@
 import React from 'react';
 import UpdatesSection from './UpdatesSection';
-import CompetitionCards from './CompetitionCards';
+
 import UpcomingEvents from './UpcomingEvents'
  
 function updates() {
@@ -8,7 +8,7 @@ function updates() {
     <div>
       <UpdatesSection/>
       <UpcomingEvents/>
-      <CompetitionCards/>
+     
     </div>
   );
 }
