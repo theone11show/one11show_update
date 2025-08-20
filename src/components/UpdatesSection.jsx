@@ -85,9 +85,9 @@ const LatestUpdates = () => {
                   transform: "translateY(40px)",
                   transition: `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`,
                 }}
-                className={`relative flex items-center w-full ${
-                  index % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
+                className={`relative flex items-center w-full 
+                  md:${index % 2 === 0 ? "justify-start" : "justify-end"} 
+                  justify-center`} // always center on mobile
               >
                 {/* Timeline dot */}
                 <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-300 shadow-[0_0_15px_5px_rgba(0,255,255,0.6)]"></span>
@@ -95,7 +95,8 @@ const LatestUpdates = () => {
                 {/* Card */}
                 <div
                   className={`w-[280px] md:w-[320px] bg-white/10 backdrop-blur-lg p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
-                    ${index % 2 === 0 ? "mr-10 text-right" : "ml-10 text-left"}`}
+                    md:${index % 2 === 0 ? "mr-10 text-right" : "ml-10 text-left"} 
+                    text-center`} // force center text on mobile
                 >
                   <p className="text-sm text-gray-300">{item.date}</p>
                   <h4 className="text-xl font-bold text-white mt-1">
@@ -111,8 +112,6 @@ const LatestUpdates = () => {
             ))}
           </div>
         </div>
-
-       
       </div>
     </section>
   );
