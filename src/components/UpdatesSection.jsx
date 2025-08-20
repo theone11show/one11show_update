@@ -15,7 +15,7 @@ const updates = [
   },
   {
     date: "July, 2025",
-    title: "60 Hr Challenge",
+    title: "60 Music Challenge",
     description: "Intense creative competition",
   },
   {
