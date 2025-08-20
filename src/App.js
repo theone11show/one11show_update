@@ -86,7 +86,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
 
         {/* Updates page */}
-        {/* <Route path="/updates" element={<Updates />} /> */}
+         <Route path="/updates" element={<Updates />} /> 
 
         {/* Waitlist join karne ka page */}
         <Route path="/join" element={<JoinWaitList />} />
