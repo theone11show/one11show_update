@@ -31,7 +31,10 @@ const OurTeamComponents = () => {
       ref={wrapperRef}
       className="bg-[#1c1c1e] pt-8 sm:pt-28 pb-6 sm:pb-10 px-4 sm:px-6"
     >
-      <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-md text-[#E2E2E2] rounded-2xl border border-white/20 shadow-lg overflow-hidden hover:shadow-[0_0_35px_#ffffff] transition-shadow duration-300">
+      <div className="w-full max-w-4xl mx-auto bg-white/10 backdrop-blur-md 
+        text-[#E2E2E2] rounded-2xl border border-white/20 shadow-lg 
+        overflow-hidden hover:shadow-[0_0_35px_#ffffff] transition-shadow duration-300">
+        
         {/* Header */}
         <div
           data-reveal
@@ -51,7 +54,7 @@ const OurTeamComponents = () => {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-8 space-y-3 sm:space-y-4 leading-relaxed text-sm sm:text-base md:text-lg">
+        <div className="p-4 sm:p-8 space-y-4 leading-relaxed text-sm sm:text-base md:text-lg">
           <div
             data-reveal
             style={{
@@ -64,10 +67,13 @@ const OurTeamComponents = () => {
               We are a unified group of industry music professionals, including
               producers, directors, artists, performers, and experienced event
               managers. Our shared mission is to provide an unbiased platform
-              for raw talents.{" "}
-              <span className="bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] bg-clip-text text-transparent font-semibold">
-                The One11 Show
-              </span>
+              for raw talents.
+            </p>
+
+            {/* Separate Line */}
+            <p className="mt-4 text-center text-xl sm:text-2xl md:text-3xl font-bold 
+              bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] bg-clip-text text-transparent">
+              The One11 Show
             </p>
           </div>
         </div>
