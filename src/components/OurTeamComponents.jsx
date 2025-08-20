@@ -78,8 +78,7 @@ const OurTeamComponents = () => {
                 transform: "translateY(40px)",
                 transition: "opacity 0.7s ease, transform 0.7s ease",
               }}
-              className="mt-4 text-center text-xl sm:text-2xl md:text-3xl font-bold 
-                bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a] bg-clip-text text-transparent"
+              className="italic font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b6b] to-[#c92a2a]"
             >
               The One11 Show
             </p>
