@@ -3,27 +3,11 @@ import React, { useEffect, useRef } from "react";
 import updateImage from "../assets/UpdateImage.png";
 
 const updates = [
-  {
-    date: "Aug, 2025",
-    title: "60 Hours Music Making Challenge",
-    description: "Push your creativity further",
-  },
-  {
-    date: "Aug, 2025",
-    title: "Round 1B",
-    description: "Online round for new participants",
-  },
-  {
-    date: "July, 2025",
-    title: "60 Hours Music Making Challenge",
-    description: "Intense creative competition",
-  },
-  {
-    date: "June, 2025",
-    title: "Round 1A",
-    description: "Online round for new participants",
-  },
-]; // latest first
+  { date: "Aug, 2025", title: "60 Hours Music Making Challenge", description: "Push your creativity further" },
+  { date: "Aug, 2025", title: "Round 1B", description: "Online round for new participants" },
+  { date: "July, 2025", title: "60 Hours Music Making Challenge", description: "Intense creative competition" },
+  { date: "June, 2025", title: "Round 1A", description: "Online round for new participants" },
+];
 
 const LatestUpdates = () => {
   const wrapperRef = useRef(null);
@@ -50,23 +34,23 @@ const LatestUpdates = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-12 px-4 font-[Antonio] flex justify-center">
+    <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-16 px-4 font-[Antonio] flex justify-center">
       <div
         ref={wrapperRef}
         className="w-full max-w-5xl bg-[#2c2c2e] text-white rounded-2xl p-6 sm:p-10 
         transition-all duration-300 shadow-lg hover:shadow-[0_0_35px_4px_rgba(0,255,255,0.4)]"
       >
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center text-white mb-8 sm:mb-12">
+        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center text-white mb-10 sm:mb-14">
           Latest Updates
         </h2>
 
         {/* Image */}
-        <div className="flex justify-center mb-8 sm:mb-12">
+        <div className="flex justify-center mb-10 sm:mb-14">
           <img
             src={updateImage}
             alt="Announcements"
-            className="w-full max-w-md h-[140px] sm:h-[160px] object-cover rounded-lg shadow-lg"
+            className="w-full max-w-md h-[160px] sm:h-[180px] object-cover rounded-lg shadow-lg"
           />
         </div>
 
@@ -75,7 +59,7 @@ const LatestUpdates = () => {
           {/* Center glowing beam */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_25px_4px_rgba(0,255,255,0.6)]"></div>
 
-          <div className="space-y-12 sm:space-y-16">
+          <div className="space-y-16 sm:space-y-20">
             {updates.map((item, index) => (
               <div
                 key={index}
@@ -90,22 +74,22 @@ const LatestUpdates = () => {
                   justify-center`}
               >
                 {/* Timeline dot */}
-                <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_15px_5px_rgba(0,255,255,0.7)]"></span>
+                <span className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]"></span>
 
-                {/* Connector line (points card to center beam) */}
+                {/* Connector line */}
                 <span
-                  className={`absolute top-1/2 h-[2px] bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] 
+                  className={`absolute top-1/2 h-[2px] bg-cyan-300 shadow-[0_0_10px_2px_rgba(0,255,255,0.7)] 
                     hidden md:block 
-                    ${index % 2 === 0 ? "left-1/2 w-10" : "right-1/2 w-10"}`}
+                    ${index % 2 === 0 ? "left-1/2 w-12" : "right-1/2 w-12"}`}
                 ></span>
 
-                {/* Mobile connector (short vertical under dot) */}
-                <span className="absolute top-4 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] md:hidden"></span>
+                {/* Mobile connector */}
+                <span className="absolute top-6 left-1/2 -translate-x-1/2 w-[2px] h-8 bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] md:hidden"></span>
 
                 {/* Card */}
                 <div
-                  className={`w-full max-w-sm md:w-[300px] bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
-                    md:${index % 2 === 0 ? "mr-10 text-right" : "ml-10 text-left"} 
+                  className={`w-full max-w-sm md:w-[320px] bg-white/10 backdrop-blur-lg p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
+                    md:${index % 2 === 0 ? "mr-12 text-right" : "ml-12 text-left"} 
                     text-center md:text-inherit`}
                 >
                   <p className="text-xs sm:text-sm text-gray-300">{item.date}</p>
@@ -113,7 +97,7 @@ const LatestUpdates = () => {
                     {item.title}
                   </h4>
                   {item.description && (
-                    <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                    <p className="text-xs sm:text-sm text-gray-400 mt-2">
                       {item.description}
                     </p>
                   )}
