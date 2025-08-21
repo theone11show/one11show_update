@@ -73,24 +73,27 @@ const LatestUpdates = () => {
                     </div>
                   </div>
 
-                  {/* CARD */}
-                  <div
-                    className={`w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
-                    ${isLeft ? "mr-[20vw] sm:mr-28 md:mr-40 text-right" : "ml-[20vw] sm:ml-28 md:ml-40 text-left"}`}
-                  >
-                    {/* Image */}
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-[140px] sm:h-[160px] object-cover rounded-md mb-3"
-                    />
-                    <p className="text-xs sm:text-sm text-gray-300">{item.date}</p>
-                    <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
-                    {item.description && (
-                      <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">{item.description}</p>
-                    )}
-                  </div>
-                </div>
+                 {/* CARD */}
+<div
+  className={`w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
+  ${isLeft ? "mr-[20vw] sm:mr-28 md:mr-40 text-right" : "ml-[20vw] sm:ml-28 md:ml-40 text-left"}
+  cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
+>
+  {/* Image with hover zoom */}
+  <div className="overflow-hidden rounded-md">
+    <img
+      src={item.image}
+      alt={item.title}
+      className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 hover:scale-110"
+    />
+  </div>
+
+  <p className="text-xs sm:text-sm text-gray-300 mt-3">{item.date}</p>
+  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
+  {item.description && (
+    <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">{item.description}</p>
+  )}
+</div>
               );
             })}
           </div>
