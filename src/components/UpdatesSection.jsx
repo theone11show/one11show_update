@@ -123,12 +123,12 @@ const LatestUpdates = () => {
                     }
                     cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
                   >
-                    {/* Image with hover zoom */}
+                    {/* Image */}
                     <div className="overflow-hidden rounded-md">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md"
                       />
                     </div>
 
@@ -145,8 +145,8 @@ const LatestUpdates = () => {
                       </p>
                     )}
 
-                    {/* Hover Details Overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-90 text-white p-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-sm leading-relaxed text-justify">
+                    {/* Dropdown Details (only on hover) */}
+                    <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out mt-3 text-sm text-gray-300 leading-relaxed">
                       {item.details}
                     </div>
                   </div>
