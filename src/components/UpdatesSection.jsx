@@ -12,7 +12,6 @@ const updates = [
 const LatestUpdates = () => {
   const wrapperRef = useRef(null);
 
-  // Scroll reveal fade animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,30 +34,27 @@ const LatestUpdates = () => {
 
   return (
     <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-16 px-4 font-[Antonio] flex justify-center">
-      <div
-        ref={wrapperRef}
-        className="w-full max-w-5xl text-white rounded-2xl p-6 sm:p-10"
-      >
+      <div ref={wrapperRef} className="w-full max-w-5xl text-white p-6 sm:p-10">
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center text-white mb-10 sm:mb-14">
+        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center mb-12">
           Latest Updates
         </h2>
 
         {/* Image */}
-        <div className="flex justify-center mb-10 sm:mb-14">
+        <div className="flex justify-center mb-14">
           <img
             src={updateImage}
             alt="Announcements"
-            className="w-full max-w-md h-[160px] sm:h-[180px] object-cover rounded-lg"
+            className="w-full max-w-md h-[180px] object-cover rounded-lg"
           />
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center glowing beam */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_25px_4px_rgba(0,255,255,0.6)]"></div>
+          {/* Center beam */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_20px_3px_rgba(0,255,255,0.6)]"></div>
 
-          <div className="space-y-16 sm:space-y-20">
+          <div className="space-y-20">
             {updates.map((item, index) => (
               <div
                 key={index}
@@ -72,18 +68,17 @@ const LatestUpdates = () => {
                   md:${index % 2 === 0 ? "justify-start" : "justify-end"} 
                   justify-center`}
               >
-                {/* Timeline dot */}
-                <span className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]"></span>
-
-                {/* Connector line */}
-                <span
-                  className={`absolute top-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
-                    hidden md:block 
-                    ${index % 2 === 0 ? "left-1/2 w-[calc(50%-160px)]" : "right-1/2 w-[calc(50%-160px)]"}`}
-                ></span>
-
-                {/* Mobile connector */}
-                <span className="absolute top-6 left-1/2 -translate-x-1/2 w-[2px] h-8 bg-cyan-300 shadow-[0_0_8px_2px_rgba(0,255,255,0.6)] md:hidden"></span>
+                {/* Dot + Connector as ONE */}
+                <div
+                  className={`absolute top-1/2 flex items-center 
+                    ${index % 2 === 0 ? "left-1/2" : "right-1/2 flex-row-reverse"}`}
+                  style={{ transform: "translateY(-50%)" }}
+                >
+                  {/* Dot */}
+                  <div className="w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]"></div>
+                  {/* Line to card */}
+                  <div className="h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] w-12 md:w-20"></div>
+                </div>
 
                 {/* Card */}
                 <div
