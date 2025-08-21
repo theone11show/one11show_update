@@ -37,8 +37,7 @@ const LatestUpdates = () => {
     <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-16 px-4 font-[Antonio] flex justify-center">
       <div
         ref={wrapperRef}
-        className="w-full max-w-5xl bg-[#2c2c2e] text-white rounded-2xl p-6 sm:p-10 
-        transition-all duration-300 shadow-lg hover:shadow-[0_0_35px_4px_rgba(0,255,255,0.4)]"
+        className="w-full max-w-5xl text-white rounded-2xl p-6 sm:p-10"
       >
         {/* Title */}
         <h2 className="text-3xl sm:text-4xl font-[Anton] text-center text-white mb-10 sm:mb-14">
@@ -50,7 +49,7 @@ const LatestUpdates = () => {
           <img
             src={updateImage}
             alt="Announcements"
-            className="w-full max-w-md h-[160px] sm:h-[180px] object-cover rounded-lg shadow-lg"
+            className="w-full max-w-md h-[160px] sm:h-[180px] object-cover rounded-lg"
           />
         </div>
 
@@ -78,9 +77,9 @@ const LatestUpdates = () => {
 
                 {/* Connector line */}
                 <span
-                  className={`absolute top-1/2 h-[2px] bg-cyan-300 shadow-[0_0_10px_2px_rgba(0,255,255,0.7)] 
+                  className={`absolute top-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
                     hidden md:block 
-                    ${index % 2 === 0 ? "left-1/2 w-12" : "right-1/2 w-12"}`}
+                    ${index % 2 === 0 ? "left-1/2 w-[calc(50%-160px)]" : "right-1/2 w-[calc(50%-160px)]"}`}
                 ></span>
 
                 {/* Mobile connector */}
@@ -88,12 +87,12 @@ const LatestUpdates = () => {
 
                 {/* Card */}
                 <div
-                  className={`w-full max-w-sm md:w-[320px] bg-white/10 backdrop-blur-lg p-6 rounded-xl border border-white/20 shadow-md hover:shadow-[0_0_25px_#00ffff] transition 
+                  className={`w-full max-w-sm md:w-[320px] bg-[#3a3a3c] p-6 rounded-lg border border-[#555] 
                     md:${index % 2 === 0 ? "mr-12 text-right" : "ml-12 text-left"} 
                     text-center md:text-inherit`}
                 >
                   <p className="text-xs sm:text-sm text-gray-300">{item.date}</p>
-                  <h4 className="text-lg sm:text-xl font-bold text-white mt-1">
+                  <h4 className="text-lg sm:text-xl font-bold text-white mt-2">
                     {item.title}
                   </h4>
                   {item.description && (
