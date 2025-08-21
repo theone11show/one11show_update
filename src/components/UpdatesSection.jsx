@@ -45,7 +45,7 @@ const LatestUpdates = () => {
           {/* Center beam */}
           <div className="absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_22px_3px_rgba(0,255,255,0.6)]"></div>
 
-          <div className="space-y-20">
+          <div className="space-y-10 sm:space-y-14 md:space-y-16">
             {updates.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
