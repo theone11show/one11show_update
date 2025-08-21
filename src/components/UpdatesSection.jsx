@@ -68,13 +68,7 @@ const LatestUpdates = () => {
           Latest Updates
         </h2>
 
-        <div className="flex justify-center mb-14">
-          <img
-            src={updateImage}
-            alt="Announcements"
-            className="w-full max-w-md h-[180px] object-cover rounded-lg"
-          />
-        </div>
+       
 
         {/* Timeline */}
         <div className="relative">
