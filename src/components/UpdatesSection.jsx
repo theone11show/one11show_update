@@ -5,7 +5,7 @@ import updateImage from "../assets/UpdateImage.png";
 const updates = [
   {
     date: "Aug, 2025",
-    title: "60 Hr Challenge",
+    title: "60 Hours Music Making Challenge",
     description: "Push your creativity further",
   },
   {
@@ -15,7 +15,7 @@ const updates = [
   },
   {
     date: "July, 2025",
-    title: "60 Music Challenge",
+    title: "60 Hours Music Making Challenge",
     description: "Intense creative competition",
   },
   {
