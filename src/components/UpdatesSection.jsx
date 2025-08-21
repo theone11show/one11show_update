@@ -47,58 +47,58 @@ const LatestUpdates = () => {
 
           <div className="space-y-20">
             {updates.map((item, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div
-                  key={i}
-                  data-reveal
-                  style={{
-                    opacity: 0,
-                    transform: "translateY(40px)",
-                    transition: `opacity 0.8s ease ${i * 0.2}s, transform 0.8s ease ${i * 0.2}s`,
-                  }}
-                  className={`relative flex w-full ${isLeft ? "justify-start" : "justify-end"}`}
-                >
-                  {/* DOT + Connector */}
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    aria-hidden="true"
-                  >
-                    <div className="relative w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
-                      {/* Horizontal connector */}
-                      <div
-                        className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
-                        ${isLeft ? "right-full" : "left-full"} w-[20vw] sm:w-24 md:w-32`}
-                      />
-                    </div>
-                  </div>
-
-                 {/* CARD */}
-<div
-  className={`w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
-  ${isLeft ? "mr-[20vw] sm:mr-28 md:mr-40 text-right" : "ml-[20vw] sm:ml-28 md:ml-40 text-left"}
-  cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
->
-  {/* Image with hover zoom */}
-  <div className="overflow-hidden rounded-md">
-    <img
-      src={item.image}
-      alt={item.title}
-      className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 hover:scale-110"
-    />
-  </div>
-
-  <p className="text-xs sm:text-sm text-gray-300 mt-3">{item.date}</p>
-  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
-  {item.description && (
-    <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">{item.description}</p>
-  )}
-</div>
-              );
-            })}
-          </div>
+  const isLeft = i % 2 === 0;
+  return (
+    <div
+      key={i}
+      data-reveal
+      style={{
+        opacity: 0,
+        transform: "translateY(40px)",
+        transition: `opacity 0.8s ease ${i * 0.2}s, transform 0.8s ease ${i * 0.2}s`,
+      }}
+      className={`relative flex w-full ${isLeft ? "justify-start" : "justify-end"}`}
+    >
+      {/* DOT + Connector */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        aria-hidden="true"
+      >
+        <div className="relative w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
+          {/* Horizontal connector */}
+          <div
+            className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
+            ${isLeft ? "right-full" : "left-full"} w-[20vw] sm:w-24 md:w-32`}
+          />
         </div>
       </div>
+
+      {/* CARD */}
+      <div
+        className={`w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
+        ${isLeft ? "mr-[20vw] sm:mr-28 md:mr-40 text-right" : "ml-[20vw] sm:ml-28 md:ml-40 text-left"}
+        cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
+      >
+        {/* Image with hover zoom */}
+        <div className="overflow-hidden rounded-md">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+
+        <p className="text-xs sm:text-sm text-gray-300 mt-3">{item.date}</p>
+        <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
+        {item.description && (
+          <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">{item.description}</p>
+        )}
+      </div>
+      </div>
+    </div> 
+  );
+})}
+
     </section>
   );
 };
