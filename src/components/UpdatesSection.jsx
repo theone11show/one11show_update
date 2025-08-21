@@ -90,17 +90,19 @@ const LatestUpdates = () => {
                   >
                     <div className="relative w-4 h-4 md:w-5 md:h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
                       <div
-                        className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
-                        left-full md:${isLeft ? "right-full" : "left-full"} w-12 md:w-28`}
+                        className={`absolute top-1/2 -translate-y-1/2 h-[3px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
+                        left-full w-16 md:w-28 ${isLeft ? "md:right-full md:left-auto" : "md:left-full"}`}
                       />
                     </div>
                   </div>
 
                   {/* CARD */}
                   <div
-                    className={`group relative w-[70vw] sm:w-[280px] md:w-[360px] bg-[#3a3a3c] p-3 sm:p-4 md:p-6 rounded-lg border border-[#565656]
-                    ml-16 md:ml-0 text-left md:${
-                      isLeft ? "mr-[18vw] sm:mr-24 md:mr-36 md:text-right" : "ml-[18vw] sm:ml-24 md:ml-36 md:text-left"
+                    className={`group relative w-[60vw] sm:w-[240px] md:w-[360px] bg-[#3a3a3c] p-2 sm:p-3 md:p-6 rounded-lg border border-[#565656]
+                    ml-20 md:ml-0 text-left ${
+                      isLeft
+                        ? "md:mr-[18vw] sm:mr-24 md:mr-36 md:text-right"
+                        : "md:ml-[18vw] sm:ml-24 md:ml-36 md:text-left"
                     }
                     cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
                   >
@@ -109,13 +111,13 @@ const LatestUpdates = () => {
                       <img
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
-                        className="w-full h-[120px] sm:h-[140px] md:h-[160px] object-cover rounded-md"
+                        className="w-full h-[100px] sm:h-[120px] md:h-[160px] object-cover rounded-md"
                       />
                     </div>
 
                     {/* Date & Title */}
                     <p className="text-xs sm:text-sm text-gray-300 mt-2 sm:mt-3">{item.date}</p>
-                    <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white mt-1 sm:mt-2">
+                    <h4 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white mt-1 sm:mt-2">
                       {item.title}
                     </h4>
                     {item.description && (
