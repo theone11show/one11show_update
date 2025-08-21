@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import updateImage from "../assets/UpdateImage.png";
 import img1 from "../assets/60hrmc.webp";
-import img2 from "../assets/60HRCHALLENGE1.web";
+import img2 from "../assets/60HRCHALLENGE1.webp";
 import img3 from "../assets/Round1.webp";
 import img4 from "../assets/round2.webp";
 
