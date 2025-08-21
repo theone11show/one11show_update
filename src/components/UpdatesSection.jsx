@@ -1,12 +1,16 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import updateImage from "../assets/UpdateImage.png";
+import img1 from "../assets/60hrmc.webp";
+import img2 from "../assets/60HRCHALLENGE1.web";
+import img3 from "../assets/Round1.webp";
+import img4 from "../assets/round2.webp";
 
 const updates = [
-  { date: "Aug, 2025", title: "60 Hours Music Making Challenge", description: "Push your creativity further" },
-  { date: "Aug, 2025", title: "Round 1B", description: "Online round for new participants" },
-  { date: "July, 2025", title: "60 Hours Music Making Challenge", description: "Intense creative competition" },
-  { date: "June, 2025", title: "Round 1A", description: "Online round for new participants" },
+  { date: "Aug, 2025", title: "60 Hours Music Making Challenge", description: "Push your creativity further", image: img1 },
+  { date: "Aug, 2025", title: "Round 1B", description: "Online round for new participants", image: img2 },
+  { date: "July, 2025", title: "60 Hours Music Making Challenge", description: "Intense creative competition", image: img3 },
+  { date: "June, 2025", title: "Round 1A", description: "Online round for new participants", image: img4 },
 ];
 
 const LatestUpdates = () => {
@@ -61,7 +65,7 @@ const LatestUpdates = () => {
                     aria-hidden="true"
                   >
                     <div className="relative w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
-                      {/* Horizontal connector (always visible, responsive width) */}
+                      {/* Horizontal connector */}
                       <div
                         className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
                         ${isLeft ? "right-full" : "left-full"} w-[20vw] sm:w-24 md:w-32`}
@@ -74,6 +78,12 @@ const LatestUpdates = () => {
                     className={`w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
                     ${isLeft ? "mr-[20vw] sm:mr-28 md:mr-40 text-right" : "ml-[20vw] sm:ml-28 md:ml-40 text-left"}`}
                   >
+                    {/* Image */}
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-[140px] sm:h-[160px] object-cover rounded-md mb-3"
+                    />
                     <p className="text-xs sm:text-sm text-gray-300">{item.date}</p>
                     <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
                     {item.description && (
