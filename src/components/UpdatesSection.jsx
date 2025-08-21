@@ -19,7 +19,7 @@ const updates = [
     date: "Aug, 2025",
     title: "Round 1B",
     description: "Online round for new participants",
-    image: img2,
+    image: img3,
     details:
       "Round 1B of The Music Battle Series Season 1 took place in an online format, offering aspiring artists the opportunity to showcase their skills and originality. This advanced the series’ mission to discover and nurture rising talent.",
   },
@@ -27,7 +27,7 @@ const updates = [
     date: "July, 2025",
     title: "60 Hours Music Making Challenge",
     description: "Intense creative competition",
-    image: img3,
+    image: img2,
     details:
       "The 60-Hour Music Making Challenge tested participants on composition, production, and creativity within a strict timeframe. Contestants produced complete tracks, showcasing artistic vision and technical skill.",
   },
