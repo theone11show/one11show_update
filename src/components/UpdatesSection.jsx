@@ -66,7 +66,7 @@ const LatestUpdates = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Center beam */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_22px_3px_rgba(0,255,255,0.6)]"></div>
+          <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_22px_3px_rgba(0,255,255,0.6)]"></div>
 
           {/* Cards */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
@@ -84,22 +84,23 @@ const LatestUpdates = () => {
                   className={`relative flex w-full justify-end md:${isLeft ? "justify-start" : "justify-end"}`}
                 >
                   {/* DOT + Connector */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true">
-                    <div className="relative w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
+                  <div
+                    className="absolute top-1/2 left-8 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2"
+                    aria-hidden="true"
+                  >
+                    <div className="relative w-4 h-4 md:w-5 md:h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
                       <div
                         className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
-                        right-full md:${isLeft ? "right-full" : "left-full"} w-[16vw] sm:w-20 md:w-28`}
+                        left-full md:${isLeft ? "right-full" : "left-full"} w-12 md:w-28`}
                       />
                     </div>
                   </div>
 
                   {/* CARD */}
                   <div
-                    className={`group relative w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
-                    ml-[18vw] sm:ml-24 text-left md:${
-                      isLeft
-                        ? "mr-[18vw] sm:mr-24 md:mr-36 md:text-right md:ml-0"
-                        : "ml-[18vw] sm:ml-24 md:ml-36 md:text-left"
+                    className={`group relative w-[70vw] sm:w-[280px] md:w-[360px] bg-[#3a3a3c] p-3 sm:p-4 md:p-6 rounded-lg border border-[#565656]
+                    ml-16 md:ml-0 text-left md:${
+                      isLeft ? "mr-[18vw] sm:mr-24 md:mr-36 md:text-right" : "ml-[18vw] sm:ml-24 md:ml-36 md:text-left"
                     }
                     cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
                   >
@@ -108,13 +109,15 @@ const LatestUpdates = () => {
                       <img
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
-                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md"
+                        className="w-full h-[120px] sm:h-[140px] md:h-[160px] object-cover rounded-md"
                       />
                     </div>
 
                     {/* Date & Title */}
-                    <p className="text-xs sm:text-sm text-gray-300 mt-3">{item.date}</p>
-                    <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
+                    <p className="text-xs sm:text-sm text-gray-300 mt-2 sm:mt-3">{item.date}</p>
+                    <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white mt-1 sm:mt-2">
+                      {item.title}
+                    </h4>
                     {item.description && (
                       <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">{item.description}</p>
                     )}
