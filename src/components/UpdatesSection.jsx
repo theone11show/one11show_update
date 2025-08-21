@@ -7,10 +7,38 @@ import img3 from "../assets/Round1.webp";
 import img4 from "../assets/round2.webp";
 
 const updates = [
-  { date: "Aug, 2025", title: "60 Hours Music Making Challenge", description: "Push your creativity further", image: img1 },
-  { date: "Aug, 2025", title: "Round 1B", description: "Online round for new participants", image: img2 },
-  { date: "July, 2025", title: "60 Hours Music Making Challenge", description: "Intense creative competition", image: img3 },
-  { date: "June, 2025", title: "Round 1A", description: "Online round for new participants", image: img4 },
+  {
+    date: "Aug, 2025",
+    title: "60 Hours Music Making Challenge",
+    description: "Push your creativity further",
+    image: img1,
+    details:
+      "The 60-Hour Music Making Challenge pushed contestants to craft an original song within a limited timeframe of 60 hours. This format tested composition, arrangement, and production under pressure, highlighting creativity and innovation.",
+  },
+  {
+    date: "Aug, 2025",
+    title: "Round 1B",
+    description: "Online round for new participants",
+    image: img2,
+    details:
+      "Round 1B of The Music Battle Series Season 1 took place in an online format, offering aspiring artists the opportunity to showcase their skills and originality. This advanced the series’ mission to discover and nurture rising talent.",
+  },
+  {
+    date: "July, 2025",
+    title: "60 Hours Music Making Challenge",
+    description: "Intense creative competition",
+    image: img3,
+    details:
+      "The 60-Hour Music Making Challenge tested participants on composition, production, and creativity within a strict timeframe. Contestants produced complete tracks, showcasing artistic vision and technical skill.",
+  },
+  {
+    date: "June, 2025",
+    title: "Round 1A",
+    description: "Online round for new participants",
+    image: img4,
+    details:
+      "Round 1A of The Music Battle Series Season 1 was conducted online, giving singers, rappers, and musicians a stage to present their abilities. This round marked the beginning of the platform’s mission to elevate emerging talent.",
+  },
 ];
 
 const LatestUpdates = () => {
@@ -27,17 +55,25 @@ const LatestUpdates = () => {
         }),
       { threshold: 0.15 }
     );
-    wrapperRef.current?.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    wrapperRef.current
+      ?.querySelectorAll("[data-reveal]")
+      .forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 
   return (
     <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-16 px-2 sm:px-6 font-[Antonio] flex justify-center">
       <div ref={wrapperRef} className="w-full max-w-6xl text-white p-4 sm:p-10">
-        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center mb-12">Latest Updates</h2>
+        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center mb-12">
+          Latest Updates
+        </h2>
 
         <div className="flex justify-center mb-14">
-          <img src={updateImage} alt="Announcements" className="w-full max-w-md h-[180px] object-cover rounded-lg" />
+          <img
+            src={updateImage}
+            alt="Announcements"
+            className="w-full max-w-md h-[180px] object-cover rounded-lg"
+          />
         </div>
 
         {/* Timeline */}
@@ -45,7 +81,8 @@ const LatestUpdates = () => {
           {/* Center beam */}
           <div className="absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_22px_3px_rgba(0,255,255,0.6)]"></div>
 
-          <div className="space-y-10 sm:space-y-14 md:space-y-16">
+          {/* Cards */}
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {updates.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -57,7 +94,9 @@ const LatestUpdates = () => {
                     transform: "translateY(40px)",
                     transition: `opacity 0.8s ease ${i * 0.2}s, transform 0.8s ease ${i * 0.2}s`,
                   }}
-                  className={`relative flex w-full ${isLeft ? "justify-start" : "justify-end"}`}
+                  className={`relative flex w-full ${
+                    isLeft ? "justify-start" : "justify-end"
+                  }`}
                 >
                   {/* DOT + Connector */}
                   <div
@@ -65,18 +104,23 @@ const LatestUpdates = () => {
                     aria-hidden="true"
                   >
                     <div className="relative w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
-                      {/* Horizontal connector */}
                       <div
                         className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
-                        ${isLeft ? "right-full" : "left-full"} w-[20vw] sm:w-24 md:w-32`}
+                        ${
+                          isLeft ? "right-full" : "left-full"
+                        } w-[16vw] sm:w-20 md:w-28`}
                       />
                     </div>
                   </div>
 
                   {/* CARD */}
                   <div
-                    className={`w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
-                    ${isLeft ? "mr-[20vw] sm:mr-28 md:mr-40 text-right" : "ml-[20vw] sm:ml-28 md:ml-40 text-left"}
+                    className={`group relative w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
+                    ${
+                      isLeft
+                        ? "mr-[18vw] sm:mr-24 md:mr-36 text-right"
+                        : "ml-[18vw] sm:ml-24 md:ml-36 text-left"
+                    }
                     cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
                   >
                     {/* Image with hover zoom */}
@@ -84,15 +128,27 @@ const LatestUpdates = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 hover:scale-110"
+                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
 
-                    <p className="text-xs sm:text-sm text-gray-300 mt-3">{item.date}</p>
-                    <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">{item.title}</h4>
+                    {/* Date & Title */}
+                    <p className="text-xs sm:text-sm text-gray-300 mt-3">
+                      {item.date}
+                    </p>
+                    <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mt-1 sm:mt-2">
+                      {item.title}
+                    </h4>
                     {item.description && (
-                      <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">{item.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">
+                        {item.description}
+                      </p>
                     )}
+
+                    {/* Hover Details Overlay */}
+                    <div className="absolute inset-0 bg-black bg-opacity-90 text-white p-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-sm leading-relaxed text-justify">
+                      {item.details}
+                    </div>
                   </div>
                 </div>
               );
