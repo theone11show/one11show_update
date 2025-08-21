@@ -19,7 +19,7 @@ const updates = [
     date: "Aug, 2025",
     title: "Round 1B",
     description: "Online round for new participants",
-    image: img3, // 🔄 swapped with img2
+    image: img2,
     details:
       "Round 1B of The Music Battle Series Season 1 took place in an online format, offering aspiring artists the opportunity to showcase their skills and originality. This advanced the series’ mission to discover and nurture rising talent.",
   },
@@ -27,7 +27,7 @@ const updates = [
     date: "July, 2025",
     title: "60 Hours Music Making Challenge",
     description: "Intense creative competition",
-    image: img2, // 🔄 swapped with img3
+    image: img3,
     details:
       "The 60-Hour Music Making Challenge tested participants on composition, production, and creativity within a strict timeframe. Contestants produced complete tracks, showcasing artistic vision and technical skill.",
   },
@@ -62,29 +62,27 @@ const LatestUpdates = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-16 px-3 sm:px-6 font-[Antonio] flex justify-center">
+    <section className="min-h-screen bg-[#1c1c1e] pt-[120px] pb-16 px-2 sm:px-6 font-[Antonio] flex justify-center">
       <div ref={wrapperRef} className="w-full max-w-6xl text-white p-4 sm:p-10">
-        {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center mb-10 sm:mb-12">
+        <h2 className="text-3xl sm:text-4xl font-[Anton] text-center mb-12">
           Latest Updates
         </h2>
 
-        {/* Banner Image */}
-        <div className="flex justify-center mb-12 sm:mb-14">
+        <div className="flex justify-center mb-14">
           <img
             src={updateImage}
             alt="Announcements"
-            className="w-full max-w-md h-[160px] sm:h-[180px] object-cover rounded-lg"
+            className="w-full max-w-md h-[180px] object-cover rounded-lg"
           />
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center vertical line */}
+          {/* Center beam */}
           <div className="absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_22px_3px_rgba(0,255,255,0.6)]"></div>
 
           {/* Cards */}
-          <div className="space-y-6 sm:space-y-8 md:space-y-10">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {updates.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -100,7 +98,7 @@ const LatestUpdates = () => {
                     isLeft ? "justify-start" : "justify-end"
                   }`}
                 >
-                  {/* Dot + Connector */}
+                  {/* DOT + Connector */}
                   <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     aria-hidden="true"
@@ -115,9 +113,9 @@ const LatestUpdates = () => {
                     </div>
                   </div>
 
-                  {/* Card */}
+                  {/* CARD */}
                   <div
-                    className={`group relative w-[85vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
+                    className={`group relative w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
                     ${
                       isLeft
                         ? "mr-[18vw] sm:mr-24 md:mr-36 text-right"
@@ -130,7 +128,7 @@ const LatestUpdates = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-[140px] sm:h-[160px] object-cover rounded-md"
                       />
                     </div>
 
@@ -147,8 +145,8 @@ const LatestUpdates = () => {
                       </p>
                     )}
 
-                    {/* Hover Dropdown */}
-                    <div className="absolute inset-0 bg-black bg-opacity-90 text-white p-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-sm leading-relaxed text-justify overflow-y-auto">
+                    {/* Dropdown Details (only on hover) */}
+                    <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out mt-3 text-sm text-gray-300 leading-relaxed">
                       {item.details}
                     </div>
                   </div>
