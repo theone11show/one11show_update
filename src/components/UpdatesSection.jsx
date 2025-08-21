@@ -68,17 +68,15 @@ const LatestUpdates = () => {
           Latest Updates
         </h2>
 
-        
-
         {/* Timeline */}
         <div className="relative">
           {/* Center beam */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-cyan-400 shadow-[0_0_22px_3px_rgba(0,255,255,0.6)]"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 w-[2px] h-full bg-cyan-400 shadow-[0_0_18px_2px_rgba(0,255,255,0.6)]"></div>
 
           {/* Cards */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
             {updates.map((item, i) => {
-              const isLeft = i % 2 === 0;
+              const isLeft = i % 2 === 0; // for large screens only
               return (
                 <div
                   key={i}
@@ -88,32 +86,29 @@ const LatestUpdates = () => {
                     transform: "translateY(40px)",
                     transition: `opacity 0.8s ease ${i * 0.2}s, transform 0.8s ease ${i * 0.2}s`,
                   }}
-                  className={`relative flex w-full ${
-                    isLeft ? "justify-start" : "justify-end"
-                  }`}
+                  className={`relative flex w-full 
+                    justify-end md:${
+                      isLeft ? "justify-start" : "justify-end"
+                    }`}
                 >
                   {/* DOT + Connector */}
                   <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     aria-hidden="true"
                   >
-                    <div className="relative w-5 h-5 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(0,255,255,0.8)]">
+                    <div className="relative w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-cyan-400 shadow-[0_0_12px_4px_rgba(0,255,255,0.8)]">
                       <div
-                        className={`absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
-                        ${
-                          isLeft ? "right-full" : "left-full"
-                        } w-[16vw] sm:w-20 md:w-28`}
+                        className={`hidden sm:block absolute top-1/2 -translate-y-1/2 h-[2px] bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,255,255,0.6)] 
+                        ${isLeft ? "right-full" : "left-full"} w-20 md:w-28`}
                       />
                     </div>
                   </div>
 
                   {/* CARD */}
                   <div
-                    className={`group relative w-[80vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
-                    ${
-                      isLeft
-                        ? "mr-[18vw] sm:mr-24 md:mr-36 text-right"
-                        : "ml-[18vw] sm:ml-24 md:ml-36 text-left"
+                    className={`group relative w-[85vw] sm:w-[300px] md:w-[360px] bg-[#3a3a3c] p-4 sm:p-6 rounded-lg border border-[#565656]
+                    ml-[16vw] md:${
+                      isLeft ? "mr-[18vw] sm:mr-24 md:mr-36 text-right" : "ml-[18vw] sm:ml-24 md:ml-36 text-left"
                     }
                     cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]`}
                   >
@@ -139,7 +134,7 @@ const LatestUpdates = () => {
                       </p>
                     )}
 
-                    {/* Dropdown Details (only on hover) */}
+                    {/* Dropdown Details (hover only) */}
                     <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out mt-3 text-sm text-gray-300 leading-relaxed">
                       {item.details}
                     </div>
