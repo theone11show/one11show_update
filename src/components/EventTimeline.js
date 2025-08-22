@@ -1,30 +1,29 @@
 import { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 import { motion, useAnimation } from "framer-motion";
 import { FaRegCalendarAlt, FaStar, FaTicketAlt } from "react-icons/fa";
 
 const days = [
   {
-day: "Day 1",
-date: "12 Aug 2025",
-details: "Opening ceremony with performances and keynote sessions.",
-highlights: "Live music, celebrity guest appearance, and networking.",
-ticketUrl: "https://bookmyshow.com/day1-ticket"
-},
-{
-day: "Day 2",
-date: "13 Aug 2025",
-details: "Workshops, panel discussions, and interactive sessions.",
-highlights: "Exclusive workshops with industry leaders.",
-ticketUrl: "https://bookmyshow.com/day2-ticket"
-},
-{
-day: "Day 3",
-date: "14 Aug 2025",
-details: "Grand finale with closing speech and gala dinner.",
-highlights: "Award ceremony, gala dinner, and closing party.",
-ticketUrl: "https://bookmyshow.com/day3-ticket"
-}
+    day: "Day 1",
+    date: "12 Aug 2025",
+    details: "Opening ceremony with performances and keynote sessions.",
+    highlights: "Live music, celebrity guest appearance, and networking.",
+    ticketUrl: "https://bookmyshow.com/day1-ticket"
+  },
+  {
+    day: "Day 2",
+    date: "13 Aug 2025",
+    details: "Workshops, panel discussions, and interactive sessions.",
+    highlights: "Exclusive workshops with industry leaders.",
+    ticketUrl: "https://bookmyshow.com/day2-ticket"
+  },
+  {
+    day: "Day 3",
+    date: "14 Aug 2025",
+    details: "Grand finale with closing speech and gala dinner.",
+    highlights: "Award ceremony, gala dinner, and closing party.",
+    ticketUrl: "https://bookmyshow.com/day3-ticket"
+  }
 ];
 
 export default function Timeline() {
@@ -34,10 +33,14 @@ export default function Timeline() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && controls.start({ width: "100%" }),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({ width: "100%" });
+        }
+      },
       { threshold: 0.5 }
     );
-    ref.current && observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [controls]);
 
@@ -47,11 +50,12 @@ export default function Timeline() {
         🎉 Event Timeline
       </h1>
 
+      {/* Timeline container */}
       <div className="relative flex justify-between items-start">
         {/* Progress Line */}
-        <div className="absolute top-4 left-0 right-0 h-1 bg-purple-200" ref={ref}>
+        <div className="absolute top-4 left-0 right-0 h-1 bg-gray-200" ref={ref}>
           <motion.div
-            className="h-1 bg-gradient-to-r from-purple-700 via-magenta-500 to-cyan-400"
+            className="h-1 bg-purple-700"
             initial={{ width: "0%" }}
             animate={controls}
             transition={{ duration: 2, ease: "easeInOut" }}
@@ -60,15 +64,17 @@ export default function Timeline() {
 
         {days.map((item, index) => (
           <div key={index} className="flex flex-col items-center w-1/3 relative">
-            {/* Dot with Tooltip */}
+            {/* Timeline Dot with Tooltip */}
             <div className="group relative flex flex-col items-center">
               <motion.div
                 whileHover={{ scale: 1.2 }}
-                className="w-8 h-8 bg-gradient-to-br from-purple-700 to-magenta-500 text-white flex items-center justify-center rounded-full z-10 shadow-lg cursor-pointer"
+                className="w-8 h-8 bg-purple-700 text-white flex items-center justify-center rounded-full z-10 shadow-lg cursor-pointer"
                 onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}
               >
                 {index + 1}
               </motion.div>
+
+              {/* Tooltip */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}
@@ -84,7 +90,7 @@ export default function Timeline() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="mt-6 bg-gradient-to-r from-purple-100 via-magenta-100 to-cyan-100 rounded-xl p-5 w-64 text-center border border-gray-200 shadow-md hover:shadow-xl hover:scale-105 transition-transform"
+              className="mt-6 bg-purple-50 rounded-xl p-5 w-64 text-center border border-gray-200 shadow-md hover:shadow-xl hover:scale-105 transition-transform"
             >
               <h2 className="text-lg font-semibold mb-1 flex items-center justify-center gap-2 text-purple-800">
                 <FaRegCalendarAlt /> {item.day}
@@ -92,26 +98,46 @@ export default function Timeline() {
               <p className="text-sm text-gray-600 mb-4">{item.date}</p>
 
               <div className="flex flex-col gap-2">
-                <Button variant="outline" size="sm" onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}>
+                <button
+                  className="px-3 py-1 rounded-md border border-purple-700 text-purple-700 hover:bg-purple-100 transition"
+                  onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}
+                >
                   Details
-                </Button>
-                <Button variant="outline" size="sm" onClick={() => setSelected(selected === `highlights-${index}` ? null : `highlights-${index}`)}>
+                </button>
+
+                <button
+                  className="px-3 py-1 rounded-md border border-pink-600 text-pink-600 hover:bg-pink-100 transition"
+                  onClick={() => setSelected(selected === `highlights-${index}` ? null : `highlights-${index}`)}
+                >
                   Highlights
-                </Button>
-                <Button variant="default" size="sm" className="flex items-center gap-1" onClick={() => window.open(item.ticketUrl, "_blank")}>
+                </button>
+
+                <button
+                  className="px-3 py-1 rounded-md bg-purple-700 text-white flex items-center gap-1 justify-center hover:bg-purple-800 transition"
+                  onClick={() => window.open(item.ticketUrl, "_blank")}
+                >
                   <FaTicketAlt /> Tickets
-                </Button>
+                </button>
               </div>
 
+              {/* Expandable Content */}
               {selected === `details-${index}` && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-3 bg-purple-50 p-3 rounded-lg text-sm text-gray-700 shadow-inner">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-3 bg-purple-100 p-3 rounded-lg text-sm text-gray-700 shadow-inner"
+                >
                   {item.details}
                 </motion.div>
               )}
 
               {selected === `highlights-${index}` && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-3 bg-yellow-50 p-3 rounded-lg text-sm text-gray-700 flex gap-2 items-start shadow-inner">
-                  <FaStar className="text-yellow-500 mt-0.5" /> {item.highlights}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-3 bg-pink-50 p-3 rounded-lg text-sm text-gray-700 flex gap-2 items-start shadow-inner"
+                >
+                  <FaStar className="text-pink-600 mt-0.5" /> {item.highlights}
                 </motion.div>
               )}
             </motion.div>
