@@ -1,3 +1,30 @@
+import { useState, useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { FaRegCalendarAlt, FaStar, FaTicketAlt } from "react-icons/fa";
+
+const days = [
+  {
+    day: "Day 1",
+    date: "12 Aug 2025",
+    details: "Opening ceremony with performances and keynote sessions.",
+    highlights: "Live music, celebrity guest appearance, and networking.",
+    ticketUrl: "https://bookmyshow.com/day1-ticket"
+  },
+  {
+    day: "Day 2",
+    date: "13 Aug 2025",
+    details: "Workshops, panel discussions, and interactive sessions.",
+    highlights: "Exclusive workshops with industry leaders.",
+    ticketUrl: "https://bookmyshow.com/day2-ticket"
+  },
+  {
+    day: "Day 3",
+    date: "14 Aug 2025",
+    details: "Grand finale with closing speech and gala dinner.",
+    highlights: "Award ceremony, gala dinner, and closing party.",
+    ticketUrl: "https://bookmyshow.com/day3-ticket"
+  }
+];
 export default function Timeline() {
   const [selected, setSelected] = useState(null);
   const controls = useAnimation();
