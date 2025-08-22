@@ -80,9 +80,12 @@ export default function Timeline() {
 
   return (
     <div className="p-6 sm:p-10 max-w-7xl mx-auto rounded-2xl shadow-md my-20">
-      <h1 className="text-3xl font-extrabold mb-12 text-center tracking-tight text-white">
-        🎉 Event Timeline
-      </h1>
+    <h1 className="text-4xl font-extrabold mb-4 text-center tracking-tight text-white">
+   Music Battle Series
+</h1>
+<h2 className="text-xl font-semibold mb-12 text-center tracking-tight text-gray-300">
+  Season 1
+</h2> 
 
       {/* Timeline container */}
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 items-start">
