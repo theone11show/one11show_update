@@ -7,7 +7,7 @@ const days = [
     day: "Day 1",
     date: "20 September 2025",
     details: "",
-    highlights: ` 📅 DATE: 20 September 2025  
+    highlights: `📅 DATE: 20 September 2025  
 📍 Location:  
 
 Go beyond performances, offering audiences and artists an experience that combines culture, creativity, and celebration:  
@@ -107,14 +107,14 @@ export default function Timeline() {
             key={index}
             className="flex flex-col items-center relative pt-6 md:pt-0"
           >
-            {/* Timeline Dot with Tooltip */}
+            {/* Timeline Dot */}
             <div className="hidden md:flex group relative flex-col items-center">
               <motion.div
                 whileHover={{ scale: 1.2 }}
                 className={`w-10 h-10 font-bold flex items-center justify-center rounded-full z-10 cursor-pointer border-2 border-gray-900 ${
                   index === 0
                     ? "bg-[#f81a26] text-white shadow-[0_0_20px_rgba(248,26,38,0.9)]"
-                    : "bg-indigo-600 text-white shadow-[0_0_20px_rgba(79,70,229,0.9)]"
+                    : "bg-[#2563eb] text-white shadow-[0_0_20px_rgba(37,99,235,0.9)]"
                 }`}
                 onClick={() =>
                   setSelected(
@@ -132,22 +132,18 @@ export default function Timeline() {
                 transition={{ duration: 0.3 }}
                 className="absolute -top-14 bg-gray-100 text-gray-900 text-xs rounded-md px-3 py-1 shadow-lg whitespace-nowrap pointer-events-none border border-gray-300"
               >
-                {item.day} – {item.details.split(" ").slice(0, 4).join(" ")}...
+                {item.day}
               </motion.div>
             </div>
 
-            {/* Floating Section */}
+            {/* Card */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className={`mt-4 rounded-2xl p-6 w-full text-center border shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 ${
-                index === 0
-                  ? "bg-[#2a0b0d] border-[#f81a26]"
-                  : "bg-gray-800 border-gray-700"
-              }`}
+              className="mt-4 bg-[#1f1f2e] rounded-2xl p-6 w-full text-center border border-gray-700 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1"
             >
-              <h2 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-indigo-400">
+              <h2 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-white">
                 <FaRegCalendarAlt /> {item.day}
               </h2>
               <p className="text-sm text-gray-400 mb-6 font-medium">
@@ -156,7 +152,7 @@ export default function Timeline() {
 
               <div className="flex flex-col gap-3">
                 <button
-                  className="px-3 py-1.5 rounded-lg border border-indigo-500 text-indigo-400 hover:bg-indigo-900/30 transition text-sm font-medium"
+                  className="px-3 py-1.5 rounded-lg bg-[#374151] text-white hover:bg-[#4b5563] transition text-sm font-medium"
                   onClick={() =>
                     setSelected(
                       selected === `details-${index}`
@@ -169,7 +165,7 @@ export default function Timeline() {
                 </button>
 
                 <button
-                  className="px-3 py-1.5 rounded-lg border border-green-500 text-green-400 hover:bg-green-900/30 transition text-sm font-medium"
+                  className="px-3 py-1.5 rounded-lg bg-[#16a34a] text-white hover:bg-[#15803d] transition text-sm font-medium"
                   onClick={() =>
                     setSelected(
                       selected === `highlights-${index}`
@@ -182,7 +178,7 @@ export default function Timeline() {
                 </button>
 
                 <button
-                  className="px-3 py-1.5 rounded-lg bg-rose-600 text-white flex items-center gap-2 justify-center hover:bg-rose-700 transition text-sm font-semibold shadow-[0_0_12px_rgba(225,29,72,0.8)]"
+                  className="px-3 py-1.5 rounded-lg bg-[#f81a26] text-white flex items-center gap-2 justify-center hover:bg-[#e11d2d] transition text-sm font-semibold shadow-[0_0_12px_rgba(248,26,38,0.8)]"
                   onClick={() => window.open(item.ticketUrl, "_blank")}
                 >
                   <FaTicketAlt /> Tickets
@@ -194,7 +190,7 @@ export default function Timeline() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 bg-indigo-900/40 p-4 rounded-lg text-sm text-gray-200 shadow-inner text-left"
+                  className="mt-4 bg-gray-800 p-4 rounded-lg text-sm text-gray-200 shadow-inner text-left"
                 >
                   {item.details}
                 </motion.div>
@@ -204,7 +200,7 @@ export default function Timeline() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 bg-green-900/40 p-4 rounded-lg text-sm text-gray-200 flex gap-2 items-start shadow-inner text-left"
+                  className="mt-4 bg-gray-800 p-4 rounded-lg text-sm text-gray-200 flex gap-2 items-start shadow-inner text-left"
                 >
                   <FaStar className="text-green-400 mt-0.5" /> {item.highlights}
                 </motion.div>
