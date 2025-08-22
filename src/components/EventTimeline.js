@@ -45,17 +45,17 @@ export default function Timeline() {
   }, [controls]);
 
   return (
-    <div className="p-8 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-extrabold mb-10 text-center tracking-tight text-purple-700">
+    <div className="p-10 max-w-6xl mx-auto bg-gray-50 rounded-2xl shadow-md">
+      <h1 className="text-3xl font-extrabold mb-12 text-center tracking-tight text-gray-900">
         🎉 Event Timeline
       </h1>
 
       {/* Timeline container */}
       <div className="relative flex justify-between items-start">
         {/* Progress Line */}
-        <div className="absolute top-4 left-0 right-0 h-1 bg-gray-200" ref={ref}>
+        <div className="absolute top-6 left-0 right-0 h-1 bg-gray-200" ref={ref}>
           <motion.div
-            className="h-1 bg-purple-700"
+            className="h-1 bg-indigo-700"
             initial={{ width: "0%" }}
             animate={controls}
             transition={{ duration: 2, ease: "easeInOut" }}
@@ -68,7 +68,7 @@ export default function Timeline() {
             <div className="group relative flex flex-col items-center">
               <motion.div
                 whileHover={{ scale: 1.2 }}
-                className="w-8 h-8 bg-purple-700 text-white flex items-center justify-center rounded-full z-10 shadow-lg cursor-pointer"
+                className="w-10 h-10 bg-indigo-700 text-white font-bold flex items-center justify-center rounded-full z-10 shadow-lg cursor-pointer border-2 border-white"
                 onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}
               >
                 {index + 1}
@@ -79,7 +79,7 @@ export default function Timeline() {
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute -top-12 bg-gray-900 text-white text-xs rounded-md px-3 py-1 shadow-lg whitespace-nowrap pointer-events-none"
+                className="absolute -top-14 bg-gray-900 text-white text-xs rounded-md px-3 py-1 shadow-lg whitespace-nowrap pointer-events-none"
               >
                 {item.day} – {item.details.split(" ").slice(0, 4).join(" ")}...
               </motion.div>
@@ -87,33 +87,33 @@ export default function Timeline() {
 
             {/* Floating Section */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="mt-6 bg-purple-50 rounded-xl p-5 w-64 text-center border border-gray-200 shadow-md hover:shadow-xl hover:scale-105 transition-transform"
+              className="mt-8 bg-white rounded-2xl p-6 w-72 text-center border border-gray-100 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1"
             >
-              <h2 className="text-lg font-semibold mb-1 flex items-center justify-center gap-2 text-purple-800">
+              <h2 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-indigo-800">
                 <FaRegCalendarAlt /> {item.day}
               </h2>
-              <p className="text-sm text-gray-600 mb-4">{item.date}</p>
+              <p className="text-sm text-gray-500 mb-6 font-medium">{item.date}</p>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3">
                 <button
-                  className="px-3 py-1 rounded-md border border-purple-700 text-purple-700 hover:bg-purple-100 transition"
+                  className="px-3 py-1.5 rounded-lg border border-indigo-700 text-indigo-700 hover:bg-indigo-50 transition text-sm font-medium"
                   onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}
                 >
                   Details
                 </button>
 
                 <button
-                  className="px-3 py-1 rounded-md border border-pink-600 text-pink-600 hover:bg-pink-100 transition"
+                  className="px-3 py-1.5 rounded-lg border border-amber-500 text-amber-600 hover:bg-amber-50 transition text-sm font-medium"
                   onClick={() => setSelected(selected === `highlights-${index}` ? null : `highlights-${index}`)}
                 >
                   Highlights
                 </button>
 
                 <button
-                  className="px-3 py-1 rounded-md bg-purple-700 text-white flex items-center gap-1 justify-center hover:bg-purple-800 transition"
+                  className="px-3 py-1.5 rounded-lg bg-rose-600 text-white flex items-center gap-2 justify-center hover:bg-rose-700 transition text-sm font-semibold"
                   onClick={() => window.open(item.ticketUrl, "_blank")}
                 >
                   <FaTicketAlt /> Tickets
@@ -125,7 +125,7 @@ export default function Timeline() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 bg-purple-100 p-3 rounded-lg text-sm text-gray-700 shadow-inner"
+                  className="mt-4 bg-indigo-50 p-4 rounded-lg text-sm text-gray-700 shadow-inner text-left"
                 >
                   {item.details}
                 </motion.div>
@@ -135,9 +135,9 @@ export default function Timeline() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 bg-pink-50 p-3 rounded-lg text-sm text-gray-700 flex gap-2 items-start shadow-inner"
+                  className="mt-4 bg-amber-50 p-4 rounded-lg text-sm text-gray-700 flex gap-2 items-start shadow-inner text-left"
                 >
-                  <FaStar className="text-pink-600 mt-0.5" /> {item.highlights}
+                  <FaStar className="text-amber-500 mt-0.5" /> {item.highlights}
                 </motion.div>
               )}
             </motion.div>
