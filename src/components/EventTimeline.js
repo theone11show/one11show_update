@@ -1,61 +1,80 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { FaRegCalendarAlt, FaStar, FaTicketAlt } from "react-icons/fa";
+import { FaRegCalendarAlt, FaStar, FaTicketAlt, FaUtensils, FaMusic, FaHeart, FaHistory, FaUsers, FaHeadphones } from "react-icons/fa";
 
 const days = [
   {
     day: "Day 1",
     date: "20 September 2025",
-    details: "",
-    highlights: `📅 DATE: 20 September 2025  
-📍 Location:  
-
-Go beyond performances, offering audiences and artists an experience that combines culture, creativity, and celebration:  
-
-- **Food to your palate**  
-  Taste carefully crafted dishes that bring variety and flavor to the event.  
-
-- **Interactive Music Scenes**  
-  Participate in live music and engaging activities.  
-
-- **Dedication**  
-  Share music with loved ones by dedicating songs and flowers.  
-
-- **Retro Rewind**  
-  Relive an era where sound and sight carried pure meaning.  
-
-### Music Battle Semi-Finals  
-Semi-finalists from across India—bands, rappers, musicians.  
-
-### The Biggest Artist Meetup  
-The first day features the biggest artist meetup in North Bengal.  
-
-### DJ Night  
-Electrifying DJ Night to end the day with international DJs and dynamic beats.
-    `,
+    details: "An exciting opening day with music, food, and performances.",
+    highlights: [
+      {
+        icon: <FaUtensils className="text-yellow-400" />,
+        title: "Food to your palate",
+        description: "Taste carefully crafted dishes that bring variety and flavor to the event."
+      },
+      {
+        icon: <FaMusic className="text-pink-400" />,
+        title: "Interactive Music Scenes",
+        description: "Participate in live music and engaging activities."
+      },
+      {
+        icon: <FaHeart className="text-red-400" />,
+        title: "Dedication",
+        description: "Share music with loved ones by dedicating songs and flowers."
+      },
+      {
+        icon: <FaHistory className="text-blue-400" />,
+        title: "Retro Rewind",
+        description: "Relive an era where sound and sight carried pure meaning."
+      },
+      {
+        icon: <FaUsers className="text-green-400" />,
+        title: "Biggest Artist Meetup",
+        description: "The first day features the biggest artist meetup in North Bengal."
+      },
+      {
+        icon: <FaHeadphones className="text-purple-400" />,
+        title: "DJ Night",
+        description: "Electrifying DJ Night to end the day with international DJs and dynamic beats."
+      }
+    ],
     ticketUrl: "https://bookmyshow.com/day1-ticket"
   },
   {
     day: "Day 2",
     date: "21 September 2025",
-    details: "",
-    highlights: `
-📅 DATE: 21 September 2025  
-
-### Puja-Themed Cultural Performance  
-Day 2 brings a touch of tradition and celebration through a specially curated cultural theme, setting the mood for Durga Puja and offering a head start for the puja festival.  
-
-### Live Performance: Fakira x Cactus  
-**Fakira** and **Cactus** take the stage together for a powerful live performance.  
-With their signature sounds and crowd-favorite tracks, the bands promise an evening filled with energy, nostalgia, and unforgettable music.
-  `,
+    details: "A day filled with cultural vibes and live concerts.",
+    highlights: [
+      {
+        icon: <FaMusic className="text-pink-400" />,
+        title: "Puja-Themed Cultural Performance",
+        description: "A traditional and festive start to Durga Puja celebrations."
+      },
+      {
+        icon: <FaUsers className="text-green-400" />,
+        title: "Live Performance: Fakira x Cactus",
+        description: "An electrifying show blending nostalgia with energy."
+      }
+    ],
     ticketUrl: "https://bookmyshow.com/day2-ticket"
   },
   {
     day: "Day 3",
     date: "14 Aug 2025",
     details: "Grand finale with closing speech and gala dinner.",
-    highlights: "Award ceremony, gala dinner, and closing party.",
+    highlights: [
+      {
+        icon: <FaStar className="text-yellow-400" />,
+        title: "Award Ceremony",
+        description: "Celebrating the best performances of the season."
+      },
+      {
+        icon: <FaUtensils className="text-orange-400" />,
+        title: "Gala Dinner",
+        description: "A grand feast with an exclusive dining experience."
+      }
+    ],
     ticketUrl: "https://bookmyshow.com/day3-ticket"
   }
 ];
@@ -200,9 +219,19 @@ export default function Timeline() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 bg-gray-800 p-4 rounded-lg text-sm text-gray-200 flex gap-2 items-start shadow-inner text-left"
+                  className="mt-4 bg-gray-800 p-4 rounded-lg text-sm text-gray-200 shadow-inner text-left"
                 >
-                  <FaStar className="text-green-400 mt-0.5" /> {item.highlights}
+                  <div className="grid gap-4">
+                    {item.highlights.map((highlight, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        {highlight.icon}
+                        <div>
+                          <p className="font-semibold text-white text-base">{highlight.title}</p>
+                          <p className="text-gray-400 text-sm">{highlight.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               )}
             </motion.div>
