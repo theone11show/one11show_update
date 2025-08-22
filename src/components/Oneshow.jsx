@@ -58,7 +58,7 @@ const Oneshow = () => {
     <Layout>
       <div>
         <AboutSection />
-        <EventTimeline/>
+    
   {/* About Us and Our Team Cards */}
 <div className="bg-[#1c1c1e] px-4 sm:px-6 lg:px-12 py-10 sm:py-16">
   <div className="flex flex-col lg:flex-row gap-6 items-stretch">
@@ -84,6 +84,8 @@ const Oneshow = () => {
         <section id="upcomingevent-section" name="upcomingevent-section">
           <UpcomingEvents />
         </section>
+        {/*Event Timelines*/}
+        <EventTimeline/>
 
         {/* Updates with scroll target */}
         <section id="updates-section" name="updates-section">
