@@ -45,15 +45,18 @@ export default function Timeline() {
   }, [controls]);
 
   return (
-    <div className="p-10 max-w-6xl mx-auto bg-black rounded-2xl shadow-md">
+    <div className="p-6 sm:p-10 max-w-7xl mx-auto bg-black rounded-2xl shadow-md">
       <h1 className="text-3xl font-extrabold mb-12 text-center tracking-tight text-white">
         🎉 Event Timeline
       </h1>
 
       {/* Timeline container */}
-      <div className="relative flex justify-between items-start">
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 items-start">
         {/* Progress Line */}
-        <div className="absolute top-6 left-0 right-0 h-1 bg-gray-700" ref={ref}>
+        <div
+          className="hidden md:block absolute top-6 left-0 right-0 h-1 bg-gray-700"
+          ref={ref}
+        >
           <motion.div
             className="h-1 bg-indigo-600 shadow-[0_0_15px_rgba(79,70,229,0.8)]"
             initial={{ width: "0%" }}
@@ -63,18 +66,20 @@ export default function Timeline() {
         </div>
 
         {days.map((item, index) => (
-          <div key={index} className="flex flex-col items-center w-1/3 relative">
-            {/* Timeline Dot with Tooltip */}
-            <div className="group relative flex flex-col items-center">
+          <div key={index} className="flex flex-col items-center relative pt-6 md:pt-0">
+            {/* Timeline Dot with Tooltip (hidden on mobile) */}
+            <div className="hidden md:flex group relative flex-col items-center">
               <motion.div
                 whileHover={{ scale: 1.2 }}
                 className="w-10 h-10 bg-indigo-600 text-white font-bold flex items-center justify-center rounded-full z-10 cursor-pointer border-2 border-gray-900 shadow-[0_0_20px_rgba(79,70,229,0.9)]"
-                onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}
+                onClick={() =>
+                  setSelected(selected === `details-${index}` ? null : `details-${index}`)
+                }
               >
                 {index + 1}
               </motion.div>
 
-              {/* Tooltip (light background for dark theme) */}
+              {/* Tooltip */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}
@@ -90,7 +95,7 @@ export default function Timeline() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="mt-8 bg-gray-800 rounded-2xl p-6 w-72 text-center border border-gray-700 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1"
+              className="mt-4 bg-gray-800 rounded-2xl p-6 w-full text-center border border-gray-700 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1"
             >
               <h2 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-indigo-400">
                 <FaRegCalendarAlt /> {item.day}
@@ -100,14 +105,18 @@ export default function Timeline() {
               <div className="flex flex-col gap-3">
                 <button
                   className="px-3 py-1.5 rounded-lg border border-indigo-500 text-indigo-400 hover:bg-indigo-900/30 transition text-sm font-medium"
-                  onClick={() => setSelected(selected === `details-${index}` ? null : `details-${index}`)}
+                  onClick={() =>
+                    setSelected(selected === `details-${index}` ? null : `details-${index}`)
+                  }
                 >
                   Details
                 </button>
 
                 <button
                   className="px-3 py-1.5 rounded-lg border border-green-500 text-green-400 hover:bg-green-900/30 transition text-sm font-medium"
-                  onClick={() => setSelected(selected === `highlights-${index}` ? null : `highlights-${index}`)}
+                  onClick={() =>
+                    setSelected(selected === `highlights-${index}` ? null : `highlights-${index}`)
+                  }
                 >
                   Highlights
                 </button>
