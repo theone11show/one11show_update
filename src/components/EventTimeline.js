@@ -3,18 +3,53 @@ import { motion, useAnimation } from "framer-motion";
 import { FaRegCalendarAlt, FaStar, FaTicketAlt } from "react-icons/fa";
 
 const days = [
+  
   {
     day: "Day 1",
-    date: "12 Aug 2025",
-    details: "Opening ceremony with performances and keynote sessions.",
-    highlights: "Live music, celebrity guest appearance, and networking.",
+    date: "20 September 2025",
+    details: "",
+    highlights:` 📅 DATE: 20 September 2025  
+📍 Location:  
+
+Go beyond performances, offering audiences and artists an experience that combines culture, creativity, and celebration:  
+
+- **Food to your palate**  
+  Taste carefully crafted dishes that bring variety and flavor to the event.  
+
+- **Interactive Music Scenes**  
+  Participate in live music and engaging activities.  
+
+- **Dedication**  
+  Share music with loved ones by dedicating songs and flowers.  
+
+- **Retro Rewind**  
+  Relive an era where sound and sight carried pure meaning.  
+
+### Music Battle Semi-Finals  
+Semi-finalists from across India—bands, rappers, musicians.  
+
+### The Biggest Artist Meetup  
+The first day features the biggest artist meetup in North Bengal.  
+
+### DJ Night  
+Electrifying DJ Night to end the day with international DJs and dynamic beats.
+    `,
     ticketUrl: "https://bookmyshow.com/day1-ticket"
   },
   {
     day: "Day 2",
-    date: "13 Aug 2025",
-    details: "Workshops, panel discussions, and interactive sessions.",
-    highlights: "Exclusive workshops with industry leaders.",
+    date: "21 Step 2025",
+    details: "",
+    highlights: `
+📅 DATE: 21 September 2025  
+
+### Puja-Themed Cultural Performance  
+Day 2 brings a touch of tradition and celebration through a specially curated cultural theme, setting the mood for Durga Puja and offering a head start for the puja festival.  
+
+### Live Performance: Fakira x Cactus  
+**Fakira** and **Cactus** take the stage together for a powerful live performance.  
+With their signature sounds and crowd-favorite tracks, the bands promise an evening filled with energy, nostalgia, and unforgettable music.
+  `,
     ticketUrl: "https://bookmyshow.com/day2-ticket"
   },
   {
