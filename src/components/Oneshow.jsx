@@ -9,6 +9,7 @@ import RoadmapSection from "./RoadmapSection";
 import UpcomingEvents from "./UpcomingEvents";
 import UpdatesSection from "./UpdatesSection";
 import OurTeamComponents from "./OurTeamComponents";
+import EventTimeline from "./EventTimeline";
 import AboutUs from "./AboutUs";
 
 const Oneshow = () => {
@@ -57,6 +58,7 @@ const Oneshow = () => {
     <Layout>
       <div>
         <AboutSection />
+        <EventTimeline/>
   {/* About Us and Our Team Cards */}
 <div className="bg-[#1c1c1e] px-4 sm:px-6 lg:px-12 py-10 sm:py-16">
   <div className="flex flex-col lg:flex-row gap-6 items-stretch">
