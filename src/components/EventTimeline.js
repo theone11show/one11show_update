@@ -3,12 +3,11 @@ import { motion, useAnimation } from "framer-motion";
 import { FaRegCalendarAlt, FaStar, FaTicketAlt } from "react-icons/fa";
 
 const days = [
-  
   {
     day: "Day 1",
     date: "20 September 2025",
     details: "",
-    highlights:` 📅 DATE: 20 September 2025  
+    highlights: ` 📅 DATE: 20 September 2025  
 📍 Location:  
 
 Go beyond performances, offering audiences and artists an experience that combines culture, creativity, and celebration:  
@@ -38,7 +37,7 @@ Electrifying DJ Night to end the day with international DJs and dynamic beats.
   },
   {
     day: "Day 2",
-    date: "21 Step 2025",
+    date: "21 September 2025",
     details: "",
     highlights: `
 📅 DATE: 21 September 2025  
@@ -60,6 +59,7 @@ With their signature sounds and crowd-favorite tracks, the bands promise an even
     ticketUrl: "https://bookmyshow.com/day3-ticket"
   }
 ];
+
 export default function Timeline() {
   const [selected, setSelected] = useState(null);
   const controls = useAnimation();
@@ -80,12 +80,12 @@ export default function Timeline() {
 
   return (
     <div className="p-6 sm:p-10 max-w-7xl mx-auto rounded-2xl shadow-md my-20">
-    <h1 className="text-4xl font-extrabold mb-4 text-center tracking-tight text-white">
-   Music Battle Series
-</h1>
-<h2 className="text-xl font-semibold mb-12 text-center tracking-tight text-gray-300">
-  Season 1
-</h2> 
+      <h1 className="text-4xl font-extrabold mb-4 text-center tracking-tight text-white">
+        Music Battle Series
+      </h1>
+      <h2 className="text-xl font-semibold mb-12 text-center tracking-tight text-gray-300">
+        Season 1
+      </h2>
 
       {/* Timeline container */}
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 items-start">
@@ -95,7 +95,7 @@ export default function Timeline() {
           ref={ref}
         >
           <motion.div
-            className="h-1 bg-indigo-600 shadow-[0_0_15px_rgba(79,70,229,0.8)]"
+            className="h-1 bg-[#f81a26] shadow-[0_0_15px_rgba(248,26,38,0.8)]"
             initial={{ width: "0%" }}
             animate={controls}
             transition={{ duration: 2, ease: "easeInOut" }}
@@ -103,14 +103,23 @@ export default function Timeline() {
         </div>
 
         {days.map((item, index) => (
-          <div key={index} className="flex flex-col items-center relative pt-6 md:pt-0">
-            {/* Timeline Dot with Tooltip (hidden on mobile) */}
+          <div
+            key={index}
+            className="flex flex-col items-center relative pt-6 md:pt-0"
+          >
+            {/* Timeline Dot with Tooltip */}
             <div className="hidden md:flex group relative flex-col items-center">
               <motion.div
                 whileHover={{ scale: 1.2 }}
-                className="w-10 h-10 bg-indigo-600 text-white font-bold flex items-center justify-center rounded-full z-10 cursor-pointer border-2 border-gray-900 shadow-[0_0_20px_rgba(79,70,229,0.9)]"
+                className={`w-10 h-10 font-bold flex items-center justify-center rounded-full z-10 cursor-pointer border-2 border-gray-900 ${
+                  index === 0
+                    ? "bg-[#f81a26] text-white shadow-[0_0_20px_rgba(248,26,38,0.9)]"
+                    : "bg-indigo-600 text-white shadow-[0_0_20px_rgba(79,70,229,0.9)]"
+                }`}
                 onClick={() =>
-                  setSelected(selected === `details-${index}` ? null : `details-${index}`)
+                  setSelected(
+                    selected === `details-${index}` ? null : `details-${index}`
+                  )
                 }
               >
                 {index + 1}
@@ -132,18 +141,28 @@ export default function Timeline() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="mt-4 bg-gray-800 rounded-2xl p-6 w-full text-center border border-gray-700 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1"
+              className={`mt-4 rounded-2xl p-6 w-full text-center border shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 ${
+                index === 0
+                  ? "bg-[#2a0b0d] border-[#f81a26]"
+                  : "bg-gray-800 border-gray-700"
+              }`}
             >
               <h2 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-indigo-400">
                 <FaRegCalendarAlt /> {item.day}
               </h2>
-              <p className="text-sm text-gray-400 mb-6 font-medium">{item.date}</p>
+              <p className="text-sm text-gray-400 mb-6 font-medium">
+                {item.date}
+              </p>
 
               <div className="flex flex-col gap-3">
                 <button
                   className="px-3 py-1.5 rounded-lg border border-indigo-500 text-indigo-400 hover:bg-indigo-900/30 transition text-sm font-medium"
                   onClick={() =>
-                    setSelected(selected === `details-${index}` ? null : `details-${index}`)
+                    setSelected(
+                      selected === `details-${index}`
+                        ? null
+                        : `details-${index}`
+                    )
                   }
                 >
                   Details
@@ -152,7 +171,11 @@ export default function Timeline() {
                 <button
                   className="px-3 py-1.5 rounded-lg border border-green-500 text-green-400 hover:bg-green-900/30 transition text-sm font-medium"
                   onClick={() =>
-                    setSelected(selected === `highlights-${index}` ? null : `highlights-${index}`)
+                    setSelected(
+                      selected === `highlights-${index}`
+                        ? null
+                        : `highlights-${index}`
+                    )
                   }
                 >
                   Highlights
