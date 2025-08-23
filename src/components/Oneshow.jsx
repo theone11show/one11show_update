@@ -11,7 +11,7 @@ import UpdatesSection from "./UpdatesSection";
 import OurTeamComponents from "./OurTeamComponents";
 import EventTimeline from "./EventTimeline";
 import AboutUs from "./AboutUs";
-
+import CountdownPage from "./CoutdownSection";
 const Oneshow = () => {
   const location = useLocation();
 
@@ -85,7 +85,7 @@ const Oneshow = () => {
           <UpcomingEvents />
         </section>
         {/*Event Timelines*/}
-        <EventTimeline/>
+         <CountdownPage/>
 
         {/* Updates with scroll target */}
         <section id="updates-section" name="updates-section">
