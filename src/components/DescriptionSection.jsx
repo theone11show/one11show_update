@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-red-700 to-red-500 text-white p-10">
-      <p className="text-center mb-6">
+    <div className="flex flex-col items-center justify-center text-white p-10 bg-gradient-to-r from-[#C90D16] to-[#520505]">
+      <p className="text-center mb-6 max-w-2xl">
         An artist launchpad dedicated to discovering, mentoring, and launching
         authentic musical and artistic talent.
         <br /><br />
