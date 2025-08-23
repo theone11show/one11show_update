@@ -113,8 +113,6 @@ function App() {
  
 
 
-      {/* Extra information section - kisi bhi informative content ke liye */}
-      <InfoSection />
 
       {/* Footer - har page ke bottom me show hoga */}
       <Footer />
