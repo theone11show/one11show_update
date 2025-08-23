@@ -4,19 +4,19 @@ const events = [
   {
     id: 1,
     title: "Band One",
-    img: "/images/band1.jpg", 
+    img: "/FakiaraImage.webp", 
     link: "/event/1"
   },
   {
     id: 2,
     title: "Band Two",
-    img: "/images/band2.jpg",
+    img: "CactusImage.webp",
     link: "/event/2"
   },
   {
     id: 3,
     title: "Coming Soon",
-    img: "/images/red-bg.jpg",
+    img: "CatusImage.webp",
     link: "/event/3"
   }
 ];
