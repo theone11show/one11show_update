@@ -4,14 +4,11 @@ import { scroller } from "react-scroll";
 import "./styles.css";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection"; 
-import SubmissionBanner from "./SubmissionBanner";
-import RoadmapSection from "./RoadmapSection";
-import UpcomingEvents from "./UpcomingEvents";
-import UpdatesSection from "./UpdatesSection";
-import OurTeamComponents from "./OurTeamComponents";
-import EventTimeline from "./EventTimeline";
 import AboutUs from "./AboutUs";
 import CountdownPage from "./CountdownSection";
+import MusicBattle from "./MusicBattle";
+import EventHeading from "./EventHeading";
+import EventsSection from "./EventsCards"
 const Oneshow = () => {
   const location = useLocation();
 
@@ -56,41 +53,21 @@ const Oneshow = () => {
 
   return (
     <Layout>
-      <div>
+      <div style={{ position:"relative" }}> >
         <AboutSection />
     
-  {/* About Us and Our Team Cards */}
-<div className="bg-[#1c1c1e] px-4 sm:px-6 lg:px-12 py-10 sm:py-16">
-  <div className="flex flex-col lg:flex-row gap-6 items-stretch">
-    {/* About Us (60%) */}
-    <div className="lg:w-3/5 flex">
-      <div className="w-full h-full">
-        <AboutUs />
-      </div>
-    </div>
-
-    {/* Our Team (40%) */}
-    <div className="lg:w-2/5 flex">
-      <div className="w-full h-full">
-        <OurTeamComponents />
-      </div>
-    </div>
-  </div>
+  <div style={{ postion: "absolute",top: "50px", left: 0, right: 0, zIndex: 20 }}>
+  <CountdownPage />
 </div>
+      
+         {/*Heading*/}
+         <EventHeading/>
+         {/*Events Cars*/}
+         <EventsSection/>
+         {/*Music Battle*/}
+         <MusicBattle/>
 
-
-
-        {/* Upcoming Events with scroll target */}
-        <section id="upcomingevent-section" name="upcomingevent-section">
-          <UpcomingEvents />
-        </section>
-        {/*Event Timelines*/}
-         <CountdownPage/>
-
-        {/* Updates with scroll target */}
-        <section id="updates-section" name="updates-section">
-          <UpdatesSection />
-        </section>
+       
       </div>
     </Layout>
   );
