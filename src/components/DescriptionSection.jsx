@@ -16,9 +16,12 @@ const AboutSection = () => {
       </div>
 
       {/* Centered Button */}
-      <button className="mt-8 bg-pink-500 hover:bg-pink-600 text-black font-semibold px-8 py-3 rounded-full transition">
-        Know More
-      </button>
+     <button
+  className="mt-8 hover:opacity-90 text-black font-semibold px-8 py-3 rounded-full transition"
+  style={{ backgroundColor: "#d0021a" }}
+>
+  Know More
+</button>
     </div>
   );
 };
