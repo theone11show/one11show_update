@@ -4,7 +4,7 @@ const events = [
   {
     id: 1,
     title: "Band One",
-    img: "/FakiaraImage.webp", 
+    img: "FakiraImage.webp", 
     link: "/event/1"
   },
   {
@@ -16,7 +16,7 @@ const events = [
   {
     id: 3,
     title: "Coming Soon",
-    img: "CatusImage.webp",
+    img: "FakiraImage.webp",
     link: "/event/3"
   }
 ];
