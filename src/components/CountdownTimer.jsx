@@ -45,14 +45,25 @@ export default function CountdownTimer() {
       {/* First Row (Days - Hours) */}
       <div className="flex items-center justify-center gap-8 mb-6">
         <div className="flex flex-col items-center">
-          <span className="text-6xl font-extrabold text-red-600">
+          <span
+            className="text-6xl font-extrabold"
+            style={{ color: "#d0021a" }}
+          >
             {timeLeft.days}
           </span>
           <span className="text-sm md:text-base text-gray-800">Days</span>
         </div>
-        <span className="text-6xl font-extrabold text-red-600">-</span>
+        <span
+          className="text-6xl font-extrabold"
+          style={{ color: "#d0021a" }}
+        >
+          -
+        </span>
         <div className="flex flex-col items-center">
-          <span className="text-6xl font-extrabold text-red-600">
+          <span
+            className="text-6xl font-extrabold"
+            style={{ color: "#d0021a" }}
+          >
             {timeLeft.hours}
           </span>
           <span className="text-sm md:text-base text-gray-800">Hours</span>
@@ -62,14 +73,25 @@ export default function CountdownTimer() {
       {/* Second Row (Minutes - Seconds) */}
       <div className="flex items-center justify-center gap-8">
         <div className="flex flex-col items-center">
-          <span className="text-6xl font-extrabold text-red-600">
+          <span
+            className="text-6xl font-extrabold"
+            style={{ color: "#d0021a" }}
+          >
             {timeLeft.minutes}
           </span>
           <span className="text-sm md:text-base text-gray-800">Minutes</span>
         </div>
-        <span className="text-6xl font-extrabold text-red-600">-</span>
+        <span
+          className="text-6xl font-extrabold"
+          style={{ color: "#d0021a" }}
+        >
+          -
+        </span>
         <div className="flex flex-col items-center">
-          <span className="text-6xl font-extrabold text-red-600">
+          <span
+            className="text-6xl font-extrabold"
+            style={{ color: "#d0021a" }}
+          >
             {timeLeft.seconds}
           </span>
           <span className="text-sm md:text-base text-gray-800">Seconds</span>
