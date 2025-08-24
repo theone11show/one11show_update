@@ -2,45 +2,82 @@ import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const events = [
-  { id: 1, title: "Band One", img: "FakiraImage.webp", link: "/event/1" },
-  { id: 2, title: "Band Two", img: "CactusImage.webp", link: "/event/2" },
-  { id: 3, title: "Coming Soon", img: "FakiraImage.webp", link: "/event/3" },
-  { id: 4, title: "Band Four", img: "sairam-nil.webp", link: "/event/4" }, 
-  { id: 5, title: "Band Five", img: "rj-praveen.webp", link: "/event/5" }    
+  {
+    id: 1,
+    title: "FAKIRA",
+    img: "FakiraImage.webp",
+    linkInfo: "/event/1/info",
+    linkTickets: "/event/1/tickets",
+  },
+  {
+    id: 2,
+    title: "CACTUS",
+    img: "CactusImage.webp",
+    linkInfo: "/event/2/info",
+    linkTickets: "/event/2/tickets",
+  },
+  {
+    id: 3,
+    title: "DJ TASIA",
+    img: "FakiraImage.webp",
+    linkInfo: "/event/3/info",
+    linkTickets: "/event/3/tickets",
+  },
+  {
+    id: 4,
+    title: "SAIRAM NIL",
+    img: "sairam-nil.webp",
+    linkInfo: "/event/4/info",
+    linkTickets: "/event/4/tickets",
+  },
+  {
+    id: 5,
+    title: "RJ PRAVEEN",
+    img: "rj-praveen.webp",
+    linkInfo: "/event/5/info",
+    linkTickets: "/event/5/tickets",
+  },
 ];
 
 const EventsSection = () => {
   const [showMore, setShowMore] = useState(false);
 
-  // Show only first 3, then reveal all on click
   const visibleEvents = showMore ? events : events.slice(0, 3);
 
   return (
-    <section className="py-12 px-6 text-white bg-[#1c1c1e]">
-      <h2 className="text-3xl font-bold text-center mb-10">Events</h2>
+    <section className="py-12 px-6 bg-gradient-to-b from-[#7a0000] to-[#1c0000]">
+      <h2 className="text-3xl font-bold text-center text-white mb-10">
+        Events
+      </h2>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {visibleEvents.map((event) => (
           <div
             key={event.id}
-            className="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            className="relative bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
-            {/* Image covers full card width (edge-to-edge) */}
+            {/* Event Image */}
             <img
               src={event.img}
               alt={event.title}
-              className="w-full h-60 object-cover block"
+              className="w-full h-64 object-cover"
             />
 
-            {/* Card Footer */}
-            <div className="p-4 flex justify-between items-center bg-black">
-              <a
-                href={event.link}
-                className="text-white font-bold hover:underline"
-              >
-                Info &gt;
-              </a>
+            {/* Gradient Overlay */}
+            <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
+
+            {/* Event Details */}
+            <div className="absolute bottom-4 left-4 text-white">
+              <h3 className="text-xl font-bold mb-2 uppercase">{event.title}</h3>
+              <div className="flex flex-col gap-1 text-sm">
+                <a href={event.linkInfo} className="hover:underline">
+                  Info &gt;
+                </a>
+                <a href={event.linkTickets} className="hover:underline">
+                  Tickets &gt;
+                </a>
+              </div>
             </div>
           </div>
         ))}
