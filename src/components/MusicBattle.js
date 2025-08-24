@@ -43,7 +43,7 @@ const MusicBattle = () => {
         </p>
 
         {/* Button */}
-        <button className="bg-red-600 hover:bg-red-700 text-black font-bold px-8 py-3 rounded-full text-lg transition-all duration-300">
+        <button className="bg-[#d0021a] hover:bg-[#b00117] text-black font-bold px-8 py-3 rounded-full text-lg transition-all duration-300">
           Know More
         </button>
       </div>
