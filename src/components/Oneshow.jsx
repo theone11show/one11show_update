@@ -37,13 +37,12 @@ const Oneshow = () => {
   return (
     <Layout>
       <div className="relative w-full">
-        {/* Hero Section */}
-        <AboutSection />
-
-       
+  <AboutSection />
   <div className="absolute inset-0 flex justify-center items-center">
     <CountdownPage />
   </div>
+</div>
+
 </div>
 
 
