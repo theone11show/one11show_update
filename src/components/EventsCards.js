@@ -58,7 +58,7 @@ const EventsSection = () => {
             <img
               src={event.img}
               alt={event.title}
-              className="w-full h-64 object-cover rounded-t-lg"
+              className="w-full h-64 object-cover rounded-[20px]"
             />
 
             {/* Info Section */}
@@ -66,7 +66,7 @@ const EventsSection = () => {
               <h3 className="text-xl  text-white uppercase mb-3 tracking-wide">
                 {event.title}
               </h3>
-              <div className="flex flex-col gap-1 text-gray-300 text-sm font-light">
+              <div className="flex flex-col gap-1 text-white text-sm font-light">
                 <a
                   href={event.linkInfo}
                   className="hover:text-white hover:underline transition"
