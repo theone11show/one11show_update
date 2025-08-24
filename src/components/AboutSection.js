@@ -40,11 +40,12 @@ const HeroSection = () => {
           <h3 className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl drop-shadow-md font-[var(--font-antonio)]">
             Join us for this exciting event
           </h3>
-         <Link
+      <Link
   to="/join"
-  className="mt-8 bg-pink-500 hover:bg-pink-600 text-black font-semibold px-8 py-3 rounded-full transition"
+  className="mt-8 bg-[#d0021a] hover:bg-[#b00117] text-black font-semibold px-8 py-3 rounded-full transition"
 >
   Book Now
+</Link>
 </Link>
         </div>
 
