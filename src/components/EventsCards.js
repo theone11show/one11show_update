@@ -19,7 +19,7 @@ const events = [
   {
     id: 3,
     title: "DJ TASIA",
-    img: "FakiraImage.webp",
+    img: "dj-tasia.webp",
     linkInfo: "/event/3/info",
     linkTickets: "/event/3/tickets",
   },
@@ -41,40 +41,38 @@ const events = [
 
 const EventsSection = () => {
   const [showMore, setShowMore] = useState(false);
-
   const visibleEvents = showMore ? events : events.slice(0, 3);
 
   return (
     <section className="py-12 px-6 bg-gradient-to-b from-[#7a0000] to-[#1c0000]">
-      <h2 className="text-3xl font-bold text-center text-white mb-10">
-        Events
-      </h2>
+      <h2 className="text-3xl font-bold text-center text-white mb-10">Events</h2>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {visibleEvents.map((event) => (
           <div
             key={event.id}
-            className="relative bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            className="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
-            {/* Event Image */}
-            <img
-              src={event.img}
-              alt={event.title}
-              className="w-full h-64 object-cover"
-            />
+            {/* Event Image (80% Height) */}
+            <div className="h-[80%]">
+              <img
+                src={event.img}
+                alt={event.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            {/* Gradient Overlay */}
-            <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
-
-            {/* Event Details */}
-            <div className="absolute bottom-4 left-4 text-white">
-              <h3 className="text-xl font-bold mb-2 uppercase">{event.title}</h3>
-              <div className="flex flex-col gap-1 text-sm">
-                <a href={event.linkInfo} className="hover:underline">
+            {/* Info Section */}
+            <div className="h-[20%] bg-gradient-to-b from-[#111] to-black p-4 flex flex-col justify-center">
+              <h3 className="text-lg font-semibold text-white uppercase mb-1">
+                {event.title}
+              </h3>
+              <div className="text-sm text-gray-300 space-y-1">
+                <a href={event.linkInfo} className="hover:text-[#d0021a] transition">
                   Info &gt;
                 </a>
-                <a href={event.linkTickets} className="hover:underline">
+                <a href={event.linkTickets} className="hover:text-[#d0021a] transition">
                   Tickets &gt;
                 </a>
               </div>
