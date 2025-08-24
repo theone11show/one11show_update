@@ -36,14 +36,16 @@ const Oneshow = () => {
 
   return (
     <Layout>
-      <div className="relative">
+      <div className="relative w-full">
         {/* Hero Section */}
         <AboutSection />
 
-        {/* Countdown Overlay (half on Hero, half on EventHeading) */}
-        <div className="absolute top-[21%] left-1/2 transform -translate-x-1/2 z-20 w-full max-w-5xl">
-          <CountdownPage />
-        </div>
+       
+  <div className="absolute inset-0 flex justify-center items-center">
+    <CountdownPage />
+  </div>
+</div>
+
 
         {/* EventHeading (Countdown overlaps top area of this) */}
         <EventHeading />
