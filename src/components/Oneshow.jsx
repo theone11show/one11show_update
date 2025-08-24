@@ -8,7 +8,7 @@ import CountdownPage from "./CountdownSection";
 import EventHeading from "./EventHeading";
 import EventsSection from "./EventsCards";
 import MusicBattle from "./MusicBattle";
-
+import NewsLetter from "./NewsLetter";
 const Oneshow = () => {
   const location = useLocation();
 
@@ -50,6 +50,7 @@ const Oneshow = () => {
 
         <EventsSection />
         <MusicBattle />
+        <NewsLetter/>
       </div>
     </Layout>
   );
