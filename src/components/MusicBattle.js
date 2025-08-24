@@ -2,31 +2,58 @@ import React from "react";
 
 const MusicBattle = () => {
   return (
-    <div className="bg-[#1c1c1e]  text-white text-center px-6 py-20">
-      {/* Subtitle */}
-      <p className="text-sm font-medium tracking-widest text-gray-300 mb-3">
-        SEASON 1
-      </p>
+    <div className="relative w-full h-[140vh] flex items-center justify-center text-center font-[Poppins]">
+      {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source
+          src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/concert.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-      {/* Title */}
-      <h2 className="text-3xl md:text-5xl font-extrabold text-green-500 mb-8">
-        MUSIC BATTLE SERIES
-      </h2>
+      {/* Gradient Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/80 via-black/60 to-black/90"></div>
 
-      {/* Description */}
-      <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-        <span className="font-bold">
-          The One11 Music Battle Season 1
-        </span>
-        , begins its journey on{" "}
-        <span className="font-bold">20 September 2025</span>, bringing together
-        artists, audiences, and creative communities for an exciting opening
-        day.
-        <br /><br />
-        From the largest artist gathering in North Bengal to engaging
-        performances and cultural showcases, Day 1 sets the foundation for three
-        days of music, connection, and celebration.
-      </p>
+      {/* Content */}
+      <div className="relative z-10 px-6 text-white">
+        {/* Subtitle */}
+        <p className="text-sm md:text-base tracking-[6px] mb-3 uppercase text-gray-300">
+          SEASON 1
+        </p>
+
+        {/* Title */}
+        <h2 className="text-3xl md:text-5xl font-extrabold text-green-500 mb-8">
+          MUSIC BATTLE SERIES
+        </h2>
+
+        {/* Description */}
+        <p className="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-8 uppercase tracking-wide">
+          The One11 Music Battle Season 1, begins its journey on 20 <br />
+          <span className="font-bold text-white">September 2025</span>, bringing together artists, audiences,<br />
+          and creative communities for an exciting opening day.
+          <br /><br />
+          From the largest artist gathering in North Bengal to engaging
+          performances and cultural showcases.
+        </p>
+
+        {/* Button */}
+        <button className="bg-red-600 hover:bg-red-700 text-black font-bold px-8 py-3 rounded-full text-lg transition-all duration-300">
+          Know More
+        </button>
+      </div>
+
+      {/* Diagonal Bottom Shape */}
+<div
+  className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-r from-gray-200 to-gray-300"
+  style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%, 0% 100%)" }}
+>
+</div>
     </div>
   );
 };
