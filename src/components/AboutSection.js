@@ -35,11 +35,12 @@ const HeroSection = () => {
             Season 1
           </h3>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 max-w-2xl drop-shadow-md font-[var(--font-antonio)]">
-            North Bengal's Biggest Music Festival Will Be Live Soon
+            North Bengal's Biggest Music Festival Will Be 
           </h2>
-          <h3 className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl drop-shadow-md font-[var(--font-antonio)]">
-            Join us for this exciting event
-          </h3>
+               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 max-w-2xl drop-shadow-md font-[var(--font-antonio)]">
+            Live Soon 
+          </h2>
+         
       <Link
   to="/join"
   className="mt-8 bg-[#d0021a] hover:bg-[#b00117] text-black font-semibold px-8 py-3 rounded-full transition"
