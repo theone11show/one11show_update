@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/one11showlogo.png";
 
-const AboutSection = () => {
-  const handleScroll = (e) => {
-    e.preventDefault();
-    const section = document.getElementById("events");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
+const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-16 pb-8">
+    <section className="relative w-full overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -24,39 +17,29 @@ const AboutSection = () => {
           src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/Website%20faktus.mov"
           type="video/mp4"
         />
-        Your browser does not support the video tag.
       </video>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50 z-[1]" />
 
-      {/* Content */}
-      <div className="relative z-[3] p-4 sm:p-6 md:p-8 flex flex-col items-center text-white">
-        
-        {/* Logo */}
-        <div className="mb-1">
+      {/* Content Wrapper */}
+      <div className="relative z-[2] flex flex-col text-white">
+        {/* 🔹 About Content (Join Waitlist tak) */}
+        <div className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-40">
           <img
             src={Logo}
             alt="One11 Show Logo"
-            className="w-32 sm:w-40 md:w-48 lg:w-56 mx-auto"
+            className="w-32 sm:w-40 md:w-48 lg:w-56 mb-4"
           />
-        </div>
-
-        {/* Season text */}
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-fredoka-one)] mb-2 drop-shadow-lg">
-          Season 1
-        </h3>
-
-        {/* Subtitle */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[var(--font-antonio)] mb-2 max-w-2xl mx-auto drop-shadow-md">
-          North Bengal's Biggest Music Festival Will Be Live Soon
-        </h2>
-        <h3 className="text-base sm:text-lg md:text-xl font-[var(--font-antonio)] mb-6 max-w-2xl mx-auto drop-shadow-md">
-          Join us for this exciting event
-        </h3>
-
-        {/* Buttons */}
-        <div className="flex flex-col gap-3 items-center justify-center">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl mb-3 font-[var(--font-fredoka-one)] drop-shadow-lg">
+            Season 1
+          </h3>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 max-w-2xl drop-shadow-md font-[var(--font-antonio)]">
+            North Bengal's Biggest Music Festival Will Be Live Soon
+          </h2>
+          <h3 className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl drop-shadow-md font-[var(--font-antonio)]">
+            Join us for this exciting event
+          </h3>
           <Link
             to="/join"
             className="btn-primary text-base sm:text-lg px-6 py-2"
@@ -64,9 +47,11 @@ const AboutSection = () => {
             Join Our Waitlist
           </Link>
         </div>
+
+     
       </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default HeroSection;
