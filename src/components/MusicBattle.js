@@ -49,7 +49,7 @@ const MusicBattle = () => {
       </div>
 
       {/* Diagonal Bottom Shape */}
-<div
+
   <div
   className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-r from-gray-200 to-gray-300 bg-opacity-30"
   style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%, 0% 100%)" }}
