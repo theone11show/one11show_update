@@ -44,7 +44,7 @@ const EventsSection = () => {
   const visibleEvents = showMore ? events : events.slice(0, 3);
 
   return (
-    <section className="py-12 px-6 bg-gradient-to-b from-[#7a0000] to-[#1c0000]">
+    <section className="py-12 px-6 bg-[#281316]">
       <h2 className="text-3xl font-bold text-center text-white mb-10">Events</h2>
 
       {/* Cards Grid */}
