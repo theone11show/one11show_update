@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react"; // arrow icons
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // ✅ react-icons
 
 const events = [
   { id: 1, title: "Band One", img: "FakiraImage.webp", link: "/event/1" },
   { id: 2, title: "Band Two", img: "CactusImage.webp", link: "/event/2" },
   { id: 3, title: "Coming Soon", img: "FakiraImage.webp", link: "/event/3" },
-  { id: 4, title: "Band Four", img: "CactusImage.webp", link: "/event/4" },   
-  { id: 5, title: "Band Five", img: "FakiraImage.webp", link: "/event/5" }    
+  { id: 4, title: "Band Four", img: "CactusImage.webp", link: "/event/4" },   // extra card
+  { id: 5, title: "Band Five", img: "FakiraImage.webp", link: "/event/5" }    // extra card
 ];
 
 const EventsSection = () => {
@@ -51,11 +51,11 @@ const EventsSection = () => {
         >
           {showMore ? (
             <>
-              Show Less <ChevronUp size={20} />
+              Show Less <FaChevronUp size={18} />
             </>
           ) : (
             <>
-              Show More <ChevronDown size={20} />
+              Show More <FaChevronDown size={18} />
             </>
           )}
         </button>
