@@ -46,7 +46,7 @@ const HeroSection = () => {
 >
   Book Now
 </Link>
-</Link>
+
         </div>
 
      
