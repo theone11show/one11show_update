@@ -6,8 +6,7 @@ import MissionSection from "./MissionSection";
 
 const CountdownPage = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 bg-[#1c1c1e]">
-      {/* Wrapper to control max width & centering */}
+    <div className="w-full min-h-screen flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-4xl mx-auto">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
