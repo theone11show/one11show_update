@@ -9,6 +9,7 @@ import EventHeading from "./EventHeading";
 import EventsSection from "./EventsCards";
 import MusicBattle from "./MusicBattle";
 import NewsLetter from "./NewsLetter";
+
 const Oneshow = () => {
   const location = useLocation();
 
@@ -36,15 +37,14 @@ const Oneshow = () => {
 
   return (
     <Layout>
-      <div className="relative w-full">
-  <AboutSection />
-  <div className="absolute inset-0 flex justify-center items-center">
-    <CountdownPage />
-  </div>
-</div>
+      <div className="relative">
+        {/* Hero Section */}
+        <AboutSection />
 
+        {/* Countdown Overlay (half on Hero, half on EventHeading) */}
+       <div className="absolute top-[40%] sm:top-[30%] md:top-[25%] lg:top-[21%] left-1/2 transform -translate-x-1/2 z-20 w-full max-w-5xl">
+  <CountdownPage />
 </div>
-
 
         {/* EventHeading (Countdown overlaps top area of this) */}
         <EventHeading />
