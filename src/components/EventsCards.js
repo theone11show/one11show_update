@@ -54,25 +54,29 @@ const EventsSection = () => {
             key={event.id}
             className="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
-            {/* Event Image (80% Height) */}
-            <div className="h-[80%]">
-              <img
-                src={event.img}
-                alt={event.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* Event Image */}
+            <img
+              src={event.img}
+              alt={event.title}
+              className="w-full h-64 object-cover rounded-t-lg"
+            />
 
             {/* Info Section */}
-            <div className="h-[20%] bg-gradient-to-r from-[#C90D16] to-[#520505] p-4 flex flex-col justify-center">
+            <div className="bg-gradient-to-b from-[#C90D16] to-[#281316] p-4">
               <h3 className="text-lg font-semibold text-white uppercase mb-1">
                 {event.title}
               </h3>
               <div className="text-sm text-gray-300 space-y-1">
-                <a href={event.linkInfo} className="hover:text-[#d0021a] transition">
+                <a
+                  href={event.linkInfo}
+                  className="hover:text-[#d0021a] transition"
+                >
                   Info &gt;
                 </a>
-                <a href={event.linkTickets} className="hover:text-[#d0021a] transition">
+                <a
+                  href={event.linkTickets}
+                  className="hover:text-[#d0021a] transition block"
+                >
                   Tickets &gt;
                 </a>
               </div>
