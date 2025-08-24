@@ -5,8 +5,8 @@ const events = [
   { id: 1, title: "Band One", img: "FakiraImage.webp", link: "/event/1" },
   { id: 2, title: "Band Two", img: "CactusImage.webp", link: "/event/2" },
   { id: 3, title: "Coming Soon", img: "FakiraImage.webp", link: "/event/3" },
-  { id: 4, title: "Band Four", img: "CactusImage.webp", link: "/event/4" },   // extra card
-  { id: 5, title: "Band Five", img: "FakiraImage.webp", link: "/event/5" }    // extra card
+  { id: 4, title: "Band Four", img: "rj-praveen.webp", link: "/event/4" },   // extra card
+  { id: 5, title: "Band Five", img: "sairam-nil.webp", link: "/event/5" }    // extra card
 ];
 
 const EventsSection = () => {
