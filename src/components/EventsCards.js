@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // ✅ react-icons
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const events = [
   { id: 1, title: "Band One", img: "FakiraImage.webp", link: "/event/1" },
   { id: 2, title: "Band Two", img: "CactusImage.webp", link: "/event/2" },
   { id: 3, title: "Coming Soon", img: "FakiraImage.webp", link: "/event/3" },
-  { id: 4, title: "Band Four", img: "rj-praveen.webp", link: "/event/4" },   // extra card
-  { id: 5, title: "Band Five", img: "sairam-nil.webp", link: "/event/5" }    // extra card
+  { id: 4, title: "Band Four", img: "sairam-nil.webp", link: "/event/4" }, 
+  { id: 5, title: "Band Five", img: "rj-praveen.webp", link: "/event/5" }    
 ];
 
 const EventsSection = () => {
@@ -26,12 +26,15 @@ const EventsSection = () => {
             key={event.id}
             className="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
+            {/* Image covers full card width (edge-to-edge) */}
             <img
               src={event.img}
               alt={event.title}
-              className="w-full h-60 object-cover"
+              className="w-full h-60 object-cover block"
             />
-            <div className="p-4 flex justify-between items-center">
+
+            {/* Card Footer */}
+            <div className="p-4 flex justify-between items-center bg-black">
               <a
                 href={event.link}
                 className="text-white font-bold hover:underline"
