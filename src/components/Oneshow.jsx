@@ -41,7 +41,7 @@ const Oneshow = () => {
         <AboutSection />
 
         {/* Countdown Overlay (half on Hero, half on EventHeading) */}
-        <div className="absolute top-[25%] left-1/2 transform -translate-x-1/2 z-20 w-full max-w-5xl">
+        <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2 z-20 w-full max-w-5xl">
           <CountdownPage />
         </div>
 
