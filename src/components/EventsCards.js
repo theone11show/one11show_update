@@ -52,7 +52,7 @@ const EventsSection = () => {
         {visibleEvents.map((event) => (
           <div
             key={event.id}
-            className="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            className="rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
             {/* Event Image */}
             <img
@@ -62,20 +62,20 @@ const EventsSection = () => {
             />
 
             {/* Info Section */}
-            <div className="bg-gradient-to-b from-[#C90D16] to-[#281316] p-4">
-              <h3 className="text-lg font-semibold text-white uppercase mb-1">
+            <div className="bg-gradient-to-b from-black via-black/95 to-black p-5">
+              <h3 className="text-xl font-semibold text-white uppercase mb-3 tracking-wide">
                 {event.title}
               </h3>
-              <div className="text-sm text-gray-300 space-y-1">
+              <div className="flex flex-col gap-1 text-gray-300 text-sm font-light">
                 <a
                   href={event.linkInfo}
-                  className="hover:text-[#d0021a] transition"
+                  className="hover:text-white hover:underline transition"
                 >
                   Info &gt;
                 </a>
                 <a
                   href={event.linkTickets}
-                  className="hover:text-[#d0021a] transition block"
+                  className="hover:text-white hover:underline transition"
                 >
                   Tickets &gt;
                 </a>
