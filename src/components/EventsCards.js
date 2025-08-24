@@ -63,7 +63,7 @@ const EventsSection = () => {
 
             {/* Info Section */}
             <div className="bg-[#281316] p-5">
-              <h3 className="text-xl font-semibold text-white uppercase mb-3 tracking-wide">
+              <h3 className="text-xl  text-white uppercase mb-3 tracking-wide">
                 {event.title}
               </h3>
               <div className="flex flex-col gap-1 text-gray-300 text-sm font-light">
