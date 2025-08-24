@@ -64,7 +64,7 @@ const EventsSection = () => {
             </div>
 
             {/* Info Section */}
-            <div className="h-[20%] bg-gradient-to-b from-[#111] to-black p-4 flex flex-col justify-center">
+            <div className="h-[20%] bg-gradient-to-r from-[#C90D16] to-[#520505] p-4 flex flex-col justify-center">
               <h3 className="text-lg font-semibold text-white uppercase mb-1">
                 {event.title}
               </h3>
