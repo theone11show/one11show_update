@@ -43,12 +43,14 @@ const Oneshow = () => {
         {/* Countdown Overlay */}
         <div
   className="
+className="
     absolute 
-    top-[20%]       /* default: very small screens (iPhone etc.) */
-    sm:top-[18%]    /* small devices (≥640px) */
-    md:top-[23%]    /* medium devices (≥768px, laptops/tablets) */
-    lg:top-[25%]    /* large devices (≥1024px, desktops) */
-    left-1/2 -translate-x-1/2 
+    top-0
+    left-1/2 -translate-x-1/2
+    translate-y-[20%]   /* instead of top-[20%] */
+    sm:translate-y-[18%]
+    md:translate-y-[23%]
+    lg:translate-y-[25%]
     z-20 
     w-full max-w-5xl 
     px-2 sm:px-4
