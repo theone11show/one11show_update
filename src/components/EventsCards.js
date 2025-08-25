@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const events = [
   {
@@ -39,10 +40,34 @@ const events = [
 ];
 
 const EventsSection = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth - 100; // how much to move
+      scrollRef.current.scrollTo({
+        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section className="py-12 px-6 bg-[#1c0000]">
-      {/* Horizontal Scroll Cards */}
-      <div className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto">
+    <section className="py-12 px-6 bg-[#1c0000] relative">
+      {/* Left Button */}
+      <button
+        onClick={() => scroll("left")}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
+      >
+        <FaChevronLeft size={20} />
+      </button>
+
+      {/* Scrollable Cards */}
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-10 scroll-smooth"
+      >
         {events.map((event) => (
           <div
             key={event.id}
@@ -78,6 +103,14 @@ const EventsSection = () => {
           </div>
         ))}
       </div>
+
+      {/* Right Button */}
+      <button
+        onClick={() => scroll("right")}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
+      >
+        <FaChevronRight size={20} />
+      </button>
     </section>
   );
 };
