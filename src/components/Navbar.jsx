@@ -145,7 +145,7 @@ const Header = () => {
           Join Waitlist
         </Link>
         <Link
-          to="/contact"
+          to="/Support"
           onClick={closeMenu}
           className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
         >
