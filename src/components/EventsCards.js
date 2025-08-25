@@ -76,11 +76,11 @@ const EventsSection = () => {
 
   return (
     <section className="py-12 px-6 bg-[#1c0000] relative">
-      {/* Left Button */}
+      {/* Left Button (hide on small screens) */}
       {showLeft && (
         <button
           onClick={() => scroll("left")}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
+          className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
         >
           <FaChevronLeft size={20} />
         </button>
@@ -89,27 +89,27 @@ const EventsSection = () => {
       {/* Scrollable Row */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-10 scroll-smooth"
+        className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-4 scroll-smooth justify-start md:justify-center"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {events.map((event) => (
           <div
             key={event.id}
-            className="min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            className="min-w-[220px] h-[300px] sm:min-w-[260px] sm:h-[340px] md:min-w-[300px] md:h-[380px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
             {/* Event Image */}
             <img
               src={event.img}
               alt={event.title}
-              className="w-full h-64 object-cover rounded-[20px]"
+              className="w-full h-2/3 object-cover rounded-[20px]"
             />
 
             {/* Info Section */}
-            <div className="bg-[#281316] p-5">
-              <h3 className="text-xl text-white uppercase mb-3 tracking-wide">
+            <div className="bg-[#281316] p-4 h-1/3 flex flex-col justify-between">
+              <h3 className="text-lg sm:text-xl text-white uppercase mb-2 tracking-wide">
                 {event.title}
               </h3>
-              <div className="flex flex-col gap-1 text-white text-sm font-light">
+              <div className="flex flex-col gap-1 text-white text-xs sm:text-sm font-light">
                 <a
                   href={event.linkInfo}
                   className="hover:text-white hover:underline transition"
@@ -128,11 +128,11 @@ const EventsSection = () => {
         ))}
       </div>
 
-      {/* Right Button */}
+      {/* Right Button (hide on small screens) */}
       {showRight && (
         <button
           onClick={() => scroll("right")}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
+          className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
         >
           <FaChevronRight size={20} />
         </button>
