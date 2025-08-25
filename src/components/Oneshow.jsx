@@ -42,8 +42,7 @@ const Oneshow = () => {
 
         {/* Countdown Overlay */}
         <div
-  
-className="
+  className="
     absolute 
     top-0
     left-1/2 -translate-x-1/2
@@ -58,6 +57,7 @@ className="
 >
   <CountdownPage />
 </div>
+  
 
         {/* Event Heading */}
         <EventHeading />
