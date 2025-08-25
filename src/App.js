@@ -104,9 +104,9 @@ function App() {
 
        {/* event component section */}
        <Route path ='/Events' element ={<Event/>}/>
+       {/* Support component section */}
 
-
-      
+        <Route path ='/Support' element ={<InfoSection/>}/>
 
 
       </Routes>
