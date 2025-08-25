@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <div className="flex flex-col items-center justify-center text-white p-6 sm:p-8 md:p-10 bg-gradient-to-r from-[#C90D16] to-[#520505]">
       <div className="space-y-3 sm:space-y-4 max-w-2xl text-center">
-        <p className="text-[10px] sm:text-sm md:text-base font-medium">
+        <p className="text-[11px] sm:text-sm md:text-base font-medium">
           An artist launchpad dedicated to discovering, mentoring, and <br />
           launching authentic musical and artistic talent.
         </p>
