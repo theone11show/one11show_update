@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { scroller } from "react-scroll";
-import "./styles.css";
-import Layout from "./Animations/Layout";
-import AboutSection from "./AboutSection" ;
+import React, { useEffect } from "react"; 
+import { useLocation } from "react-router-dom"; 
+import { scroller } from "react-scroll"; 
+import "./styles.css"; 
+import Layout from "./Animations/Layout"; 
+import AboutSection from "./AboutSection" ; 
 import CountdownPage from "./CountdownSection"; 
-import EventHeading from "./EventHeading";
+import EventHeading from "./EventHeading"; 
 import EventsSection from "./EventsCards";
-import MusicBattle from "./MusicBattle";
-import NewsLetter from "./NewsLetter";
-
+ import MusicBattle from "./MusicBattle"; 
+ import NewsLetter from "./NewsLetter";
 const Oneshow = () => {
   const location = useLocation();
 
@@ -37,24 +36,23 @@ const Oneshow = () => {
 
   return (
     <Layout>
-      <div className="relative">
+      <div className="relative w-full overflow-x-hidden">  {/* ✅ Prevent sideways scroll */}
         {/* Hero Section */}
         <AboutSection />
 
-        {/* Countdown Overlay (half on Hero, half on EventHeading) */}
-       <div className="absolute top-[40%] sm:top-[30%] md:top-[25%] lg:top-[21%] left-1/2 transform -translate-x-1/2 z-20 w-full max-w-5xl">
-  <CountdownPage />
-</div>
+        {/* Countdown Overlay */}
+        <div className="absolute top-[29%] left-1/2 -translate-x-1/2 z-20 w-full max-w-5xl px-2 sm:px-4">
+          <CountdownPage />
+        </div>
 
-        {/* EventHeading (Countdown overlaps top area of this) */}
+        {/* Event Heading */}
         <EventHeading />
 
         <EventsSection />
         <MusicBattle />
-        <NewsLetter/>
+        <NewsLetter />
       </div>
     </Layout>
   );
 };
-
 export default Oneshow;
