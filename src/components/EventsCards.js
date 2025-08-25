@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const events = [
@@ -41,11 +41,21 @@ const events = [
 
 const EventsSection = () => {
   const scrollRef = useRef(null);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeft(scrollLeft > 0);
+      setShowRight(scrollLeft + clientWidth < scrollWidth - 1);
+    }
+  };
 
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth - 100; // how much to move
+      const scrollAmount = clientWidth - 150;
       scrollRef.current.scrollTo({
         left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
         behavior: "smooth",
@@ -53,20 +63,34 @@ const EventsSection = () => {
     }
   };
 
+  useEffect(() => {
+    checkScroll();
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener("scroll", checkScroll);
+    }
+    return () => {
+      if (el) el.removeEventListener("scroll", checkScroll);
+    };
+  }, []);
+
   return (
     <section className="py-12 px-6 bg-[#1c0000] relative">
       {/* Left Button */}
-      <button
-        onClick={() => scroll("left")}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
-      >
-        <FaChevronLeft size={20} />
-      </button>
+      {showLeft && (
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
+        >
+          <FaChevronLeft size={20} />
+        </button>
+      )}
 
-      {/* Scrollable Cards */}
+      {/* Scrollable Row */}
       <div
         ref={scrollRef}
         className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-10 scroll-smooth"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {events.map((event) => (
           <div
@@ -105,12 +129,21 @@ const EventsSection = () => {
       </div>
 
       {/* Right Button */}
-      <button
-        onClick={() => scroll("right")}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
-      >
-        <FaChevronRight size={20} />
-      </button>
+      {showRight && (
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full shadow-lg hover:bg-black/80 transition z-10"
+        >
+          <FaChevronRight size={20} />
+        </button>
+      )}
+
+      {/* Extra scrollbar hide for Chrome/Safari */}
+      <style jsx>{`
+        div::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };
