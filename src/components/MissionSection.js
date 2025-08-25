@@ -2,7 +2,7 @@ import React from "react";
 
 const MissionSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-200 text-center px-4 sm:px-6 md:px-10 py-10">
+    <div className="w-full h-full flex flex-col items-center justify-center bg-gray-200 text-center px-4 sm:px-6 md:px-10">
       <div className="max-w-3xl"> 
         <p className="mb-6 text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
           We are a unified group of industry music professionals,
@@ -16,7 +16,6 @@ const MissionSection = () => {
         Connect
       </button>
     </div>
-  );
-};
-
-export default MissionSection;
+  )
+}
+export default MissionSection
