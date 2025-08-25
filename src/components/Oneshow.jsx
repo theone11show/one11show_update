@@ -42,7 +42,7 @@ const Oneshow = () => {
 
         {/* Countdown Overlay */}
         <div
-  className="
+  
 className="
     absolute 
     top-0
