@@ -36,14 +36,26 @@ const Oneshow = () => {
 
   return (
     <Layout>
-      <div className="relative w-full overflow-x-hidden">  {/* ✅ Prevent sideways scroll */}
+      <div className="relative w-full overflow-x-hidden">  
         {/* Hero Section */}
         <AboutSection />
 
         {/* Countdown Overlay */}
-        <div className="absolute top-[29%] left-1/2 -translate-x-1/2 z-20 w-full max-w-5xl px-2 sm:px-4">
-          <CountdownPage />
-        </div>
+        <div
+  className="
+    absolute 
+    top-[20%]       /* default: very small screens (iPhone etc.) */
+    sm:top-[18%]    /* small devices (≥640px) */
+    md:top-[23%]    /* medium devices (≥768px, laptops/tablets) */
+    lg:top-[25%]    /* large devices (≥1024px, desktops) */
+    left-1/2 -translate-x-1/2 
+    z-20 
+    w-full max-w-5xl 
+    px-2 sm:px-4
+  "
+>
+  <CountdownPage />
+</div>
 
         {/* Event Heading */}
         <EventHeading />
