@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import React from "react";
 
 const events = [
   {
@@ -40,19 +39,14 @@ const events = [
 ];
 
 const EventsSection = () => {
-  const [showMore, setShowMore] = useState(false);
-  const visibleEvents = showMore ? events : events.slice(0, 3);
-
   return (
-    <section className="py-12 px-6 bg-[#1c0000] ">
-      <h2 className="text-3xl font-bold text-center text-white mb-10">Events</h2>
-
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {visibleEvents.map((event) => (
+    <section className="py-12 px-6 bg-[#1c0000]">
+      {/* Horizontal Scroll Cards */}
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto">
+        {events.map((event) => (
           <div
             key={event.id}
-            className="rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            className="min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
           >
             {/* Event Image */}
             <img
@@ -63,7 +57,7 @@ const EventsSection = () => {
 
             {/* Info Section */}
             <div className="bg-[#281316] p-5">
-              <h3 className="text-xl  text-white uppercase mb-3 tracking-wide">
+              <h3 className="text-xl text-white uppercase mb-3 tracking-wide">
                 {event.title}
               </h3>
               <div className="flex flex-col gap-1 text-white text-sm font-light">
@@ -83,24 +77,6 @@ const EventsSection = () => {
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Toggle Button */}
-      <div className="flex justify-center mt-8">
-        <button
-          onClick={() => setShowMore(!showMore)}
-          className="flex items-center gap-2 text-lg font-semibold text-white hover:text-gray-300 transition"
-        >
-          {showMore ? (
-            <>
-              Show Less <FaChevronUp size={18} />
-            </>
-          ) : (
-            <>
-              Show More <FaChevronDown size={18} />
-            </>
-          )}
-        </button>
       </div>
     </section>
   );
