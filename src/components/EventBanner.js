@@ -2,15 +2,26 @@ import React from "react";
 
 const EventBanner = () => {
   return (
-    <div className="relative flex items-center justify-center bg-orange-100 overflow-hidden">
+    <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
+      {/* Background image covers parent */}
       <img
-        src="/background3.webp" 
+        src="/background3.webp"
         alt="concert"
-        className="w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      
-    </div>
-  );
-};
 
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+        <div className="text-center text-white p-4">
+          <h2 className="text-sm sm:text-lg md:text-2xl font-bold mb-2">
+            Live Concert Event
+          </h2>
+          <p className="text-[10px] sm:text-sm md:text-base">
+            Join us for an unforgettable experience
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
 export default EventBanner;
