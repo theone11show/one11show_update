@@ -7,30 +7,37 @@ const CountdownPage = () => {
   return (
     <div className="w-full min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-7xl mx-auto">
-        {/* 2x2 Grid with wider right-side cards and equal heights */}
-        <div 
-          className="grid grid-rows-2 grid-cols-12 w-full h-[90vh]" 
-          style={{ gap: "0" }} // No gap
-        >
+        {/* 2x2 Grid with equal row heights */}
+        <div className="grid grid-rows-2 grid-cols-12 w-full h-[90vh] gap-0">
+          
           {/* Top Left - Countdown Timer */}
           <div className="col-span-5 row-span-1 h-full">
-            <CountdownTimer />
+            <div className="h-full">
+              <CountdownTimer />
+            </div>
           </div>
 
           {/* Top Right - About Section */}
           <div className="col-span-7 row-span-1 h-full">
-            <AboutSection />
+            <div className="h-full">
+              <AboutSection />
+            </div>
           </div>
 
           {/* Bottom Left - Event Banner */}
           <div className="col-span-5 row-span-1 h-full">
-            <EventBanner />
+            <div className="h-full">
+              <EventBanner />
+            </div>
           </div>
 
           {/* Bottom Right - Mission Section */}
           <div className="col-span-7 row-span-1 h-full">
-            <MissionSection />
+            <div className="h-full">
+              <MissionSection />
+            </div>
           </div>
+
         </div>
       </div>
     </div>
