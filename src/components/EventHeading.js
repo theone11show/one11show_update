@@ -1,4 +1,5 @@
 import React from "react";
+import EventsCards from "./EventsCards";
 
 const EventHeading = () => {
   return (
@@ -28,6 +29,7 @@ const EventHeading = () => {
       >
         LIVE IN SILIGURI
       </p>
+     <EventsSection />
     </div>
   );
 };
