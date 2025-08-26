@@ -3,7 +3,7 @@ import React from "react";
 
 const EventHeading = () => {
   return (
-    <div className="relative  text-gray pl-6 sm:pl-16 md:pl-28 pr-6 sm:pr-12 md:pr-20 min-h-[1000px]">
+    <div className="relative  text-gray pl-6 sm:pl-16 md:pl-28 pr-6 sm:pr-12 md:pr-20 min-h-[900px]">
       {/* Main Heading */}
       <h2
         className="
