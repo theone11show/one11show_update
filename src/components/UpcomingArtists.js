@@ -1,6 +1,6 @@
 import React from "react";
 import EventHeading from "./EventHeading";
-import EventsCards from "./EventCards";
+import EventsCards from "./EventsCards";
 
 const UpcomingArtists = () => {
   return (
