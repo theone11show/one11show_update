@@ -1,6 +1,6 @@
 import React from "react";
 import EventHeading from "./EventHeading";
-import EventsSection from "./EventsSection";
+import EventsCards from "./EventCards";
 
 const UpcomingArtists = () => {
   return (
@@ -8,8 +8,8 @@ const UpcomingArtists = () => {
       {/* Heading Section */}
       <EventHeading />
 
-      {/* Events Section */}
-      <EventsSection />
+      {/* Events Cards */}
+      <EventsCards />
     </section>
   );
 };
