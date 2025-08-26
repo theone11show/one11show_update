@@ -85,48 +85,49 @@ const EventsSection = () => {
           <FaChevronLeft size={20} />
         </button>
       )}
-
       {/* Scrollable Row */}
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-4 scroll-smooth justify-start md:justify-center"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {events.map((event) => (
-          <div
-            key={event.id}
-            className="min-w-[220px] h-[300px] sm:min-w-[260px] sm:h-[340px] md:min-w-[300px] md:h-[380px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
-          >
-            {/* Event Image */}
-            <img
-              src={event.img}
-              alt={event.title}
-              className="w-full h-2/3 object-cover rounded-[20px]"
-            />
+<div
+  ref={scrollRef}
+  className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-4 scroll-smooth justify-start"
+  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+>
+  {events.map((event) => (
+    <div
+      key={event.id}
+      className="min-w-[220px] h-[300px] sm:min-w-[260px] sm:h-[340px] md:min-w-[300px] md:h-[380px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+    >
+      {/* Event Image */}
+      <img
+        src={event.img}
+        alt={event.title}
+        className="w-full h-2/3 object-cover rounded-[20px]"
+      />
+{/* Info Section */}
+<div className="bg-[#281316] px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
+  <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-montserrat">
+    {event.title}
+  </h3>
+  <div className="flex flex-col gap-1 text-white">
+    <a
+      href={event.linkInfo}
+      className="hover:text-white hover:underline transition text-[14px] font-sackers"
+    >
+      Info &gt;
+    </a>
+    <a
+      href={event.linkTickets}
+      className="hover:text-white hover:underline transition text-[14px] font-sackers"
+    >
+      Tickets &gt;
+    </a>
+  </div>
+</div>
 
-            {/* Info Section */}
-            <div className="bg-[#281316] p-4 h-1/3 flex flex-col justify-between">
-              <h3 className="text-lg sm:text-xl text-white uppercase mb-2 tracking-wide">
-                {event.title}
-              </h3>
-              <div className="flex flex-col gap-1 text-white text-xs sm:text-sm font-light">
-                <a
-                  href={event.linkInfo}
-                  className="hover:text-white hover:underline transition"
-                >
-                  Info &gt;
-                </a>
-                <a
-                  href={event.linkTickets}
-                  className="hover:text-white hover:underline transition"
-                >
-                  Tickets &gt;
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+   
+    </div>
+  ))}
+</div>
+
 
       {/* Right Button (hide on small screens) */}
       {showRight && (
