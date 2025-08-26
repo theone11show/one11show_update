@@ -2,7 +2,7 @@ import React from "react";
 
 const MusicBattle = () => {
   return (
-    <div className="relative w-full h-[140vh] flex items-center justify-center text-center font-[Poppins]">
+    <div className="relative w-full h-[80vh] md:h-[90vh] lg:h-[100vh] flex items-center justify-center text-center">
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -23,36 +23,37 @@ const MusicBattle = () => {
       {/* Content */}
       <div className="relative z-10 px-6 text-white">
         {/* Subtitle */}
-        <p className="text-sm md:text-base tracking-[6px] mb-3 uppercase text-gray-300">
-          SEASON 1
-        </p>
+        <p className="text-[26px] font-montserrat tracking-[6px] mb-3 text-gray-300">
+  SEASON 1
+</p>
 
         {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-green-500 mb-8">
-          MUSIC BATTLE SERIES
-        </h2>
+        <h2 className="text-[40px] md:text-[50px] lg:text-[60px] font-anton text-green-500 mb-8">
+  MUSIC BATTLE SERIES
+</h2>
 
         {/* Description */}
-        <p className="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-8 uppercase tracking-wide">
-          The One11 Music Battle Season 1, begins its journey on 20 <br />
-          <span className="font-bold text-white">September 2025</span>, bringing together artists, audiences,<br />
-          and creative communities for an exciting opening day.
-          <br /><br />
-          From the largest artist gathering in North Bengal to engaging
-          performances and cultural showcases.
-        </p>
+       <p className="max-w-3xl mx-auto text-[14px] md:text-[17px] lg:text-[19.3px] font-anton leading-relaxed mb-8 uppercase tracking-wide">
+  The  One11  Music  Battle  Season  1, begins  its  journey  on 20<br />
+  <span className="font-bold text-white">September 2025</span>, bringing together artists, audiences, and<br />
+   creative communities for an exciting opening day.
+  <br /><br />
+  From the largest artist gathering in North Bengal to engaging
+  performances and cultural showcases. 
+</p>
 
         {/* Button */}
-        <button className="bg-[#d0021a] hover:bg-[#b00117] text-black font-bold px-8 py-3 rounded-full text-lg transition-all duration-300">
-          Know More
-        </button>
+       <button className="bg-[#d0021a] hover:bg-[#b00117] text-black font-bold px-12 py-2 rounded-full text-lg transition-all duration-300">
+  Know More
+</button>
+
       </div>
 
       {/* Diagonal Bottom Shape */}
 
   <div
-  className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-r from-gray-200 to-gray-300 bg-opacity-30"
-  style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%, 0% 100%)" }}
+  className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-r from-gray-500/50 to-gray-700/60"
+  style={{ clipPath: "polygon(0 100%, 100% 55%, 100% 100%, 0% 100%)" }}
 ></div>
 
     </div>
