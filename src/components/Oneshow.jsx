@@ -8,6 +8,7 @@ import EventHeading from "./EventHeading";
 import EventsCards from"./EventsCards";
 import MusicBattle from "./MusicBattle";
 import NewsLetter from "./NewsLetter";
+import UpcomingArtists from "./UpcomingArtists";
 
 const Oneshow = () => {
   const location = useLocation();
@@ -53,9 +54,7 @@ const Oneshow = () => {
           </div>
         </div>
 
-        {/* Event Heading */}
-        <EventHeading />
-        <EventsCards/>
+        UpcomingArtists
         <MusicBattle/>
         <NewsLetter/>
 
