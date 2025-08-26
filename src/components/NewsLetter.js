@@ -3,23 +3,36 @@ import { FiMail } from "react-icons/fi";
 
 const NewsLetter = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-gray-300 to-gray-100 py-10 px-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-      {/* Left - Title */}
-      <h2 className="text-4xl font-extrabold text-white tracking-wide drop-shadow-lg">
-        NEWSLETTER
-      </h2>
+    <div className="w-full bg-gradient-to-r from-gray-300 to-gray-100 py-10 px-6 shadow-lg">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Left - Title */}
+        <h2 className="text-[56px] font-anton text-white tracking-wide drop-shadow-lg">
+          NEWSLETTER
+        </h2>
 
-      {/* Middle - Static Text with Divider */}
-      <div className="flex-1 max-w-xl w-full relative">
-        <p className="text-gray-600 text-lg tracking-wide">email address here</p>
-        <div className="absolute bottom-[-6px] left-0 w-[120%] h-[2px] bg-gradient-to-r from-[#d0021a] to-gray-700"></div>
+        {/* Center + Right */}
+        <div className="flex flex-1 items-center justify-between relative">
+          {/* Center - Static Text */}
+          <p className="ml-4 text-gray-600 text-[18px] font-montserrat tracking-wide leading-none flex items-center">
+            email address here
+          </p>
+
+          {/* Right - Subscribe Button */}
+         {/* Right - Subscribe Button */}
+<button className="flex items-center gap-2 text-black 
+  text-[16px] md:text-[21px] font-montserrat 
+  px-4 md:px-6 py-2 
+  hover:text-[#d0021a] transition 
+  mr-4 md:mr-20">
+  <FiMail className="text-2xl md:text-4xl text-gray-500" />
+  Subscribe
+</button>
+
+
+          {/* Divider (only under center + right, with margin-left) */}
+          <div className="absolute -bottom-2 left-4 right-0 h-[2px] bg-gradient-to-r from-[#d0021a] to-gray-700"></div>
+        </div>
       </div>
-
-      {/* Right - Subscribe Button */}
-      <button className="flex items-center gap-2 text-gray-600 font-semibold px-6 py-2 bg-transparent border-none rounded-none hover:text-[#d0021a] transition">
-        <FiMail className="text-xl" />
-        Subscribe
-      </button>
     </div>
   );
 };
