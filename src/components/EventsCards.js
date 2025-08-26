@@ -75,7 +75,7 @@ const EventsSection = () => {
   }, []);
 
   return (
-    <section className="py-12 px-6  relative">
+    <section className="pt-6 pb-12 px-6 relative">
       {/* Left Button (hide on small screens) */}
       {showLeft && (
         <button
