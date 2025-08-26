@@ -1,75 +1,84 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
-import "./styles.css";
-
-// Sections
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
-import CountdownPage from "./CountdownSection";
+import CountdownSection from "./CountdownSection";
 import EventHeading from "./EventHeading";
-import EventsSection from "./EventsCards";
+import EventsCards from"./EventsCards";
 import MusicBattle from "./MusicBattle";
 import NewsLetter from "./NewsLetter";
-import UpcomingArtists from "./UpcomingArtists";
 
 const Oneshow = () => {
   const location = useLocation();
 
+  // Auto-scroll
   useEffect(() => {
     if (location.state?.scrollToUpdates) {
       setTimeout(() => {
-        scroller.scrollTo("updates-section", {
-          smooth: true,
-          duration: 500,
-          offset: -70,
-        });
+        scroller.scrollTo("updates-section", { smooth: true, duration: 500, offset: -70 });
       }, 200);
     }
-
     if (location.state?.scrollToUpcoming) {
       setTimeout(() => {
-        scroller.scrollTo("upcomingevent-section", {
-          smooth: true,
-          duration: 500,
-          offset: -70,
-        });
+        scroller.scrollTo("upcomingevent-section", { smooth: true, duration: 500, offset: -70 });
       }, 200);
     }
   }, [location]);
 
+  // Parallax side images
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const leftImage = document.querySelector(".side-image.left");
+      const rightImage = document.querySelector(".side-image.right");
+      if (leftImage) leftImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
+      if (rightImage) rightImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Layout>
-      <div className="relative w-full overflow-x-hidden">
-        {/* Hero Section */}
+      {/* Main Wrapper with hidden horizontal overflow */}
+      <div className="w-full overflow-x-hidden">
+        {/* Background Section */}
         <AboutSection />
 
-        {/* Countdown Overlay */}
-        <div
-          className="
-            absolute 
-            top-0
-            left-1/2 -translate-x-1/2
-            translate-y-[20%]    /* default: very small screens (phones) */
-            sm:translate-y-[18%] /* small devices ≥640px */
-            md:translate-y-[23%] /* medium devices ≥768px */
-            lg:translate-y-[25%] /* large devices ≥1024px */
-            z-20 
-            w-full max-w-5xl 
-            px-2 sm:px-4
-          "
-        >
-          <CountdownPage />
+        {/* Countdown Overlay → on top of AboutSection and EventHeading */}
+        <div className="absolute w-full z-[10] -mt-32 sm:-mt-40 md:-mt-48">
+          <div className="scroll-container">
+            <CountdownSection />
+          </div>
         </div>
-        <UpcomingArtists/>
-        
 
-        {/* Music Battle Section */}
-        <MusicBattle />
+        {/* Event Heading */}
+        <EventHeading />
+        <EventsCards/>
+        <MusicBattle/>
+        <NewsLetter/>
 
-        {/* Newsletter Section */}
-        <NewsLetter />
       </div>
+
+      {/* Inline CSS for responsive scroll behavior */}
+      <style>
+        {`
+          .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-behavior: smooth;
+          }
+          /* Mobile: switch to vertical stacking */
+          @media (max-width: 768px) {
+            .scroll-container {
+              flex-direction: column;
+              overflow-x: hidden;
+            }
+          }
+        `}
+      </style>
     </Layout>
   );
 };
