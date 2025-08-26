@@ -29,7 +29,7 @@ const EventHeading = () => {
       >
         LIVE IN SILIGURI
       </p>
-     <EventsSection />
+     <EventsCards />
     </div>
   );
 };
