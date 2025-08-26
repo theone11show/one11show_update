@@ -11,6 +11,7 @@ import EventHeading from "./EventHeading";
 import EventsSection from "./EventsCards";
 import MusicBattle from "./MusicBattle";
 import NewsLetter from "./NewsLetter";
+import UpcomingArtists from "./UpcomingArtists";
 
 const Oneshow = () => {
   const location = useLocation();
@@ -60,12 +61,8 @@ const Oneshow = () => {
         >
           <CountdownPage />
         </div>
-
-        {/* Event Heading */}
-        <EventHeading />
-
-        {/* Events Section */}
-        <EventsSection />
+        <UpcomingArtists/>
+        
 
         {/* Music Battle Section */}
         <MusicBattle />
