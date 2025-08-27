@@ -8,7 +8,6 @@ import EventHeading from "./EventHeading";
 import EventsCards from"./EventsCards";
 import MusicBattle from "./MusicBattle";
 import NewsLetter from "./NewsLetter";
-import UpcomingArtists from "./UpcomingArtists";
 
 const Oneshow = () => {
   const location = useLocation();
@@ -48,15 +47,15 @@ const Oneshow = () => {
         <AboutSection />
 
         {/* Countdown Overlay → on top of AboutSection and EventHeading */}
-        <div className="absolute w-full z-[10] -mt-40 sm:-mt-40 md:-mt-48">
+        <div className="absolute w-full z-[10] -mt-40 sm:-mt-40 md:-mt-55">
           <div className="scroll-container">
             <CountdownSection />
           </div>
         </div>
 
-        <div className="mt-40 sm:mt-30 md:mt-20">
-  <UpcomingArtists />
-</div>
+        {/* Event Heading */}
+        <EventHeading />
+        <EventsCards/>
         <MusicBattle/>
         <NewsLetter/>
 
