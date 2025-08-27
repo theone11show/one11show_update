@@ -48,7 +48,7 @@ const Oneshow = () => {
         <AboutSection />
 
         {/* Countdown Overlay → on top of AboutSection and EventHeading */}
-        <div className="absolute w-full z-[10] -mt-32 sm:-mt-40 md:-mt-48">
+        <div className="absolute w-full z-[10] -mt-40 sm:-mt-40 md:-mt-48">
           <div className="scroll-container">
             <CountdownSection />
           </div>
