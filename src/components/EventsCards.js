@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const events = [
   { id: 1, title: "FAKIRA", img: "FakiraImage.webp", linkInfo: "/event/1/info", linkTickets: "/event/1/tickets" },
   { id: 2, title: "CACTUS", img: "CactusImage.webp", linkInfo: "/event/2/info", linkTickets: "/event/2/tickets" },
-  { id: 3, title: "DJ TASIA", img: "dj-tasia.webp", linkInfo: "/event/3/info", linkTickets: "/event/3/tickets" },
+  { id: 3, title: "DJ TASIA", img: "dj.webp", linkInfo: "/event/3/info", linkTickets: "/event/3/tickets" },
   { id: 4, title: "SAIRAM NIL", img: "sairam-nil.webp", linkInfo: "/event/4/info", linkTickets: "/event/4/tickets" },
   { id: 5, title: "RJ PRAVEEN", img: "rj-praveen.webp", linkInfo: "/event/5/info", linkTickets: "/event/5/tickets" },
 ];
