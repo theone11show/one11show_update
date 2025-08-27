@@ -46,7 +46,7 @@ const EventsSection = () => {
     <section
       className="py-12 px-6 relative"
       style={{
-        backgroundImage: "url('/your-background-image.jpg')", // ✅ Replace with your image path
+        backgroundImage: "url('/your-background-image.jpg')", 
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
