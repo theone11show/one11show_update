@@ -43,7 +43,17 @@ const EventsSection = () => {
   }, []);
 
   return (
-<section className="py-12 px-6 bg-gradient-to-r from-[#8b0000] to-[#4b0000] relative">
+    <section
+      className="py-12 px-6 relative"
+      style={{
+        backgroundImage: "url('/your-background-image.jpg')", // ✅ Replace with your image path
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay for better text & content contrast */}
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
 
       {/* Left Button */}
       {showLeft && (
@@ -57,42 +67,40 @@ const EventsSection = () => {
 
       {/* Scrollable Row */}
       <div
-  ref={scrollRef}
-  className="flex gap-8 overflow-x-auto scrollbar-hide max-w-[960px] mx-auto px-4 scroll-smooth justify-start"
->
-  {events.map((event) => (
-    <div
-      key={event.id}
-      className="min-w-[280px] h-[360px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
-    >
-      {/* Event Image */}
-      <div className="h-2/3">
-        <img
-          src={event.img}
-          alt={event.title}
-          className="w-full h-full object-cover rounded-lg" // smaller radius
-        />
-      </div>
+        ref={scrollRef}
+        className="flex gap-8 overflow-x-auto scrollbar-hide max-w-[960px] mx-auto px-4 scroll-smooth justify-start relative z-10"
+      >
+        {events.map((event) => (
+          <div
+            key={event.id}
+            className="min-w-[280px] h-[360px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 bg-[#281316]/80"
+          >
+            {/* Event Image */}
+            <div className="h-2/3">
+              <img
+                src={event.img}
+                alt={event.title}
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
 
-      {/* Info Section */}
-      <div className="bg-[#281316] px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
-        <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-montserrat">
-          {event.title}
-        </h3>
-        <div className="flex flex-col gap-1 text-white">
-          <a href={event.linkInfo} className="hover:text-white hover:underline transition text-[14px] font-sackers">
-            Info &gt;
-          </a>
-          <a href={event.linkTickets} className="hover:text-white hover:underline transition text-[14px] font-sackers">
-            Tickets &gt;
-          </a>
-        </div>
+            {/* Info Section */}
+            <div className="px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
+              <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-montserrat">
+                {event.title}
+              </h3>
+              <div className="flex flex-col gap-1 text-white">
+                <a href={event.linkInfo} className="hover:text-white hover:underline transition text-[14px] font-sackers">
+                  Info &gt;
+                </a>
+                <a href={event.linkTickets} className="hover:text-white hover:underline transition text-[14px] font-sackers">
+                  Tickets &gt;
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
-
-      
 
       {/* Right Button */}
       {showRight && (
