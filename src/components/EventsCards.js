@@ -91,7 +91,7 @@ const EventsSection = () => {
   ))}
 </div>
 
-      </div>
+      
 
       {/* Right Button */}
       {showRight && (
