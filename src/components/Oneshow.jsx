@@ -54,7 +54,7 @@ const Oneshow = () => {
           </div>
         </div>
 
-        <div className="mt-40 sm:mt-20 md:mt-10">
+        <div className="mt-40 sm:mt-30 md:mt-20">
   <UpcomingArtists />
 </div>
         <MusicBattle/>
