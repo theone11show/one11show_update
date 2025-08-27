@@ -43,7 +43,8 @@ const EventsSection = () => {
   }, []);
 
   return (
-    <section className="py-12 px-6 bg-[#1c0000] relative">
+<section className="py-12 px-6 bg-gradient-to-r from-[#8b0000] to-[#4b0000] relative">
+
       {/* Left Button */}
       {showLeft && (
         <button
