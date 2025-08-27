@@ -1,7 +1,7 @@
 import React from 'react'
-import ContdownSection from "./CountdownSection";
-import EventsCards from "./EventsCards";
+import CountdownSection from "./CountdownSection";
 import EventHeading from "./EventHeading";
+import EventsCards from "./EventsCards";
 
 const CardsSection = () => {
   return (
@@ -10,10 +10,9 @@ const CardsSection = () => {
   className="relative w-full bg-cover bg-center"
   style={{ backgroundImage: "url('/BackgroundSection.png')" }}
 >
-  <CountdownSection/>
-  <EventsCards/>
-  <EventHeading/>
-
+  <CountdownSection />
+  <EventHeading />
+   <EventsCards/>
 </section>
     </div>
   )
