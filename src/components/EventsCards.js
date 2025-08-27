@@ -2,41 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const events = [
-  {
-    id: 1,
-    title: "FAKIRA",
-    img: "FakiraImage.webp",
-    linkInfo: "/event/1/info",
-    linkTickets: "/event/1/tickets",
-  },
-  {
-    id: 2,
-    title: "CACTUS",
-    img: "CactusImage.webp",
-    linkInfo: "/event/2/info",
-    linkTickets: "/event/2/tickets",
-  },
-  {
-    id: 3,
-    title: "DJ TASIA",
-    img: "dj-tasia.webp",
-    linkInfo: "/event/3/info",
-    linkTickets: "/event/3/tickets",
-  },
-  {
-    id: 4,
-    title: "SAIRAM NIL",
-    img: "sairam-nil.webp",
-    linkInfo: "/event/4/info",
-    linkTickets: "/event/4/tickets",
-  },
-  {
-    id: 5,
-    title: "RJ PRAVEEN",
-    img: "rj-praveen.webp",
-    linkInfo: "/event/5/info",
-    linkTickets: "/event/5/tickets",
-  },
+  { id: 1, title: "FAKIRA", img: "FakiraImage.webp", linkInfo: "/event/1/info", linkTickets: "/event/1/tickets" },
+  { id: 2, title: "CACTUS", img: "CactusImage.webp", linkInfo: "/event/2/info", linkTickets: "/event/2/tickets" },
+  { id: 3, title: "DJ TASIA", img: "dj-tasia.webp", linkInfo: "/event/3/info", linkTickets: "/event/3/tickets" },
+  { id: 4, title: "SAIRAM NIL", img: "sairam-nil.webp", linkInfo: "/event/4/info", linkTickets: "/event/4/tickets" },
+  { id: 5, title: "RJ PRAVEEN", img: "rj-praveen.webp", linkInfo: "/event/5/info", linkTickets: "/event/5/tickets" },
 ];
 
 const EventsSection = () => {
@@ -54,10 +24,12 @@ const EventsSection = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth - 150;
+      const cardWidth = 320; // Card width (300px) + gap (~20px)
+      const scrollAmount = cardWidth;
       scrollRef.current.scrollTo({
-        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        left: direction === "left"
+          ? scrollRef.current.scrollLeft - scrollAmount
+          : scrollRef.current.scrollLeft + scrollAmount,
         behavior: "smooth",
       });
     }
@@ -66,17 +38,13 @@ const EventsSection = () => {
   useEffect(() => {
     checkScroll();
     const el = scrollRef.current;
-    if (el) {
-      el.addEventListener("scroll", checkScroll);
-    }
-    return () => {
-      if (el) el.removeEventListener("scroll", checkScroll);
-    };
+    if (el) el.addEventListener("scroll", checkScroll);
+    return () => el && el.removeEventListener("scroll", checkScroll);
   }, []);
 
   return (
-    <section className="pt-6 pb-12 px-6 relative">
-      {/* Left Button (hide on small screens) */}
+    <section className="py-12 px-6 bg-[#1c0000] relative">
+      {/* Left Button */}
       {showLeft && (
         <button
           onClick={() => scroll("left")}
@@ -85,51 +53,44 @@ const EventsSection = () => {
           <FaChevronLeft size={20} />
         </button>
       )}
+
       {/* Scrollable Row */}
-<div
-  ref={scrollRef}
-  className="flex gap-6 overflow-x-auto scrollbar-hide max-w-6xl mx-auto px-4 scroll-smooth justify-start"
-  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
->
-  {events.map((event) => (
-    <div
-      key={event.id}
-      className="min-w-[220px] h-[300px] sm:min-w-[260px] sm:h-[340px] md:min-w-[300px] md:h-[380px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
-    >
-      {/* Event Image */}
-      <img
-        src={event.img}
-        alt={event.title}
-        className="w-full h-2/3 object-cover rounded-[20px]"
-      />
-{/* Info Section */}
-<div className="bg-[#281316] px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
-  <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-montserrat">
-    {event.title}
-  </h3>
-  <div className="flex flex-col gap-1 text-white">
-    <a
-      href={event.linkInfo}
-      className="hover:text-white hover:underline transition text-[14px] font-sackers"
-    >
-      Info &gt;
-    </a>
-    <a
-      href={event.linkTickets}
-      className="hover:text-white hover:underline transition text-[14px] font-sackers"
-    >
-      Tickets &gt;
-    </a>
-  </div>
-</div>
+      <div
+        ref={scrollRef}
+        className="flex gap-8 overflow-x-auto scrollbar-hide max-w-[960px] mx-auto px-4 scroll-smooth justify-start"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {events.map((event) => (
+          <div
+            key={event.id}
+            className="min-w-[300px] h-[380px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            {/* Event Image */}
+            <img
+              src={event.img}
+              alt={event.title}
+              className="w-full h-2/3 object-cover rounded-[20px]"
+            />
 
-   
-    </div>
-  ))}
-</div>
+            {/* Info Section */}
+            <div className="bg-[#281316] px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
+              <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-montserrat">
+                {event.title}
+              </h3>
+              <div className="flex flex-col gap-1 text-white">
+                <a href={event.linkInfo} className="hover:text-white hover:underline transition text-[14px] font-sackers">
+                  Info &gt;
+                </a>
+                <a href={event.linkTickets} className="hover:text-white hover:underline transition text-[14px] font-sackers">
+                  Tickets &gt;
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-
-      {/* Right Button (hide on small screens) */}
+      {/* Right Button */}
       {showRight && (
         <button
           onClick={() => scroll("right")}
@@ -139,7 +100,7 @@ const EventsSection = () => {
         </button>
       )}
 
-      {/* Extra scrollbar hide for Chrome/Safari */}
+      {/* Hide Scrollbar */}
       <style jsx>{`
         div::-webkit-scrollbar {
           display: none;
