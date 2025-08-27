@@ -1,14 +1,11 @@
 import React from "react";
+
 const EventHeading = () => {
   return (
-    <div className="text-center sm:text-left px-6 sm:px-16 md:px-28 py-12 sm:py-16 md:py-24">
+    <div className="relative bg-gradient-to-r from-[#C90D16] to-[#520505] text-gray pl-6 sm:pl-16 md:pl-28 pr-6 sm:pr-12 md:pr-20 min-h-[1000px]">
       {/* Main Heading */}
       <h2
-        className="
-          text-3xl sm:text-5xl md:text-7xl lg:text-8xl
-          uppercase tracking-wider drop-shadow-lg
-          font-aton text-white
-        "
+        className=" absolute   top-[30%] sm:top-[70%] md:top-[50%] lg:top-[55%] text-3xl sm:text-5xl md:text-7xl lg:text-8xl   font-extrabold uppercase tracking-wider drop-shadow-lg text-left"
       >
         UPCOMING ARTISTS
       </h2>
@@ -16,10 +13,11 @@ const EventHeading = () => {
       {/* Sub Heading */}
       <p
         className="
-          mt-4
-          text-lg sm:text-2xl md:text-4xl
+          absolute 
+          top-[39%] sm:top-[60%] md:top-[62%] lg:top-[67%] 
+          text-lg sm:text-2xl md:text-4xl lg:text-5xl 
           text-gray-300 drop-shadow
-          font-montserrat
+          text-left
         "
       >
         LIVE IN SILIGURI
@@ -27,4 +25,5 @@ const EventHeading = () => {
     </div>
   );
 };
+
 export default EventHeading;
