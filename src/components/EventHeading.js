@@ -1,3 +1,4 @@
+import React from "react";
 const EventHeading = () => {
   return (
     <div className="text-center sm:text-left px-6 sm:px-16 md:px-28 py-12 sm:py-16 md:py-24">
@@ -26,3 +27,4 @@ const EventHeading = () => {
     </div>
   );
 };
+export default EventHeading;
