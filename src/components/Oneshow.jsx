@@ -4,7 +4,7 @@ import { scroller } from "react-scroll";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
 import CountdownSection from "./CountdownSection";
-import UpcomingArtists from "./UpcomingArtists";
+
 import EventHeading from "./EventHeading";
 import EventsCards from"./EventsCards";
 import MusicBattle from "./MusicBattle";
@@ -55,7 +55,8 @@ const Oneshow = () => {
         </div>
 
         {/* Event Heading */}
-         <UpcomingArtists/>
+        <EventHeading/>
+        <EventsCards/>
         <MusicBattle/>
         <NewsLetter/>
 
