@@ -2,11 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const events = [
-  { id: 1, title: "FAKIRA", img: "FakiraImage.webp", linkInfo: "/event/1/info", linkTickets: "/event/1/tickets" },
-  { id: 2, title: "CACTUS", img: "CactusImage.webp", linkInfo: "/event/2/info", linkTickets: "/event/2/tickets" },
-  { id: 3, title: "DJ TASIA", img: "dj.webp", linkInfo: "/event/3/info", linkTickets: "/event/3/tickets" },
-  { id: 4, title: "SAIRAM NIL", img: "sairam-nil.webp", linkInfo: "/event/4/info", linkTickets: "/event/4/tickets" },
-  { id: 5, title: "RJ PRAVEEN", img: "rj-praveen.webp", linkInfo: "/event/5/info", linkTickets: "/event/5/tickets" },
+  { id: 1, title: "DJ TASIA", img: "dj.webp", linkInfo: "", linkTickets: "" },
+  { id: 2, title: "SAIRAM NIL", img: "SaiRam.webp", linkInfo: "", linkTickets: "" },
+   { id:3, title: "RJ PRAVEEN", img: "rj.webp", linkInfo: "", linkTickets: "" },
+  { id: 4, title: "FAKIRA", img: "FakiraImage.webp", linkInfo: "", linkTickets: "" },
+  { id: 5, title: "CACTUS", img: "CactusImage.webp", linkInfo: "", linkTickets: "" },
+  
+  
+ 
 ];
 
 const EventsSection = () => {
@@ -45,16 +48,10 @@ const EventsSection = () => {
   return (
     <section
       className="py-12 px-6 relative"
-      style={{
-        backgroundImage: "url('/BackgroundSection.png
-          ')", 
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      
     >
       {/* Overlay for better text & content contrast */}
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 "></div>
 
       {/* Left Button */}
       {showLeft && (
