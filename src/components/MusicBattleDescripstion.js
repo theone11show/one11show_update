@@ -46,7 +46,7 @@ const MusicBattleDescription = () => {
 
       {/* Description */}
       <div className="max-w-3xl text-center space-y-4 text-white "
-      style={{fontFamily:"'Poppins', sans-serif",fontSize:"19px"}}
+      style={{fontFamily:"'Poppins', sans-serif",fontSize:"22px"}}
       >
         <p className="mt-5">
           The One11 Music Battle Seaseon 1, begins its journey on 20 September 2025 <br/>
@@ -62,7 +62,7 @@ const MusicBattleDescription = () => {
       {/* 2025 Text */}
       <h4
         className="text-3xl md:text-4xl mt-8"
-        style={{ fontFamily: "'Montserrat', sans-serif", fontSize:"25.9", color:"e4e2dd" }}
+        style={{ fontFamily: "'Montserrat', sans-serif", fontSize:"30", color:"e4e2dd" }}
       >
         2025
       </h4>
