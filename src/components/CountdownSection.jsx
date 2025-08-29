@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const CountdownSection = () => {
+   const navigate = useNavigate()
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-12-31T23:59:59")
+    const targetDate = new Date("2025-09-20T00:00:00")
     const now = new Date()
     const difference = targetDate - now
 
@@ -92,6 +94,7 @@ const CountdownSection = () => {
       </p>
     </div>
     <button
+       onClick={() => navigate("/about")}
       className="mt-4   text-black font-semibold px-8 py-2 rounded-full transition text-sm"
       style={{ fontFamily: "'Anton', sans-serif",backgroundColor: "#d0021a " }}
     >
@@ -128,6 +131,7 @@ const CountdownSection = () => {
   </div>
   <div className="flex items-center gap-4">
   <button
+   onClick={() => navigate("/OurMission")}
   className="px-4 py-2 rounded-full text-black font-semibold"
   style={{ backgroundColor: "#fecd98" }}
 >
