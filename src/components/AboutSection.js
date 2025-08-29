@@ -14,7 +14,7 @@ const HeroSection = () => {
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
         <source
-          src="https://xwbiqeigjdpuzfqw.public.blob.vercel-storage.com/Website%20faktus.mov"
+          src="https://player.cloudinary.com/embed/?cloud_name=dymitjx0r&public_id=HeaderVideo_dd6txy&profile=cld-default"
           type="video/mp4"
         />
       </video>
