@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
-import CountdownSection from "./CountdownSection";
+
 import NewsLetter from "./NewsLetter";
 import UpcommingArtists from "./UpcommingArtists";
 
@@ -56,7 +56,7 @@ const Oneshow = () => {
 
         
 
-        {/* Event Sections */}
+       
        <UpcommingArtists/>
         <NewsLetter />
       </div>
