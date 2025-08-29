@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
 
 const MusicBattle = () => {
+   const navigate = useNavigate()
   return (
     <div className="relative w-full h-[80vh] md:h-[90vh] lg:h-[100vh] flex items-center justify-center text-center">
       {/* Background Video */}
@@ -43,7 +45,7 @@ const MusicBattle = () => {
 </p>
 
         {/* Button */}
-       <button className="bg-[#d0021a] hover:bg-[#b00117] text-black font-bold px-12 py-2 rounded-full text-lg transition-all duration-300">
+       <button onClick={() => navigate("/eventSchedule")} className="bg-[#d0021a] hover:bg-[#b00117] text-black font-bold px-12 py-2 rounded-full text-lg transition-all duration-300">
   Know More
 </button>
 
