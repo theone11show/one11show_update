@@ -1,10 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react"
 
 const CountdownSection = () => {
-  const navigate = useNavigate();
   const calculateTimeLeft = () => {
     const targetDate = new Date("2025-12-31T23:59:59")
     const now = new Date()
@@ -96,7 +94,6 @@ const CountdownSection = () => {
     <button
       className="mt-4   text-black font-semibold px-8 py-2 rounded-full transition text-sm"
       style={{ fontFamily: "'Anton', sans-serif",backgroundColor: "#d0021a " }}
-      onClick={() => navigate("/eventSchedule")} 
     >
       know more
     </button>
