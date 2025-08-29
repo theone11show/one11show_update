@@ -54,10 +54,7 @@ const Oneshow = () => {
         {/* About Section */}
         <AboutSection />
 
-        {/* Countdown Section (natural flow, no overlay) */}
-        <div className="scroll-container my-12">
-          <CountdownSection />
-        </div>
+       
 
         {/* Event Sections */}
        <UpcommingArtists/>
