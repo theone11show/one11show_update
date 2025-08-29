@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const CountdownSection = () => {
   const navigate = useNavigate();
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-12-31T23:59:59")
+    const targetDate = new Date("2025-09-20T00:00:00")
     const now = new Date()
     const difference = targetDate - now
 
@@ -96,7 +96,7 @@ const CountdownSection = () => {
     <button
       className="mt-4   text-black font-semibold px-8 py-2 rounded-full transition text-sm"
       style={{ fontFamily: "'Anton', sans-serif",backgroundColor: "#d0021a " }}
-      onClick={() => navigate("/eventSchedule")} 
+      onClick={() => navigate("/about")} 
     >
       know more
     </button>
@@ -132,7 +132,10 @@ const CountdownSection = () => {
   <div className="flex items-center gap-4">
   <button
   className="px-4 py-2 rounded-full text-black font-semibold"
-  style={{ backgroundColor: "#fecd98" }}
+  style={{ backgroundColor: "#fecd98" }} 
+     onClick={() => navigate("/OurMission")} 
+
+ 
 >
   Connect
 </button>

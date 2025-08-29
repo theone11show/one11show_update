@@ -24,7 +24,7 @@ const EventSchedule = () => {
 
   return (
     <div
-      className="w-full bg-cover bg-center bg-no-repeat text-white px-6 py-12"
+      className="w-full bg-cover bg-center bg-no-repeat text-white"
       style={{
         backgroundImage: "url('/MusicBattle2.webp')",
         paddingBottom: "12rem",
@@ -104,6 +104,7 @@ const EventSchedule = () => {
                 style={{
                   fontSize: "clamp(14px, 2.2vw, 16px)", // slightly bigger button text
                   borderColor: "#fff",
+                  fontFamily:"'Poppins', sans-serif",
                 }}
               >
                 BUY TICKETS
