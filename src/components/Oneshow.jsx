@@ -4,11 +4,8 @@ import { scroller } from "react-scroll";
 import Layout from "./Animations/Layout";
 import AboutSection from "./AboutSection";
 import CountdownSection from "./CountdownSection";
-
-import EventHeading from "./EventHeading";
-import EventsCards from"./EventsCards";
-import MusicBattle from "./MusicBattle";
 import NewsLetter from "./NewsLetter";
+import UpcommingArtists from "./UpcommingArtists";
 
 const Oneshow = () => {
   const location = useLocation();
@@ -17,12 +14,20 @@ const Oneshow = () => {
   useEffect(() => {
     if (location.state?.scrollToUpdates) {
       setTimeout(() => {
-        scroller.scrollTo("updates-section", { smooth: true, duration: 500, offset: -70 });
+        scroller.scrollTo("updates-section", {
+          smooth: true,
+          duration: 500,
+          offset: -70,
+        });
       }, 200);
     }
     if (location.state?.scrollToUpcoming) {
       setTimeout(() => {
-        scroller.scrollTo("upcomingevent-section", { smooth: true, duration: 500, offset: -70 });
+        scroller.scrollTo("upcomingevent-section", {
+          smooth: true,
+          duration: 500,
+          offset: -70,
+        });
       }, 200);
     }
   }, [location]);
@@ -30,11 +35,14 @@ const Oneshow = () => {
   // Parallax side images
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       const leftImage = document.querySelector(".side-image.left");
       const rightImage = document.querySelector(".side-image.right");
-      if (leftImage) leftImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
-      if (rightImage) rightImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
+      if (leftImage)
+        leftImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
+      if (rightImage)
+        rightImage.style.transform = `translateY(${scrollTop * 0.2}px)`;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -42,24 +50,18 @@ const Oneshow = () => {
 
   return (
     <Layout>
-      {/* Main Wrapper with hidden horizontal overflow */}
       <div className="w-full overflow-x-hidden">
-        {/* Background Section */}
+        {/* About Section */}
         <AboutSection />
 
-        {/* Countdown Overlay → on top of AboutSection and EventHeading */}
-        <div className="absolute w-full z-[10] -mt-40 sm:-mt-40 md:-mt-55">
-          <div className="scroll-container">
-            <CountdownSection />
-          </div>
+        {/* Countdown Section (natural flow, no overlay) */}
+        <div className="scroll-container my-12">
+          <CountdownSection />
         </div>
 
-        {/* Event Heading */}
-        <EventHeading/>
-        <EventsCards/>
-        <MusicBattle/>
-        <NewsLetter/>
-
+        {/* Event Sections */}
+       <UpcommingArtists/>
+        <NewsLetter />
       </div>
 
       {/* Inline CSS for responsive scroll behavior */}

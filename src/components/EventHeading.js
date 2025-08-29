@@ -2,23 +2,17 @@ import React from "react";
 
 const EventHeading = () => {
   return (
-    <div className="relative bg-gradient-to-r from-[#C90D16] to-[#520505] text-gray pl-6 sm:pl-16 md:pl-28 pr-6 sm:pr-12 md:pr-20 min-h-[1400px] md:min-h-[1000px]">
+    <div className="w-full px-6 sm:px-16 md:px-28 py-16 sm:py-24 md:py-32 text-left">
       {/* Main Heading */}
       <h2
-        className=" absolute   top-[30%] sm:top-[30%] md:top-[50%] lg:top-[55%] text-3xl sm:text-5xl md:text-7xl lg:text-8xl    font-extrabold uppercase tracking-wider drop-shadow-lg text-left"
+        className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-wider drop-shadow-lg text-gray-100"
       >
         UPCOMING ARTISTS
       </h2>
 
       {/* Sub Heading */}
       <p
-        className="
-          absolute 
-          top-[39%] sm:top-[60%] md:top-[62%] lg:top-[67%] 
-          text-lg sm:text-2xl md:text-4xl lg:text-5xl 
-          text-gray-300 drop-shadow
-          text-left
-        "
+        className="mt-4 text-lg sm:text-2xl md:text-4xl lg:text-5xl text-gray-300 drop-shadow"
       >
         LIVE IN SILIGURI
       </p>

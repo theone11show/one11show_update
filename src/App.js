@@ -54,6 +54,7 @@ import PopupModal from './PopupModal';
 import './index.css'
 import AboutSection from './components/AboutSection';
 import OurTeamComponents from './components/OurTeamComponents';
+import MusicBattleEvents from "./Pages/MusicBattleEvents";
 
 
 
@@ -107,6 +108,7 @@ function App() {
        {/* Support component section */}
 
         <Route path ='/Support' element ={<InfoSection/>}/>
+        <Route path ='/eventSchedule' element ={<MusicBattleEvents/>}/> 
 
 
       </Routes>
