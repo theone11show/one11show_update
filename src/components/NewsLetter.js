@@ -70,10 +70,8 @@ const NewsLetter = () => {
               placeholder="Enter your email"
               required
               className="ml-4 bg-transparent border-none outline-none text-gray-600 
-           font-montserrat tracking-wide leading-none flex-1 font-[Poppins] placeholder:font-[Poppins]"
-style={{
-  fontSize: "clamp(14px, 3vw, 18px)",
-}}
+                         text-[18px] font-montserrat tracking-wide leading-none flex-1 font-[Poppins] placeholder:font-[Poppins]"
+            />
 
             {/* Subscribe Button */}
             <button
