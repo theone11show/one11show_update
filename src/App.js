@@ -16,8 +16,7 @@ import Oneshow from './components/Oneshow';
 // Form submit hone ke baad dikhne wala thank you page
 import Thank_you from './components/Thank_you';
 
-// About page ka component (project ke baare me info)
-
+// About page ka component (project ke baare me info
 import Aboutus from "./Pages/Aboutus";
 
 // Gallery page jisme images ya media show hote hain
