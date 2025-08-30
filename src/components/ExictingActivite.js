@@ -16,7 +16,7 @@ export default function ExcitingActivities() {
         <h1
           className="text-center mb-6"
           style={{
-            fontSize: "72px",
+           fontSize: "clamp(28px, 6vw, 72px)",
             color: "#e4e2dd",
             fontFamily: "'Montserrat', sans-serif",
           }}
