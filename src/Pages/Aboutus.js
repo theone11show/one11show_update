@@ -10,12 +10,12 @@ const Aboutus = () => {
   style={{ backgroundImage: "url('/aboutus.webp')" }}
 >
   {/* Title */}
-  <h2 className=" md:-ml-[120px]  text-[40px] md:text-[56px] font-anton text-white text-center mt-[550px]">
+  <h2 className="   text-[40px] md:text-[56px] font-anton text-white text-center mt-[550px]">
   About Us
 </h2>
 
  {/* About description */}
-<div className="md:- mt-20 md:-ml-[20px] text-[14px] sm:text-[16px] md:text-[28px] text-[#ffffff] leading-relaxed text-center font-[Montserrat] relative z-10">
+<div className="md:- mt-20  text-[14px] sm:text-[16px] md:text-[24px] text-[#ffffff] leading-relaxed text-center font-[Montserrat] relative z-10">
   <span>
     The One11 Show is an artist’s launchpad dedicated to discovering, mentoring, and launching authentic
   </span>
