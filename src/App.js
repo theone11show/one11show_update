@@ -81,7 +81,7 @@ function App() {
         <Route path="/submission-successfully" element={<Thank_you />} />
 
         {/* About page */}
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<about />} />
 
         {/* Gallery page */}
         <Route path="/gallery" element={<Gallery />} />
