@@ -70,9 +70,7 @@ const Header = () => {
   const menuItems = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
-    { label: "Our Mission", to: "/OurMission" },
     { label: "FAQs", to: "/Support" },
-    { label: "Support", to: "/Support" },
     { label: "Privacy Policy", to: "/Policy" },
     { label: "Terms of Service", to: "/TermsandCondition" },
   ];
@@ -144,13 +142,7 @@ const Header = () => {
         >
           Join Waitlist
         </Link>
-        <Link
-          to="/Support"
-          onClick={closeMenu}
-          className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
-        >
-          Contact
-        </Link>
+       
       </div>
     </header>
   );
