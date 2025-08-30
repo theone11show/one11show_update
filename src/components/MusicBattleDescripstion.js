@@ -52,21 +52,30 @@ const MusicBattleDescription = () => {
 
       {/* Description - shifted slightly left */}
       <div
-        className="max-w-3xl text-white mt-5"
+        className="max-w-3xl text-white mt-5 pr-15 " 
+      >
+        <p className="sm:text-lg"
         style={{
           fontFamily: "'Poppins', sans-serif",
-          fontSize: "22px", // increased font size
+          fontSize: "21px", // increased font size
           textAlign: "center",
           
         
         }}
-      >
-        <p>
+        >
           The One11 Music Battle Season 1 begins its journey on 20 September 2025 <br />
           bringing together artists, audiences, and creative communities for an exciting <br />
           opening day.
         </p>
-        <p className="mt-4">
+        <p className="mt-4"
+        style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "21px", 
+          textAlign: "center",
+          
+        
+        }}
+        >
           From the largest artists gathering in North Bengal to engaging performances <br />
           and cultural showcases.
         </p>
