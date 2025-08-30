@@ -50,65 +50,88 @@ const EventSchedule = () => {
             className="grid grid-cols-[110px_auto_160px] items-center border-b border-white py-6"
           >
             {/* Date Section */}
-            <div className="flex items-center border-r border-gray-300 pr-6">
-              <span
-                className="font-bold"
-                style={{
-                  fontSize: "clamp(34px, 6vw, 54px)", // bigger date
-                  color: "#e4e2dd",
-                  fontFamily: "'Montserrat', sans-serif",
-                }}
-              >
-                {event.date}
-              </span>
-              <span
-                style={{
-                  fontSize: "clamp(20px, 3vw, 24px)", // bigger month
-                  color: "#e4e2dd",
-                  fontFamily: "'Montserrat', sans-serif",
-                  marginLeft: "6px",
-                }}
-              >
-                {event.month}
-              </span>
-            </div>
+           {/* Date Section */}
+<div className="flex items-center">
+  <div className="flex items-center border-r border-gray-300 pr-3 md:pr-4 lg:pr-5">
+    <span
+      className="font-bold"
+      style={{
+        fontSize: "clamp(34px, 6vw, 54px)", // bigger date
+        color: "#e4e2dd",
+        fontFamily: "'Montserrat', sans-serif",
+      }}
+    >
+      {event.date}
+    </span>
+    <span
+      style={{
+        fontSize: "clamp(20px, 3vw, 24px)", // bigger month
+        color: "#e4e2dd",
+        fontFamily: "'Montserrat', sans-serif",
+        marginLeft: "6px",
+      }}
+    >
+      {event.month}
+    </span>
+  </div>
+</div>
+
+
 
             {/* Event Details */}
-            <div className="pl-6 flex flex-wrap items-baseline gap-3 min-w-0">
-              <span
-                className="italic font-bold shrink-0"
-                style={{
-                  fontSize: "clamp(24px, 3vw, 28px)", // bigger day
-                  color: "#e4e2dd",
-                  fontFamily: "'Poppins', sans-serif",
-                }}
-              >
-                {event.day}
-              </span>
-              <span
-                className="break-words"
-                style={{
-                  fontSize: "clamp(22px, 2.5vw, 28px)", // bigger title
-                  color: "#e4e2dd",
-                  fontFamily: "'Poppins', sans-serif",
-                }}
-              >
-                {event.title}
-              </span>
-            </div>
+<div className="pl-4 sm:pl-6 md:pl-10 flex flex-wrap items-baseline gap-3 min-w-0">
+  <span
+    className="italic font-bold shrink-0"
+    style={{
+      fontSize: "clamp(24px, 3vw, 28px)", // bigger day
+      color: "#e4e2dd",
+      fontFamily: "'Poppins', sans-serif",
+    }}
+  >
+    {event.day}
+  </span>
+  <span
+    className="break-words"
+    style={{
+      fontSize: "clamp(22px, 2.5vw, 28px)", // bigger title
+      color: "#e4e2dd",
+      fontFamily: "'Poppins', sans-serif",
+    }}
+  >
+    {event.title}
+  </span>
+</div>
 
-            {/* Button */}
-            <div className="flex justify-end">
-              <button
-                className="border rounded-full px-6 py-3 font-semibold opacity-70 hover:opacity-100 hover:bg-white hover:text-black transition"
-                style={{
-                  fontSize: "clamp(14px, 2.2vw, 16px)", // slightly bigger button text
-                  borderColor: "#fff",
-                }}
-              >
-                BUY TICKETS
-              </button>
-            </div>
+{/* Button */}
+<div className="flex justify-end mt-4 sm:mt-6 md:mt-0">
+  {event.day === "Day 3" ? (
+    <button
+      className="border rounded-full px-6 py-3 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap w-[160px] md:w-[180px] lg:w-[200px]"
+      style={{
+        fontSize: "clamp(12px, 2.2vw, 16px)",
+        borderColor: "#fff",
+        color: "white",
+      }}
+      disabled
+    >
+      COMING SOON
+    </button>
+  ) : (
+    <button
+      className="border rounded-full px-6 py-3 font-semibold opacity-70 hover:opacity-100 hover:bg-white hover:text-black transition font-[Poppins] whitespace-nowrap w-[160px] sm:w-[150px] md:w-[180px] lg:w-[200px]"
+      style={{
+        fontSize: "clamp(14px, 2.2vw, 16px)",
+        borderColor: "#fff",
+      }}
+    >
+      BUY TICKETS
+    </button>
+  )}
+</div>
+
+
+
+
           </div>
         ))}
       </div>
