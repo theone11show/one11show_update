@@ -55,6 +55,7 @@ import './index.css'
 import AboutSection from './components/AboutSection';
 import OurTeamComponents from './components/OurTeamComponents';
 import MusicBattleEvents from "./Pages/MusicBattleEvents";
+import Aboutus from "./Pages/Aboutus";
 
 
 
