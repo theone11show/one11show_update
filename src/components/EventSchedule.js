@@ -104,34 +104,18 @@ const EventSchedule = () => {
 
 {/* Button */}
 <div className="flex justify-end mt-4 sm:mt-6 md:mt-0">
-  {event.day === "Day 3" ? (
-    <button
-      className="border rounded-full px-6 py-3 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap w-[160px] md:w-[180px] lg:w-[200px]"
-      style={{
-        fontSize: "clamp(12px, 2.2vw, 16px)",
-        borderColor: "#fff",
-        color: "white",
-      }}
-      disabled
-    >
-      COMING SOON
-    </button>
-  ) : (
-    <button
-      className="border rounded-full px-6 py-3 font-semibold opacity-70 hover:opacity-100 hover:bg-white hover:text-black transition font-[Poppins] whitespace-nowrap w-[160px] sm:w-[150px] md:w-[180px] lg:w-[200px]"
-      style={{
-        fontSize: "clamp(14px, 2.2vw, 16px)",
-        borderColor: "#fff",
-      }}
-    >
-      BUY TICKETS
-    </button>
-  )}
+  <button
+    className="border rounded-full px-6 py-3 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap w-[160px] md:w-[180px] lg:w-[200px]"
+    style={{
+      fontSize: "clamp(12px, 2.2vw, 16px)",
+      borderColor: "#fff",
+      color: "white",
+    }}
+    disabled
+  >
+    COMING SOON
+  </button>
 </div>
-
-
-
-
           </div>
         ))}
       </div>
