@@ -84,7 +84,7 @@ export default function ExcitingActivities() {
               </h2>
               <p
                 style={{
-                  fontSize: "18.5px",
+                  fontSize: "clamp(14px, 3vw, 18px)",
                   color: "#fffff",
                   fontFamily: "'Poppins', sans-serif",
                   lineHeight: "1.7",
@@ -102,7 +102,7 @@ export default function ExcitingActivities() {
             <div className="md:w-1/2 text-right">
               <h2
                 style={{
-                  fontSize: "18.5px",
+                    fontSize: "clamp(14px, 3vw, 18px)",
                   fontFamily: "'Montserrat', sans-serif",
                   color: "#ffffff",
                   marginBottom: "10px",
@@ -129,7 +129,7 @@ export default function ExcitingActivities() {
             <div className="md:w-1/2 text-left">
               <h2
                 style={{
-                  fontSize: "18.5px",
+                  fontSize: "clamp(14px, 3vw, 18px)",
                   fontFamily: "'Montserrat', sans-serif",
                   color: "#ffffff",
                   marginBottom: "10px",
@@ -139,7 +139,7 @@ export default function ExcitingActivities() {
               </h2>
               <p
                 style={{
-                  fontSize: "18.5px",
+                fontSize: "clamp(14px, 3vw, 18px)",
                   color: "#ffffff",
                   fontFamily: "'Montserrat', sans-serif",
                   lineHeight: "1.7",
@@ -155,7 +155,7 @@ export default function ExcitingActivities() {
             <div className="md:w-1/2 text-right">
               <h2
                 style={{
-                  fontSize: "18.5px",
+                  fontSize: "clamp(14px, 3vw, 18px)",
                   fontFamily: "'Montserrat', sans-serif",
                   color: "#ffffff",
                   marginBottom: "10px",
@@ -165,7 +165,7 @@ export default function ExcitingActivities() {
               </h2>
               <p
                 style={{
-                  fontSize: "18.5px",
+                  fontSize: "clamp(14px, 3vw, 18px)",
                   color: "#ffffff",
                   fontFamily: "'Montserrat', sans-serif",
                   lineHeight: "1.7",
