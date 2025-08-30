@@ -42,10 +42,10 @@ const HeroSection = () => {
           </h2>
          
       <Link
-  to="/join"
+  to="/eventSchedule"
   className="mt-8 bg-[#d0021a] hover:bg-[#b00117] text-black font-semibold px-8 py-3 rounded-full transition"
 >
-  Book Now
+  Know more 
 </Link>
 
         </div>
