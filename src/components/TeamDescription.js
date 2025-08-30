@@ -21,7 +21,7 @@ const TeamDescription = () => {
 
         {/* Team Background Text */}
         <div className="absolute top-0 left-0 w-full h-full flex items-end">
-          <span className="ml-20 text-[140px] sm:text-[160px] text-[#cdcdcd]/20 font-['Anton'] leading-none">
+          <span className="ml-40 text-[140px] sm:text-[160px] text-[#cdcdcd]/20 font-['Anton'] leading-none">
             Team
           </span>
         </div>
