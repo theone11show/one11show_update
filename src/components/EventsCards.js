@@ -3,10 +3,10 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const events = [
   { id: 1, title: "DJ TASIA", img: "dj.webp", linkInfo: "", linkTickets: "" },
-  { id: 2, title: "SAIRAM NIL", img: "SaiRam.webp", linkInfo: "", linkTickets: "" },
+  { id: 2, title: "SAIRAM IYER", img: "SaiRam.webp", linkInfo: "", linkTickets: "" },
    { id:3, title: "RJ PRAVEEN", img: "rj.webp", linkInfo: "", linkTickets: "" },
   { id: 4, title: "FAKIRA", img: "FakiraImage.webp", linkInfo: "", linkTickets: "" },
-  { id: 5, title: "CACTUS", img: "CactusImage.webp", linkInfo: "", linkTickets: "" },
+  { id: 5, title: "CACTUSS", img: "CactusImage.webp", linkInfo: "", linkTickets: "" },
   
   
  
