@@ -16,8 +16,8 @@ import Oneshow from './components/Oneshow';
 // Form submit hone ke baad dikhne wala thank you page
 import Thank_you from './components/Thank_you';
 
-// About page ka component (project ke baare me info
-import Aboutus from "./Pages/Aboutus";
+// About page ka component (project ke baare me info)
+import About from './Pages/About';
 
 // Gallery page jisme images ya media show hote hain
 import Gallery from './Pages/Gallery';
@@ -110,6 +110,7 @@ function App() {
 
         <Route path ='/Support' element ={<InfoSection/>}/>
         <Route path ='/eventSchedule' element ={<MusicBattleEvents/>}/> 
+
 
 
       </Routes>
