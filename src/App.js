@@ -17,7 +17,7 @@ import Oneshow from './components/Oneshow';
 import Thank_you from './components/Thank_you';
 
 // About page ka component (project ke baare me info)
-import About from './Pages/About';
+import Aboutus from './Pages/About';
 
 // Gallery page jisme images ya media show hote hain
 import Gallery from './Pages/Gallery';
@@ -81,7 +81,7 @@ function App() {
         <Route path="/submission-successfully" element={<Thank_you />} />
 
         {/* About page */}
-        <Route path="/about" element={<about />} />
+        <Route path="/about" element={<Aboutus />} />
 
         {/* Gallery page */}
         <Route path="/gallery" element={<Gallery />} />
