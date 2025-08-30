@@ -84,14 +84,14 @@ const EventsSection = () => {
 
             {/* Info Section */}
             <div className="px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
-              <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-montserrat">
+              <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-[Montserrat] font-bold ">
                 {event.title}
               </h3>
               <div className="flex flex-col gap-1 text-white">
-                <a href={event.linkInfo} className="hover:text-white hover:underline transition text-[14px] font-sackers">
+                <a href={event.linkInfo} className="hover:text-white hover:underline transition text-[14px] font-[Montserrat]">
                   Info &gt;
                 </a>
-                <a href={event.linkTickets} className="hover:text-white hover:underline transition text-[14px] font-sackers">
+                <a href={event.linkTickets} className="hover:text-white hover:underline transition text-[14px] font-[Montserrat] ">
                   Tickets &gt;
                 </a>
               </div>
