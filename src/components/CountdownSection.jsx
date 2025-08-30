@@ -131,7 +131,7 @@ const CountdownSection = () => {
   </div>
   <div className="flex items-center gap-4">
   <button
-   onClick={() => navigate("/OurMission")}
+   onClick={() => navigate("/about")}
   className="px-4 py-2 rounded-full text-black font-semibold"
   style={{ backgroundColor: "#fecd98" }}
 >
