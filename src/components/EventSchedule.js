@@ -106,7 +106,7 @@ const EventSchedule = () => {
 <div className="flex justify-end mt-4 sm:mt-6 md:mt-0">
   <button
   className="border rounded-full px-4 py-2 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap 
-             w-[120px] sm:w-[140px] md:w-[180px] lg:w-[200px]"
+             w-[110px] sm:w-[100px] md:w-[180px] lg:w-[200px]"
   style={{
     fontSize: "clamp(10px, 2.5vw, 16px)",
     borderColor: "#fff",
