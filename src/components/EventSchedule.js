@@ -65,7 +65,7 @@ const EventSchedule = () => {
     </span>
     <span
       style={{
-        fontSize: "clamp(20px, 3vw, 24px)", // bigger month
+        fontSize: "clamp(16px, 3vw, 24px)", // bigger month
         color: "#e4e2dd",
         fontFamily: "'Montserrat', sans-serif",
         marginLeft: "6px",
@@ -83,7 +83,7 @@ const EventSchedule = () => {
   <span
     className="italic font-bold shrink-0"
     style={{
-      fontSize: "clamp(24px, 3vw, 28px)", // bigger day
+      fontSize: "clamp(18px, 3vw, 28px)", // bigger day
       color: "#e4e2dd",
       fontFamily: "'Poppins', sans-serif",
     }}
@@ -93,7 +93,7 @@ const EventSchedule = () => {
   <span
     className="break-words"
     style={{
-      fontSize: "clamp(22px, 2.5vw, 28px)", // bigger title
+      fontSize: "clamp(16px, 2.5vw, 28px)", // bigger title
       color: "#e4e2dd",
       fontFamily: "'Poppins', sans-serif",
     }}
@@ -108,7 +108,7 @@ const EventSchedule = () => {
   className="border rounded-full px-4 py-2 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap 
              w-[110px] sm:w-[100px] md:w-[180px] lg:w-[200px]"
   style={{
-    fontSize: "clamp(10px, 2.5vw, 16px)",
+    fontSize: "clamp(10px, 2.5vw, 16px)", // smaller on mobile
     borderColor: "#fff",
     color: "white",
   }}
