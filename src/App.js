@@ -56,6 +56,7 @@ import AboutSection from './components/AboutSection';
 import OurTeamComponents from './components/OurTeamComponents';
 import MusicBattleEvents from "./Pages/MusicBattleEvents";
 import Aboutus from "./Pages/Aboutus";
+import Day1 from "./Pages/Day1";
 
 
 
@@ -110,6 +111,8 @@ function App() {
 
         <Route path ='/Support' element ={<InfoSection/>}/>
         <Route path ='/eventSchedule' element ={<MusicBattleEvents/>}/> 
+           <Route path ='/day1-events' element ={<Day1/>}/>
+
 
 
 
