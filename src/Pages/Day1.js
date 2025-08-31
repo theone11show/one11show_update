@@ -39,7 +39,7 @@ const MobileLayout = () => {
       {/* Guest 1 */}
       <div>
         <img src="/Rj-day1.webp" alt="RJ Praveen"  loading="lazy" className="rounded-xl " />
-         <img src="/SaiRam.webp" alt="Sai Ram"  loading="lazy" className="rounded-xl h-80 mt-20" />
+        
         <div className="mb-20 font-extrabold">
           <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16 " >
             EXCLUSIVE PRESENCE
@@ -47,7 +47,9 @@ const MobileLayout = () => {
           <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
             Look who gets pranked next by RJ Praveen at the show, as he hosts
             the show and takes the event next level.
+       
           </p>
+         <img src="/SaiRam.webp" alt="Sai Ram"  loading="lazy" className="rounded-xl h-80 mt-20" />
           <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
             Talented dual-voice Shri Sairam Iyer will join as the judge for the
             semi-finals of the one1 music battle. See as he, along with other
@@ -114,3 +116,4 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
