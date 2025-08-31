@@ -51,6 +51,17 @@ const MobileLayout = () => {
         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
           Look who gets pranked next by RJ Praveen at the show, as he hosts the show and takes the event next level.
         </p>
+           <img
+          src="/SaiRam.webp"
+          alt="Sai Ram"
+          loading="lazy"
+          className="rounded-xl w-full h-56 object-cover mt-4"
+        />  
+         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
+          Talented dual-voice Shri Sairam Iyer will join as the judge for the
+            semi-finals of the one1 music battle. See as he, along with other
+            judges, selects the finalists for the music battle.
+        </p>
       </div>
 
       {/* Divider */}
@@ -62,13 +73,13 @@ const MobileLayout = () => {
           Music battle series
         </h2>
         <img
-          src="/SaiRam.webp"
+          src="/Theone11.webp"
           alt="Sai Ram"
           loading="lazy"
           className="rounded-xl w-full h-56 object-cover mt-4"
         />
         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
-          Talented dual-voice Shri Sairam Iyer will join as the judge for the semi-finals of the one1 music battle. See as he, along with other judges, selects the finalists for the music battle.
+          Semi-finalists from across India will find themselves on this stage near you. From bands, singer-songwriters, rappers, musicians—find out whether they have what it takes to go to the finals.
         </p>
       </div>
 
@@ -121,6 +132,7 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
 
