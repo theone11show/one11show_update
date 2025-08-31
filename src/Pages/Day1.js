@@ -38,7 +38,8 @@ const MobileLayout = () => {
 
       {/* Guest 1 */}
       <div>
-        <img src="/Rj-day1.webp" alt="RJ Praveen"  loading="lazy" className="rounded-xl" />
+        <img src="/Rj-day1.webp" alt="RJ Praveen"  loading="lazy" className="rounded-xl " />
+         <img src="/SaiRam.webp" alt="Sai Ram"  loading="lazy" className="rounded-xl h-80 mt-20" />
         <div className="mb-20 font-extrabold">
           <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16 " >
             EXCLUSIVE PRESENCE
@@ -53,11 +54,12 @@ const MobileLayout = () => {
             judges, selects the finalists for the music battle.
           </p>
         </div>
+
       </div>
 
       {/* Guest 2 */}
       <div>
-        <img src="/SaiRam.webp" alt="Sai Ram"  loading="lazy" className="rounded-xl" />
+        <img src="/Theone11.webp" alt="Sai Ram"  loading="lazy" className="rounded-xl" />
         <div className="mb-20 font-extrabold">
           <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16 " >
             Music battle series
