@@ -7,6 +7,7 @@ const EventSchedule = () => {
       month: "sept",
       title: "Music Battle series S1 & Dj night with Dj Tasia",
       day: "Day 1",
+      link: "/day1-events",
     },
     {
       date: "21",
