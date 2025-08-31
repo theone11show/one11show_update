@@ -38,12 +38,13 @@ const MobileLayout = () => {
 
       {/* Guest 1 */}
       <div>
-        <img src="/Rj-day1.webp" alt="RJ Praveen"  loading="lazy" className="rounded-xl " />
+       
         
         <div className="mb-20 font-extrabold">
           <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16 " >
             EXCLUSIVE PRESENCE
           </h2>
+      <img src="/Rj-day1.webp" alt="RJ Praveen"  loading="lazy" className="rounded-xl " />
           <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
             Look who gets pranked next by RJ Praveen at the show, as he hosts
             the show and takes the event next level.
@@ -116,4 +117,5 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
