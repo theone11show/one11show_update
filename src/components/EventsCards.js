@@ -68,37 +68,54 @@ const EventsSection = () => {
         ref={scrollRef}
         className="flex gap-8 overflow-x-auto scrollbar-hide max-w-[960px] mx-auto px-4 scroll-smooth justify-start relative z-10"
       >
-        {events.map((event) => (
-          <div
-            key={event.id}
-            className="min-w-[280px] h-[360px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 bg-[#281316]/80"
-          >
-            {/* Event Image */}
-            <div className="h-2/3">
-              <img
-                src={event.img}
-                alt={event.title}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
+        
+       {events.map((event, index) => (
+  <div
+    key={event.id}
+    className="min-w-[280px] h-[360px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 bg-[#281316]/80"
+  >
+    {/* Event Image */}
+    <div className="h-2/3">
+      {(index < 3 && event.linkInfo) ? (
+        <a href={event.linkInfo}>
+          <img
+            src={event.img}
+            alt={event.title}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </a>
+      ) : (
+        <img
+          src={event.img}
+          alt={event.title}
+          className="w-full h-full object-cover rounded-lg"
+        />
+      )}
+    </div>
 
-            {/* Info Section */}
-            <div className="px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
-              <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-[Montserrat] font-bold ">
-                {event.title}
-              </h3>
-              <div className="flex flex-col gap-1 text-white">
-                <a href={event.linkInfo} className="hover:text-white hover:underline transition text-[14px] font-[Montserrat]">
-                  Info &gt;
-                </a>
-                <a href={event.linkTickets} className="hover:text-white hover:underline transition text-[14px] font-[Montserrat] ">
-                  Tickets &gt;
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+    {/* Info Section */}
+    <div className="px-4 pt-4 pb-8 md:p-4 h-1/3 flex flex-col justify-between">
+      <h3 className="text-[21px] text-white uppercase mb-2 tracking-wide font-[Montserrat] font-bold">
+        {event.title}
+      </h3>
+      <div className="flex flex-col gap-1 text-white">
+        <a
+          href={event.linkInfo}
+          className="hover:text-white hover:underline transition text-[14px] font-[Montserrat]"
+        >
+          Info &gt;
+        </a>
+        <a
+          href={event.linkTickets}
+          className="hover:text-white hover:underline transition text-[14px] font-[Montserrat]"
+        >
+          Tickets &gt;
+        </a>
       </div>
+    </div>
+  </div>
+))}
+  </div>  
 
       {/* Right Button */}
       {showRight && (
