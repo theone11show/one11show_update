@@ -51,7 +51,7 @@ const Header = () => {
   const menuItems = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
-    { label: "Events", to :"/Events"},
+    { label: "Events", to :"/eventSchedule"},
     { label: "Updates", to: "/updates" },
     { label: "FAQs", to: "/Support" },
     { label: "Privacy Policy", to: "/Policy" },
