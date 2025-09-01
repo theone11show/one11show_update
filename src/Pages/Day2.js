@@ -46,7 +46,7 @@ const MobileLayout = () => {
    <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16">
             PUJA-THEMED CULTURAL PERFORMANCE
           </h2>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-16">
           <img
             src="/day2.webp"
             alt="day2"
@@ -148,6 +148,7 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
 
