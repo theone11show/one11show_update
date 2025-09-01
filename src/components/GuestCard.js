@@ -2,7 +2,7 @@ import React from "react";
 
 const GuestCard = () => {
   return (
-<div className="bg-[#1e1e1e]/70 backdrop-blur-md p-6 rounded-2xl shadow-lg 
+<div className="bg-[#1e1e1e]/70 backdrop-blur-md p-6  shadow-lg 
       w-full md:w-4/5 lg:w-3/4 mx-auto grid grid-cols-1 gap-8 mt-12 pt-80">
 
       
@@ -60,3 +60,4 @@ const GuestCard = () => {
 }
 
 export default GuestCard;
+
