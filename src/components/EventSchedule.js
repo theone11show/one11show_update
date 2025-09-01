@@ -9,6 +9,7 @@ const EventSchedule = () => {
       title: "Music Battle series S1 & Dj night with Dj Tasia",
       day: "Day 1",
       link: "/day1-events",
+      tickets: "https://in.bookmyshow.com/events/the-one11-show/ET00460471?webview=true",
     },
     {
       date: "21",
@@ -16,6 +17,7 @@ const EventSchedule = () => {
       title: "Cactuss x Fakira & Cultural event",
       day: "Day 2",
       link: "/day2-events",
+      tickets: "https://in.bookmyshow.com/events/the-one11-show/ET00460471?webview=true",
     },
     {
       date: "22",
@@ -23,6 +25,7 @@ const EventSchedule = () => {
       title: "Exclusive Event",
       day: "Day 3",
       link: "/day3-events",
+      tickets: null, // No tickets for Day 3
     },
   ];
 
@@ -111,18 +114,35 @@ const EventSchedule = () => {
 
             {/* Button */}
             <div className="flex justify-center md:justify-end">
-              <button
-                className="flex items-center justify-center border rounded-full px-6 py-3 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap"
-                style={{
-                  fontSize: "clamp(14px, 4vw, 18px)",
-                  borderColor: "#fff",
-                  color: "white",
-                  minWidth: "140px",
-                }}
-                disabled
-              >
-                COMING SOON
-              </button>
+              {event.tickets ? (
+                <a
+                  href={event.tickets}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center border rounded-full px-6 py-3 font-semibold font-[Poppins] whitespace-nowrap hover:bg-white hover:text-black transition"
+                  style={{
+                    fontSize: "clamp(14px, 4vw, 18px)",
+                    borderColor: "#fff",
+                    color: "white",
+                    minWidth: "140px",
+                  }}
+                >
+                  BUY TICKETS
+                </a>
+              ) : (
+                <button
+                  className="flex items-center justify-center border rounded-full px-6 py-3 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap"
+                  style={{
+                    fontSize: "clamp(14px, 4vw, 18px)",
+                    borderColor: "#fff",
+                    color: "white",
+                    minWidth: "140px",
+                  }}
+                  disabled
+                >
+                  COMING SOON
+                </button>
+              )}
             </div>
           </div>
         ))}
