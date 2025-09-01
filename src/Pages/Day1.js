@@ -46,21 +46,23 @@ const MobileLayout = () => {
           src="/Rj-day1.webp"
           alt="RJ Praveen"
           loading="lazy"
-          className="rounded-xl w-full h-56 object-cover mt-4"
+          className="rounded-xl w-full h-auto object-contain mt-4"
         />
         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
-          Look who gets pranked next by RJ Praveen at the show, as he hosts the show and takes the event next level.
+          Look who gets pranked next by RJ Praveen at the show, as he hosts the
+          show and takes the event next level.
         </p>
-           <img
+
+        <img
           src="/SaiRam.webp"
           alt="Sai Ram"
           loading="lazy"
-          className="rounded-xl w-full h-56 object-cover mt-4"
-        />  
-         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
+          className="rounded-xl w-full h-auto object-contain mt-4"
+        />
+        <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
           Talented dual-voice Shri Sairam Iyer will join as the judge for the
-            semi-finals of the one1 music battle. See as he, along with other
-            judges, selects the finalists for the music battle.
+          semi-finals of the one1 music battle. See as he, along with other
+          judges, selects the finalists for the music battle.
         </p>
       </div>
 
@@ -76,10 +78,12 @@ const MobileLayout = () => {
           src="/Theone11.webp"
           alt="Sai Ram"
           loading="lazy"
-          className="rounded-xl w-full h-56 object-cover mt-4"
+          className="rounded-xl w-full h-auto object-contain mt-4"
         />
         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
-          Semi-finalists from across India will find themselves on this stage near you. From bands, singer-songwriters, rappers, musicians—find out whether they have what it takes to go to the finals.
+          Semi-finalists from across India will find themselves on this stage
+          near you. From bands, singer-songwriters, rappers, musicians—find out
+          whether they have what it takes to go to the finals.
         </p>
       </div>
 
@@ -94,10 +98,12 @@ const MobileLayout = () => {
           src="/Dj-day1.webp"
           alt="DJ Tasia"
           loading="lazy"
-          className="rounded-xl w-full h-56 object-cover mt-4"
+          className="rounded-xl w-full h-auto object-contain mt-4"
         />
         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
-          Electrifying DJ Night to end the day. Dj Tasia will take over the console, spinning dynamic beats that promise to uplift the crowd and keep the night alive.
+          Electrifying DJ Night to end the day. Dj Tasia will take over the
+          console, spinning dynamic beats that promise to uplift the crowd and
+          keep the night alive.
         </p>
       </div>
 
@@ -112,15 +118,19 @@ const MobileLayout = () => {
           src="/crowd.webp"
           alt="Crowd"
           loading="lazy"
-          className="rounded-xl w-full h-56 object-cover mt-4"
+          className="rounded-xl w-full h-auto object-contain mt-4"
         />
         <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4 pb-4">
-          The first day will feature the biggest artist meetup in North Bengal, where artists of every genre, taste, and niche will come together to connect, bond, and network beyond boundaries of language and genre, over a single roof of music.
+          The first day will feature the biggest artist meetup in North Bengal,
+          where artists of every genre, taste, and niche will come together to
+          connect, bond, and network beyond boundaries of language and genre,
+          over a single roof of music.
         </p>
       </div>
     </div>
   );
 };
+
 
 const GuestsSection = () => {
   return (
@@ -132,6 +142,7 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
 
