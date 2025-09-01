@@ -69,8 +69,7 @@ function App() {
         {/* Our Mission page */}
         <Route path="/OurMission" element={<OurMission />} />
 
-        {/* Events page (list of events) */}
-        <Route path="/Events" element={<Event />} />
+       
 
         {/* Support / Info section */}
         <Route path="/Support" element={<InfoSection />} />
