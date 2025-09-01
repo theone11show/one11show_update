@@ -61,7 +61,7 @@ const MobileLayout = () => {
             HeadStart for the puja festival.
           </p>
         </div>
-        <hr className="border-gray-600" />
+          <hr className="border-t border-gray-300/50" />
       </div>
 
       {/* Guest 2 */}
@@ -84,7 +84,7 @@ const MobileLayout = () => {
             as in a desert and despite the odds, like a cactus, they survived
           </p>
         </div>
-        <hr className="border-gray-600" />
+        <hr className="border-t border-gray-300/50" />
       </div>
 
       {/* Guest 3 */}
@@ -108,7 +108,7 @@ const MobileLayout = () => {
             performance at The One11 Show.
           </p>
         </div>
-        <hr className="border-gray-600" />
+          <hr className="border-t border-gray-300/50" />
       </div>
 
       {/* Guest 4 */}
@@ -131,7 +131,7 @@ const MobileLayout = () => {
             Find out whether they have what it takes to go to the finals.
           </p>
         </div>
-        <hr className="border-gray-600" />
+        <hr className="border-t border-gray-300/50" />
       </div>
     </div>
   );
@@ -148,4 +148,5 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
