@@ -128,7 +128,7 @@ const MobileLayout = () => {
           </h2>
           <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed pb-5">
          To keep the excitement alive, we've lined up suprise performances that will be revealed only
-              on the day of event
+              on the day of event.
           </p>
         </div>
        
@@ -148,6 +148,7 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
 
