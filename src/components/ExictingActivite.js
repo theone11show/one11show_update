@@ -161,7 +161,7 @@ export default function ExcitingActivities() {
                   marginBottom: "10px",
                 }}
               >
-                stage Opportunities
+                Stage Opportunities
               </h2>
               <p
                 style={{
