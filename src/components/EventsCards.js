@@ -117,12 +117,14 @@ const EventsSection = () => {
                 >
                   Info &gt;
                 </a>
-                <a
-                  href={event.linkTickets}
-                  className="hover:text-white hover:underline transition text-[14px] font-[Montserrat]"
-                >
-                  Tickets &gt;
-                </a>
+    <a
+  href={event.linkTickets}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-white hover:underline transition text-[14px] font-[Montserrat]"
+>
+  Tickets &gt;
+</a>
               </div>
             </div>
           </div>
