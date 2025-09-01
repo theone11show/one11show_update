@@ -48,7 +48,7 @@ const MobileLayout = () => {
             src="/day2.webp"
             alt="day2"
             loading="lazy"
-            className="rounded-xl h-80"
+            className="rounded-xl h-72"
           />
         </div>
         <div className="mb-20 font-extrabold text-left">
@@ -71,7 +71,7 @@ const MobileLayout = () => {
             src="/cactussday2.webp"
             alt="cactussday2"
             loading="lazy"
-            className="rounded-xl h-80"
+            className="rounded-xl h-72"
           />
         </div>
         <div className="mb-20 font-extrabold text-left">
@@ -94,7 +94,7 @@ const MobileLayout = () => {
             src="/fakiraday2.webp"
             loading="lazy"
             alt="Fakira"
-            className="rounded-xl h-80"
+            className="rounded-xl h-72"
           />
         </div>
         <div className="mt-16 mb-20 font-extrabold text-left">
@@ -118,7 +118,7 @@ const MobileLayout = () => {
             src="/suprised.webp"
             loading="lazy"
             alt="suprised"
-            className="rounded-xl mt-4 h-80"
+            className="rounded-xl mt-4 h-72"
           />
         </div>
         <div className="mt-16 mb-20 text-left">
@@ -131,7 +131,7 @@ const MobileLayout = () => {
             Find out whether they have what it takes to go to the finals.
           </p>
         </div>
-        <hr className="border-t border-gray-300/50" />
+       
       </div>
     </div>
   );
@@ -148,5 +148,6 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
