@@ -11,28 +11,11 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const handleUpdatesClick = () => {
-    closeMenu();
-    navigate("/updates");
-  };
 
-  const handleEventsClick = () => {
-    closeMenu();
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollToUpcoming: true } });
-    } else {
-      scroller.scrollTo("upcomingevent-section", {
-        smooth: true,
-        duration: 500,
-        offset: -70,
-      });
-    }
-  };
-
-  // Scroll hide/show on mobile
+  // Navbar hide/show on scroll
   useEffect(() => {
     let lastY = window.scrollY;
     let ticking = false;
@@ -45,13 +28,11 @@ const Header = () => {
         ticking = false;
         return;
       }
-
       if (currentY > lastY && currentY > hideThreshold) {
         setShowNavbar(false);
       } else {
         setShowNavbar(true);
       }
-
       lastY = currentY;
       ticking = false;
     };
@@ -70,31 +51,37 @@ const Header = () => {
   const menuItems = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
+    { label: "Events", to :"/Events"},
+    { label: "Updates", to: "/updates" },
     { label: "FAQs", to: "/Support" },
     { label: "Privacy Policy", to: "/Policy" },
     { label: "Terms of Service", to: "/TermsandCondition" },
+    { label: "Join Waitlist", to: "/join" },
   ];
 
   return (
     <header
-      className={`shadow-lg fixed w-full z-50 py-1 px-6 bg-charcoal-black transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed w-full z-50 py-1 px-6 shadow-lg transition-transform duration-300
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+        bg-gradient-to-r from-[#1f1f1f] to-[#000000] md:bg-charcoal-black
+      `}
     >
       <nav className="container flex justify-between items-center">
         <Logo />
 
-        {/* Menu toggle visible on all screens */}
+        {/* Menu toggle */}
         <button
           onClick={toggleMenu}
           className="text-cream-white focus:outline-none"
           aria-label="Toggle menu"
         >
-          <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}></i>
+          <i
+            className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}
+          ></i>
         </button>
       </nav>
 
-      {/* Overlay / Side Drawer Menu */}
+      {/* Mobile menu */}
       <div
         className={`fixed top-0 right-0 h-full w-full md:w-96 bg-[#171616] py-5 z-50 flex flex-col items-center justify-start space-y-8 text-2xl font-bold transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -108,41 +95,26 @@ const Header = () => {
           <i className="fas fa-times text-3xl"></i>
         </button>
 
-        {menuItems.map((item, idx) => (
-          <Link
-            key={idx}
-            to={item.to}
-            onClick={closeMenu}
-            className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
-          >
-            {item.label}
-          </Link>
-        ))}
-
-        {/* Events */}
-        <span
-          onClick={handleEventsClick}
-          className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
-        >
-          Events
-        </span>
-
-        {/* Updates */}
-        <span
-          onClick={handleUpdatesClick}
-          className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
-        >
-          Updates
-        </span>
-
-        <Link
-          to="/join"
-          onClick={closeMenu}
-          className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
-        >
-          Join Waitlist
-        </Link>
-       
+        {menuItems.map((item, idx) =>
+          item.action ? (
+            <span
+              key={idx}
+              onClick={item.action}
+              className="text-cream-white hover:text-primary-red transition duration-300 text-xl cursor-pointer"
+            >
+              {item.label}
+            </span>
+          ) : (
+            <Link
+              key={idx}
+              to={item.to}
+              onClick={closeMenu}
+              className="text-cream-white hover:text-primary-red transition duration-300 text-xl"
+            >
+              {item.label}
+            </Link>
+          )
+        )}
       </div>
     </header>
   );
