@@ -1,10 +1,10 @@
 import React from 'react'
-import CompetitionCard from './CompetitionCards'
+import EventSchedule from "./EventSchedule";
 
 const Event = () => {
   return (
-    <div className="p-[120px]">
-      <CompetitionCard />
+    <div className="p-[160px] bg-charcoal-black">
+    <EventSchedule/>
     </div>
   )
 }
