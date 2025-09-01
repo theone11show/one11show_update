@@ -14,7 +14,7 @@ const EventsSection = () => {
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
 
-  // Check scroll position (throttled with rAF)
+  // Check scroll position
   const checkScroll = useCallback(() => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -55,9 +55,6 @@ const EventsSection = () => {
 
   return (
     <section className="py-12 px-6 relative">
-      {/* Overlay for better text & content contrast */}
-      <div className="absolute inset-0"></div>
-
       {/* Left Button */}
       {showLeft && (
         <button
@@ -76,26 +73,34 @@ const EventsSection = () => {
         {events.map((event, index) => (
           <div
             key={event.id}
-            className="min-w-[280px] h-[360px] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 bg-[#281316]/80 will-change-transform"
+            className="min-w-[280px] aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 bg-[#281316]/80 will-change-transform"
           >
             {/* Event Image */}
             <div className="h-2/3">
               {(index < 3 && event.linkInfo) ? (
                 <a href={event.linkInfo}>
+                  <picture>
+                    <source srcSet={event.img.replace(".webp", ".avif")} type="image/avif" />
+                    <source srcSet={event.img} type="image/webp" />
+                    <img
+                      src={event.img}
+                      alt={event.title}
+                      loading="lazy"
+                      className="w-full h-full object-contain sm:object-cover rounded-lg"
+                    />
+                  </picture>
+                </a>
+              ) : (
+                <picture>
+                  <source srcSet={event.img.replace(".webp", ".avif")} type="image/avif" />
+                  <source srcSet={event.img} type="image/webp" />
                   <img
                     src={event.img}
                     alt={event.title}
                     loading="lazy"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-contain sm:object-cover rounded-lg"
                   />
-                </a>
-              ) : (
-                <img
-                  src={event.img}
-                  alt={event.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover rounded-lg"
-                />
+                </picture>
               )}
             </div>
 
