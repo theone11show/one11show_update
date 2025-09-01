@@ -43,6 +43,9 @@ const MobileLayout = () => {
 
       {/* Guest 1 */}
       <div>
+   <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16">
+            PUJA-THEMED CULTURAL PERFORMANCE
+          </h2>
         <div className="flex justify-center">
           <img
             src="/day2.webp"
@@ -52,9 +55,7 @@ const MobileLayout = () => {
           />
         </div>
         <div className="mb-20 font-extrabold text-left">
-          <h2 className="font-['Montserrat'] text-[#e4e2dd] text-[27px] mt-16">
-            PUJA-THEMED CULTURAL PERFORMANCE
-          </h2>
+         
           <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
             Day 2 brings a touch of tradition and celebration through specially
             curated cultural theme setting the mood for Durga Puja, offering a
@@ -147,6 +148,7 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
 
