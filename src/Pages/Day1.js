@@ -114,7 +114,7 @@ const MobileLayout = () => {
           loading="lazy"
           className="rounded-xl w-full h-56 object-cover mt-4"
         />
-        <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4">
+        <p className="font-['Montserrat'] text-white text-[14px] leading-relaxed mt-4 pb-4">
           The first day will feature the biggest artist meetup in North Bengal, where artists of every genre, taste, and niche will come together to connect, bond, and network beyond boundaries of language and genre, over a single roof of music.
         </p>
       </div>
@@ -132,6 +132,7 @@ const GuestsSection = () => {
 };
 
 export default GuestsSection;
+
 
 
 
