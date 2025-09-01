@@ -30,7 +30,7 @@ const ExclusivePresence2 = () => {
             CACTUSS
           </h2>
           <p className="font-['Montserrat'] text-white text-[19px] leading-relaxed">
-          Cactus is a Rock band from Kolkata, formed in 1992. 
+          Cactuss is a Rock band from Kolkata, formed in 1992. 
           The name was derived from the fact that the music scene was then 
           devoid of life as in a desert and despite the odds, like a cactus,
           they survived
@@ -67,3 +67,4 @@ const ExclusivePresence2 = () => {
 };
 
 export default ExclusivePresence2;
+
