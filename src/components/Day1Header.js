@@ -21,16 +21,20 @@ const Day1Header = () => {
 </p>
       {/* Buttons */}
       <div className="flex flex-nowrap gap-4 mt-8">
-        <button
-          className="font-['Poppins'] bg-white text-black rounded-full font-bold
-          px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5
-          min-w-[140px] md:min-w-[180px] lg:min-w-[200px]
-          text-xs sm:text-sm md:text-lg lg:text-xl
-          whitespace-nowrap
-          hover:bg-gray-200 transition"
-        >
-          BOOK TICKETS
-        </button>
+      <a
+    href="https://in.bookmyshow.com/events/the-one11-show/ET00460471?webview=true"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-['Poppins'] bg-white text-black rounded-full font-bold
+      px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5
+      min-w-[140px] md:min-w-[180px] lg:min-w-[200px]
+      text-xs sm:text-sm md:text-lg lg:text-xl
+      whitespace-nowrap
+      flex items-center justify-center
+      hover:bg-gray-200 transition"
+  >
+    BOOK TICKETS
+  </a>
         <button
           className="font-['Poppins'] bg-white text-black rounded-full font-bold
           px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5
@@ -47,3 +51,4 @@ const Day1Header = () => {
 };
 
 export default Day1Header;
+
