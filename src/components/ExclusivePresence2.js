@@ -58,7 +58,7 @@ const ExclusivePresence2 = () => {
           <p className="font-['Montserrat'] text-white text-[19px] leading-relaxed">
          
              To keep the excitement alive, we've lined up suprise performances that will be revealed only
-              on the day of event
+              on the day of event.
           </p>
         </div>
       </div>
@@ -67,5 +67,6 @@ const ExclusivePresence2 = () => {
 };
 
 export default ExclusivePresence2;
+
 
 
