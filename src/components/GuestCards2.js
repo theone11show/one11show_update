@@ -12,7 +12,7 @@ const GuestCard2 = () => {
           alt="day2"
           loading="lazy"
           className="w-3/4 h-72 object-cover rounded-xl"
-        />>
+        />
       </div>
 
       {/* Card 2 */}
@@ -49,3 +49,4 @@ const GuestCard2 = () => {
 }
 
 export default GuestCard2;
+
