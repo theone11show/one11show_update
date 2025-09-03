@@ -72,8 +72,7 @@ function App() {
 
        
 
-        {/* Support / Info section */}
-        <Route path="/Support" element={<InfoSection />} />
+     
 
         {/* Music Battle Events (event schedule overview) */}
         <Route path="/eventSchedule" element={<MusicBattleEvents />} />
