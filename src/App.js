@@ -24,7 +24,7 @@ import Day1 from "./Pages/Day1";
 import Day2 from "./Pages/Day2";
 import Event from "./components/Event";
 import Footer from "./components/Footer";
-import faq from "./Pages/Faq";
+import Faq from "./Pages/Faq";
 import "./index.css";
 
 function App() {
