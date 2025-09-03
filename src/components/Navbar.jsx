@@ -21,7 +21,7 @@ const Header = () => {
     { label: "About Us", to: "/about" },
     { label: "Events", to :"/eventSchedule"},
     { label: "Updates", to: "/updates" },
-    { label: "FAQs", to: "/Support" },
+    { label: "FAQs", to: "/Faq" },
     { label: "Privacy Policy", to: "/Policy" },
     { label: "Terms of Service", to: "/TermsandCondition" },
    
