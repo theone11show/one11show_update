@@ -24,7 +24,7 @@ const Header = () => {
     { label: "FAQs", to: "/Support" },
     { label: "Privacy Policy", to: "/Policy" },
     { label: "Terms of Service", to: "/TermsandCondition" },
-    { label: "Join Waitlist", to: "/join" },
+   
   ];
 
   return (
