@@ -24,6 +24,7 @@ import Day1 from "./Pages/Day1";
 import Day2 from "./Pages/Day2";
 import Event from "./components/Event";
 import Footer from "./components/Footer";
+import faq from "./Pages/Faq";
 import "./index.css";
 
 function App() {
@@ -82,6 +83,9 @@ function App() {
 
         {/* Day 2 events schedule */}
         <Route path="/day2-events" element={<Day2 />} />
+
+         {/* Faq page */}
+        <Route path="/Faq" element={<Faq/>} />
       </Routes>
 
       {/* Footer will always show */}
