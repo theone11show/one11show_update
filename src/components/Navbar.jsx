@@ -7,7 +7,7 @@ import "./Logo.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -15,39 +15,7 @@ const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
 
-  // Navbar hide/show on scroll
-  useEffect(() => {
-    let lastY = window.scrollY;
-    let ticking = false;
-    const hideThreshold = 50;
-    const delta = 5;
-
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      if (Math.abs(currentY - lastY) <= delta) {
-        ticking = false;
-        return;
-      }
-      if (currentY > lastY && currentY > hideThreshold) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-      lastY = currentY;
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(handleScroll);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  
   const menuItems = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
@@ -62,7 +30,7 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 py-1 px-6 shadow-lg transition-transform duration-300
-        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+       
         bg-gradient-to-r from-[#1f1f1f] to-[#000000] md:bg-charcoal-black
       `}
     >
@@ -83,10 +51,10 @@ const Header = () => {
 
       {/* Mobile menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-full md:w-96 bg-[#171616] py-5 z-50 flex flex-col items-center justify-start space-y-8 text-2xl font-bold transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+  className={`fixed top-0 right-0 h-screen w-full md:w-96 bg-black py-5 z-40 flex flex-col items-center justify-start space-y-8 text-2xl font-bold transition-transform duration-300 ease-in-out ${
+    isMenuOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
         <button
           onClick={closeMenu}
           className="absolute top-6 right-6 text-cream-white"
