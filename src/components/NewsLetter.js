@@ -64,14 +64,14 @@ const NewsLetter = () => {
           <div className="flex items-center justify-between">
             {/* Input Box */}
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              required
-              className="ml-4 bg-transparent border-none outline-none text-gray-600 
-                         text-[18px] font-montserrat tracking-wide leading-none flex-1 font-[Poppins] placeholder:font-[Poppins]"
-            />
+  type="email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  placeholder="Enter your email"
+  required
+  className="w-full md:w-auto ml-4 bg-transparent border-none outline-none text-gray-600
+             text-[16px] md:text-[18px] font-montserrat tracking-wide leading-none flex-1 font-[Poppins] placeholder:font-[Poppins] placeholder:text-gray-400 truncate"
+/>
 
             {/* Subscribe Button */}
             <button
