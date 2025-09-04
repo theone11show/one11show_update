@@ -20,8 +20,8 @@ const EventSchedule = () => {
       tickets: "https://in.bookmyshow.com/events/the-one11-show/ET00460471?webview=true",
     },
     {
-      date: "22",
-      month: "sept",
+      date: "??",
+      month: "",
       title: "Exclusive Event",
       day: "Day 3",
       link: "/day3-events",
