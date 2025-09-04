@@ -74,7 +74,7 @@ style={{
         {faqData.map((faq, index) => (
           <div
             key={index}
-          className="border-b-2 border-white py-4 cursor-pointer"
+          className="border-b-2 border-white py-4 mb-10 cursor-pointer"
             onClick={() => toggleFAQ(index)}
           >
             {/* Question with numbering */}
@@ -82,7 +82,7 @@ style={{
               <h3
                 className="font-semibold font-[Montserrat]"
                 style={{
-                  fontSize: "clamp(18px, 4vw, 26px)", // responsive
+                  fontSize: "clamp(16px, 4vw, 24px)", // responsive
                   fontFamily: "'Montserrat', sans-serif",
                 }}
               >
@@ -90,7 +90,7 @@ style={{
               </h3>
 
               {/* Arrow */}
-              <span className="text-xl">
+              <span className="text-4xl">
                 {openIndex === index ? <FiChevronUp /> : <FiChevronDown />}
               </span>
             </div>
@@ -100,7 +100,7 @@ style={{
               <p
                 className="mt-3 text-gray-300"
                 style={{
-                  fontSize: "clamp(14px, 3.5vw, 20px)",
+                  fontSize: "clamp(13px, 3.5vw, 19px)",
                   fontFamily: "'Montserrat', sans-serif",
                 }}
                 dangerouslySetInnerHTML={{ __html: faq.answer }}
