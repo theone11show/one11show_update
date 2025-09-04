@@ -16,7 +16,7 @@ import PaymentInstructions from "./components/PaymentInstructions";
 import JoinWaitList from "./components/JoinWaitList";
 import RegisterForm from "./components/RegisterForm";
 import TermsandCondition from "./components/TermsandCondition";
-import PrivacyPolicy from "./components/PrivacyPolicy";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import OurMission from "./components/OurMission";
 import InfoSection from "./components/InfoSection";
 import MusicBattleEvents from "./Pages/MusicBattleEvents";
