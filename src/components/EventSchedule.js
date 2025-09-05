@@ -61,10 +61,10 @@ const EventSchedule = () => {
               <div className="flex items-center border-none md:border-r border-gray-300 pr-0 md:pr-4 lg:pr-5">
                 <Link
                   to={event.link}
-                  className="font-bold hover:underline cursor-pointer"
+                  className="font-bold cursor-pointer text-[#e4e2dd] hover:text-[#FFD8B2]"
                   style={{
                     fontSize: "clamp(40px, 8vw, 54px)",
-                    color: "#e4e2dd",
+                   
                     fontFamily: "'Montserrat', sans-serif",
                   }}
                 >
@@ -72,10 +72,10 @@ const EventSchedule = () => {
                 </Link>
                 <Link
                   to={event.link}
-                  className="hover:underline cursor-pointer"
+                  className="cursor-pointer text-[#e4e2dd] hover:text-[#FFD8B2]"
                   style={{
                     fontSize: "clamp(20px, 5vw, 24px)",
-                    color: "#e4e2dd",
+                   
                     fontFamily: "'Montserrat', sans-serif",
                     marginLeft: "6px",
                   }}
@@ -89,10 +89,10 @@ const EventSchedule = () => {
             <div className="flex flex-col md:flex-row justify-center md:justify-start items-center md:items-baseline gap-2 min-w-0">
               <Link
                 to={event.link}
-                className="italic font-bold shrink-0 hover:underline cursor-pointer"
+                className="italic font-bold shrink-0 cursor-pointer text-[#e4e2dd] hover:text-[#FFD8B2]"
                 style={{
                   fontSize: "clamp(20px, 5vw, 28px)",
-                  color: "#e4e2dd",
+                 
                   fontFamily: "'Poppins', sans-serif",
                 }}
               >
@@ -101,10 +101,10 @@ const EventSchedule = () => {
 
               <Link
                 to={event.link}
-                className="break-words hover:underline cursor-pointer"
+                className="break-words cursor-pointer text-[#e4e2dd] hover:text-[#FFD8B2]"
                 style={{
                   fontSize: "clamp(18px, 5vw, 26px)",
-                  color: "#e4e2dd",
+                
                   fontFamily: "'Poppins', sans-serif",
                 }}
               >
@@ -116,19 +116,18 @@ const EventSchedule = () => {
             <div className="flex justify-center md:justify-end">
               {event.tickets ? (
                 <a
-                  href={event.tickets}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center border rounded-full px-6 py-3 font-semibold font-[Poppins] whitespace-nowrap hover:bg-white hover:text-black transition"
-                  style={{
-                    fontSize: "clamp(14px, 4vw, 18px)",
-                    borderColor: "#fff",
-                    color: "white",
-                    minWidth: "140px",
-                  }}
-                >
-                  BUY TICKETS
-                </a>
+           href={event.tickets}
+           target="_blank"
+          rel="noopener noreferrer"
+         className="flex items-center justify-center border rounded-full px-6 py-3 font-semibold font-[Poppins] whitespace-nowrap transition hover:bg-white hover:text-black hover:border-black active:bg-white active:text-black active:border-black"
+         style={{
+        fontSize: "clamp(14px, 4vw, 18px)",
+         
+         minWidth: "140px",
+  }}
+>
+  BUY TICKETS
+</a>
               ) : (
                 <button
                   className="flex items-center justify-center border rounded-full px-6 py-3 font-semibold opacity-50 cursor-not-allowed font-[Poppins] whitespace-nowrap"
