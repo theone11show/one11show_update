@@ -47,10 +47,10 @@ const faqData = [
     answer:
       "Tickets are <strong>non-refundable</strong>. Refunds may only apply if the event is cancelled.",
   },
-  {
+ {
     question: "Who do I contact for ticket-related issues?",
     answer:
-      "For help with tickets, email us at <strong>team@theone11.show</strong> or call at <strong>+91 74777 85294</strong>.",
+      'For help with tickets, email us at <a href="mailto:team@theone11.show" class="text-[#FFD8B2] underline"><strong>team@theone11.show</strong></a> or call at <a href="tel:+917477785294" class="text-[#FFD8B2] underline"><strong>+91 74777 85294</strong></a>.',
   },
 ];
 
@@ -114,3 +114,4 @@ style={{
 };
 
 export default Questions;
+
