@@ -12,7 +12,6 @@ import Thank_you from "./components/Thank_you";
 import Aboutus from "./Pages/Aboutus";
 import Gallery from "./Pages/Gallery";
 import Updates from "./components/Updates";
-import PaymentInstructions from "./components/PaymentInstructions";
 import JoinWaitList from "./components/JoinWaitList";
 import RegisterForm from "./components/RegisterForm";
 import TermsandCondition from "./components/TermsandCondition";
