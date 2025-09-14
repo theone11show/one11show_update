@@ -17,14 +17,12 @@ const Day2Header = () => {
   whitespace-nowrap
   text-sm sm:text-base md:text-[22px]"
 >
-  21 SEPTEMBER • SUNDAY
+  COMING SOON
 </p>
       {/* Buttons */}
       <div className="flex flex-nowrap gap-4 mt-8">
-         <a
-    href="https://in.bookmyshow.com/events/the-one11-show/ET00460471?webview=true"
-    target="_blank"
-    rel="noopener noreferrer"
+         <button
+   
     className="font-['Poppins'] bg-white text-black rounded-full font-bold
       px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5
       min-w-[140px] md:min-w-[180px] lg:min-w-[200px]
@@ -34,7 +32,7 @@ const Day2Header = () => {
       hover:bg-gray-200 transition"
   >
     BOOK TICKETS
-  </a>
+  </button>
         <button
           className="font-['Poppins'] bg-white text-black rounded-full font-bold
           px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5
