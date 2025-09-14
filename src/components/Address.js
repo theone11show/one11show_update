@@ -63,7 +63,7 @@ const Address = () => {
               fontFamily: "'Poppins', sans-serif",
             }}
           >
-            20 & 21<sup>st</sup> September 2025
+            Coming soon
           </p>
         </div>
 
