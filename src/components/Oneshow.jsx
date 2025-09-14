@@ -6,6 +6,7 @@ import AboutSection from "./AboutSection";
 import CountdownSection from "./CountdownSection";
 import NewsLetter from "./NewsLetter";
 import UpcommingArtists from "./UpcommingArtists";
+import Popup from "./Popup";
 
 const Oneshow = () => {
   const location = useLocation();
@@ -79,6 +80,7 @@ const Oneshow = () => {
           }
         `}
       </style>
+        <Popup />
     </Layout>
   );
 };
