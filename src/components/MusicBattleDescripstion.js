@@ -63,7 +63,7 @@ const MusicBattleDescription = () => {
         
         }}
         >
-          The One11 Music Battle Season 1 begins its journey on 20 September 2025 <br />
+          The One11 Music Battle Season 1 begins its journey soon <br />
           bringing together artists, audiences, and creative communities for an exciting <br />
           opening day.
         </p>
