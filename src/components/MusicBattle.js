@@ -36,8 +36,8 @@ const MusicBattle = () => {
 
         {/* Description */}
        <p className="max-w-3xl mx-auto text-[14px] md:text-[17px] lg:text-[19.3px] font-anton leading-relaxed mb-8 uppercase tracking-wide">
-  The  One11  Music  Battle  Season  1, begins  its  journey  on 20<br />
-  <span className="font-bold text-white">September 2025</span>, bringing together artists, audiences, and<br />
+  The  One11  Music  Battle  Season  1, begins  its  journey soon<br />
+ , bringing together artists, audiences, and<br />
    creative communities for an exciting opening day.
   <br /><br />
   From the largest artist gathering in North Bengal to engaging
