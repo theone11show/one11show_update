@@ -10,11 +10,10 @@ import ScrollToTop from "./components/scrollToTop";
 import Oneshow from "./components/Oneshow";
 import Thank_you from "./components/Thank_you";
 import Aboutus from "./Pages/Aboutus";
-import Gallery from "./Pages/Gallery";
 import Updates from "./components/Updates";
+
 import JoinWaitList from "./components/JoinWaitList";
-import RegisterForm from "./components/RegisterForm";
-import TermsandCondition from "./components/TermsandCondition";
+import TermsandConditions from "./Pages/TermsandConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import OurMission from "./components/OurMission";
 import InfoSection from "./components/InfoSection";
@@ -23,8 +22,10 @@ import Day1 from "./Pages/Day1";
 import Day2 from "./Pages/Day2";
 import Event from "./components/Event";
 import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 import Faq from "./Pages/Faq";
 import "./index.css";
+
 
 function App() {
   return (
@@ -45,21 +46,18 @@ function App() {
         {/* About us page */}
         <Route path="/about" element={<Aboutus />} />
 
-        {/* Gallery page (images & media) */}
-        <Route path="/gallery" element={<Gallery />} />
+       
 
         {/* Updates page (latest news/info) */}
         <Route path="/updates" element={<Updates />} />
 
-        {/* Join waitlist page */}
-        <Route path="/join" element={<JoinWaitList />} />
+      
 
-       
-        {/* Registration form page */}
-        <Route path="/register" element={<RegisterForm />} />
+      
+
 
         {/* Terms and Conditions page */}
-        <Route path="/TermsandCondition" element={<TermsandCondition />} />
+        <Route path="/TermsandCondition" element={<TermsandConditions />} />
 
         {/* Privacy Policy page */}
         <Route path="/Policy" element={<PrivacyPolicy />} />
@@ -69,7 +67,8 @@ function App() {
 
        
 
-     
+        {/* Support / Info section */}
+        <Route path="/Support" element={<InfoSection />} />
 
         {/* Music Battle Events (event schedule overview) */}
         <Route path="/eventSchedule" element={<MusicBattleEvents />} />
@@ -80,8 +79,13 @@ function App() {
         {/* Day 2 events schedule */}
         <Route path="/day2-events" element={<Day2 />} />
 
-         {/* Faq page */}
-        <Route path="/Faq" element={<Faq/>} />
+        {/* Faq */}
+         <Route path="/Faq" element={<Faq />} />
+
+
+       
+        {/*Not found 404 */}
+         <Route path="*" element={<NotFound />} />
       </Routes>
 
       {/* Footer will always show */}
