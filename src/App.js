@@ -54,9 +54,7 @@ function App() {
         {/* Join waitlist page */}
         <Route path="/join" element={<JoinWaitList />} />
 
-        {/* Payment instructions page */}
-        <Route path="/payment-instructions" element={<PaymentInstructions />} />
-
+       
         {/* Registration form page */}
         <Route path="/register" element={<RegisterForm />} />
 
